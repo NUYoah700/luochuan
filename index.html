@@ -246,7 +246,7 @@ async function init() {
   list.innerHTML = '<div class="d-loader">加载中...</div>';
 
   try {
-    const resp = await fetch(`${DATA_DIR}_index.json`);
+    const resp = await fetch(`${DATA_DIR}index.json`);
     if (!resp.ok) throw new Error('index not found');
     dateMeta = (await resp.json()).reverse();
   } catch {

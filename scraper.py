@@ -412,7 +412,7 @@ def collect_all():
 
 def update_index(articles):
     """更新汇总索引文件，供前端加载多日数据"""
-    index_file = DATA_DIR / "_index.json"
+    index_file = DATA_DIR / "index.json"
     existing = []
     if index_file.exists():
         try:
