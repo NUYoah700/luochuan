@@ -1,8 +1,7 @@
 # 配置（含密码，不提交）
 config.json
 
-# 每日数据
-data/*.json
+# 日志和临时文件
 data/*.log
 data/*.pid
 
