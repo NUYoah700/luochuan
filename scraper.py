@@ -163,7 +163,7 @@ def fetch_github_trending_ai():
             return articles
 
         soup = BeautifulSoup(resp.text, "html.parser")
-        repos = soup.select("article.Box-row")[:20]
+        repos = soup.select("article.Box-row")
 
         for repo in repos:
             h2 = repo.select_one("h2")
@@ -173,6 +173,8 @@ def fetch_github_trending_ai():
             name = name.replace(" / ", "/").replace(" /", "/").replace("/ ", "/").strip()
             if not name or "/" not in name:
                 continue
+            if len(articles) >= 20:
+                break
             desc_el = repo.select_one("p")
             desc = desc_el.get_text(strip=True) if desc_el else ""
 
