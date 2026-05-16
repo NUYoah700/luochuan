@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>洛川 · AI信息聚合</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f5f6f8;
+    --bg-card: #ffffff;
+    --bg-card-hover: #fafbfc;
+    --border: #e2e4e9;
+    --border-active: #c5c8d0;
+    --text-primary: #1a1a2e;
+    --text-secondary: #555a68;
+    --text-muted: #9499a5;
+    --accent: #3050e6;
+    --accent-light: rgba(48, 80, 230, 0.08);
+    --accent2: #0d9488;
+    --gold: #b45309;
+    --tag-new: #16a34a;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --transition: 0.2s ease;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+      "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .app { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+  /* ── Header ── */
+  .header {
+    position: sticky; top: 0; z-index: 100;
+    padding: 18px 0; margin-bottom: 24px;
+    background: rgba(245, 246, 248, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none; color: inherit;
+  }
+  .brand-logo {
+    width: 36px; height: 36px;
+    background: var(--accent);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 19px; color: #fff; font-weight: 700;
+  }
+  .brand-name { font-size: 19px; font-weight: 700; letter-spacing: 2px; }
+  .brand-desc { font-size: 11px; color: var(--text-muted); letter-spacing: 1px; }
+
+  .btn-refresh {
+    padding: 7px 16px; border-radius: 18px; border: 1px solid var(--border);
+    background: #fff; color: var(--text-primary);
+    font-size: 13px; cursor: pointer; transition: var(--transition);
+    font-family: inherit; font-weight: 500;
+  }
+  .btn-refresh:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── Drawer List ── */
+  .drawer-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 40px; }
+
+  /* ── Drawer ── */
+  .drawer {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .drawer:hover { border-color: var(--border-active); }
+
+  .drawer-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 22px; cursor: pointer; user-select: none;
+    transition: background 0.15s;
+  }
+  .drawer-header:hover { background: #f8f9fb; }
+  .drawer-header-left { display: flex; align-items: center; gap: 10px; }
+  .drawer-date { font-size: 15px; font-weight: 700; color: var(--text-primary); }
+  .drawer-count {
+    font-size: 12px; color: var(--text-muted);
+    background: #f0f1f4; padding: 2px 10px; border-radius: 10px;
+  }
+  .drawer-chevron {
+    font-size: 13px; color: var(--text-muted); transition: transform 0.3s ease;
+    font-weight: 700;
+  }
+  .drawer.open .drawer-chevron { transform: rotate(180deg); }
+  .drawer.open .drawer-header { border-bottom: 1px solid var(--border); }
+
+  .drawer-body {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .drawer.open .drawer-body { max-height: 10000px; }
+
+  .drawer-content { padding: 18px 22px; }
+
+  /* ── Stats ── */
+  .d-stats { display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .d-stat {
+    padding: 4px 12px; border-radius: 14px;
+    background: #f0f1f4; border: 1px solid var(--border);
+    font-size: 12px; color: var(--text-secondary);
+  }
+  .d-stat strong { color: var(--text-primary); font-size: 15px; margin-right: 2px; font-weight: 700; }
+
+  /* ── Search ── */
+  .d-search-wrap { position: relative; margin-bottom: 12px; }
+  .d-search-input {
+    width: 100%; padding: 9px 16px 9px 36px; border-radius: 20px;
+    border: 1px solid var(--border);
+    background: #f5f6f8; color: var(--text-primary);
+    font-size: 13px; outline: none; transition: var(--transition);
+    font-family: inherit;
+  }
+  .d-search-input:focus { border-color: var(--accent); background: #fff; }
+  .d-search-input::placeholder { color: var(--text-muted); }
+  .d-search-icon {
+    position: absolute; left: 13px; top: 50%; transform: translateY(-50%);
+    color: var(--text-muted); font-size: 15px; pointer-events: none;
+  }
+
+  /* ── Category chips ── */
+  .d-cats { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
+  .d-cat {
+    padding: 4px 12px; border-radius: 14px; border: 1px solid var(--border);
+    background: #f5f6f8; color: var(--text-secondary);
+    font-size: 12px; cursor: pointer; transition: var(--transition);
+    font-weight: 500;
+  }
+  .d-cat:hover { border-color: var(--accent); color: var(--accent); }
+  .d-cat.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  /* ── Article cards ── */
+  .d-feed { display: flex; flex-direction: column; gap: 8px; }
+
+  .d-card {
+    background: #f8f9fb;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 15px 18px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .d-card:hover {
+    background: #fff;
+    border-color: var(--accent);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transform: translateY(-1px);
+  }
+  .d-card-title { font-size: 14px; font-weight: 700; line-height: 1.5; margin-bottom: 5px; }
+  .d-card-title a { color: var(--text-primary); text-decoration: none; }
+  .d-card-title a:hover { color: var(--accent); }
+  .d-card-meta {
+    display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+    font-size: 11px; color: var(--text-muted); margin-bottom: 4px;
+  }
+  .d-card-meta .source { color: var(--accent2); font-weight: 600; }
+  .d-card-meta .r-tag {
+    padding: 1px 7px; border-radius: 8px; font-size: 10px;
+    background: var(--accent-light); color: var(--accent); font-weight: 500;
+  }
+  .d-card-meta .r-tag.intl { background: rgba(180,83,9,0.08); color: var(--gold); }
+  .d-card-summary {
+    font-size: 12px; color: var(--text-secondary); line-height: 1.5;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .d-card .importance-dot {
+    width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    margin-left: auto;
+  }
+  .d-card .importance-dot.high { background: var(--tag-new); }
+  .d-card .importance-dot.normal { background: #d1d5db; }
+
+  /* ── Empty / Loader ── */
+  .d-empty { text-align: center; padding: 36px 20px; color: var(--text-muted); font-size: 14px; }
+  .d-loader { text-align: center; padding: 28px; color: var(--text-muted); }
+
+  /* ── Footer ── */
+  .footer {
+    text-align: center; padding: 22px 20px;
+    color: var(--text-muted); font-size: 12px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #b0b5be; }
+
+  @media (max-width: 600px) {
+    .app { padding: 0 12px; }
+    .drawer-header { padding: 14px 16px; }
+    .drawer-content { padding: 14px 16px; }
+    .d-card { padding: 12px 14px; }
+    .brand-name { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <header class="header">
+    <a class="brand" href="/">
+      <div class="brand-logo">洛</div>
+      <div>
+        <div class="brand-name">洛 川</div>
+        <div class="brand-desc">AI · 信息聚合</div>
+      </div>
+    </a>
+    <button class="btn-refresh" onclick="init()">⟳ 刷新</button>
+  </header>
+
+  <div class="drawer-list" id="drawerList"></div>
+
+  <div class="footer">洛川 · 每日清晨 06:00 自动更新 · AI资讯聚合引擎</div>
+</div>
+
+<script>
+const DATA_DIR = './data/';
+
+let dateMeta = [];
+let drawerData = {};
+let openDate = null;
+
+async function init() {
+  const list = document.getElementById('drawerList');
+  list.innerHTML = '<div class="d-loader">加载中...</div>';
+
+  try {
+    const resp = await fetch(`${DATA_DIR}_index.json`);
+    if (!resp.ok) throw new Error('index not found');
+    dateMeta = (await resp.json()).reverse();
+  } catch {
+    dateMeta = [];
+  }
+
+  if (dateMeta.length === 0) {
+    list.innerHTML = '<div class="d-empty">暂无数据</div>';
+    return;
+  }
+
+  // 修正索引计数——从实际数据文件读取
+  await fixIndexCounts();
+  renderDrawers();
+  if (dateMeta.length > 0) await openDrawer(dateMeta[0].date);
+}
+
+async function fixIndexCounts() {
+  // 对每个日期，如果数据已加载则以实际文章数为准
+  for (const m of dateMeta) {
+    if (drawerData[m.date] && drawerData[m.date].articles) {
+      m.count = drawerData[m.date].articles.length;
+    }
+  }
+}
+
+function renderDrawers() {
+  const list = document.getElementById('drawerList');
+  list.innerHTML = dateMeta.map((m, i) => `
+    <div class="drawer${openDate === m.date ? ' open' : ''}" id="drawer-${m.date}">
+      <div class="drawer-header" onclick="toggleDrawer('${m.date}')">
+        <div class="drawer-header-left">
+          <span class="drawer-date">${m.date}</span>
+          <span class="drawer-count" id="count-${m.date}">${m.count} 篇</span>
+          ${i === 0 ? '<span style="font-size:10px;color:#fff;background:var(--accent);padding:1px 8px;border-radius:8px;font-weight:600">最新</span>' : ''}
+        </div>
+        <span class="drawer-chevron">▼</span>
+      </div>
+      <div class="drawer-body">
+        <div class="drawer-content" id="content-${m.date}">
+          <div class="d-loader">加载中...</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+async function toggleDrawer(date) {
+  if (openDate === date) {
+    closeDrawer(date);
+    return;
+  }
+  await openDrawer(date);
+}
+
+async function openDrawer(date) {
+  if (openDate && openDate !== date) {
+    closeDrawerSilent(openDate);
+  }
+
+  openDate = date;
+  const drawer = document.getElementById(`drawer-${date}`);
+  if (drawer) drawer.classList.add('open');
+
+  if (drawerData[date]) {
+    renderDrawerContent(date);
+  } else {
+    try {
+      const resp = await fetch(`${DATA_DIR}${date}.json`);
+      if (!resp.ok) throw new Error('not found');
+      const data = await resp.json();
+      drawerData[date] = { articles: data.articles || [] };
+      // 用实际文章数更新计数
+      const meta = dateMeta.find(m => m.date === date);
+      if (meta) { meta.count = data.articles.length; }
+      const countEl = document.getElementById(`count-${date}`);
+      if (countEl) { countEl.textContent = data.articles.length + ' 篇'; }
+    } catch {
+      drawerData[date] = { articles: [] };
+    }
+    renderDrawerContent(date);
+  }
+}
+
+function closeDrawer(date) {
+  openDate = null;
+  const drawer = document.getElementById(`drawer-${date}`);
+  if (drawer) drawer.classList.remove('open');
+}
+
+function closeDrawerSilent(date) {
+  const drawer = document.getElementById(`drawer-${date}`);
+  if (drawer) drawer.classList.remove('open');
+}
+
+function renderDrawerContent(date) {
+  const container = document.getElementById(`content-${date}`);
+  if (!container) return;
+
+  const data = drawerData[date];
+  if (!data || !data.articles || data.articles.length === 0) {
+    container.innerHTML = '<div class="d-empty">该日暂无资讯</div>';
+    return;
+  }
+
+  const articles = data.articles;
+  container.innerHTML = buildContentHTML(date, articles);
+  bindDrawerEvents(date, articles);
+}
+
+function buildContentHTML(date, articles) {
+  const domestic = articles.filter(a => a.region === '国内').length;
+  const intl = articles.filter(a => a.region === '国际' || a.region === '日本').length;
+  const important = articles.filter(a => a.importance === 'high').length;
+
+  const cats = new Map();
+  for (const a of articles) cats.set(a.category, (cats.get(a.category) || 0) + 1);
+
+  const regions = new Map();
+  for (const a of articles) regions.set(a.region, (regions.get(a.region) || 0) + 1);
+
+  return `
+    <div class="d-stats">
+      <div class="d-stat"><strong>${articles.length}</strong>篇</div>
+      <div class="d-stat">🔥 <strong>${important}</strong>重点</div>
+      <div class="d-stat">🇨🇳 <strong>${domestic}</strong>国内</div>
+      <div class="d-stat">🌍 <strong>${intl}</strong>国际</div>
+    </div>
+    <div class="d-search-wrap">
+      <span class="d-search-icon">⌕</span>
+      <input class="d-search-input" type="text" id="search-${date}" placeholder="搜索这一天..." autocomplete="off">
+    </div>
+    <div class="d-cats">
+      <span class="d-cat active" data-cat="全部">全部 (${articles.length})</span>
+      ${[...cats].map(([n, c]) => `<span class="d-cat" data-cat="${escapeHtml(n)}">${escapeHtml(n)} (${c})</span>`).join('')}
+      <span style="color:var(--text-muted);margin:0 2px">|</span>
+      <span class="d-cat active" data-region="全部">全部地区</span>
+      ${[...regions].map(([n, c]) => `<span class="d-cat" data-region="${escapeHtml(n)}">${escapeHtml(n)} (${c})</span>`).join('')}
+    </div>
+    <div class="d-feed" id="feed-${date}">
+      ${buildCardsHTML(articles, { cat: '全部', region: '全部', search: '' })}
+    </div>
+  `;
+}
+
+function buildCardsHTML(articles, filter) {
+  let filtered = articles;
+
+  if (filter.search) {
+    const s = filter.search;
+    filtered = filtered.filter(a =>
+      a.title.toLowerCase().includes(s) ||
+      (a.summary || '').toLowerCase().includes(s) ||
+      (a.source || '').toLowerCase().includes(s)
+    );
+  }
+  if (filter.cat !== '全部') filtered = filtered.filter(a => a.category === filter.cat);
+  if (filter.region !== '全部') filtered = filtered.filter(a => a.region === filter.region);
+
+  if (filtered.length === 0) {
+    return '<div class="d-empty">🔍 没有匹配的资讯</div>';
+  }
+
+  const regionClass = { '国内': '', '国际': 'intl', '日本': 'intl' };
+
+  return filtered.map(a => `
+    <article class="d-card" onclick="window.open('${escapeHtml(a.url)}', '_blank')">
+      <div style="display:flex;align-items:flex-start;gap:10px">
+        <span style="flex:1;font-size:14px;font-weight:700;line-height:1.5">
+          <a href="${escapeHtml(a.url)}" target="_blank" onclick="event.stopPropagation()" style="color:var(--text-primary);text-decoration:none">${escapeHtml(a.title)}</a>
+        </span>
+        <span class="importance-dot ${a.importance}"></span>
+      </div>
+      <div class="d-card-meta">
+        <span class="source">${a.sourceIcon || ''} ${escapeHtml(a.source)}</span>
+        <span>${a.raw_date || ''}</span>
+        <span class="r-tag ${regionClass[a.region] || ''}">${a.region}</span>
+        <span style="font-size:10px;background:#f0f1f4;padding:1px 7px;border-radius:8px">${a.category}</span>
+      </div>
+      <p class="d-card-summary">${escapeHtml(a.summary || '')}</p>
+    </article>
+  `).join('');
+}
+
+function bindDrawerEvents(date, articles) {
+  const container = document.getElementById(`content-${date}`);
+  if (!container) return;
+
+  let filter = { cat: '全部', region: '全部', search: '' };
+
+  const searchInput = document.getElementById(`search-${date}`);
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      filter.search = this.value.toLowerCase();
+      refreshFeed(date, articles, filter);
+    });
+  }
+
+  container.querySelectorAll('.d-cat').forEach(chip => {
+    chip.addEventListener('click', function() {
+      if (this.dataset.cat !== undefined) filter.cat = this.dataset.cat;
+      if (this.dataset.region !== undefined) filter.region = this.dataset.region;
+      filter.search = searchInput ? searchInput.value.toLowerCase() : '';
+
+      // 更新 chip active 状态
+      container.querySelectorAll('.d-cat').forEach(c => c.classList.remove('active'));
+      const activeCat = container.querySelector(`.d-cat[data-cat="${escapeHtml(filter.cat)}"]`);
+      const activeRegion = container.querySelector(`.d-cat[data-region="${escapeHtml(filter.region)}"]`);
+      if (activeCat) activeCat.classList.add('active');
+      if (activeRegion) activeRegion.classList.add('active');
+
+      refreshFeed(date, articles, filter);
+    });
+  });
+}
+
+function refreshFeed(date, articles, filter) {
+  const feed = document.getElementById(`feed-${date}`);
+  if (feed) feed.innerHTML = buildCardsHTML(articles, filter);
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+init();
+</script>
+</body>
+</html>

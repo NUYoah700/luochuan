@@ -1,0 +1,15 @@
+# 配置（含密码，不提交）
+config.json
+
+# 每日数据
+data/*.json
+data/*.log
+data/*.pid
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
