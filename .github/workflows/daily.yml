@@ -4,7 +4,9 @@ on:
   schedule:
     # 北京时间 06:00 = UTC 22:00
     - cron: '0 22 * * *'
-  workflow_dispatch:  # 允许手动触发
+  workflow_dispatch:
+  push:
+    branches: [master]
 
 jobs:
   scrape:
@@ -21,15 +23,7 @@ jobs:
         run: pip install requests beautifulsoup4
 
       - name: 写入配置
-        run: |
-          echo '${{ secrets.LUOCHUAN_CONFIG }}' > config.json
+        run: echo '${{ secrets.LUOCHUAN_CONFIG }}' > config.json
 
       - name: 运行抓取
         run: python scraper.py
-
-      - name: 提交数据
-        run: |
-          git config user.name "Luochuan Bot"
-          git config user.email "bot@luochuan.local"
-          git add data/
-          git diff --staged --quiet || (git commit -m "每日数据: $(date +%Y-%m-%d)" && git push)
