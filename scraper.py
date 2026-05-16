@@ -20,6 +20,9 @@ if sys.platform == 'win32':
 import requests
 from bs4 import BeautifulSoup
 
+# ── DeepSeek API ──
+DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
+
 # ── 配置 ──
 DATA_DIR = Path(__file__).parent / "data"
 OUTPUT_FILE = DATA_DIR / f"{datetime.now().strftime('%Y-%m-%d')}.json"
@@ -52,6 +55,17 @@ def make_id(title, url):
 
 def now_iso():
     return datetime.now(timezone.utc).isoformat()
+
+def load_local_config():
+    """加载本地配置文件"""
+    cfg_file = Path(__file__).parent / "config.json"
+    if cfg_file.exists():
+        try:
+            with open(cfg_file, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except:
+            pass
+    return {}
 
 # ── 数据源：Hacker News (AI相关热门) ──
 def fetch_hackernews():
@@ -138,9 +152,9 @@ def fetch_reddit_ai():
     return articles
 
 
-# ── 数据源：GitHub Trending AI/ML repos ──
+# ── 数据源：GitHub Trending（所有热门项目） ──
 def fetch_github_trending_ai():
-    """获取GitHub今日热门AI仓库"""
+    """获取GitHub今日热门仓库，不限领域"""
     articles = []
     try:
         url = "https://github.com/trending?since=daily&spoken_language_code="
@@ -148,16 +162,8 @@ def fetch_github_trending_ai():
         if not resp:
             return articles
 
-        # GitHub trending page parsing is unreliable via requests; use minimal approach
-        # We grab the page and look for AI-related repos
         soup = BeautifulSoup(resp.text, "html.parser")
-        repos = soup.select("article.Box-row")[:25]
-
-        ai_keywords = [
-            "ai", "llm", "gpt", "openai", "claude", "deepseek", "llama",
-            "agent", "diffusion", "transformer", "rag", "copilot", "cursor",
-            "chatbot", "embedding", "inference"
-        ]
+        repos = soup.select("article.Box-row")[:20]
 
         for repo in repos:
             h2 = repo.select_one("h2")
@@ -165,24 +171,44 @@ def fetch_github_trending_ai():
                 continue
             name = h2.get_text(strip=True)
             name = name.replace(" / ", "/").replace(" /", "/").replace("/ ", "/").strip()
+            if not name or "/" not in name:
+                continue
             desc_el = repo.select_one("p")
             desc = desc_el.get_text(strip=True) if desc_el else ""
-            text = f"{name} {desc}".lower()
-            if any(kw in text for kw in ai_keywords):
-                repo_url = f"https://github.com/{name.strip()}"
-                articles.append({
-                    "id": make_id(name, repo_url),
-                    "title": name.strip(),
-                    "summary": desc[:200] if desc else "查看项目详情",
-                    "source": "GitHub Trending",
-                    "sourceIcon": "⭐",
-                    "url": repo_url,
-                    "category": "开源项目",
-                    "region": "国际",
-                    "importance": "high",
-                    "timestamp": now_iso(),
-                    "raw_date": datetime.now().strftime("%Y-%m-%d %H:%M"),
-                })
+
+            # 获取编程语言
+            lang_el = repo.select_one("[itemprop='programmingLanguage']")
+            lang = lang_el.get_text(strip=True) if lang_el else ""
+
+            # 获取 star 数
+            stars_el = repo.select_one(".d-inline-block.float-sm-right")
+            stars = ""
+            if stars_el:
+                stars_text = stars_el.get_text(strip=True)
+                stars_match = re.search(r'[\d,]+', stars_text)
+                if stars_match:
+                    stars = stars_match.group()
+
+            repo_url = f"https://github.com/{name.strip()}"
+            extra = f"⭐ {stars}" if stars else ""
+            if lang:
+                extra = f"{extra} · {lang}" if extra else lang
+
+            articles.append({
+                "id": make_id(name, repo_url),
+                "title": name.strip(),
+                "summary": desc[:250] if desc else "查看项目详情",
+                "lang": lang,
+                "stars": stars,
+                "source": "GitHub Trending",
+                "sourceIcon": "⭐",
+                "url": repo_url,
+                "category": "开源项目",
+                "region": "国际",
+                "importance": "high",
+                "timestamp": now_iso(),
+                "raw_date": datetime.now().strftime("%Y-%m-%d %H:%M"),
+            })
         print(f"  ✓ GitHub Trending: {len(articles)} 篇")
     except Exception as e:
         print(f"  ⚠ GitHub 抓取异常: {e}")
@@ -348,6 +374,75 @@ def fetch_theverge_ai():
     return articles
 
 
+# ── DeepSeek 中文总结 ──
+def add_chinese_summaries(articles, config):
+    """用 DeepSeek 给每篇文章生成中文简介和用途说明"""
+    api_key = config.get("deepseek_key", "")
+    if not api_key:
+        print("  ⚠ 未配置 deepseek_key，跳过中文总结")
+        return
+
+    # 分批处理，每批 10 篇
+    batch_size = 10
+    for i in range(0, len(articles), batch_size):
+        batch = articles[i:i + batch_size]
+        items_json = json.dumps([
+            {
+                "index": idx,
+                "title": a["title"],
+                "desc": a.get("summary", "")[:150],
+                "source": a["source"],
+                "lang": a.get("lang", ""),
+                "stars": a.get("stars", ""),
+            }
+            for idx, a in enumerate(batch)
+        ], ensure_ascii=False)
+
+        prompt = f"""以下是今日热门 GitHub/GitHub Trending 项目和其他AI资讯。请为每条资讯写一句中文简介（不超过40字），说明这个项目的用途或这条资讯的价值。
+
+返回一个JSON数组，每一项格式：{{"index": 序号, "summary_cn": "一句话中文简介"}}
+
+资讯列表：
+{items_json}"""
+
+        try:
+            resp = requests.post(
+                DEEPSEEK_URL,
+                headers={
+                    "Authorization": f"Bearer {api_key}",
+                    "Content-Type": "application/json",
+                },
+                json={
+                    "model": "deepseek-chat",
+                    "messages": [{"role": "user", "content": prompt}],
+                    "temperature": 0.3,
+                    "max_tokens": 1024,
+                },
+                timeout=60,
+            )
+            resp.raise_for_status()
+            result = resp.json()
+            content = result["choices"][0]["message"]["content"]
+
+            # 解析返回的 JSON
+            json_match = re.search(r'\[[\s\S]*\]', content)
+            if json_match:
+                summaries = json.loads(json_match.group())
+                for s in summaries:
+                    idx = i + s["index"]
+                    if idx < len(articles):
+                        articles[idx]["summary_cn"] = s.get("summary_cn", "")
+                print(f"  ✓ DeepSeek 总结: {len(summaries)} 条")
+            else:
+                print(f"  ⚠ DeepSeek 返回格式异常: {content[:100]}")
+
+        except Exception as e:
+            print(f"  ⚠ DeepSeek API 错误: {e}")
+            continue
+
+        if i + batch_size < len(articles):
+            time.sleep(0.5)  # API 速率限制
+
 # ── 主函数 ──
 def collect_all():
     """采集所有数据源并合并去重"""
@@ -387,6 +482,13 @@ def collect_all():
 
     # 按重要性排序
     unique.sort(key=lambda x: (0 if x["importance"] == "high" else 1, x["title"]))
+
+    # 加载配置获取 DeepSeek key
+    config = load_local_config()
+
+    # DeepSeek 中文总结
+    print(f"\n  🤖 DeepSeek 生成中文简介...")
+    add_chinese_summaries(unique, config)
 
     # 构建输出
     output = {

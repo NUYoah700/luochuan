@@ -426,6 +426,7 @@ function buildCardsHTML(articles, filter) {
         <span class="r-tag ${regionClass[a.region] || ''}">${a.region}</span>
         <span style="font-size:10px;background:#f0f1f4;padding:1px 7px;border-radius:8px">${a.category}</span>
       </div>
+      ${a.summary_cn ? `<p style="font-size:13px;color:var(--accent2);line-height:1.4;margin-bottom:4px;font-weight:500">💡 ${escapeHtml(a.summary_cn)}</p>` : ''}
       <p class="d-card-summary">${escapeHtml(a.summary || '')}</p>
     </article>
   `).join('');

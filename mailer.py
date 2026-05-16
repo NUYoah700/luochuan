@@ -65,6 +65,7 @@ def build_html_digest(date_str, articles):
               <span style="background:rgba(108,140,255,0.1);padding:1px 8px;border-radius:8px;font-size:10px">{a['region']}</span>
               <span style="color:#5a6070;margin-left:6px">{a['category']}</span>
             </div>
+            ''' + (f'<div style="font-size:13px;color:#50e5c4;line-height:1.4;margin-bottom:4px;">💡 {a.get("summary_cn","")}</div>' if a.get('summary_cn') else '') + f'''
             <div style="font-size:13px;color:#5a6070;line-height:1.4;">{a.get('summary','')[:180]}</div>
           </td>
         </tr>"""
