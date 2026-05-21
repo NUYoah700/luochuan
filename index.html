@@ -599,6 +599,7 @@
     </div>
     
     <button class="modal-btn" onclick="completeOnboarding()">开始探索 🚀</button>
+    <button style="width:100%;padding:12px;border-radius:12px;border:2px solid rgba(102,126,234,0.3);background:transparent;color:#667eea;font-size:14px;font-weight:600;cursor:pointer;margin-top:10px;transition:all 0.2s" onclick="skipOnboarding()">跳过引导，直接浏览</button>
   </div>
 </div>
 
@@ -684,6 +685,8 @@ async function init() {
   
   if (!userPreferences.onboarding_complete) {
     showOnboarding();
+    // 预加载文章，这样完成引导后可以立即显示
+    loadArticles();
     return;
   }
   
@@ -724,11 +727,45 @@ function completeOnboarding() {
   savePreferences();
   document.getElementById('onboardingModal').classList.remove('show');
   
-  loadArticles().then(() => {
+  // 如果文章还没加载，等待加载完成
+  if (allArticles.length === 0) {
+    loadArticles().then(() => {
+      setupSwipeCard();
+      updateStats();
+      showCurrentCard();
+    });
+  } else {
+    // 文章已预加载，直接显示
     setupSwipeCard();
     updateStats();
     showCurrentCard();
-  });
+  }
+}
+
+function skipOnboarding() {
+  userPreferences = {
+    onboarding_complete: true,
+    interests: [],
+    liked_articles: [],
+    disliked_articles: [],
+    topic_weights: {},
+    last_update: new Date().toISOString()
+  };
+  
+  savePreferences();
+  document.getElementById('onboardingModal').classList.remove('show');
+  
+  if (allArticles.length === 0) {
+    loadArticles().then(() => {
+      setupSwipeCard();
+      updateStats();
+      showCurrentCard();
+    });
+  } else {
+    setupSwipeCard();
+    updateStats();
+    showCurrentCard();
+  }
 }
 
 async function loadArticles() {
