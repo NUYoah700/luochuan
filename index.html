@@ -656,7 +656,7 @@ body {
 <script>
 const DATA_DIR = './data/';
 let articles = [], currentIndex = 0, mode = 'swipe';
-let prefs = {}, isDragging = false, startX = 0, curX = 0, curY = 0;
+let prefs = {}, isDragging = false, startX = 0, startY = 0, curX = 0, curY = 0;
 let activeCard = null;
 let allArticles = []; // 保存所有文章
 
@@ -666,6 +666,16 @@ const SOURCE_EMOJI = {
 };
 
 function getTag(a) {
+  // 如果是 B站，优先用特定分类
+  if (a.source === 'B站') {
+    const t = (a.title + a.summary + (a.category || '')).toLowerCase();
+    if (/钱|赚|创业|副业|变现/.test(t)) return 'money';
+    if (/ai|人工智能|gpt/.test(t)) return 'ai';
+    if (/职场|工作|打工|上班/.test(t)) return 'career';
+    if (/趋势|未来|风口/.test(t)) return 'trend';
+    return 'video';
+  }
+  
   const t = (a.title + a.summary + (a.category || '')).toLowerCase();
   if (/钱|赚|创业/.test(t)) return 'money';
   if (/ai|人工智能/.test(t)) return 'ai';
@@ -678,6 +688,10 @@ function loadPrefs() {
   try {
     prefs = JSON.parse(localStorage.getItem('luo_prefs')) || {};
   } catch (e) { prefs = {}; }
+  
+  // 确保必要属性存在
+  prefs.liked = prefs.liked || [];
+  prefs.weights = prefs.weights || {};
 }
 
 function savePrefs() {
@@ -821,6 +835,9 @@ function createCard(a, isTop) {
   div.className = 'stack-card';
   if (isTop) div.style.zIndex = '10';
   
+  // 确保有图片
+  const imageUrl = a.image || 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop';
+  
   div.innerHTML = `
     <div class="overlay like">
       <span class="overlay-icon">♥</span>
@@ -829,14 +846,14 @@ function createCard(a, isTop) {
       <span class="overlay-icon">✕</span>
     </div>
     <div class="card-inner">
-      <div class="card-image" style="background-image:url('${a.image}')"></div>
+      <div class="card-image" style="background-image:url('${imageUrl}')"></div>
       <div class="card-source">
         <span>${getSourceEmoji(a.source)}</span>
         <span>${a.source}</span>
         <span style="margin-left:auto;opacity:0.6;">刚刚</span>
       </div>
-      <h3 class="card-title">${a.title}</h3>
-      <p class="card-summary">${a.summary}</p>
+      <h3 class="card-title">${a.title || '内容'}</h3>
+      <p class="card-summary">${a.summary || ''}</p>
     </div>
   `;
   
@@ -860,6 +877,7 @@ function dragStart(e) {
   isDragging = true;
   const p = e.touches ? e.touches[0] : e;
   startX = p.clientX;
+  startY = p.clientY; // 添加 startY
   curX = 0;
   curY = 0;
   
@@ -872,7 +890,7 @@ function dragMove(e) {
   
   const p = e.touches ? e.touches[0] : e;
   curX = p.clientX - startX;
-  curY = (e.touches ? e.touches[0].clientY : e.clientY) - (e.touches ? startY : startY);
+  curY = p.clientY - startY;
   
   const rotate = curX * 0.04;
   activeCard.style.transform = `translate(${curX}px, ${curY}px) rotate(${rotate}deg)`;
@@ -916,7 +934,7 @@ function snapBack() {
 }
 
 function flyAway(action) {
-  if (!activeCard) return;
+  if (!activeCard || currentIndex >= articles.length) return;
   
   const targetX = action === 'like' ? window.innerWidth + 100 : -window.innerWidth - 100;
   const rotate = action === 'like' ? 20 : -20;
@@ -929,6 +947,12 @@ function flyAway(action) {
   
   setTimeout(() => {
     const a = articles[currentIndex];
+    if (!a) {
+      currentIndex++;
+      activeCard = null;
+      renderStack();
+      return;
+    }
     const tag = getTag(a);
     
     if (action === 'like') {
@@ -950,6 +974,7 @@ function handleAction(action) {
   
   if (action === 'like' || action === 'skip') {
     curX = action === 'like' ? 200 : -200;
+    curY = 0; // 添加 curY 初始化
     flyAway(action);
   } else if (action === 'info') {
     const a = articles[currentIndex];
