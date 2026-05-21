@@ -32,6 +32,79 @@ HEADERS = {
     "KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
 }
 
+# ── 图片相关 ──
+def get_category_image(category):
+    """根据分类返回Unsplash相关主题图片"""
+    category_map = {
+        "赚钱": "business",
+        "创业": "startup",
+        "投资": "finance",
+        "ai": "artificial-intelligence",
+        "科技": "technology",
+        "技术": "technology",
+        "职场": "business",
+        "视频": "video-camera",
+        "热门": "trending",
+        "生活": "lifestyle",
+        "商业": "business",
+        "设计": "design",
+        "艺术": "art",
+        "论文": "science",
+        "学术": "science",
+        "开源": "code",
+        "项目": "laptop-code",
+    }
+    
+    keyword = "technology"
+    for key, val in category_map.items():
+        if key in category.lower():
+            keyword = val
+            break
+    
+    return f"https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
+
+def fetch_og_image(url):
+    """从网页URL获取og:image或其他图片"""
+    if not url or url == "#":
+        return None
+    
+    try:
+        resp = safe_get(url)
+        if not resp:
+            return None
+        
+        soup = BeautifulSoup(resp.text, "html.parser")
+        
+        # 尝试 og:image
+        og_img = soup.find("meta", property="og:image")
+        if og_img and og_img.get("content"):
+            img_url = og_img["content"]
+            if img_url.startswith("//"):
+                img_url = "https:" + img_url
+            return img_url
+        
+        # 尝试 twitter:image
+        tw_img = soup.find("meta", name="twitter:image")
+        if tw_img and tw_img.get("content"):
+            img_url = tw_img["content"]
+            if img_url.startswith("//"):
+                img_url = "https:" + img_url
+            return img_url
+        
+        # 尝试 find a reasonable image
+        for img in soup.find_all("img"):
+            src = img.get("src", "") or img.get("data-src", "")
+            if src and (".jpg" in src or ".jpeg" in src or ".png" in src):
+                if src.startswith("//"):
+                    src = "https:" + src
+                if src.startswith("/"):
+                    from urllib.parse import urljoin
+                    src = urljoin(url, src)
+                return src
+    except:
+        pass
+    return None
+
 # ── 工具函数 ──
 def safe_get(url, params=None, headers=None):
     """安全HTTP请求，优先系统代理，失败时直连回退"""
@@ -445,6 +518,41 @@ def add_chinese_summaries(articles, config):
         if i + batch_size < len(articles):
             time.sleep(0.5)  # API 速率限制
 
+# ── 图片填充函数 ──
+def fill_images(articles):
+    """为没有图片的文章填充相关图片"""
+    # 预设的图片集合，按主题分
+    default_images = [
+        "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop",
+    ]
+    
+    for i, article in enumerate(articles):
+        if not article.get("image"):
+            # 优先用分类匹配
+            category = article.get("category", "")
+            title = article.get("title", "")
+            source = article.get("source", "")
+            
+            # 循环用不同的图
+            img_idx = i % len(default_images)
+            article["image"] = default_images[img_idx]
+            
+            # 如果有特定来源，给特定图
+            if "B站" in source or "视频" in category:
+                article["image"] = "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
+            elif "AI" in source or "AI" in title:
+                article["image"] = "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
+            elif "创业" in category or "投资" in category:
+                article["image"] = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+            elif "职场" in category or "工作" in title:
+                article["image"] = "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
+            
+    return articles
+
 # ── 主函数 ──
 def collect_all():
     """采集所有数据源并合并去重"""
@@ -498,6 +606,10 @@ def collect_all():
     # DeepSeek 中文总结
     print(f"\n  🤖 DeepSeek 生成中文简介...")
     add_chinese_summaries(unique, config)
+    
+    # 填充图片
+    print(f"\n  🖼️  正在为文章填充图片...")
+    fill_images(unique)
 
     # 构建输出
     output = {
@@ -582,6 +694,11 @@ def fetch_bilibili():
             bvid = item.get("bvid", "")
             url = f"https://www.bilibili.com/video/{bvid}"
             
+            # 图片：B站API直接提供封面
+            image = item.get("pic", "")
+            if image and image.startswith("//"):
+                image = "https:" + image
+            
             stat = item.get("stat", {})
             plays = stat.get("view", 0)
             likes = stat.get("like", 0)
@@ -598,6 +715,7 @@ def fetch_bilibili():
                 "importance": "high" if plays > 1000000 else "normal",
                 "timestamp": now_iso(),
                 "raw_date": datetime.now().strftime("%Y-%m-%d %H:%M"),
+                "image": image,
                 "extra": {
                     "plays": plays,
                     "likes": likes,
@@ -731,6 +849,11 @@ def fetch_36kr():
             if len(title) < 10:
                 continue
             
+            # 尝试获取图片
+            image = item.get("cover", "") or item.get("image", "")
+            if image and image.startswith("//"):
+                image = "https:" + image
+            
             articles.append({
                 "id": make_id(title, str(item.get("id", ""))),
                 "title": title,
@@ -743,6 +866,7 @@ def fetch_36kr():
                 "importance": "high",
                 "timestamp": now_iso(),
                 "raw_date": item.get("published_at", "")[:16] or datetime.now().strftime("%Y-%m-%d %H:%M"),
+                "image": image,
             })
         print(f"  ✓ 36氪: {len(articles)} 条")
     except Exception as e:

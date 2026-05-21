@@ -17,7 +17,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:35.211818+00:00",
       "raw_date": "2026-05-19 23:10",
-      "summary_cn": "免费在终端、VSCode或Discord中使用Claude Code，支持语音。"
+      "summary_cn": "免费在终端、VSCode或Discord中使用Claude Code，支持语音。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "b394c57298e1",
@@ -31,7 +32,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:40.733026+00:00",
       "raw_date": "2026-05-19 23:10",
-      "summary_cn": "苹果为iOS 27准备AI写作助手、应用快捷方式和壁纸。"
+      "summary_cn": "苹果为iOS 27准备AI写作助手、应用快捷方式和壁纸。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "af5ba7c82239",
@@ -47,7 +49,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:35.208274+00:00",
       "raw_date": "2026-05-19 23:10",
-      "summary_cn": "能通过所有机器人检测的隐身Chromium浏览器，可替代Playwright。"
+      "summary_cn": "能通过所有机器人检测的隐身Chromium浏览器，可替代Playwright。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "67277374d283",
@@ -63,7 +66,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:35.211354+00:00",
       "raw_date": "2026-05-19 23:10",
-      "summary_cn": "为Photoshop用户提供的GIMP 3+补丁，方便迁移使用。"
+      "summary_cn": "为Photoshop用户提供的GIMP 3+补丁，方便迁移使用。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "e78b30b36627",
@@ -77,7 +81,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:25.448106+00:00",
       "raw_date": "2026-05-19 17:43",
-      "summary_cn": "Gemini 3.5 Flash模型在Hacker News引发热议。"
+      "summary_cn": "Gemini 3.5 Flash模型在Hacker News引发热议。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "44bde469f7df",
@@ -91,7 +96,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:27.456448+00:00",
       "raw_date": "2026-05-19 17:46",
-      "summary_cn": "Gemini Omni模型在Hacker News上获得高分讨论。"
+      "summary_cn": "Gemini Omni模型在Hacker News上获得高分讨论。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "a34887fc1eb8",
@@ -107,7 +113,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:35.205589+00:00",
       "raw_date": "2026-05-19 23:10",
-      "summary_cn": "让所有软件都支持命令行操作，实现Agent原生交互。"
+      "summary_cn": "让所有软件都支持命令行操作，实现Agent原生交互。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "2ba5e3475a86",
@@ -123,7 +130,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:35.213730+00:00",
       "raw_date": "2026-05-19 23:10",
-      "summary_cn": "集导演、编剧、制片和视频生成于一体的智能视频创作工具。"
+      "summary_cn": "集导演、编剧、制片和视频生成于一体的智能视频创作工具。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "9fc9d329472f",
@@ -139,7 +147,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:35.206106+00:00",
       "raw_date": "2026-05-19 23:10",
-      "summary_cn": "用Claude Code完成学术研究全流程：调研到定稿。"
+      "summary_cn": "用Claude Code完成学术研究全流程：调研到定稿。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "97877b0083b0",
@@ -153,7 +162,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:26.575388+00:00",
       "raw_date": "2026-05-19 15:07",
-      "summary_cn": "某位人士宣布加入Anthropic，引发社区广泛关注。"
+      "summary_cn": "某位人士宣布加入Anthropic，引发社区广泛关注。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "17a00232ccf2",
@@ -167,7 +177,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:30.160219+00:00",
       "raw_date": "2026-05-19 05:04",
-      "summary_cn": "314个npm包遭恶意篡改，类似沙虫攻击再度上演。"
+      "summary_cn": "314个npm包遭恶意篡改，类似沙虫攻击再度上演。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "b8594aaf9c10",
@@ -181,7 +192,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:25.924760+00:00",
       "raw_date": "2026-05-19 19:14",
-      "summary_cn": "Mistral AI收购Emmi AI，打造领先AI技术栈。"
+      "summary_cn": "Mistral AI收购Emmi AI，打造领先AI技术栈。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "9e15bbca8eed",
@@ -195,7 +207,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:25.829063+00:00",
       "raw_date": "2026-05-19 19:34",
-      "summary_cn": "OpenAI采用Google的SynthID水印，为AI图像提供验证工具。"
+      "summary_cn": "OpenAI采用Google的SynthID水印，为AI图像提供验证工具。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "6b0676a01c5f",
@@ -209,7 +222,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:26.018282+00:00",
       "raw_date": "2026-05-19 12:23",
-      "summary_cn": "Forge项目通过护栏将8B模型在智能体任务上从53%提升至99%。"
+      "summary_cn": "Forge项目通过护栏将8B模型在智能体任务上从53%提升至99%。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "b00ce29f69b6",
@@ -223,7 +237,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:29.961136+00:00",
       "raw_date": "2026-05-19 01:30",
-      "summary_cn": "五分钟回顾LLM领域过去六个月的重大进展。"
+      "summary_cn": "五分钟回顾LLM领域过去六个月的重大进展。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "2c489d77a5e5",
@@ -239,7 +254,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:35.207210+00:00",
       "raw_date": "2026-05-19 23:10",
-      "summary_cn": "Anthropic官方维护的高质量Claude Code插件目录。"
+      "summary_cn": "Anthropic官方维护的高质量Claude Code插件目录。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "73532a9cf3fa",
@@ -255,7 +271,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:35.209802+00:00",
       "raw_date": "2026-05-19 23:10",
-      "summary_cn": "预索引代码知识图谱，减少token和工具调用，完全本地运行。"
+      "summary_cn": "预索引代码知识图谱，减少token和工具调用，完全本地运行。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "fa282ad1aa12",
@@ -271,7 +288,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:35.212780+00:00",
       "raw_date": "2026-05-19 23:10",
-      "summary_cn": "免费开源的企业资源规划（ERP）系统。"
+      "summary_cn": "免费开源的企业资源规划（ERP）系统。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "93f12c59f2c5",
@@ -287,7 +305,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:35.210876+00:00",
       "raw_date": "2026-05-19 23:10",
-      "summary_cn": "构建生产级LLM软件的12条原则指南。"
+      "summary_cn": "构建生产级LLM软件的12条原则指南。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "c634b0568fe5",
@@ -303,7 +322,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:35.213258+00:00",
       "raw_date": "2026-05-19 23:10",
-      "summary_cn": "微软推出的12节AI智能体入门课程。"
+      "summary_cn": "微软推出的12节AI智能体入门课程。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "7149d35bed50",
@@ -319,7 +339,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:35.209322+00:00",
       "raw_date": "2026-05-19 23:10",
-      "summary_cn": "一站式AI代理平台，集成多种功能型智能体。"
+      "summary_cn": "一站式AI代理平台，集成多种功能型智能体。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "a0328abb0baa",
@@ -335,7 +356,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:35.210401+00:00",
       "raw_date": "2026-05-19 23:10",
-      "summary_cn": "基于Karpathy观察改进Claude Code行为的配置文件。"
+      "summary_cn": "基于Karpathy观察改进Claude Code行为的配置文件。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "e94ec5d7a574",
@@ -351,7 +373,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:35.206714+00:00",
       "raw_date": "2026-05-19 23:10",
-      "summary_cn": "一套有效的智能体技能框架与软件开发方法论。"
+      "summary_cn": "一套有效的智能体技能框架与软件开发方法论。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "0ecc56904e29",
@@ -367,7 +390,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:35.212308+00:00",
       "raw_date": "2026-05-19 23:10",
-      "summary_cn": "用于创建和分享3D建筑项目的在线编辑器。"
+      "summary_cn": "用于创建和分享3D建筑项目的在线编辑器。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "fa68372c0aeb",
@@ -383,7 +407,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:35.207792+00:00",
       "raw_date": "2026-05-19 23:10",
-      "summary_cn": "为AI编程代理提供持久化记忆的基准解决方案。"
+      "summary_cn": "为AI编程代理提供持久化记忆的基准解决方案。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "e442df2c425e",
@@ -399,7 +424,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:35.208742+00:00",
       "raw_date": "2026-05-19 23:10",
-      "summary_cn": "Rust编写的CLI代理，可减少60-90%的LLM令牌消耗。"
+      "summary_cn": "Rust编写的CLI代理，可减少60-90%的LLM令牌消耗。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "da8133cd39bd",
@@ -413,7 +439,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:40.732984+00:00",
       "raw_date": "2026-05-19 23:10",
-      "summary_cn": "播客制作者现在拥有专属贴纸服务了。"
+      "summary_cn": "播客制作者现在拥有专属贴纸服务了。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "f3d23d39e866",
@@ -429,7 +456,8 @@
       "importance": "high",
       "timestamp": "2026-05-19T23:10:35.205025+00:00",
       "raw_date": "2026-05-19 23:10",
-      "summary_cn": "私密、简单且强大的个人AI超级智能体。"
+      "summary_cn": "私密、简单且强大的个人AI超级智能体。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "1fa72a9da2bb",
@@ -443,7 +471,8 @@
       "importance": "normal",
       "timestamp": "2026-05-19T23:10:31.239144+00:00",
       "raw_date": "2026-05-19 17:16",
-      "summary_cn": "用于训练中风和糖尿病临床模型的数据集质量极差。"
+      "summary_cn": "用于训练中风和糖尿病临床模型的数据集质量极差。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "b4a81accaea3",
@@ -457,7 +486,8 @@
       "importance": "normal",
       "timestamp": "2026-05-19T23:10:28.634801+00:00",
       "raw_date": "2026-05-19 17:22",
-      "summary_cn": "探讨AI与人类沟通中的“曼哈顿博士综合征”现象。"
+      "summary_cn": "探讨AI与人类沟通中的“曼哈顿博士综合征”现象。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "cd8c44f98ba9",
@@ -471,7 +501,8 @@
       "importance": "normal",
       "timestamp": "2026-05-19T23:10:26.942356+00:00",
       "raw_date": "2026-05-19 15:27",
-      "summary_cn": "披露三项Linux内核高危漏洞，影响系统安全。"
+      "summary_cn": "披露三项Linux内核高危漏洞，影响系统安全。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "0c8f90b9d22f",
@@ -485,7 +516,8 @@
       "importance": "normal",
       "timestamp": "2026-05-19T23:10:29.865348+00:00",
       "raw_date": "2026-05-19 19:35",
-      "summary_cn": "Crossview 4.4.0版本发布，带来新功能与改进。"
+      "summary_cn": "Crossview 4.4.0版本发布，带来新功能与改进。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "55145d694886",
@@ -499,7 +531,8 @@
       "importance": "normal",
       "timestamp": "2026-05-19T23:10:29.212147+00:00",
       "raw_date": "2026-05-19 18:03",
-      "summary_cn": "谷歌Gemini CLI将于2026年6月18日停止服务。"
+      "summary_cn": "谷歌Gemini CLI将于2026年6月18日停止服务。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "d4ce59ff4814",
@@ -513,7 +546,8 @@
       "importance": "normal",
       "timestamp": "2026-05-19T23:10:26.483661+00:00",
       "raw_date": "2026-05-17 19:21",
-      "summary_cn": "展示神经细胞自动机生长模拟，探索自组织模式。"
+      "summary_cn": "展示神经细胞自动机生长模拟，探索自组织模式。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "2b408b45782f",
@@ -527,7 +561,8 @@
       "importance": "normal",
       "timestamp": "2026-05-19T23:10:27.642467+00:00",
       "raw_date": "2026-05-17 15:52",
-      "summary_cn": "面向LLM时代的TLA+入门，用提示词驱动形式化验证。"
+      "summary_cn": "面向LLM时代的TLA+入门，用提示词驱动形式化验证。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "67643efdbb09",
@@ -541,7 +576,8 @@
       "importance": "normal",
       "timestamp": "2026-05-19T23:10:29.770050+00:00",
       "raw_date": "2026-05-19 20:31",
-      "summary_cn": "Java Valhalla项目重新思考领域原始类型，提升性能。"
+      "summary_cn": "Java Valhalla项目重新思考领域原始类型，提升性能。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "252736e6dc8f",
@@ -555,7 +591,8 @@
       "importance": "normal",
       "timestamp": "2026-05-19T23:10:25.539438+00:00",
       "raw_date": "2026-05-19 22:30",
-      "summary_cn": "提供去除AI生成内容水印的工具与方法。"
+      "summary_cn": "提供去除AI生成内容水印的工具与方法。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "0c4a59739826",
@@ -569,7 +606,8 @@
       "importance": "normal",
       "timestamp": "2026-05-19T23:10:31.443920+00:00",
       "raw_date": "2026-05-19 11:16",
-      "summary_cn": "Id-agent：为AI代理设计的高效UUID替代方案。"
+      "summary_cn": "Id-agent：为AI代理设计的高效UUID替代方案。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "82d9201b87be",
@@ -583,7 +621,8 @@
       "importance": "normal",
       "timestamp": "2026-05-19T23:10:26.757759+00:00",
       "raw_date": "2026-05-17 15:22",
-      "summary_cn": "绘制光子学与CPO供应链中90家公司的关系图谱。"
+      "summary_cn": "绘制光子学与CPO供应链中90家公司的关系图谱。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     }
   ]
 }

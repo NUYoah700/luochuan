@@ -15,7 +15,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:47.737667+00:00",
       "raw_date": "2026-05-20 19:05",
-      "summary_cn": "OpenAI模型推翻了几何学中的一个核心猜想。"
+      "summary_cn": "OpenAI模型推翻了几何学中的一个核心猜想。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "93da8ca984a0",
@@ -29,7 +30,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:51.752362+00:00",
       "raw_date": "2026-05-20 12:30",
-      "summary_cn": "安娜的档案被判赔1950万美元，并遭全球域名封禁。"
+      "summary_cn": "安娜的档案被判赔1950万美元，并遭全球域名封禁。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "8117fc4e60d6",
@@ -43,7 +45,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:18:00.539886+00:00",
       "raw_date": "2026-05-20 23:18",
-      "summary_cn": "一本关于AI时代真相的书被发现包含AI编造的引文。"
+      "summary_cn": "一本关于AI时代真相的书被发现包含AI编造的引文。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "351e8c19883b",
@@ -57,7 +60,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:18:00.539840+00:00",
       "raw_date": "2026-05-20 23:18",
-      "summary_cn": "数据中心建设成为佐治亚州长竞选中的争议焦点。"
+      "summary_cn": "数据中心建设成为佐治亚州长竞选中的争议焦点。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "e78b30b36627",
@@ -71,7 +75,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:51.915308+00:00",
       "raw_date": "2026-05-19 17:43",
-      "summary_cn": "谷歌发布Gemini 3.5 Flash模型，引发广泛讨论。"
+      "summary_cn": "谷歌发布Gemini 3.5 Flash模型，引发广泛讨论。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "86ccfb97ce48",
@@ -85,7 +90,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:49.334075+00:00",
       "raw_date": "2026-05-20 10:57",
-      "summary_cn": "谷歌AI遭操控，公司正悄然反击以维护安全。"
+      "summary_cn": "谷歌AI遭操控，公司正悄然反击以维护安全。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "a34887fc1eb8",
@@ -101,7 +107,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:55.451761+00:00",
       "raw_date": "2026-05-20 23:17",
-      "summary_cn": "CLI-Anything让所有软件都能通过命令行被AI代理操控。"
+      "summary_cn": "CLI-Anything让所有软件都能通过命令行被AI代理操控。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "2ba5e3475a86",
@@ -117,7 +124,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:55.461053+00:00",
       "raw_date": "2026-05-20 23:17",
-      "summary_cn": "ViMax实现全自动智能视频生成，集导演编剧于一体。"
+      "summary_cn": "ViMax实现全自动智能视频生成，集导演编剧于一体。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "98b1e958629c",
@@ -131,7 +139,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:48.093125+00:00",
       "raw_date": "2026-05-18 02:04",
-      "summary_cn": "探讨每秒N个token的推理速度在实际中的真实体验。"
+      "summary_cn": "探讨每秒N个token的推理速度在实际中的真实体验。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "9fc9d329472f",
@@ -147,7 +156,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:55.448616+00:00",
       "raw_date": "2026-05-20 23:17",
-      "summary_cn": "该项目提供Claude Code进行学术研究的完整工作流。"
+      "summary_cn": "该项目提供Claude Code进行学术研究的完整工作流。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "9530e69a0d1f",
@@ -161,7 +171,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:51.497501+00:00",
       "raw_date": "2026-05-20 05:43",
-      "summary_cn": "Infomaniak转向基金会模式以保护用户数据隐私。"
+      "summary_cn": "Infomaniak转向基金会模式以保护用户数据隐私。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "1cf9506ec895",
@@ -175,7 +186,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:18:00.539807+00:00",
       "raw_date": "2026-05-20 23:18",
-      "summary_cn": "Meta在路易斯安那州大规模投资AI基础设施。"
+      "summary_cn": "Meta在路易斯安那州大规模投资AI基础设施。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "5ce35911e1c6",
@@ -189,7 +201,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:48.672850+00:00",
       "raw_date": "2026-05-20 19:38",
-      "summary_cn": "利用离体人脑进行药物测试，引发伦理讨论。"
+      "summary_cn": "利用离体人脑进行药物测试，引发伦理讨论。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "cfc1435bc58b",
@@ -203,7 +216,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:48.264915+00:00",
       "raw_date": "2026-05-20 10:35",
-      "summary_cn": "Qwen3.7-Max发布，主打智能体前沿能力。"
+      "summary_cn": "Qwen3.7-Max发布，主打智能体前沿能力。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "16e28f8ab582",
@@ -217,7 +231,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:18:00.539869+00:00",
       "raw_date": "2026-05-20 23:18",
-      "summary_cn": "能源价格上涨与数据中心需求影响公用事业交易。"
+      "summary_cn": "能源价格上涨与数据中心需求影响公用事业交易。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "0f7c23889e0e",
@@ -231,7 +246,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:50.926428+00:00",
       "raw_date": "2026-05-20 14:30",
-      "summary_cn": "田纳西男子因特朗普表情包被监禁37天获赔。"
+      "summary_cn": "田纳西男子因特朗普表情包被监禁37天获赔。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "cad706a4e595",
@@ -245,7 +261,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:18:00.539856+00:00",
       "raw_date": "2026-05-20 23:18",
-      "summary_cn": "乡镇财务官因Oracle与OpenAI数据中心威胁辞职。"
+      "summary_cn": "乡镇财务官因Oracle与OpenAI数据中心威胁辞职。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "2c489d77a5e5",
@@ -261,7 +278,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:55.453970+00:00",
       "raw_date": "2026-05-20 23:17",
-      "summary_cn": "Anthropic官方发布的Claude代码插件目录。"
+      "summary_cn": "Anthropic官方发布的Claude代码插件目录。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "0addfbd033c8",
@@ -277,7 +295,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:55.452442+00:00",
       "raw_date": "2026-05-20 23:17",
-      "summary_cn": "oh-my-pi：终端AI编码代理，支持哈希锚定编辑。"
+      "summary_cn": "oh-my-pi：终端AI编码代理，支持哈希锚定编辑。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "73532a9cf3fa",
@@ -293,7 +312,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:55.447826+00:00",
       "raw_date": "2026-05-20 23:17",
-      "summary_cn": "Codegraph：本地预索引代码知识图谱，减少Token消耗。"
+      "summary_cn": "Codegraph：本地预索引代码知识图谱，减少Token消耗。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "c6cf699531a3",
@@ -309,7 +329,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:55.459933+00:00",
       "raw_date": "2026-05-20 23:17",
-      "summary_cn": "高性能C/C++实现的LLM推理引擎，支持本地运行大模型。"
+      "summary_cn": "高性能C/C++实现的LLM推理引擎，支持本地运行大模型。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "7149d35bed50",
@@ -325,7 +346,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:55.454811+00:00",
       "raw_date": "2026-05-20 23:17",
-      "summary_cn": "一站式AI代理平台，集成前端、社交、内容审核等多种智能体。"
+      "summary_cn": "一站式AI代理平台，集成前端、社交、内容审核等多种智能体。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "a0328abb0baa",
@@ -341,7 +363,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:55.450206+00:00",
       "raw_date": "2026-05-20 23:17",
-      "summary_cn": "基于Karpathy经验改进Claude Code行为的单一配置文件。"
+      "summary_cn": "基于Karpathy经验改进Claude Code行为的单一配置文件。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "e94ec5d7a574",
@@ -357,7 +380,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:55.453277+00:00",
       "raw_date": "2026-05-20 23:17",
-      "summary_cn": "一套实用的智能体技能框架与软件开发方法论。"
+      "summary_cn": "一套实用的智能体技能框架与软件开发方法论。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "2b3ab3ed8303",
@@ -373,7 +397,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:55.456832+00:00",
       "raw_date": "2026-05-20 23:17",
-      "summary_cn": "开源全功能2D动画制作软件，适合专业动画创作。"
+      "summary_cn": "开源全功能2D动画制作软件，适合专业动画创作。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "4eeed5d5db61",
@@ -389,7 +414,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:55.455453+00:00",
       "raw_date": "2026-05-20 23:17",
-      "summary_cn": "免费开源的WhatsApp API网关，支持自托管部署。"
+      "summary_cn": "免费开源的WhatsApp API网关，支持自托管部署。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "fa68372c0aeb",
@@ -405,7 +431,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:55.458837+00:00",
       "raw_date": "2026-05-20 23:17",
-      "summary_cn": "为AI编码代理提供持久化记忆，基准测试表现领先。"
+      "summary_cn": "为AI编码代理提供持久化记忆，基准测试表现领先。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "d4bb80647014",
@@ -421,7 +448,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:55.451045+00:00",
       "raw_date": "2026-05-20 23:17",
-      "summary_cn": "从零学习AI工程，注重实践与项目交付。"
+      "summary_cn": "从零学习AI工程，注重实践与项目交付。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "f3d23d39e866",
@@ -437,7 +465,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:55.449324+00:00",
       "raw_date": "2026-05-20 23:17",
-      "summary_cn": "个人AI超级智能助手，注重隐私、简洁与强大性能。"
+      "summary_cn": "个人AI超级智能助手，注重隐私、简洁与强大性能。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "231a51d517d3",
@@ -453,7 +482,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:55.456130+00:00",
       "raw_date": "2026-05-20 23:17",
-      "summary_cn": "跨平台桌面应用，可流媒体播放和下载全球影视动漫。"
+      "summary_cn": "跨平台桌面应用，可流媒体播放和下载全球影视动漫。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "9aab283eafa2",
@@ -469,7 +499,8 @@
       "importance": "high",
       "timestamp": "2026-05-20T23:17:55.457666+00:00",
       "raw_date": "2026-05-20 23:17",
-      "summary_cn": "一个私密、安静的Markdown笔记应用，专注于个人思考空间。"
+      "summary_cn": "一个私密、安静的Markdown笔记应用，专注于个人思考空间。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "ce35d668e3ea",
@@ -483,7 +514,8 @@
       "importance": "normal",
       "timestamp": "2026-05-20T23:17:52.681064+00:00",
       "raw_date": "2026-05-20 21:10",
-      "summary_cn": "文章指出AI并未发明低质内容，而是将其规模化放大。"
+      "summary_cn": "文章指出AI并未发明低质内容，而是将其规模化放大。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "dd8b268be2c6",
@@ -497,7 +529,8 @@
       "importance": "normal",
       "timestamp": "2026-05-20T23:17:51.178838+00:00",
       "raw_date": "2026-05-20 21:23",
-      "summary_cn": "民调数据汇编显示美国公众对AI的态度已转向反对。"
+      "summary_cn": "民调数据汇编显示美国公众对AI的态度已转向反对。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "54e3e873cfe1",
@@ -511,7 +544,8 @@
       "importance": "normal",
       "timestamp": "2026-05-20T23:17:50.845676+00:00",
       "raw_date": "2026-05-17 20:07",
-      "summary_cn": "解释Transformer中的自回归下一个词预测与KV缓存机制。"
+      "summary_cn": "解释Transformer中的自回归下一个词预测与KV缓存机制。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "e8382edf1a47",
@@ -525,7 +559,8 @@
       "importance": "normal",
       "timestamp": "2026-05-20T23:17:50.600274+00:00",
       "raw_date": "2026-05-20 21:45",
-      "summary_cn": "Cloudflare CEO谈如何选择用AI替代哪些员工岗位。"
+      "summary_cn": "Cloudflare CEO谈如何选择用AI替代哪些员工岗位。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "ea31ad6e1dae",
@@ -539,7 +574,8 @@
       "importance": "normal",
       "timestamp": "2026-05-20T23:17:49.843768+00:00",
       "raw_date": "2026-05-20 15:25",
-      "summary_cn": "提出在AI编码循环中应用形式化验证门控以提高可靠性。"
+      "summary_cn": "提出在AI编码循环中应用形式化验证门控以提高可靠性。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "405a92461f8a",
@@ -553,7 +589,8 @@
       "importance": "normal",
       "timestamp": "2026-05-20T23:17:50.498056+00:00",
       "raw_date": "2026-05-17 15:31",
-      "summary_cn": "探讨应对代码托管平台碎片化问题的策略与方法。"
+      "summary_cn": "探讨应对代码托管平台碎片化问题的策略与方法。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "354608383cae",
@@ -567,7 +604,8 @@
       "importance": "normal",
       "timestamp": "2026-05-20T23:17:50.175654+00:00",
       "raw_date": "2026-05-17 20:46",
-      "summary_cn": "利用工程化电突触实现脑回路长期编辑的新技术。"
+      "summary_cn": "利用工程化电突触实现脑回路长期编辑的新技术。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "b919cbcd8f0c",
@@ -581,7 +619,8 @@
       "importance": "normal",
       "timestamp": "2026-05-20T23:17:51.094419+00:00",
       "raw_date": "2026-05-20 22:03",
-      "summary_cn": "Anthropic即将迎来首个盈利季度，增长势头惊人。"
+      "summary_cn": "Anthropic即将迎来首个盈利季度，增长势头惊人。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "76d8238c539e",
@@ -595,7 +634,8 @@
       "importance": "normal",
       "timestamp": "2026-05-20T23:17:48.429607+00:00",
       "raw_date": "2026-05-20 21:11",
-      "summary_cn": "PopuLoRA方法让多个LLM群体协同进化，提升推理能力。"
+      "summary_cn": "PopuLoRA方法让多个LLM群体协同进化，提升推理能力。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "98a2e24aabd1",
@@ -609,7 +649,8 @@
       "importance": "normal",
       "timestamp": "2026-05-20T23:17:48.595575+00:00",
       "raw_date": "2026-05-20 17:48",
-      "summary_cn": "回顾钱学森：美国失去、中国获得的导弹天才（2025年文章）。"
+      "summary_cn": "回顾钱学森：美国失去、中国获得的导弹天才（2025年文章）。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "c9f075602d80",
@@ -623,7 +664,8 @@
       "importance": "normal",
       "timestamp": "2026-05-20T23:17:49.922161+00:00",
       "raw_date": "2026-05-20 16:53",
-      "summary_cn": "Dari-docs：利用并行编码代理优化文档的工具。"
+      "summary_cn": "Dari-docs：利用并行编码代理优化文档的工具。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "5c968c48428f",
@@ -637,7 +679,8 @@
       "importance": "normal",
       "timestamp": "2026-05-20T23:17:50.763942+00:00",
       "raw_date": "2026-05-20 15:45",
-      "summary_cn": "Lance：一个模型同时支持图像/视频生成与理解。"
+      "summary_cn": "Lance：一个模型同时支持图像/视频生成与理解。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "15161a32c01f",
@@ -651,7 +694,8 @@
       "importance": "normal",
       "timestamp": "2026-05-20T23:17:51.336567+00:00",
       "raw_date": "2026-05-17 19:22",
-      "summary_cn": "Smartmedia卡规范免费开放，推动旧存储标准复兴。"
+      "summary_cn": "Smartmedia卡规范免费开放，推动旧存储标准复兴。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "e824fff3386b",
@@ -665,7 +709,8 @@
       "importance": "normal",
       "timestamp": "2026-05-20T23:17:51.006389+00:00",
       "raw_date": "2026-05-20 15:10",
-      "summary_cn": "Stable Audio 3发布，AI音频生成能力再升级。"
+      "summary_cn": "Stable Audio 3发布，AI音频生成能力再升级。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "021d0ee39ff1",
@@ -679,7 +724,8 @@
       "importance": "normal",
       "timestamp": "2026-05-20T23:17:50.255569+00:00",
       "raw_date": "2026-05-20 14:40",
-      "summary_cn": "用AI代理测试分布式系统，提升自动化与可靠性。"
+      "summary_cn": "用AI代理测试分布式系统，提升自动化与可靠性。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "71c1c8e18a5d",
@@ -693,7 +739,8 @@
       "importance": "normal",
       "timestamp": "2026-05-20T23:17:50.684848+00:00",
       "raw_date": "2026-05-18 14:10",
-      "summary_cn": "FFT与Transformer结合，用于图像恢复任务（2024）。"
+      "summary_cn": "FFT与Transformer结合，用于图像恢复任务（2024）。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     }
   ]
 }

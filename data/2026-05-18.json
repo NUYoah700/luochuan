@@ -15,7 +15,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:50.162216+00:00",
       "raw_date": "2026-05-18 13:01",
-      "summary_cn": "通过培育树木自然生长成椅子形状，探索可持续家具制造。"
+      "summary_cn": "通过培育树木自然生长成椅子形状，探索可持续家具制造。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "19ff7914d361",
@@ -29,7 +30,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:59.645665+00:00",
       "raw_date": "2026-05-18 23:09",
-      "summary_cn": "报道亚马逊CEO贾西如何改写公司AI时代战略。"
+      "summary_cn": "报道亚马逊CEO贾西如何改写公司AI时代战略。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "7082bc05cb63",
@@ -43,7 +45,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:47.827527+00:00",
       "raw_date": "2026-05-18 17:01",
-      "summary_cn": "AI公司Anthropic收购API平台Stainless，强化技术生态。"
+      "summary_cn": "AI公司Anthropic收购API平台Stainless，强化技术生态。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "d9eb07215568",
@@ -59,7 +62,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:54.150778+00:00",
       "raw_date": "2026-05-18 23:09",
-      "summary_cn": "开源情报工具，追踪富豪飞机、间谍卫星及地震事件。"
+      "summary_cn": "开源情报工具，追踪富豪飞机、间谍卫星及地震事件。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "af5ba7c82239",
@@ -75,7 +79,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:54.149531+00:00",
       "raw_date": "2026-05-18 23:09",
-      "summary_cn": "隐身Chromium浏览器，通过全部30项机器人检测测试。"
+      "summary_cn": "隐身Chromium浏览器，通过全部30项机器人检测测试。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "5436a3d2440c",
@@ -89,7 +94,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:48.260063+00:00",
       "raw_date": "2026-05-18 17:38",
-      "summary_cn": "马斯克起诉奥特曼和OpenAI的诉讼被法院驳回。"
+      "summary_cn": "马斯克起诉奥特曼和OpenAI的诉讼被法院驳回。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "e38f776f182b",
@@ -103,7 +109,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:51.164409+00:00",
       "raw_date": "2026-05-18 12:49",
-      "summary_cn": "Domo首席数据官呼吁别被AI焦虑裹挟，应放慢节奏。"
+      "summary_cn": "Domo首席数据官呼吁别被AI焦虑裹挟，应放慢节奏。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "a34887fc1eb8",
@@ -119,7 +126,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:54.146390+00:00",
       "raw_date": "2026-05-18 23:09",
-      "summary_cn": "让所有软件支持CLI操作，实现Agent原生交互。"
+      "summary_cn": "让所有软件支持CLI操作，实现Agent原生交互。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "78d2ca1956d5",
@@ -133,7 +141,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:49.152806+00:00",
       "raw_date": "2026-05-18 18:30",
-      "summary_cn": "Haiku操作系统现已可在苹果M1芯片Mac上运行。"
+      "summary_cn": "Haiku操作系统现已可在苹果M1芯片Mac上运行。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "9fc9d329472f",
@@ -149,7 +158,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:54.145707+00:00",
       "raw_date": "2026-05-18 23:09",
-      "summary_cn": "为Claude Code提供学术研究全流程技能指南。"
+      "summary_cn": "为Claude Code提供学术研究全流程技能指南。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "1c33d92df7c1",
@@ -163,7 +173,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:48.768250+00:00",
       "raw_date": "2026-05-18 17:25",
-      "summary_cn": "伊朗推出基于比特币的霍尔木兹海峡船舶保险服务。"
+      "summary_cn": "伊朗推出基于比特币的霍尔木兹海峡船舶保险服务。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "d67ee283d396",
@@ -179,7 +190,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:54.147021+00:00",
       "raw_date": "2026-05-18 23:09",
-      "summary_cn": "提供面向科研、工程与金融等领域的即用型AI智能体技能集。"
+      "summary_cn": "提供面向科研、工程与金融等领域的即用型AI智能体技能集。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "2236335702d8",
@@ -193,7 +205,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:50.376253+00:00",
       "raw_date": "2026-05-18 12:20",
-      "summary_cn": "Linux安全邮件列表因垃圾信息泛滥几乎无法管理。"
+      "summary_cn": "Linux安全邮件列表因垃圾信息泛滥几乎无法管理。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "1cc1c23ec2c9",
@@ -209,7 +222,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:54.152020+00:00",
       "raw_date": "2026-05-18 23:09",
-      "summary_cn": "基于线性扩散Transformer的高效高分辨率图像合成模型。"
+      "summary_cn": "基于线性扩散Transformer的高效高分辨率图像合成模型。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "3c0fafdd91f1",
@@ -223,7 +237,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:59.645734+00:00",
       "raw_date": "2026-05-18 23:09",
-      "summary_cn": "报道南佛罗里达一家AI驱动本地新闻网站的兴衰历程。"
+      "summary_cn": "报道南佛罗里达一家AI驱动本地新闻网站的兴衰历程。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "c7a4ae4973eb",
@@ -237,7 +252,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:48.073199+00:00",
       "raw_date": "2026-05-18 18:12",
-      "summary_cn": "实验让AI自主运营广播电台，引发讨论与关注。"
+      "summary_cn": "实验让AI自主运营广播电台，引发讨论与关注。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "91b74593eab6",
@@ -251,7 +267,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:48.014109+00:00",
       "raw_date": "2026-05-18 15:24",
-      "summary_cn": "利用Git的--author标志成功阻止GitHub仓库的AI机器人刷屏。"
+      "summary_cn": "利用Git的--author标志成功阻止GitHub仓库的AI机器人刷屏。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "28c107a6141a",
@@ -265,7 +282,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:51.548077+00:00",
       "raw_date": "2026-05-17 23:10",
-      "summary_cn": "仅用16字节x86代码将《黑客帝国》数字雨转化为声音。"
+      "summary_cn": "仅用16字节x86代码将《黑客帝国》数字雨转化为声音。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "ba3901e165a6",
@@ -281,7 +299,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:54.153264+00:00",
       "raw_date": "2026-05-18 23:09",
-      "summary_cn": "LLM驱动的A/H/美股智能分析系统，支持多数据源与推送。"
+      "summary_cn": "LLM驱动的A/H/美股智能分析系统，支持多数据源与推送。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "a94fe958b98b",
@@ -295,7 +314,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:59.645718+00:00",
       "raw_date": "2026-05-18 23:09",
-      "summary_cn": "一篇令人深思的AI相关报道，值得认真阅读。"
+      "summary_cn": "一篇令人深思的AI相关报道，值得认真阅读。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "c6cf699531a3",
@@ -311,7 +331,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:54.148291+00:00",
       "raw_date": "2026-05-18 23:09",
-      "summary_cn": "用C/C++实现的高性能LLM推理引擎，支持本地运行大模型。"
+      "summary_cn": "用C/C++实现的高性能LLM推理引擎，支持本地运行大模型。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "93f12c59f2c5",
@@ -327,7 +348,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:54.151405+00:00",
       "raw_date": "2026-05-18 23:09",
-      "summary_cn": "提出构建生产级LLM应用的12条核心原则，指导AI软件开发。"
+      "summary_cn": "提出构建生产级LLM应用的12条核心原则，指导AI软件开发。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "c634b0568fe5",
@@ -343,7 +365,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:54.152643+00:00",
       "raw_date": "2026-05-18 23:09",
-      "summary_cn": "微软官方教程，12节课带你从零开始构建AI智能体。"
+      "summary_cn": "微软官方教程，12节课带你从零开始构建AI智能体。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "a5ac2a1537ca",
@@ -359,7 +382,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:54.154105+00:00",
       "raw_date": "2026-05-18 23:09",
-      "summary_cn": "开源、隐私优先的网站分析工具，轻量替代Google Analytics。"
+      "summary_cn": "开源、隐私优先的网站分析工具，轻量替代Google Analytics。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "c75ea41f2cf6",
@@ -375,7 +399,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:54.148907+00:00",
       "raw_date": "2026-05-18 23:09",
-      "summary_cn": "利用WiFi信号实现空间感知、生命体征监测，无需摄像头。"
+      "summary_cn": "利用WiFi信号实现空间感知、生命体征监测，无需摄像头。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "eb47d2a29ff5",
@@ -391,7 +416,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:54.147657+00:00",
       "raw_date": "2026-05-18 23:09",
-      "summary_cn": "基于ONNX的本地多语言语音合成，速度快且支持离线运行。"
+      "summary_cn": "基于ONNX的本地多语言语音合成，速度快且支持离线运行。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "31d7665f61ca",
@@ -407,7 +433,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:54.150158+00:00",
       "raw_date": "2026-05-18 23:09",
-      "summary_cn": "为AI编程助手提供安全、验证过的技能注册表，扩展能力。"
+      "summary_cn": "为AI编程助手提供安全、验证过的技能注册表，扩展能力。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "f3d23d39e866",
@@ -423,7 +450,8 @@
       "importance": "high",
       "timestamp": "2026-05-18T23:09:54.144982+00:00",
       "raw_date": "2026-05-18 23:09",
-      "summary_cn": "个人AI超级智能助手，私密、简洁且功能强大，基于Rust开发。"
+      "summary_cn": "个人AI超级智能助手，私密、简洁且功能强大，基于Rust开发。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "2e3c8986ecea",
@@ -437,7 +465,8 @@
       "importance": "normal",
       "timestamp": "2026-05-18T23:09:50.250847+00:00",
       "raw_date": "2026-05-18 16:56",
-      "summary_cn": "用Rust编写的高性能、形式化验证的存储引擎，安全可靠。"
+      "summary_cn": "用Rust编写的高性能、形式化验证的存储引擎，安全可靠。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "fcd80e32a855",
@@ -451,7 +480,8 @@
       "importance": "normal",
       "timestamp": "2026-05-18T23:09:48.321684+00:00",
       "raw_date": "2026-05-18 18:43",
-      "summary_cn": "多智能体世界模型，探索AI协同理解与模拟复杂环境。"
+      "summary_cn": "多智能体世界模型，探索AI协同理解与模拟复杂环境。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "c02c34c4330e",
@@ -465,7 +495,8 @@
       "importance": "normal",
       "timestamp": "2026-05-18T23:09:48.958781+00:00",
       "raw_date": "2026-05-18 21:29",
-      "summary_cn": "AI对齐话语可能造成自我实现的错误对齐，引发讨论。"
+      "summary_cn": "AI对齐话语可能造成自我实现的错误对齐，引发讨论。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "a35ac962fc0b",
@@ -479,7 +510,8 @@
       "importance": "normal",
       "timestamp": "2026-05-18T23:09:48.830415+00:00",
       "raw_date": "2026-05-18 17:56",
-      "summary_cn": "通过LP、FUSE等技术将推理冷启动延迟降低40倍。"
+      "summary_cn": "通过LP、FUSE等技术将推理冷启动延迟降低40倍。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "82f23caddc35",
@@ -493,7 +525,8 @@
       "importance": "normal",
       "timestamp": "2026-05-18T23:09:50.033085+00:00",
       "raw_date": "2026-05-18 18:17",
-      "summary_cn": "Haiku操作系统现已支持在M1 Mac上运行。"
+      "summary_cn": "Haiku操作系统现已支持在M1 Mac上运行。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "b080456f4dda",
@@ -507,7 +540,8 @@
       "importance": "normal",
       "timestamp": "2026-05-18T23:09:47.888425+00:00",
       "raw_date": "2026-05-18 21:59",
-      "summary_cn": "墨西哥政府被单用户利用Claude入侵，150GB数据泄露。"
+      "summary_cn": "墨西哥政府被单用户利用Claude入侵，150GB数据泄露。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "d6abe30be4fe",
@@ -521,7 +555,8 @@
       "importance": "normal",
       "timestamp": "2026-05-18T23:09:50.496161+00:00",
       "raw_date": "2026-05-18 20:30",
-      "summary_cn": "开发者宣布不再使用JetBrains产品，引发热议。"
+      "summary_cn": "开发者宣布不再使用JetBrains产品，引发热议。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "fb25d7a17d2f",
@@ -535,7 +570,8 @@
       "importance": "normal",
       "timestamp": "2026-05-18T23:09:51.361790+00:00",
       "raw_date": "2026-05-18 13:26",
-      "summary_cn": "研究人员让幼师佩戴摄像头以训练AI，引发隐私争议。"
+      "summary_cn": "研究人员让幼师佩戴摄像头以训练AI，引发隐私争议。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "3a6e22064be3",
@@ -549,7 +585,8 @@
       "importance": "normal",
       "timestamp": "2026-05-18T23:09:50.310098+00:00",
       "raw_date": "2026-05-18 15:40",
-      "summary_cn": "InsForge开源项目，为编码代理提供类似Heroku的平台。"
+      "summary_cn": "InsForge开源项目，为编码代理提供类似Heroku的平台。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "56d5585d4b11",
@@ -563,7 +600,8 @@
       "importance": "normal",
       "timestamp": "2026-05-18T23:09:51.030611+00:00",
       "raw_date": "2026-05-18 22:19",
-      "summary_cn": "乌克兰推出FPV拦截无人机“黄蜂刺”，用于反制。"
+      "summary_cn": "乌克兰推出FPV拦截无人机“黄蜂刺”，用于反制。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "5465ce7e7a5a",
@@ -577,7 +615,8 @@
       "importance": "normal",
       "timestamp": "2026-05-18T23:09:49.469504+00:00",
       "raw_date": "2026-05-18 11:51",
-      "summary_cn": "语音AI系统易受隐藏音频攻击，安全漏洞受关注。"
+      "summary_cn": "语音AI系统易受隐藏音频攻击，安全漏洞受关注。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     }
   ]
 }

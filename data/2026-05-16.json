@@ -15,7 +15,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:32.045989+00:00",
       "raw_date": "2026-05-15 13:39",
-      "summary_cn": "Pixel 10 零点击漏洞链曝光，引发安全关注。"
+      "summary_cn": "Pixel 10 零点击漏洞链曝光，引发安全关注。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "19ff7914d361",
@@ -29,7 +30,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:42.104253+00:00",
       "raw_date": "2026-05-16 22:54",
-      "summary_cn": "亚马逊CEO安迪·贾西正为AI时代重写公司战略。"
+      "summary_cn": "亚马逊CEO安迪·贾西正为AI时代重写公司战略。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "9740ff2e9292",
@@ -45,7 +47,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:37.160167+00:00",
       "raw_date": "2026-05-16 22:54",
-      "summary_cn": "开源AI视频生成平台，集成200+模型，免费替代商业工具。"
+      "summary_cn": "开源AI视频生成平台，集成200+模型，免费替代商业工具。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "cabaea4959ca",
@@ -59,7 +62,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:42.104345+00:00",
       "raw_date": "2026-05-16 22:54",
-      "summary_cn": "苹果与OpenAI联盟破裂，可能引发法律纠纷。"
+      "summary_cn": "苹果与OpenAI联盟破裂，可能引发法律纠纷。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "76e4c4208f71",
@@ -73,7 +77,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:34.046948+00:00",
       "raw_date": "2026-05-15 16:51",
-      "summary_cn": "Bun的Rust重写存在内存安全问题，引发社区热议。"
+      "summary_cn": "Bun的Rust重写存在内存安全问题，引发社区热议。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "f46452c5b4f4",
@@ -87,7 +92,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:30.604612+00:00",
       "raw_date": "2026-05-16 14:58",
-      "summary_cn": "DeepSeek-V4-Flash让大模型控制技术重获关注。"
+      "summary_cn": "DeepSeek-V4-Flash让大模型控制技术重获关注。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "9be2e2d9d8e5",
@@ -101,7 +107,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:29.513867+00:00",
       "raw_date": "2026-05-16 07:01",
-      "summary_cn": "前沿AI已打破传统CTF竞赛模式，引发讨论。"
+      "summary_cn": "前沿AI已打破传统CTF竞赛模式，引发讨论。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "a473c429f9e7",
@@ -115,7 +122,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:31.125953+00:00",
       "raw_date": "2026-05-15 20:26",
-      "summary_cn": "作者认为许多公司正陷入AI幻觉，引发广泛共鸣。"
+      "summary_cn": "作者认为许多公司正陷入AI幻觉，引发广泛共鸣。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "d67ee283d396",
@@ -131,7 +139,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:37.158798+00:00",
       "raw_date": "2026-05-16 22:54",
-      "summary_cn": "科研与金融领域的AI智能体技能包，即开即用。"
+      "summary_cn": "科研与金融领域的AI智能体技能包，即开即用。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "6bd1ecde98f8",
@@ -145,7 +154,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:29.114928+00:00",
       "raw_date": "2026-05-16 09:14",
-      "summary_cn": "开发者分享从Tailwind迁移到结构化CSS的经验。"
+      "summary_cn": "开发者分享从Tailwind迁移到结构化CSS的经验。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "7890bfe7488b",
@@ -159,7 +169,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:32.736053+00:00",
       "raw_date": "2026-05-16 11:34",
-      "summary_cn": "OpenClaw创建者30天在OpenAI令牌上花费130万美元。"
+      "summary_cn": "OpenClaw创建者30天在OpenAI令牌上花费130万美元。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "4eb888a2972a",
@@ -173,7 +184,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:31.529899+00:00",
       "raw_date": "2026-05-15 22:38",
-      "summary_cn": "Orthrus-Qwen3实现Qwen3模型前向传播速度提升7.8倍。"
+      "summary_cn": "Orthrus-Qwen3实现Qwen3模型前向传播速度提升7.8倍。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "0977935f6d4a",
@@ -187,7 +199,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:28.706356+00:00",
       "raw_date": "2026-05-16 12:06",
-      "summary_cn": "SANA-WM开源世界模型可生成1分钟720p视频。"
+      "summary_cn": "SANA-WM开源世界模型可生成1分钟720p视频。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "eb219c167b91",
@@ -201,7 +214,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:33.656147+00:00",
       "raw_date": "2026-05-14 15:35",
-      "summary_cn": "展示神经网络学习玩贪吃蛇的交互演示。"
+      "summary_cn": "展示神经网络学习玩贪吃蛇的交互演示。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "ac00c2dc473f",
@@ -215,7 +229,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:32.333342+00:00",
       "raw_date": "2026-05-15 23:37",
-      "summary_cn": "P2P甲基苯丙胺泛滥问题分析（2021年文章）。"
+      "summary_cn": "P2P甲基苯丙胺泛滥问题分析（2021年文章）。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "3c0fafdd91f1",
@@ -229,7 +244,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:42.104304+00:00",
       "raw_date": "2026-05-16 22:54",
-      "summary_cn": "南佛罗里达AI驱动本地新闻网站的兴衰。"
+      "summary_cn": "南佛罗里达AI驱动本地新闻网站的兴衰。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "a94fe958b98b",
@@ -243,7 +259,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:42.104292+00:00",
       "raw_date": "2026-05-16 22:54",
-      "summary_cn": "一篇发人深省的AI相关阅读材料。"
+      "summary_cn": "一篇发人深省的AI相关阅读材料。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "1b09cd7bffc3",
@@ -257,7 +274,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:42.104335+00:00",
       "raw_date": "2026-05-16 22:54",
-      "summary_cn": "彭博社马克·古尔曼透露的苹果AI进展。"
+      "summary_cn": "彭博社马克·古尔曼透露的苹果AI进展。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "73532a9cf3fa",
@@ -273,7 +291,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:37.162590+00:00",
       "raw_date": "2026-05-16 22:54",
-      "summary_cn": "Codegraph为Claude Code提供本地代码知识图谱。"
+      "summary_cn": "Codegraph为Claude Code提供本地代码知识图谱。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "feff6fc8a44c",
@@ -287,7 +306,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:42.104322+00:00",
       "raw_date": "2026-05-16 22:54",
-      "summary_cn": "ChatGPT如何被整合进某产品或服务中。"
+      "summary_cn": "ChatGPT如何被整合进某产品或服务中。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "e94ec5d7a574",
@@ -303,7 +323,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:37.159553+00:00",
       "raw_date": "2026-05-16 22:54",
-      "summary_cn": "一个实用的智能体技能框架与软件开发方法论。"
+      "summary_cn": "一个实用的智能体技能框架与软件开发方法论。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "9e294de5c136",
@@ -319,7 +340,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:37.158125+00:00",
       "raw_date": "2026-05-16 22:54",
-      "summary_cn": "极速JavaScript运行时，集打包、测试、包管理于一体。"
+      "summary_cn": "极速JavaScript运行时，集打包、测试、包管理于一体。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "c75ea41f2cf6",
@@ -335,7 +357,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:37.161992+00:00",
       "raw_date": "2026-05-16 22:54",
-      "summary_cn": "利用WiFi信号实现空间感知、生命体征监测，无需摄像头。"
+      "summary_cn": "利用WiFi信号实现空间感知、生命体征监测，无需摄像头。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "eb47d2a29ff5",
@@ -351,7 +374,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:37.160767+00:00",
       "raw_date": "2026-05-16 22:54",
-      "summary_cn": "超快、设备端运行的多语言语音合成，基于ONNX原生执行。"
+      "summary_cn": "超快、设备端运行的多语言语音合成，基于ONNX原生执行。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "f3d23d39e866",
@@ -367,7 +391,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:37.161376+00:00",
       "raw_date": "2026-05-16 22:54",
-      "summary_cn": "私密、简单且强大的个人AI超级智能助手。"
+      "summary_cn": "私密、简单且强大的个人AI超级智能助手。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "e066d4c2af5d",
@@ -381,7 +406,8 @@
       "importance": "high",
       "timestamp": "2026-05-16T22:54:29.407681+00:00",
       "raw_date": "2026-05-16 09:30",
-      "summary_cn": "为大型语言模型设计的高效在线记忆方法。"
+      "summary_cn": "为大型语言模型设计的高效在线记忆方法。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "60e5c1dc29ca",
@@ -395,7 +421,8 @@
       "importance": "normal",
       "timestamp": "2026-05-16T22:54:32.231788+00:00",
       "raw_date": "2026-05-14 02:37",
-      "summary_cn": "攻陷校园所有投影仪和摄像头的安全研究。"
+      "summary_cn": "攻陷校园所有投影仪和摄像头的安全研究。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "a040e65b48aa",
@@ -409,7 +436,8 @@
       "importance": "normal",
       "timestamp": "2026-05-16T22:54:29.303305+00:00",
       "raw_date": "2026-05-16 22:13",
-      "summary_cn": "尝试用Claude在Algora悬赏平台赚钱的数据与工具。"
+      "summary_cn": "尝试用Claude在Algora悬赏平台赚钱的数据与工具。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "a7871a4d8254",
@@ -423,7 +451,8 @@
       "importance": "normal",
       "timestamp": "2026-05-16T22:54:32.524854+00:00",
       "raw_date": "2026-05-16 12:49",
-      "summary_cn": "关于无效代理对（Invalid Surrogate Pairs）的有趣Bug分析。"
+      "summary_cn": "关于无效代理对（Invalid Surrogate Pairs）的有趣Bug分析。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "a3d66459af47",
@@ -437,7 +466,8 @@
       "importance": "normal",
       "timestamp": "2026-05-16T22:54:28.603188+00:00",
       "raw_date": "2026-05-16 22:23",
-      "summary_cn": "纯Rust编写的Unix风格编码智能体。"
+      "summary_cn": "纯Rust编写的Unix风格编码智能体。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     }
   ]
 }

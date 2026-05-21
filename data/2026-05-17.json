@@ -15,7 +15,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:52.145105+00:00",
       "raw_date": "2026-05-17 13:11",
-      "summary_cn": "AI是技术而非产品，强调其工具属性而非成品价值。"
+      "summary_cn": "AI是技术而非产品，强调其工具属性而非成品价值。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "79c3b52c334e",
@@ -29,7 +30,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:56.231418+00:00",
       "raw_date": "2026-05-17 11:49",
-      "summary_cn": "AI订阅模式对企业而言是潜在的定时炸弹。"
+      "summary_cn": "AI订阅模式对企业而言是潜在的定时炸弹。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "19ff7914d361",
@@ -43,7 +45,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:58:03.962745+00:00",
       "raw_date": "2026-05-17 22:58",
-      "summary_cn": "安迪·贾西正为AI时代重写亚马逊的运营剧本。"
+      "summary_cn": "安迪·贾西正为AI时代重写亚马逊的运营剧本。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "9740ff2e9292",
@@ -59,7 +62,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:59.806290+00:00",
       "raw_date": "2026-05-17 22:57",
-      "summary_cn": "开源AI视频生成平台，集成200+模型，免费替代商业工具。"
+      "summary_cn": "开源AI视频生成平台，集成200+模型，免费替代商业工具。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "d9eb07215568",
@@ -75,7 +79,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:59.806904+00:00",
       "raw_date": "2026-05-17 22:57",
-      "summary_cn": "开源情报工具，追踪私人飞机、间谍卫星及地震事件。"
+      "summary_cn": "开源情报工具，追踪私人飞机、间谍卫星及地震事件。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "a34887fc1eb8",
@@ -91,7 +96,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:59.804428+00:00",
       "raw_date": "2026-05-17 22:57",
-      "summary_cn": "让所有软件支持AI代理操作，实现命令行化交互。"
+      "summary_cn": "让所有软件支持AI代理操作，实现命令行化交互。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "03be4eb225e6",
@@ -105,7 +111,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:50.729381+00:00",
       "raw_date": "2026-05-17 12:13",
-      "summary_cn": "作者认为AI不会加速你的流程，引发广泛讨论。"
+      "summary_cn": "作者认为AI不会加速你的流程，引发广泛讨论。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "d67ee283d396",
@@ -121,7 +128,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:59.809443+00:00",
       "raw_date": "2026-05-17 22:57",
-      "summary_cn": "为科研、工程、金融等领域提供即用型AI代理技能。"
+      "summary_cn": "为科研、工程、金融等领域提供即用型AI代理技能。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "41ee4044d7da",
@@ -137,7 +145,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:59.810665+00:00",
       "raw_date": "2026-05-17 22:57",
-      "summary_cn": "白盒AI渗透测试工具，自动分析源码并执行攻击。"
+      "summary_cn": "白盒AI渗透测试工具，自动分析源码并执行攻击。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "1cd2d6c540da",
@@ -153,7 +162,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:59.810069+00:00",
       "raw_date": "2026-05-17 22:57",
-      "summary_cn": "本地AI全能工具，支持推理、语音、RAG及图像生成。"
+      "summary_cn": "本地AI全能工具，支持推理、语音、RAG及图像生成。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "6bd1ecde98f8",
@@ -167,7 +177,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:55.556063+00:00",
       "raw_date": "2026-05-16 09:14",
-      "summary_cn": "作者分享为何放弃Tailwind并学习更结构化地组织CSS。"
+      "summary_cn": "作者分享为何放弃Tailwind并学习更结构化地组织CSS。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "cc0620a7eda1",
@@ -183,7 +194,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:59.808230+00:00",
       "raw_date": "2026-05-17 22:57",
-      "summary_cn": "从原型到企业部署的生产级GenAI代理端到端教程。"
+      "summary_cn": "从原型到企业部署的生产级GenAI代理端到端教程。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "0b21305c1659",
@@ -197,7 +209,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:53.482502+00:00",
       "raw_date": "2026-05-16 20:14",
-      "summary_cn": "OpenAI与马耳他政府合作，向全体公民推广ChatGPT Plus。"
+      "summary_cn": "OpenAI与马耳他政府合作，向全体公民推广ChatGPT Plus。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "2c1134b6ac4c",
@@ -211,7 +224,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:51.211854+00:00",
       "raw_date": "2026-05-15 11:02",
-      "summary_cn": "用宝可梦解释Prolog基础，寓教于乐。"
+      "summary_cn": "用宝可梦解释Prolog基础，寓教于乐。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "3c0fafdd91f1",
@@ -225,7 +239,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:58:03.962798+00:00",
       "raw_date": "2026-05-17 22:58",
-      "summary_cn": "报道南佛罗里达一家AI驱动地方新闻网站的兴衰。"
+      "summary_cn": "报道南佛罗里达一家AI驱动地方新闻网站的兴衰。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "91599e946c50",
@@ -241,7 +256,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:59.811402+00:00",
       "raw_date": "2026-05-17 22:57",
-      "summary_cn": "现代出版、会员、订阅和新闻通讯的独立技术平台。"
+      "summary_cn": "现代出版、会员、订阅和新闻通讯的独立技术平台。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "a3d66459af47",
@@ -255,7 +271,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:50.979329+00:00",
       "raw_date": "2026-05-16 22:23",
-      "summary_cn": "纯Rust编写的类Unix编码代理，灵感来自Unix哲学。"
+      "summary_cn": "纯Rust编写的类Unix编码代理，灵感来自Unix哲学。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "a94fe958b98b",
@@ -269,7 +286,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:58:03.962785+00:00",
       "raw_date": "2026-05-17 22:58",
-      "summary_cn": "一篇令人深思的AI相关阅读内容。"
+      "summary_cn": "一篇令人深思的AI相关阅读内容。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "14f485fe99ce",
@@ -285,7 +303,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:59.805060+00:00",
       "raw_date": "2026-05-17 22:57",
-      "summary_cn": "面向所有人的日程安排基础设施，开源可自部署。"
+      "summary_cn": "面向所有人的日程安排基础设施，开源可自部署。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "73532a9cf3fa",
@@ -301,7 +320,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:59.814047+00:00",
       "raw_date": "2026-05-17 22:57",
-      "summary_cn": "为Claude Code预建的知识图谱，减少令牌和工具调用。"
+      "summary_cn": "为Claude Code预建的知识图谱，减少令牌和工具调用。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "03e8fe2eb367",
@@ -317,7 +337,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:59.808839+00:00",
       "raw_date": "2026-05-17 22:57",
-      "summary_cn": "开源语音代理平台，可构建自定义语音交互应用。"
+      "summary_cn": "开源语音代理平台，可构建自定义语音交互应用。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "c118fcae3f1f",
@@ -333,7 +354,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:59.812722+00:00",
       "raw_date": "2026-05-17 22:57",
-      "summary_cn": "高性能自托管邮件列表管理器，单二进制文件部署。"
+      "summary_cn": "高性能自托管邮件列表管理器，单二进制文件部署。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "ad8b87ffabf4",
@@ -349,7 +371,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:59.812128+00:00",
       "raw_date": "2026-05-17 22:57",
-      "summary_cn": "全球最灵活的电商平台，支持定制化商业解决方案。"
+      "summary_cn": "全球最灵活的电商平台，支持定制化商业解决方案。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "c634b0568fe5",
@@ -365,7 +388,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:59.814639+00:00",
       "raw_date": "2026-05-17 22:57",
-      "summary_cn": "微软出品，12节入门课程教你构建AI代理。"
+      "summary_cn": "微软出品，12节入门课程教你构建AI代理。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "9e294de5c136",
@@ -381,7 +405,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:59.805673+00:00",
       "raw_date": "2026-05-17 22:57",
-      "summary_cn": "极速JavaScript运行时，集打包、测试、包管理于一体。"
+      "summary_cn": "极速JavaScript运行时，集打包、测试、包管理于一体。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "a5ac2a1537ca",
@@ -397,7 +422,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:59.813445+00:00",
       "raw_date": "2026-05-17 22:57",
-      "summary_cn": "开源隐私优先的网站分析工具，轻量无Cookie。"
+      "summary_cn": "开源隐私优先的网站分析工具，轻量无Cookie。",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
     },
     {
       "id": "31d7665f61ca",
@@ -413,7 +439,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:59.807499+00:00",
       "raw_date": "2026-05-17 22:57",
-      "summary_cn": "专业AI编码代理的安全技能注册表，扩展多种工具。"
+      "summary_cn": "专业AI编码代理的安全技能注册表，扩展多种工具。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "f3d23d39e866",
@@ -429,7 +456,8 @@
       "importance": "high",
       "timestamp": "2026-05-17T22:57:59.803745+00:00",
       "raw_date": "2026-05-17 22:57",
-      "summary_cn": "个人AI超级智能，私密、简单且功能强大。"
+      "summary_cn": "个人AI超级智能，私密、简单且功能强大。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "e47db7bb8ecf",
@@ -443,7 +471,8 @@
       "importance": "normal",
       "timestamp": "2026-05-17T22:57:51.822668+00:00",
       "raw_date": "2026-05-17 21:49",
-      "summary_cn": "AI可穿戴设备需通过咖啡店测试才能生存。"
+      "summary_cn": "AI可穿戴设备需通过咖啡店测试才能生存。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "f21225f4f98e",
@@ -457,7 +486,8 @@
       "importance": "normal",
       "timestamp": "2026-05-17T22:57:54.496579+00:00",
       "raw_date": "2026-05-17 12:44",
-      "summary_cn": "带安全护栏的代理交易系统，降低自动化交易风险。"
+      "summary_cn": "带安全护栏的代理交易系统，降低自动化交易风险。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "15dd957f9011",
@@ -471,7 +501,8 @@
       "importance": "normal",
       "timestamp": "2026-05-17T22:57:53.932149+00:00",
       "raw_date": "2026-05-17 21:23",
-      "summary_cn": "报道称AI仇恨浪潮正在兴起，引发社会关注与讨论。"
+      "summary_cn": "报道称AI仇恨浪潮正在兴起，引发社会关注与讨论。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "075b01923913",
@@ -485,7 +516,8 @@
       "importance": "normal",
       "timestamp": "2026-05-17T22:57:50.621522+00:00",
       "raw_date": "2026-05-17 15:37",
-      "summary_cn": "Semble：为AI代理设计的代码搜索工具，比grep节省98%令牌。"
+      "summary_cn": "Semble：为AI代理设计的代码搜索工具，比grep节省98%令牌。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
     },
     {
       "id": "d6d5f240423b",
@@ -499,7 +531,8 @@
       "importance": "normal",
       "timestamp": "2026-05-17T22:57:49.947679+00:00",
       "raw_date": "2026-05-17 21:56",
-      "summary_cn": "回顾ThinkPad从IBM到联想AI工作站的演变历程。"
+      "summary_cn": "回顾ThinkPad从IBM到联想AI工作站的演变历程。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     },
     {
       "id": "1a1794f377dc",
@@ -513,7 +546,8 @@
       "importance": "normal",
       "timestamp": "2026-05-17T22:57:51.327355+00:00",
       "raw_date": "2026-05-17 12:03",
-      "summary_cn": "退伍军人试验显示伊博格碱或可成为PTSD新疗法。"
+      "summary_cn": "退伍军人试验显示伊博格碱或可成为PTSD新疗法。",
+      "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop"
     },
     {
       "id": "9cb4ff63538c",
@@ -527,7 +561,8 @@
       "importance": "normal",
       "timestamp": "2026-05-17T22:57:50.506262+00:00",
       "raw_date": "2026-05-17 21:45",
-      "summary_cn": "两架EA-18战机在爱达荷航展相撞，飞行员安全弹射。"
+      "summary_cn": "两架EA-18战机在爱达荷航展相撞，飞行员安全弹射。",
+      "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop"
     },
     {
       "id": "72f0a224d6be",
@@ -541,7 +576,8 @@
       "importance": "normal",
       "timestamp": "2026-05-17T22:57:55.096192+00:00",
       "raw_date": "2026-05-17 18:37",
-      "summary_cn": "亚利桑那大学学生嘘声反对Eric Schmidt的AI鼓吹演讲。"
+      "summary_cn": "亚利桑那大学学生嘘声反对Eric Schmidt的AI鼓吹演讲。",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
     }
   ]
 }
