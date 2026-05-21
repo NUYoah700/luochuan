@@ -3,283 +3,281 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>洛川 · AI信息聚合</title>
+<title>洛川</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg-gradient-start: #667eea;
-    --bg-gradient-end: #764ba2;
-    --glass-bg: rgba(255, 255, 255, 0.15);
-    --glass-border: rgba(255, 255, 255, 0.25);
-    --text-primary: #1a1a2e;
-    --text-secondary: #4a5568;
-    --text-muted: #718096;
-    --accent: #667eea;
-    --accent-hover: #5a67d8;
-    --accent-light: rgba(102, 126, 234, 0.12);
-    --accent2: #48bb78;
-    --accent3: #ed8936;
-    --accent5: #9f7aea;
-    --tag-new: #48bb78;
-    --card-bg: rgba(255, 255, 255, 0.95);
-    --card-border: rgba(255, 255, 255, 0.6);
-    --radius: 20px;
-    --radius-sm: 16px;
-    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --bg: #f5f5f7;
+    --card-bg: #ffffff;
+    --text-primary: #1d1d1f;
+    --text-secondary: #6e6e73;
+    --text-muted: #a1a1a6;
+    --accent: #0071e3;
+    --accent-hover: #0077ed;
+    --border: #e6e6e6;
+    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
   }
 
   html { scroll-behavior: smooth; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-      "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+      "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    color: var(--text-primary);
   }
 
-  body::before {
-    content: '';
-    position: fixed;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: 
-      radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.3) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.25) 0%, transparent 50%),
-      radial-gradient(circle at 50% 50%, rgba(236, 201, 75, 0.1) 0%, transparent 40%);
-    z-index: -1;
-    animation: bgFloat 20s ease-in-out infinite;
+  .app { 
+    max-width: 430px; 
+    margin: 0 auto; 
+    padding: 0 20px 100px;
   }
-
-  @keyframes bgFloat {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    50% { transform: translate(-2%, -2%) rotate(1deg); }
-  }
-
-  .app { position: relative; z-index: 1; max-width: 500px; margin: 0 auto; padding: 0 20px 100px; }
 
   /* ── Header ── */
   .header {
-    position: sticky; top: 0; z-index: 100;
-    padding: 16px 0; margin-bottom: 20px;
-    background: var(--glass-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0 20px;
+    position: sticky;
+    top: 0;
+    background: rgba(245, 245, 247, 0.95);
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--glass-border);
-    display: flex; align-items: center; justify-content: space-between;
-    border-radius: 0 0 24px 24px;
-    margin-left: -20px;
-    margin-right: -20px;
-    padding-left: 24px;
-    padding-right: 24px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    z-index: 100;
   }
-  .brand {
-    display: flex; align-items: center; gap: 12px;
-    text-decoration: none; color: inherit;
-  }
-  .brand-logo {
-    width: 42px; height: 42px;
-    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
-    border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 20px; color: #fff; font-weight: 800;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-    position: relative;
-    overflow: hidden;
-  }
-  .brand-logo::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.3) 50%, transparent 60%);
-    animation: logoShine 3s ease-in-out infinite;
-  }
-  @keyframes logoShine {
-    0%, 100% { transform: translateX(-100%) rotate(45deg); }
-    50% { transform: translateX(100%) rotate(45deg); }
-  }
-  .brand-name { font-size: 20px; font-weight: 800; letter-spacing: 2px; color: #fff; }
-  .brand-desc { font-size: 10px; color: rgba(255,255,255,0.7); letter-spacing: 1px; font-weight: 500; }
 
-  .header-actions { display: flex; gap: 10px; }
-  .btn-icon {
-    width: 36px; height: 36px; border-radius: 10px;
-    border: 1px solid var(--glass-border);
-    background: var(--glass-bg); color: #fff;
-    cursor: pointer; transition: var(--transition);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px; backdrop-filter: blur(10px);
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
   }
-  .btn-icon:hover { background: rgba(255, 255, 255, 0.25); transform: translateY(-2px); }
-  .btn-upgrade {
-    padding: 8px 14px; border-radius: 18px; border: none;
-    background: linear-gradient(135deg, var(--accent3), #f6ad55);
-    color: #fff; font-size: 12px; cursor: pointer;
-    font-family: inherit; font-weight: 700;
-    box-shadow: 0 4px 12px rgba(237, 137, 54, 0.4);
+
+  .brand-logo {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  .brand-name {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--text-primary);
+  }
+
+  .header-right {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .header-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: var(--transition);
   }
-  .btn-upgrade:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(237, 137, 54, 0.5); }
+  .header-btn:hover { background: rgba(0, 0, 0, 0.05); }
 
-  /* ── Tinder-style Swipe Card ── */
-  .swipe-container {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto 24px;
-    perspective: 1000px;
+  /* ── Stats ── */
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 12px 0 24px;
   }
-  
-  .swipe-card {
+  .stat-item {
+    text-align: center;
+  }
+  .stat-value {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* ── Card Container ── */
+  .card-stack {
     position: relative;
+    height: 520px;
+    margin-bottom: 24px;
+  }
+
+  /* ── Card ── */
+  .card {
+    position: absolute;
     width: 100%;
-    aspect-ratio: 3 / 4;
+    height: 100%;
+    background: var(--card-bg);
     border-radius: var(--radius);
     overflow: hidden;
     cursor: grab;
     user-select: none;
-    transition: box-shadow 0.3s;
-    box-shadow: 
-      0 12px 40px rgba(0, 0, 0, 0.2),
-      0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
+    box-shadow: var(--shadow-medium);
+    border: 1px solid rgba(0, 0, 0, 0.04);
   }
-  .swipe-card:active { cursor: grabbing; }
-  .swipe-card.is-dragging { transition: none; }
-  .swipe-card.animating { transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s; }
+  .card:active { cursor: grabbing; }
+  .card.is-dragging { transition: none; }
+  .card.animating { transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.5s; }
 
   /* Card Image */
   .card-image {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
+    height: 60%;
     background-size: cover;
     background-position: center;
-    transition: transform 0.3s;
   }
-  .swipe-card:hover .card-image { transform: scale(1.02); }
-
-  /* Card Gradient Overlay */
-  .card-gradient {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 70%;
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.9) 0%,
-      rgba(0, 0, 0, 0.6) 30%,
-      rgba(0, 0, 0, 0.2) 60%,
-      transparent 100%
-    );
-    pointer-events: none;
-  }
-
-  /* Card Source Badge */
-  .card-source-badge {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    padding: 6px 12px;
-    border-radius: 20px;
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    font-size: 11px;
-    font-weight: 700;
-    color: #fff;
-    border: 1px solid var(--glass-border);
-  }
-  .card-source-badge.douyin { background: rgba(255, 0, 80, 0.8); border-color: #ff0050; }
-  .card-source-badge.bilibili { background: rgba(41, 162, 216, 0.8); border-color: #29a1f1; }
-  .card-source-badge.kuaishou { background: rgba(255, 0, 68, 0.8); border-color: #ff0044; }
-
-  /* Card Pain Point Tag */
-  .card-pain-tag {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 700;
-    color: #fff;
-    backdrop-filter: blur(10px);
-  }
-  .card-pain-tag.money { background: linear-gradient(135deg, rgba(237, 137, 54, 0.9), rgba(246, 173, 85, 0.9)); }
-  .card-pain-tag.anxiety { background: linear-gradient(135deg, rgba(245, 101, 101, 0.9), rgba(252, 129, 129, 0.9)); }
-  .card-pain-tag.career { background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(90, 103, 216, 0.9)); }
-  .card-pain-tag.tech { background: linear-gradient(135deg, rgba(159, 122, 234, 0.9), rgba(128, 90, 213, 0.9)); }
-  .card-pain-tag.emotion { background: linear-gradient(135deg, rgba(237, 100, 166, 0.9), rgba(197, 48, 116, 0.9)); }
-  .card-pain-tag.default { background: var(--glass-bg); border: 1px solid var(--glass-border); }
 
   /* Card Content */
   .card-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
     padding: 24px;
-    color: #fff;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .card-source {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-source-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+  .card-source-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  .card-tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: var(--bg);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 
   .card-title {
-    font-size: 22px;
-    font-weight: 800;
-    line-height: 1.3;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--text-primary);
     margin-bottom: 8px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    flex: 1;
   }
 
   .card-summary {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 12px;
+    color: var(--text-secondary);
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
 
-  .card-insight {
-    padding: 10px 14px;
-    border-radius: 10px;
-    background: rgba(72, 187, 120, 0.2);
-    border-left: 3px solid var(--accent2);
-    font-size: 12px;
-    color: #fff;
-    line-height: 1.5;
-    font-weight: 600;
-    margin-bottom: 16px;
-    backdrop-filter: blur(10px);
+  .card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    margin-top: 12px;
   }
 
   .card-meta {
     display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.8);
+    gap: 10px;
+    font-size: 12px;
+    color: var(--text-muted);
   }
   .card-meta-item {
-    padding: 4px 10px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
-    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .card-time {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* No Image Placeholder */
+  .card-no-image {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    background: linear-gradient(135deg, #f8f8fa 0%, #e8e8ed 100%);
+  }
+  .card-no-image-icon {
+    font-size: 56px;
+    opacity: 0.3;
+  }
+  .card-no-image-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 500;
   }
 
   /* Swipe Overlays */
-  .swipe-overlay {
+  .card-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -293,180 +291,304 @@
     transition: opacity 0.15s;
     pointer-events: none;
   }
-  .swipe-overlay.like {
-    background: linear-gradient(135deg, rgba(72, 187, 120, 0.85), rgba(56, 178, 172, 0.85));
+  .card-overlay.like {
+    background: rgba(0, 113, 227, 0.12);
   }
-  .swipe-overlay.nope {
-    background: linear-gradient(135deg, rgba(245, 101, 101, 0.85), rgba(252, 129, 129, 0.85));
+  .card-overlay.nope {
+    background: rgba(237, 66, 69, 0.12);
   }
-  .swipe-overlay-content {
-    text-align: center;
-    color: #fff;
+  .card-overlay-label {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    padding: 12px 32px;
+    border-radius: 10px;
+    border: 4px solid;
+    transform: rotate(-15deg);
   }
-  .swipe-overlay-icon { font-size: 72px; margin-bottom: 12px; }
-  .swipe-overlay-text { font-size: 28px; font-weight: 900; text-transform: uppercase; letter-spacing: 4px; }
+  .card-overlay.like .card-overlay-label {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+  .card-overlay.nope .card-overlay-label {
+    color: #ed4245;
+    border-color: #ed4245;
+  }
 
-  /* Swipe Buttons - Tinder Style */
-  .swipe-buttons {
+  /* ── Action Buttons ── */
+  .actions {
     display: flex;
     justify-content: center;
-    gap: 24px;
-    margin-bottom: 20px;
+    gap: 20px;
+    padding: 8px 0;
   }
-  .swipe-btn {
-    width: 64px;
-    height: 64px;
+
+  .action-btn {
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     border: none;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 28px;
+    font-size: 24px;
     transition: var(--transition);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    background: var(--card-bg);
+    box-shadow: var(--shadow-light);
   }
-  .swipe-btn.nope {
-    background: linear-gradient(145deg, #ffffff, #f0f0f0);
-    color: #fc8181;
-    border: 3px solid #fc8181;
-  }
-  .swipe-btn.nope:hover {
-    transform: scale(1.1) rotate(-10deg);
-    box-shadow: 0 8px 25px rgba(245, 101, 101, 0.4);
-  }
-  .swipe-btn.super {
-    width: 48px;
-    height: 48px;
-    background: linear-gradient(145deg, #ffffff, #f0f0f0);
-    color: #ecc94b;
-    border: 3px solid #ecc94b;
-  }
-  .swipe-btn.super:hover {
+  .action-btn:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(236, 201, 75, 0.4);
   }
-  .swipe-btn.like {
-    background: linear-gradient(145deg, #48bb78, #38a169);
+  .action-btn.nope {
+    color: #ed4245;
+    border: 2px solid #ed4245;
+  }
+  .action-btn.nope:hover {
+    background: #ed4245;
     color: #fff;
-    box-shadow: 0 6px 20px rgba(72, 187, 120, 0.4);
   }
-  .swipe-btn.like:hover {
-    transform: scale(1.1) rotate(10deg);
-    box-shadow: 0 8px 25px rgba(72, 187, 120, 0.5);
+  .action-btn.super {
+    width: 44px;
+    height: 44px;
+    color: #ffd60a;
+    border: 2px solid #ffd60a;
+    font-size: 18px;
+  }
+  .action-btn.super:hover {
+    background: #ffd60a;
+    color: #fff;
+  }
+  .action-btn.like {
+    color: var(--accent);
+    border: 2px solid var(--accent);
+  }
+  .action-btn.like:hover {
+    background: var(--accent);
+    color: #fff;
   }
 
-  /* Card Counter */
-  .card-counter {
+  /* ── Empty State ── */
+  .empty-state {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 56px 32px;
     text-align: center;
-    color: rgba(255, 255, 255, 0.8);
+    box-shadow: var(--shadow-medium);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+  }
+  .empty-icon { font-size: 64px; margin-bottom: 20px; opacity: 0.2; }
+  .empty-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+  .empty-desc {
     font-size: 14px;
-    margin-bottom: 16px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 24px;
   }
-  .card-counter strong { color: #fff; font-weight: 700; }
-
-  /* Stats Bar */
-  .stats-bar {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    margin-bottom: 20px;
-    padding: 12px;
-    background: var(--glass-bg);
-    border-radius: var(--radius-sm);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
+  .empty-btn {
+    padding: 12px 32px;
+    border-radius: 24px;
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
   }
-  .stat-item { text-align: center; }
-  .stat-value { font-size: 20px; font-weight: 800; color: #fff; }
-  .stat-label { font-size: 11px; color: rgba(255, 255, 255, 0.7); margin-top: 2px; }
+  .empty-btn:hover { background: var(--accent-hover); }
 
-  /* Onboarding Modal */
+  /* ── Onboarding Modal ── */
   .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    backdrop-filter: blur(10px);
+    padding: 24px;
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
   }
-  .modal-overlay.show { opacity: 1; visibility: visible; }
-  .modal-content {
+  .modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  .modal {
     background: var(--card-bg);
     border-radius: var(--radius);
-    padding: 28px;
-    max-width: 420px;
+    padding: 40px 32px 32px;
+    max-width: 380px;
     width: 100%;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-    transform: scale(0.9) translateY(20px);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.2);
+    transform: scale(0.95) translateY(10px);
     transition: var(--transition);
   }
-  .modal-overlay.show .modal-content { transform: scale(1) translateY(0); }
-  .modal-title { font-size: 22px; font-weight: 800; color: var(--text-primary); margin-bottom: 10px; text-align: center; }
-  .modal-desc { font-size: 13px; color: var(--text-secondary); text-align: center; margin-bottom: 20px; line-height: 1.6; }
-  .modal-step { display: flex; align-items: center; gap: 14px; padding: 14px; background: rgba(0, 0, 0, 0.03); border-radius: var(--radius-sm); margin-bottom: 10px; }
-  .modal-step-icon { width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, var(--accent), var(--bg-gradient-end)); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; }
-  .modal-step-text { flex: 1; font-size: 13px; color: var(--text-primary); font-weight: 600; }
-  .modal-btn { width: 100%; padding: 14px; border-radius: 12px; border: none; background: linear-gradient(135deg, var(--accent), var(--bg-gradient-end)); color: #fff; font-size: 15px; font-weight: 700; cursor: pointer; transition: var(--transition); font-family: inherit; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4); }
-  .modal-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5); }
-
-  /* Interest Selection */
-  .interest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 18px; }
-  .interest-chip { padding: 10px 6px; border-radius: 10px; border: 2px solid rgba(0, 0, 0, 0.08); background: #fff; text-align: center; cursor: pointer; transition: var(--transition); font-size: 12px; font-weight: 600; color: var(--text-secondary); }
-  .interest-chip:hover { border-color: var(--accent); color: var(--accent); }
-  .interest-chip.selected { background: linear-gradient(135deg, var(--accent), var(--bg-gradient-end)); border-color: transparent; color: #fff; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3); }
-  .interest-chip .emoji { font-size: 22px; display: block; margin-bottom: 4px; }
-
-  /* Swipe End State */
-  .swipe-end { text-align: center; padding: 48px 24px; background: var(--card-bg); border-radius: var(--radius); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2); }
-  .swipe-end-icon { font-size: 64px; margin-bottom: 16px; }
-  .swipe-end-title { font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 8px; }
-  .swipe-end-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; }
-
-  /* Footer */
-  .footer { text-align: center; padding: 24px 16px; color: rgba(255, 255, 255, 0.6); font-size: 12px; margin-top: 32px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
-
-  /* Scrollbar */
-  ::-webkit-scrollbar { width: 6px; height: 6px; }
-  ::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); }
-  ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--bg-gradient-start), var(--bg-gradient-end)); border-radius: 3px; }
-
-  /* No Image Placeholder */
-  .card-no-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  .modal-overlay.show .modal {
+    transform: scale(1) translateY(0);
+  }
+  .modal-header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .modal-logo {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #000 0%, #333 100%);
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 auto 16px;
+  }
+  .modal-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+  .modal-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .modal-steps {
+    margin-bottom: 28px;
+  }
+  .modal-step {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    margin-bottom: 12px;
+  }
+  .modal-step-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .modal-step-text {
+    font-size: 14px;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+  .modal-interests {
+    margin-bottom: 24px;
+  }
+  .interests-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .interests-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .interest-chip {
+    padding: 12px 8px;
+    border-radius: 12px;
+    border: 1.5px solid var(--border);
+    background: transparent;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+  .interest-chip:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .interest-chip.selected {
+    background: var(--accent);
+    border-color: var(--accent);
     color: #fff;
   }
-  .card-no-image-icon { font-size: 80px; margin-bottom: 16px; }
-  .card-no-image-text { font-size: 24px; font-weight: 800; text-align: center; padding: 0 24px; line-height: 1.4; }
+  .interest-chip .emoji {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .modal-btn-primary {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+  }
+  .modal-btn-primary:hover {
+    background: var(--accent-hover);
+  }
+  .modal-btn-secondary {
+    width: 100%;
+    padding: 12px;
+    border-radius: 14px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+    margin-top: 8px;
+  }
+  .modal-btn-secondary:hover {
+    color: var(--text-primary);
+  }
+
+  /* ── Footer ── */
+  .footer {
+    text-align: center;
+    padding: 32px 0 0;
+    color: var(--text-muted);
+    font-size: 12px;
+  }
 
   @media (max-width: 480px) {
     .app { padding: 0 16px 80px; }
-    .header { padding: 14px 18px; margin-left: -16px; margin-right: -16px; }
-    .brand-logo { width: 36px; height: 36px; font-size: 16px; }
-    .brand-name { font-size: 16px; }
-    .card-title { font-size: 20px; }
-    .card-content { padding: 20px; }
-    .swipe-btn { width: 56px; height: 56px; font-size: 24px; }
-    .swipe-btn.super { width: 42px; height: 42px; font-size: 20px; }
-    .interest-grid { grid-template-columns: repeat(2, 1fr); }
+    .card-stack { height: 480px; }
+    .card-title { font-size: 18px; }
+    .action-btn { width: 52px; height: 52px; font-size: 22px; }
+    .action-btn.super { width: 40px; height: 40px; font-size: 16px; }
+    .interests-grid { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 </head>
@@ -474,49 +596,37 @@
 
 <div class="app">
   <header class="header">
-    <a class="brand" href="/">
+    <div class="brand">
       <div class="brand-logo">洛</div>
-      <div>
-        <div class="brand-name">洛 川</div>
-        <div class="brand-desc">AI · 信息聚合</div>
-      </div>
-    </a>
-    <div class="header-actions">
-      <button class="btn-icon" onclick="showPreferences()" title="偏好设置">⚙️</button>
-      <button class="btn-upgrade" onclick="showUpgrade()">升级 Pro</button>
+      <div class="brand-name">洛川</div>
+    </div>
+    <div class="header-right">
+      <button class="header-btn" onclick="showPreferences()">⚙️</button>
     </div>
   </header>
 
-  <div class="stats-bar">
+  <div class="stats">
     <div class="stat-item">
       <div class="stat-value" id="stat-liked">0</div>
-      <div class="stat-label">喜欢</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-value" id="stat-nope">0</div>
-      <div class="stat-label">不喜欢</div>
+      <div class="stat-label">Liked</div>
     </div>
     <div class="stat-item">
       <div class="stat-value" id="stat-remaining">0</div>
-      <div class="stat-label">剩余</div>
+      <div class="stat-label">Left</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value" id="stat-nope">0</div>
+      <div class="stat-label">Passed</div>
     </div>
   </div>
 
-  <div class="card-counter" id="cardCounter">正在加载... <strong>0</strong> 条新内容</div>
-
-  <div class="swipe-container" id="swipeContainer">
-    <div class="swipe-card" id="swipeCard">
-      <div class="swipe-overlay like" id="overlayLike">
-        <div class="swipe-overlay-content">
-          <div class="swipe-overlay-icon">❤️</div>
-          <div class="swipe-overlay-text">喜欢</div>
-        </div>
+  <div class="card-stack" id="cardStack">
+    <div class="card" id="card">
+      <div class="card-overlay like" id="overlayLike">
+        <div class="card-overlay-label">LIKE</div>
       </div>
-      <div class="swipe-overlay nope" id="overlayNope">
-        <div class="swipe-overlay-content">
-          <div class="swipe-overlay-icon">👎</div>
-          <div class="swipe-overlay-text">跳过</div>
-        </div>
+      <div class="card-overlay nope" id="overlayNope">
+        <div class="card-overlay-label">PASS</div>
       </div>
       
       <div class="card-no-image" id="cardNoImage">
@@ -524,63 +634,76 @@
         <div class="card-no-image-text">加载中...</div>
       </div>
       <div class="card-image" id="cardImage" style="display:none;"></div>
-      <div class="card-gradient"></div>
-      
-      <span class="card-source-badge" id="cardSource">来源</span>
-      <span class="card-pain-tag default" id="cardPainTag">热门</span>
       
       <div class="card-content">
-        <div class="card-title" id="cardTitle">标题加载中...</div>
-        <div class="card-summary" id="cardSummary">摘要内容...</div>
-        <div class="card-insight" id="cardInsight" style="display:none;">💡 核心洞察</div>
-        <div class="card-meta" id="cardMeta">
-          <span class="card-meta-item">来源</span>
+        <div>
+          <div class="card-top">
+            <div class="card-source">
+              <div class="card-source-icon" id="cardSourceIcon">📰</div>
+              <div class="card-source-name" id="cardSource">来源</div>
+            </div>
+            <div class="card-tag" id="cardTag">热门</div>
+          </div>
+          <div class="card-title" id="cardTitle">标题加载中...</div>
+          <div class="card-summary" id="cardSummary">摘要内容...</div>
+        </div>
+        <div class="card-bottom">
+          <div class="card-meta" id="cardMeta">
+            <span class="card-meta-item">📍 全球</span>
+          </div>
+          <div class="card-time" id="cardTime">刚刚</div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="swipe-buttons">
-    <button class="swipe-btn nope" onclick="handleSwipe('nope')">👎</button>
-    <button class="swipe-btn super" onclick="handleSwipe('super')">⭐</button>
-    <button class="swipe-btn like" onclick="handleSwipe('like')">❤️</button>
+  <div class="actions">
+    <button class="action-btn nope" onclick="handleSwipe('nope')">✕</button>
+    <button class="action-btn super" onclick="handleSwipe('super')">★</button>
+    <button class="action-btn like" onclick="handleSwipe('like')">♥</button>
   </div>
 
-  <div class="footer">洛川 · 每日清晨 06:00 自动更新 · AI资讯聚合引擎</div>
+  <div class="footer">每日清晨 06:00 自动更新</div>
 </div>
 
 <!-- Onboarding Modal -->
 <div class="modal-overlay" id="onboardingModal">
-  <div class="modal-content">
-    <div class="modal-title">🎉 欢迎使用洛川</div>
-    <div class="modal-desc">专注于赚钱机会、世界前沿资讯的智能聚合平台</div>
-    
-    <div class="modal-step">
-      <div class="modal-step-icon">👉</div>
-      <div class="modal-step-text">右滑 ❤️ = 喜欢，会推送更多类似内容</div>
-    </div>
-    <div class="modal-step">
-      <div class="modal-step-icon">👈</div>
-      <div class="modal-step-text">左滑 👎 = 不喜欢，减少此类内容</div>
-    </div>
-    <div class="modal-step">
-      <div class="modal-step-icon">⚡</div>
-      <div class="modal-step-text">AI 会学习你的喜好，越用越懂你</div>
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-logo">洛</div>
+      <div class="modal-title">欢迎使用洛川</div>
+      <div class="modal-desc">发现值得关注的资讯，让阅读更高效</div>
     </div>
     
-    <div class="modal-title" style="font-size: 16px; margin-top: 16px;">选择你的兴趣（可多选）</div>
-    
-    <div class="interest-grid" id="interestGrid">
-      <div class="interest-chip" data-interest="money"><span class="emoji">💰</span>赚钱创业</div>
-      <div class="interest-chip" data-interest="ai"><span class="emoji">🤖</span>AI科技</div>
-      <div class="interest-chip" data-interest="career"><span class="emoji">💼</span>职场发展</div>
-      <div class="interest-chip" data-interest="anxiety"><span class="emoji">😰</span>生活焦虑</div>
-      <div class="interest-chip" data-interest="trend"><span class="emoji">🔮</span>未来趋势</div>
-      <div class="interest-chip" data-interest="emotion"><span class="emoji">💔</span>情感困惑</div>
+    <div class="modal-steps">
+      <div class="modal-step">
+        <div class="modal-step-num">1</div>
+        <div class="modal-step-text">向右滑动，标记喜欢的内容</div>
+      </div>
+      <div class="modal-step">
+        <div class="modal-step-num">2</div>
+        <div class="modal-step-text">向左滑动，跳过不感兴趣的</div>
+      </div>
+      <div class="modal-step">
+        <div class="modal-step-num">3</div>
+        <div class="modal-step-text">AI 会学习你的喜好，越用越懂你</div>
+      </div>
     </div>
     
-    <button class="modal-btn" onclick="completeOnboarding()">开始探索 🚀</button>
-    <button style="width:100%;padding:10px;border-radius:10px;border:2px solid rgba(102,126,234,0.3);background:transparent;color:#667eea;font-size:13px;font-weight:600;cursor:pointer;margin-top:8px" onclick="skipOnboarding()">跳过引导，直接浏览</button>
+    <div class="modal-interests">
+      <div class="interests-title">选择你的兴趣</div>
+      <div class="interests-grid" id="interestsGrid">
+        <div class="interest-chip" data-interest="money"><span class="emoji">💰</span>赚钱</div>
+        <div class="interest-chip" data-interest="ai"><span class="emoji">🤖</span>AI</div>
+        <div class="interest-chip" data-interest="career"><span class="emoji">💼</span>职场</div>
+        <div class="interest-chip" data-interest="tech"><span class="emoji">🚀</span>科技</div>
+        <div class="interest-chip" data-interest="trend"><span class="emoji">🔮</span>趋势</div>
+        <div class="interest-chip" data-interest="life"><span class="emoji">🎯</span>生活</div>
+      </div>
+    </div>
+    
+    <button class="modal-btn-primary" onclick="completeOnboarding()">开始使用</button>
+    <button class="modal-btn-secondary" onclick="skipOnboarding()">稍后选择</button>
   </div>
 </div>
 
@@ -596,39 +719,22 @@ let isDragging = false;
 let startX = 0, startY = 0, currentX = 0, currentY = 0;
 let cardEl;
 
-const PAIN_POINTS = {
-  money: { label: '💰 赚钱', class: 'money' },
-  anxiety: { label: '😰 焦虑', class: 'anxiety' },
-  career: { label: '💼 职场', class: 'career' },
-  ai: { label: '🤖 AI', class: 'tech' },
-  tech: { label: '🔮 趋势', class: 'tech' },
-  emotion: { label: '💔 情感', class: 'emotion' },
-  default: { label: '📌 热门', class: 'default' }
-};
-
-const SOURCE_EMOJI = {
+const SOURCE_ICONS = {
   '抖音': '🎵', 'B站': '📺', '快手': '🎬',
-  '36氪': '💰', '虎嗅': '🐯', '知乎': '💬',
+  '36氪': '💼', '虎嗅': '🐯', '知乎': '💬',
   '少数派': '✌️', '创业邦': '🚀', '机器之心': '🧠',
   '量子位': '⚛️', 'Hacker News': '🔶', 'Reddit': '🤖'
 };
 
-function classifyPainPoint(article) {
+function classifyTag(article) {
   const text = (article.title + ' ' + (article.summary || '') + ' ' + (article.category || '')).toLowerCase();
   
-  const patterns = {
-    money: ['赚钱', '变现', '创业', '副业', '投资', '风口', '商机', '盈利', '收入', '财富', 'money', 'profit', 'startup'],
-    anxiety: ['焦虑', '内卷', '躺平', '中年', '35岁', '危机', '压力', '烦恼', '痛苦'],
-    career: ['职场', '求职', '晋升', '加薪', '跳槽', '面试', '裁员', '打工', '工作'],
-    ai: ['ai', '人工智能', 'gpt', 'chatgpt', 'llm', '大模型', '机器学习', '深度学习'],
-    tech: ['前沿', '趋势', '颠覆', '创新', '突破', '未来', '新技术', '黑科技'],
-    emotion: ['情感', '恋爱', '人际关系', '孤独', '社恐', '家庭', '婚姻']
-  };
-  
-  for (const [point, keywords] of Object.entries(patterns)) {
-    if (keywords.some(kw => text.includes(kw))) return point;
-  }
-  return 'default';
+  if (text.includes('钱') || text.includes('赚') || text.includes('创业')) return '赚钱';
+  if (text.includes('ai') || text.includes('人工智能')) return 'AI';
+  if (text.includes('职场') || text.includes('工作')) return '职场';
+  if (text.includes('科技') || text.includes('技术')) return '科技';
+  if (text.includes('趋势') || text.includes('未来')) return '趋势';
+  return '资讯';
 }
 
 function loadPreferences() {
@@ -652,10 +758,6 @@ function updateStats() {
   document.getElementById('stat-liked').textContent = likedCount;
   document.getElementById('stat-nope').textContent = nopeCount;
   document.getElementById('stat-remaining').textContent = Math.max(0, allArticles.length - currentIndex);
-  
-  const remaining = allArticles.length - currentIndex;
-  const counter = document.getElementById('cardCounter');
-  counter.innerHTML = remaining > 0 ? `还有 <strong>${remaining}</strong> 条新内容` : `今日内容已浏览完`;
 }
 
 async function init() {
@@ -761,10 +863,10 @@ function filterByPreferences(articles) {
   
   const weights = userPreferences.topic_weights || {};
   articles.sort((a, b) => {
-    const painA = classifyPainPoint(a);
-    const painB = classifyPainPoint(b);
-    const weightA = weights[painA] || 0.5;
-    const weightB = weights[painB] || 0.5;
+    const tagA = classifyTag(a);
+    const tagB = classifyTag(b);
+    const weightA = weights[tagA] || 0.5;
+    const weightB = weights[tagB] || 0.5;
     return weightB - weightA;
   });
   
@@ -783,64 +885,60 @@ function shuffleArray(array) {
 function generateSampleArticles() {
   return [
     {
-      title: '【重磅】2026年最赚钱的6个副业方向',
+      title: '2026年值得关注的6个副业方向',
       summary: '整理了当前最热门的副业赚钱方向，包括AI内容创作、跨境电商、知识付费等',
       source: '36氪',
-      image: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=800&h=1000&fit=crop',
+      image: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=800&h=600&fit=crop',
       category: '赚钱',
       importance: 'high',
+      region: '中国',
       url: '#'
     },
     {
-      title: 'AI取代的不是工作，而是不会用AI的人',
+      title: 'AI时代，如何不被替代',
       summary: '未来真正危险的并非AI本身，而是那些尚未掌握AI技能的人',
       source: '虎嗅',
-      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=1000&fit=crop',
-      category: 'AI焦虑',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
+      category: 'AI',
       importance: 'high',
+      region: '全球',
       url: '#'
     },
     {
-      title: '35岁职场危机：如何在中年找到新机会',
+      title: '35岁之后的职业选择',
       summary: '分享一位40岁转型成功的案例，从被裁员到找到新赛道的完整路径',
       source: '知乎',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=1000&fit=crop',
+      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop',
       category: '职场',
       importance: 'normal',
+      region: '中国',
       url: '#'
     },
     {
-      title: 'B站UP主月入10万的秘密',
-      summary: '拆解头部知识博主的变现路径，从定位、内容、流量到变现的完整方法论',
+      title: '短视频创作者的变现指南',
+      summary: '拆解头部博主的变现路径，从定位、内容、流量到变现的完整方法论',
       source: 'B站',
-      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=1000&fit=crop',
+      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
       category: '创业',
       importance: 'high',
+      region: '中国',
       url: '#'
     },
     {
-      title: '抖音带货新玩法：AI工具自动生成爆款视频',
-      summary: '实测3款AI视频工具，教会你如何每天自动生成10条高质量带货视频',
-      source: '抖音',
-      image: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=1000&fit=crop',
-      category: '赚钱',
-      importance: 'high',
-      url: '#'
-    },
-    {
-      title: '特斯拉开源新一代自动驾驶技术',
+      title: '特斯拉开源FSD技术',
       summary: '特斯拉宣布开源FSD技术，行业即将巨变',
       source: '机器之心',
-      image: 'https://images.unsplash.com/photo-1617704548623-340376564e68?w=800&h=1000&fit=crop',
+      image: 'https://images.unsplash.com/photo-1617704548623-340376564e68?w=800&h=600&fit=crop',
       category: '科技',
       importance: 'high',
+      region: '全球',
       url: '#'
     }
   ];
 }
 
 function setupSwipeCard() {
-  cardEl = document.getElementById('swipeCard');
+  cardEl = document.getElementById('card');
   
   cardEl.addEventListener('mousedown', handleStart);
   cardEl.addEventListener('touchstart', handleStart, { passive: false });
@@ -853,8 +951,6 @@ function setupSwipeCard() {
 }
 
 function handleStart(e) {
-  if (userPreferences.is_pro) return;
-  
   isDragging = true;
   const point = e.touches ? e.touches[0] : e;
   startX = point.clientX;
@@ -934,22 +1030,22 @@ function handleSwipe(direction) {
   }
   
   const article = allArticles[currentIndex];
-  const painPoint = classifyPainPoint(article);
+  const tag = classifyTag(article);
   
   if (direction === 'like') {
     likedCount++;
     if (!userPreferences.liked_articles) userPreferences.liked_articles = [];
-    userPreferences.liked_articles.push({ id: article.id || article.title, pain_point: painPoint, timestamp: new Date().toISOString() });
+    userPreferences.liked_articles.push({ id: article.id || article.title, tag, timestamp: new Date().toISOString() });
     
     if (!userPreferences.topic_weights) userPreferences.topic_weights = {};
-    userPreferences.topic_weights[painPoint] = Math.min((userPreferences.topic_weights[painPoint] || 0.5) + 0.1, 1.0);
+    userPreferences.topic_weights[tag] = Math.min((userPreferences.topic_weights[tag] || 0.5) + 0.1, 1.0);
   } else if (direction === 'nope') {
     nopeCount++;
     if (!userPreferences.disliked_articles) userPreferences.disliked_articles = [];
-    userPreferences.disliked_articles.push({ id: article.id || article.title, pain_point: painPoint, timestamp: new Date().toISOString() });
+    userPreferences.disliked_articles.push({ id: article.id || article.title, tag, timestamp: new Date().toISOString() });
     
     if (!userPreferences.topic_weights) userPreferences.topic_weights = {};
-    userPreferences.topic_weights[painPoint] = Math.max((userPreferences.topic_weights[painPoint] || 0.5) - 0.05, 0.1);
+    userPreferences.topic_weights[tag] = Math.max((userPreferences.topic_weights[tag] || 0.5) - 0.05, 0.1);
   }
   
   userPreferences.last_update = new Date().toISOString();
@@ -972,42 +1068,25 @@ function showCurrentCard() {
   }
   
   const article = allArticles[currentIndex];
-  const painPoint = classifyPainPoint(article);
-  const painInfo = PAIN_POINTS[painPoint] || PAIN_POINTS.default;
+  const tag = classifyTag(article);
+  const sourceIcon = SOURCE_ICONS[article.source] || '📰';
   
-  // Source badge
-  const sourceBadge = document.getElementById('cardSource');
-  const emoji = SOURCE_EMOJI[article.source] || '📰';
-  sourceBadge.textContent = `${emoji} ${article.source || '资讯'}`;
-  sourceBadge.className = 'card-source-badge';
-  if (['抖音'].includes(article.source)) sourceBadge.classList.add('douyin');
-  if (['B站', 'bilibili', '哔哩哔哩'].includes(article.source)) sourceBadge.classList.add('bilibili');
-  if (['快手', 'kuaishou'].includes(article.source)) sourceBadge.classList.add('kuaishou');
+  // Source
+  document.getElementById('cardSource').textContent = article.source || '资讯';
+  document.getElementById('cardSourceIcon').textContent = sourceIcon;
   
-  // Pain tag
-  const painTag = document.getElementById('cardPainTag');
-  painTag.textContent = painInfo.label;
-  painTag.className = `card-pain-tag ${painInfo.class}`;
+  // Tag
+  document.getElementById('cardTag').textContent = tag;
   
   // Title & Summary
   document.getElementById('cardTitle').textContent = article.title;
   document.getElementById('cardSummary').textContent = article.summary || article.summary_cn || '暂无摘要';
   
-  // Insight
-  const insightEl = document.getElementById('cardInsight');
-  if (article.summary_cn) {
-    insightEl.textContent = '💡 ' + article.summary_cn;
-    insightEl.style.display = 'block';
-  } else {
-    insightEl.style.display = 'none';
-  }
-  
   // Meta
-  const metaEl = document.getElementById('cardMeta');
-  metaEl.innerHTML = `
-    <span class="card-meta-item">${article.region || '未知'}</span>
-    <span class="card-meta-item">${article.category || '分类'}</span>
+  document.getElementById('cardMeta').innerHTML = `
+    <span class="card-meta-item">📍 ${article.region || '全球'}</span>
   `;
+  document.getElementById('cardTime').textContent = '刚刚';
   
   // Image
   const cardImage = document.getElementById('cardImage');
@@ -1018,19 +1097,16 @@ function showCurrentCard() {
     cardImage.style.display = 'block';
     cardNoImage.style.display = 'none';
   } else {
-    // Generate gradient background based on content
-    const colors = getGradientColors(painPoint);
-    cardNoImage.style.background = colors;
     const emoji = getContentEmoji(article);
     cardNoImage.innerHTML = `
       <div class="card-no-image-icon">${emoji}</div>
-      <div class="card-no-image-text">${article.title.substring(0, 30)}${article.title.length > 30 ? '...' : ''}</div>
+      <div class="card-no-image-text">${tag}</div>
     `;
     cardNoImage.style.display = 'flex';
     cardImage.style.display = 'none';
   }
   
-  // Reset card position
+  // Reset
   cardEl.style.transform = 'translate(0, 0) rotate(0deg)';
   document.getElementById('overlayLike').style.opacity = 0;
   document.getElementById('overlayNope').style.opacity = 0;
@@ -1043,47 +1119,33 @@ function showCurrentCard() {
   };
 }
 
-function getGradientColors(painPoint) {
-  const gradients = {
-    money: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-    anxiety: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-    career: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-    tech: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
-    emotion: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
-    default: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)'
-  };
-  return gradients[painPoint] || gradients.default;
-}
-
 function getContentEmoji(article) {
   const text = (article.title + ' ' + (article.category || '')).toLowerCase();
   
   if (text.includes('钱') || text.includes('赚') || text.includes('创业')) return '💰';
   if (text.includes('ai') || text.includes('人工智能')) return '🤖';
   if (text.includes('职场') || text.includes('工作')) return '💼';
-  if (text.includes('焦虑') || text.includes('生活')) return '😰';
   if (text.includes('视频') || text.includes('抖音') || text.includes('b站')) return '📺';
   if (text.includes('科技') || text.includes('技术')) return '🚀';
-  if (text.includes('情感') || text.includes('恋爱')) return '💔';
   
   return '📰';
 }
 
 function showEndState() {
-  const container = document.getElementById('swipeContainer');
-  container.innerHTML = `
-    <div class="swipe-end">
-      <div class="swipe-end-icon">🎉</div>
-      <div class="swipe-end-title">今日内容已浏览完毕</div>
-      <div class="swipe-end-desc">
-        喜欢 ${likedCount} 条 · 不喜欢 ${nopeCount} 条<br>
+  const stack = document.getElementById('cardStack');
+  stack.innerHTML = `
+    <div class="empty-state">
+      <div class="empty-icon">🎉</div>
+      <div class="empty-title">今日内容已浏览完毕</div>
+      <div class="empty-desc">
+        喜欢 ${likedCount} 条 · 跳过 ${nopeCount} 条<br>
         明天早上6点有新内容哦
       </div>
-      <button class="modal-btn" onclick="resetSwipe()">重新浏览</button>
+      <button class="empty-btn" onclick="resetSwipe()">重新浏览</button>
     </div>
   `;
   
-  document.querySelector('.swipe-buttons').style.display = 'none';
+  document.querySelector('.actions').style.display = 'none';
 }
 
 function resetSwipe() {
@@ -1094,11 +1156,7 @@ function resetSwipe() {
 }
 
 function showPreferences() {
-  alert('偏好设置功能开发中...\n\n当前兴趣: ' + (userPreferences.interests || []).join(', ') || '未设置');
-}
-
-function showUpgrade() {
-  alert('🚀 升级到 Pro 版本\n\n• 无限浏览次数\n• AI热点预判\n• 高级内容变现工具\n\n即将上线，敬请期待！');
+  alert('偏好设置功能开发中...');
 }
 
 init();
