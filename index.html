@@ -103,6 +103,37 @@
   }
   .header-btn:hover { background: rgba(0, 0, 0, 0.05); }
 
+  /* ── Mode Switch ── */
+  .mode-switch {
+    display: flex;
+    gap: 8px;
+    padding: 6px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    margin-bottom: 16px;
+  }
+  .mode-btn {
+    flex: 1;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+  }
+  .mode-btn.active {
+    background: var(--accent);
+    color: #fff;
+  }
+  .mode-btn:hover:not(.active) {
+    background: rgba(0, 0, 0, 0.05);
+  }
+
   /* ── Stats ── */
   .stats {
     display: flex;
@@ -125,6 +156,81 @@
     margin-top: 4px;
     text-transform: uppercase;
     letter-spacing: 1px;
+  }
+
+  /* ── List View ── */
+  .list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .list-item {
+    background: var(--card-bg);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    box-shadow: var(--shadow-light);
+    cursor: pointer;
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+  }
+  .list-item:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+  }
+  .list-item-image {
+    width: 100px;
+    height: 80px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+  }
+  .list-item-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+  }
+  .list-item-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .list-item-source {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .list-item-tag {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 12px;
+    background: var(--bg);
+    color: var(--text-secondary);
+  }
+  .list-item-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 6px;
+  }
+  .list-item-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 11px;
+    color: var(--text-muted);
   }
 
   /* ── Card Container ── */
@@ -605,6 +711,11 @@
     </div>
   </header>
 
+  <div class="mode-switch">
+    <button class="mode-btn active" data-mode="swipe" onclick="switchMode('swipe')">🎴 滑动</button>
+    <button class="mode-btn" data-mode="list" onclick="switchMode('list')">📋 列表</button>
+  </div>
+
   <div class="stats">
     <div class="stat-item">
       <div class="stat-value" id="stat-liked">0</div>
@@ -657,11 +768,13 @@
     </div>
   </div>
 
-  <div class="actions">
+  <div class="actions" id="actions">
     <button class="action-btn nope" onclick="handleSwipe('nope')">✕</button>
     <button class="action-btn super" onclick="handleSwipe('super')">★</button>
     <button class="action-btn like" onclick="handleSwipe('like')">♥</button>
   </div>
+
+  <div class="list-view" id="listView" style="display:none;"></div>
 
   <div class="footer">每日清晨 06:00 自动更新</div>
 </div>
@@ -1187,6 +1300,71 @@ function resetSwipe() {
 
 function showPreferences() {
   alert('偏好设置功能开发中...');
+}
+
+function switchMode(mode) {
+  document.querySelectorAll('.mode-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.mode === mode);
+  });
+  
+  const cardStack = document.getElementById('cardStack');
+  const actions = document.getElementById('actions');
+  const listView = document.getElementById('listView');
+  
+  if (mode === 'swipe') {
+    cardStack.style.display = 'block';
+    actions.style.display = 'flex';
+    listView.style.display = 'none';
+  } else {
+    cardStack.style.display = 'none';
+    actions.style.display = 'none';
+    listView.style.display = 'flex';
+    renderListView();
+  }
+}
+
+function renderListView() {
+  const listView = document.getElementById('listView');
+  
+  if (allArticles.length === 0) {
+    listView.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">📭</div>
+        <div class="empty-title">暂无内容</div>
+        <div class="empty-desc">请稍后再试</div>
+      </div>
+    `;
+    return;
+  }
+  
+  listView.innerHTML = allArticles.map((article, index) => {
+    const tag = classifyTag(article);
+    const image = article.image || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=160&fit=crop';
+    
+    return `
+      <div class="list-item" onclick="openArticle('${article.url || '#'}')">
+        <div class="list-item-image" style="background-image: url(${image})"></div>
+        <div class="list-item-content">
+          <div class="list-item-top">
+            <span class="list-item-source">${article.source}</span>
+            <span class="list-item-tag">${tag}</span>
+          </div>
+          <div class="list-item-title">${article.title}</div>
+          <div class="list-item-meta">
+            <span>📍 ${article.region || '全球'}</span>
+            <span>•</span>
+            <span>${article.category}</span>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function openArticle(url) {
+  if (url && url !== '#') {
+    window.open(url, '_blank');
+  }
 }
 
 init();
