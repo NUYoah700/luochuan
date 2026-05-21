@@ -456,6 +456,13 @@ def collect_all():
     all_articles = []
 
     sources = [
+        ("B站热门", fetch_bilibili),
+        ("抖音热搜", fetch_douyin_hot),
+        ("快手热搜", fetch_kuaishou_hot),
+        ("36氪", fetch_36kr),
+        ("虎嗅", fetch_huxiu),
+        ("少数派", fetch_sspai),
+        ("创业邦", fetch_cyzone),
         ("Hacker News", fetch_hackernews),
         ("Reddit AI", fetch_reddit_ai),
         ("GitHub Trending", fetch_github_trending_ai),
@@ -553,6 +560,329 @@ def send_email_if_configured(output):
             send_digest(to_email, output["date"], output["articles"])
     except Exception as e:
         print(f"  ⚠ 邮件发送跳过: {e}")
+
+
+# ── 数据源：B站热门视频 ──
+def fetch_bilibili():
+    """从B站API获取热门视频"""
+    articles = []
+    try:
+        url = "https://api.bilibili.com/x/web-interface/ranking/v2"
+        resp = safe_get(url, headers={**HEADERS, "Referer": "https://www.bilibili.com/"})
+        if not resp:
+            return articles
+        
+        data = resp.json()
+        if data.get("code") != 0:
+            return articles
+        
+        for item in data.get("data", {}).get("list", [])[:15]:
+            title = item.get("title", "")
+            desc = item.get("desc", "")[:150]
+            bvid = item.get("bvid", "")
+            url = f"https://www.bilibili.com/video/{bvid}"
+            
+            stat = item.get("stat", {})
+            plays = stat.get("view", 0)
+            likes = stat.get("like", 0)
+            
+            articles.append({
+                "id": make_id(title, url),
+                "title": title,
+                "summary": f"播放 {plays:,} | 点赞 {likes:,} | {desc[:80]}",
+                "source": "B站",
+                "sourceIcon": "📺",
+                "url": url,
+                "category": "热门视频",
+                "region": "国内",
+                "importance": "high" if plays > 1000000 else "normal",
+                "timestamp": now_iso(),
+                "raw_date": datetime.now().strftime("%Y-%m-%d %H:%M"),
+                "extra": {
+                    "plays": plays,
+                    "likes": likes,
+                    "author": item.get("owner", {}).get("name", ""),
+                    "duration": item.get("duration", 0)
+                }
+            })
+        print(f"  ✓ B站热门: {len(articles)} 条")
+    except Exception as e:
+        print(f"  ⚠ B站 抓取异常: {e}")
+    return articles
+
+
+# ── 数据源：抖音热搜 ──
+def fetch_douyin_hot():
+    """从抖音获取热搜榜单"""
+    articles = []
+    try:
+        url = "https://www.douyin.com/aweme/v1/web/hot/search/list/"
+        params = {
+            "device_platform": "webapp",
+            "aid": "6383",
+            "channel": "channel_pc_web",
+            "keyword_request_num": "20"
+        }
+        resp = safe_get(url, params=params, headers={
+            **HEADERS,
+            "Referer": "https://www.douyin.com/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+        })
+        
+        if not resp:
+            print(f"  ⚠ 抖音热搜 抓取失败（可能需要代理）")
+            return articles
+        
+        data = resp.json()
+        word_list = data.get("data", {}).get("word_list", [])[:15]
+        
+        for item in word_list:
+            word = item.get("word", "")
+            hot_value = item.get("hot_value", 0)
+            desc = item.get("sentence_desc", "")
+            
+            articles.append({
+                "id": make_id(word, f"douyin_hot_{word}"),
+                "title": f"🔥 {word}",
+                "summary": f"抖音热搜 | 热度 {hot_value:,} | {desc}",
+                "source": "抖音",
+                "sourceIcon": "🎵",
+                "url": f"https://www.douyin.com/search/{word}",
+                "category": "热搜",
+                "region": "国内",
+                "importance": "high" if hot_value > 500000 else "normal",
+                "timestamp": now_iso(),
+                "raw_date": datetime.now().strftime("%Y-%m-%d %H:%M"),
+                "extra": {"hot_value": hot_value}
+            })
+        print(f"  ✓ 抖音热搜: {len(articles)} 条")
+    except Exception as e:
+        print(f"  ⚠ 抖音热搜 抓取异常: {e}")
+    return articles
+
+
+# ── 数据源：快手热搜 ──
+def fetch_kuaishou_hot():
+    """从快手获取热搜榜单"""
+    articles = []
+    try:
+        url = "https://www.kuaishou.com/graphql"
+        payload = {
+            "operationName": "hotSearch",
+            "variables": {},
+            "query": "query hotSearch { hotSearch { title heat }}"
+        }
+        
+        resp = requests.post(
+            url, 
+            json=payload,
+            headers={**HEADERS, "Content-Type": "application/json"},
+            timeout=REQUEST_TIMEOUT
+        )
+        
+        if not resp or resp.status_code != 200:
+            print(f"  ⚠ 快手热搜 抓取失败（可能需要登录）")
+            return articles
+        
+        data = resp.json()
+        items = data.get("data", {}).get("hotSearch", [])[:15]
+        
+        for item in items:
+            title = item.get("title", "")
+            heat = item.get("heat", 0)
+            
+            articles.append({
+                "id": make_id(title, f"kuaishou_hot_{title}"),
+                "title": f"📱 {title}",
+                "summary": f"快手热搜 | 热度 {heat:,}",
+                "source": "快手",
+                "sourceIcon": "🎬",
+                "url": "https://www.kuaishou.com/search",
+                "category": "热搜",
+                "region": "国内",
+                "importance": "high" if heat > 100000 else "normal",
+                "timestamp": now_iso(),
+                "raw_date": datetime.now().strftime("%Y-%m-%d %H:%M"),
+                "extra": {"heat": heat}
+            })
+        print(f"  ✓ 快手热搜: {len(articles)} 条")
+    except Exception as e:
+        print(f"  ⚠ 快手热搜 抓取异常: {e}")
+    return articles
+
+
+# ── 数据源：36氪 ──
+def fetch_36kr():
+    """抓取36氪最新文章"""
+    articles = []
+    try:
+        url = "https://36kr.com/api/newsflash/index"
+        params = {"per_page": 20, "page": 1}
+        resp = safe_get(url, params=params, headers={**HEADERS, "Referer": "https://36kr.com/"})
+        
+        if not resp:
+            return articles
+        
+        data = resp.json()
+        items = data.get("data", {}).get("items", [])[:15]
+        
+        for item in items:
+            title = item.get("title", "")
+            if len(title) < 10:
+                continue
+            
+            articles.append({
+                "id": make_id(title, str(item.get("id", ""))),
+                "title": title,
+                "summary": item.get("description", "")[:150] or "36氪深度报道",
+                "source": "36氪",
+                "sourceIcon": "💰",
+                "url": item.get("route", "") or f"https://36kr.com/p/{item.get('id', '')}",
+                "category": "创业投资",
+                "region": "国内",
+                "importance": "high",
+                "timestamp": now_iso(),
+                "raw_date": item.get("published_at", "")[:16] or datetime.now().strftime("%Y-%m-%d %H:%M"),
+            })
+        print(f"  ✓ 36氪: {len(articles)} 条")
+    except Exception as e:
+        print(f"  ⚠ 36氪 抓取异常: {e}")
+    return articles
+
+
+# ── 数据源：虎嗅 ──
+def fetch_huxiu():
+    """抓取虎嗅最新文章"""
+    articles = []
+    try:
+        url = "https://www.huxiu.com/v2/article/list.php"
+        params = {"page": 1, "pageSize": 20}
+        resp = safe_get(url, params=params, headers={**HEADERS, "Referer": "https://www.huxiu.com/"})
+        
+        if not resp:
+            return articles
+        
+        soup = BeautifulSoup(resp.text, "html.parser")
+        items = soup.select(".article-item")[:15]
+        
+        for item in items:
+            title_el = item.select_one(".article-item__title")
+            if not title_el:
+                continue
+            
+            title = title_el.get_text(strip=True)
+            href = item.select_one("a")
+            url = href.get("href", "") if href else ""
+            if not url.startswith("http"):
+                url = f"https://www.huxiu.com{url}"
+            
+            meta_el = item.select_one(".article-item__info")
+            meta = meta_el.get_text(strip=True) if meta_el else ""
+            
+            articles.append({
+                "id": make_id(title, url),
+                "title": title,
+                "summary": meta[:150] or "虎嗅商业观察",
+                "source": "虎嗅",
+                "sourceIcon": "🐯",
+                "url": url,
+                "category": "商业观察",
+                "region": "国内",
+                "importance": "high",
+                "timestamp": now_iso(),
+                "raw_date": datetime.now().strftime("%Y-%m-%d %H:%M"),
+            })
+        print(f"  ✓ 虎嗅: {len(articles)} 条")
+    except Exception as e:
+        print(f"  ⚠ 虎嗅 抓取异常: {e}")
+    return articles
+
+
+# ── 数据源：少数派 ──
+def fetch_sspai():
+    """抓取少数派最新文章"""
+    articles = []
+    try:
+        url = "https://sspai.com/api/v1/article/tag/1000/page/1?limit=20"
+        resp = safe_get(url, headers={**HEADERS, "Referer": "https://sspai.com/"})
+        
+        if not resp:
+            return articles
+        
+        data = resp.json()
+        items = data.get("data", [])[:15]
+        
+        for item in items:
+            title = item.get("title", "")
+            if len(title) < 10:
+                continue
+            
+            article_id = item.get("id", "")
+            url = f"https://sspai.com/post/{article_id}"
+            
+            articles.append({
+                "id": make_id(title, url),
+                "title": title,
+                "summary": item.get("summary", "")[:150] or "少数派生活科技",
+                "source": "少数派",
+                "sourceIcon": "✌️",
+                "url": url,
+                "category": "科技生活",
+                "region": "国内",
+                "importance": "normal",
+                "timestamp": now_iso(),
+                "raw_date": item.get("created_at", "")[:16] or datetime.now().strftime("%Y-%m-%d %H:%M"),
+            })
+        print(f"  ✓ 少数派: {len(articles)} 条")
+    except Exception as e:
+        print(f"  ⚠ 少数派 抓取异常: {e}")
+    return articles
+
+
+# ── 数据源：创业邦 ──
+def fetch_cyzone():
+    """抓取创业邦最新文章"""
+    articles = []
+    try:
+        url = "https://www.cyzone.cn/article/list/"
+        resp = safe_get(url, headers={**HEADERS, "Referer": "https://www.cyzone.cn/"})
+        
+        if not resp:
+            return articles
+        
+        soup = BeautifulSoup(resp.text, "html.parser")
+        items = soup.select(".article-item")[:15]
+        
+        for item in items:
+            title_el = item.select_one("h2 a") or item.select_one("h3 a")
+            if not title_el:
+                continue
+            
+            title = title_el.get_text(strip=True)
+            url = title_el.get("href", "")
+            if not url.startswith("http"):
+                url = f"https://www.cyzone.cn{url}"
+            
+            desc_el = item.select_one(".article-desc")
+            desc = desc_el.get_text(strip=True)[:150] if desc_el else ""
+            
+            articles.append({
+                "id": make_id(title, url),
+                "title": title,
+                "summary": desc or "创业邦深度报道",
+                "source": "创业邦",
+                "sourceIcon": "🚀",
+                "url": url,
+                "category": "创业投资",
+                "region": "国内",
+                "importance": "high",
+                "timestamp": now_iso(),
+                "raw_date": datetime.now().strftime("%Y-%m-%d %H:%M"),
+            })
+        print(f"  ✓ 创业邦: {len(articles)} 条")
+    except Exception as e:
+        print(f"  ⚠ 创业邦 抓取异常: {e}")
+    return articles
 
 
 if __name__ == "__main__":

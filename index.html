@@ -12,7 +12,6 @@
     --bg-gradient-end: #764ba2;
     --glass-bg: rgba(255, 255, 255, 0.15);
     --glass-border: rgba(255, 255, 255, 0.25);
-    --glass-shadow: rgba(0, 0, 0, 0.1);
     --text-primary: #1a1a2e;
     --text-secondary: #4a5568;
     --text-muted: #718096;
@@ -21,9 +20,7 @@
     --accent-light: rgba(102, 126, 234, 0.12);
     --accent2: #48bb78;
     --accent3: #ed8936;
-    --accent4: #f56565;
     --accent5: #9f7aea;
-    --gold: #ecc94b;
     --tag-new: #48bb78;
     --card-bg: rgba(255, 255, 255, 0.95);
     --card-border: rgba(255, 255, 255, 0.6);
@@ -111,271 +108,337 @@
   .brand-name { font-size: 22px; font-weight: 800; letter-spacing: 3px; color: #fff; }
   .brand-desc { font-size: 11px; color: rgba(255,255,255,0.7); letter-spacing: 2px; font-weight: 500; }
 
-  .btn-refresh {
-    padding: 10px 22px; border-radius: 25px; border: 1px solid var(--glass-border);
+  .header-actions { display: flex; gap: 12px; }
+  .btn-icon {
+    width: 40px; height: 40px; border-radius: 12px;
+    border: 1px solid var(--glass-border);
     background: var(--glass-bg); color: #fff;
-    font-size: 13px; cursor: pointer; transition: var(--transition);
-    font-family: inherit; font-weight: 600; backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer; transition: var(--transition);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; backdrop-filter: blur(10px);
   }
-  .btn-refresh:hover { 
+  .btn-icon:hover { 
     background: rgba(255, 255, 255, 0.25);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
   }
-  .btn-refresh:active { transform: translateY(0); }
+  .btn-upgrade {
+    padding: 10px 18px; border-radius: 20px; border: none;
+    background: linear-gradient(135deg, var(--accent3), #f6ad55);
+    color: #fff; font-size: 13px; cursor: pointer;
+    font-family: inherit; font-weight: 700;
+    box-shadow: 0 4px 12px rgba(237, 137, 54, 0.4);
+    transition: var(--transition);
+  }
+  .btn-upgrade:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(237, 137, 54, 0.5);
+  }
 
-  /* ── Drawer List ── */
-  .drawer-list { display: flex; flex-direction: column; gap: 16px; }
+  /* ── Mode Switch ── */
+  .mode-switch {
+    display: flex; gap: 8px; margin-bottom: 24px;
+    background: var(--glass-bg);
+    padding: 6px; border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+  }
+  .mode-btn {
+    flex: 1; padding: 12px; border-radius: 12px; border: none;
+    background: transparent; color: rgba(255,255,255,0.7);
+    font-size: 14px; font-weight: 600; cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+  }
+  .mode-btn.active {
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  }
+  .mode-btn:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
 
-  /* ── Drawer ── */
-  .drawer {
+  /* ── Swipe Card Area ── */
+  .swipe-container {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    height: 520px;
+    margin: 0 auto 40px;
+    perspective: 1000px;
+  }
+  
+  .swipe-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
     background: var(--card-bg);
-    border: 1px solid var(--card-border);
     border-radius: var(--radius);
-    overflow: hidden;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    padding: 24px;
+    cursor: grab;
+    user-select: none;
+    transition: box-shadow 0.3s;
     box-shadow: 
       0 8px 32px rgba(0, 0, 0, 0.12),
-      0 2px 8px rgba(0, 0, 0, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.8);
-    transition: var(--transition);
+      0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
-  .drawer:hover { 
-    transform: translateY(-4px);
-    box-shadow: 
-      0 16px 48px rgba(102, 126, 234, 0.15),
-      0 8px 16px rgba(0, 0, 0, 0.1),
-      inset 0 1px 0 rgba(255, 255, 255, 0.9);
-    border-color: rgba(102, 126, 234, 0.3);
+  .swipe-card:active { cursor: grabbing; }
+  .swipe-card.is-dragging {
+    transition: none;
+  }
+  .swipe-card.animating {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.5s,
+                box-shadow 0.3s;
   }
 
-  .drawer-header {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 20px 24px; cursor: pointer; user-select: none;
-    transition: background 0.2s;
-    position: relative;
+  .card-header {
+    display: flex; align-items: flex-start; gap: 12px;
+    margin-bottom: 16px;
   }
-  .drawer-header::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 4px;
-    height: 60%;
-    background: linear-gradient(180deg, var(--bg-gradient-start), var(--bg-gradient-end));
-    border-radius: 0 4px 4px 0;
-    opacity: 0;
-    transition: var(--transition);
+  .card-source-badge {
+    padding: 6px 12px; border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-light), rgba(118, 75, 162, 0.1));
+    font-size: 12px; font-weight: 700;
+    color: var(--accent);
+    white-space: nowrap;
   }
-  .drawer:hover .drawer-header::before { opacity: 1; }
-  .drawer-header:hover { background: rgba(102, 126, 234, 0.05); }
-  .drawer-header-left { display: flex; align-items: center; gap: 12px; }
-  .drawer-date { font-size: 16px; font-weight: 700; color: var(--text-primary); }
-  .drawer-count {
+  .card-source-badge.douyin { background: linear-gradient(135deg, rgba(255, 0, 80, 0.1), rgba(255, 100, 0, 0.1)); color: #ff0050; }
+  .card-source-badge.bilibili { background: linear-gradient(135deg, rgba(41, 162, 216, 0.1), rgba(251, 105, 139, 0.1)); color: #29a1f1; }
+  .card-source-badge.kuaishou { background: linear-gradient(135deg, rgba(255, 0, 68, 0.1), rgba(255, 140, 0, 0.1)); color: #ff0044; }
+
+  .card-importance {
+    margin-left: auto; padding: 4px 10px; border-radius: 8px;
+    font-size: 11px; font-weight: 600;
+    background: var(--accent-light); color: var(--accent);
+  }
+  .card-importance.high { background: rgba(72, 187, 120, 0.15); color: var(--tag-new); }
+
+  .card-pain-point {
+    display: inline-block; padding: 4px 12px; border-radius: 10px;
+    font-size: 11px; font-weight: 700;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, var(--accent5), #805ad5);
+    color: #fff;
+  }
+  .card-pain-point.money { background: linear-gradient(135deg, var(--accent3), #f6ad55); }
+  .card-pain-point.anxiety { background: linear-gradient(135deg, #fc8181, #f56565); }
+  .card-pain-point.career { background: linear-gradient(135deg, var(--accent), var(--accent-hover)); }
+  .card-pain-point.tech { background: linear-gradient(135deg, var(--accent5), #6b46c1); }
+
+  .card-title {
+    font-size: 20px; font-weight: 800; line-height: 1.4;
+    color: var(--text-primary); margin-bottom: 12px;
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  .card-summary {
+    font-size: 14px; color: var(--text-secondary); line-height: 1.6;
+    margin-bottom: 12px;
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  .card-insight {
+    padding: 12px 16px; border-radius: 12px;
+    background: linear-gradient(135deg, rgba(72, 187, 120, 0.1), rgba(72, 187, 120, 0.05));
+    border-left: 3px solid var(--accent2);
+    font-size: 13px; color: var(--accent2); line-height: 1.5;
+    font-weight: 600; margin-bottom: 16px;
+  }
+
+  .card-meta {
+    display: flex; gap: 8px; flex-wrap: wrap;
     font-size: 12px; color: var(--text-muted);
-    background: var(--accent-light); padding: 4px 12px; border-radius: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+  .card-meta-item {
+    padding: 4px 10px; border-radius: 8px;
+    background: rgba(0,0,0,0.04);
     font-weight: 600;
   }
-  .drawer-chevron {
-    font-size: 14px; color: var(--text-muted); transition: transform 0.4s ease;
-    font-weight: 700; background: rgba(0,0,0,0.03); width: 28px; height: 28px;
-    display: flex; align-items: center; justify-content: center; border-radius: 8px;
-  }
-  .drawer.open .drawer-chevron { 
-    transform: rotate(180deg);
-    background: var(--accent-light);
-    color: var(--accent);
-  }
-  .drawer.open .drawer-header { border-bottom: 1px solid rgba(102, 126, 234, 0.1); }
 
-  .drawer-body {
-    max-height: 0; overflow: hidden;
-    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Swipe Overlays */
+  .swipe-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px; font-weight: 900;
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
   }
-  .drawer.open .drawer-body { max-height: 10000px; }
+  .swipe-overlay.like {
+    background: linear-gradient(135deg, rgba(72, 187, 120, 0.9), rgba(56, 178, 172, 0.9));
+    color: #fff;
+  }
+  .swipe-overlay.nope {
+    background: linear-gradient(135deg, rgba(245, 101, 101, 0.9), rgba(252, 129, 129, 0.9));
+    color: #fff;
+  }
 
-  .drawer-content { padding: 24px; }
+  /* Swipe Indicators */
+  .swipe-indicators {
+    display: flex; justify-content: center; gap: 20px;
+    margin-bottom: 24px;
+  }
+  .swipe-btn {
+    width: 64px; height: 64px; border-radius: 50%;
+    border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  .swipe-btn.nope {
+    background: linear-gradient(135deg, #fc8181, #f56565);
+    color: #fff;
+  }
+  .swipe-btn.nope:hover {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 6px 20px rgba(245, 101, 101, 0.4);
+  }
+  .swipe-btn.like {
+    background: linear-gradient(135deg, var(--accent2), #38b2ac);
+    color: #fff;
+  }
+  .swipe-btn.like:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 20px rgba(72, 187, 120, 0.4);
+  }
 
-  /* ── Stats ── */
-  .d-stats { 
-    display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;
-    padding: 16px;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.08));
-    border-radius: var(--radius-sm);
-    border: 1px solid rgba(102, 126, 234, 0.1);
+  /* Card Counter */
+  .card-counter {
+    text-align: center; color: rgba(255,255,255,0.7);
+    font-size: 14px; margin-bottom: 16px;
   }
-  .d-stat {
-    padding: 8px 16px; border-radius: 20px;
-    background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(255, 255, 255, 0.8);
-    font-size: 13px; color: var(--text-secondary);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    display: flex; align-items: center; gap: 6px;
-  }
-  .d-stat strong { 
-    color: var(--accent); font-size: 18px; margin-right: 2px; font-weight: 800; 
-  }
-  .d-stat .icon { font-size: 16px; }
+  .card-counter strong { color: #fff; font-weight: 700; }
 
-  /* ── Search ── */
-  .d-search-wrap { position: relative; margin-bottom: 16px; }
-  .d-search-input {
-    width: 100%; padding: 14px 20px 14px 48px; border-radius: 25px;
-    border: 2px solid rgba(102, 126, 234, 0.15);
-    background: rgba(255, 255, 255, 0.8);
-    color: var(--text-primary);
-    font-size: 14px; outline: none; transition: var(--transition);
+  /* ── Drawer List (传统模式) ── */
+  .drawer-list { display: none; flex-direction: column; gap: 16px; }
+
+  /* ── Onboarding Modal ── */
+  .modal-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+  }
+  .modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  .modal-content {
+    background: var(--card-bg); border-radius: var(--radius);
+    padding: 32px; max-width: 480px; width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9) translateY(20px);
+    transition: var(--transition);
+  }
+  .modal-overlay.show .modal-content {
+    transform: scale(1) translateY(0);
+  }
+  .modal-title {
+    font-size: 24px; font-weight: 800; color: var(--text-primary);
+    margin-bottom: 12px; text-align: center;
+  }
+  .modal-desc {
+    font-size: 14px; color: var(--text-secondary);
+    text-align: center; margin-bottom: 24px; line-height: 1.6;
+  }
+  .modal-step {
+    display: flex; align-items: center; gap: 16px;
+    padding: 16px; background: rgba(0,0,0,0.03);
+    border-radius: var(--radius-sm); margin-bottom: 12px;
+  }
+  .modal-step-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent), var(--bg-gradient-end));
+    color: #fff; display: flex; align-items: center; justify-content: center;
+    font-size: 24px; font-weight: 700;
+  }
+  .modal-step-text {
+    flex: 1; font-size: 14px; color: var(--text-primary);
+    font-weight: 600;
+  }
+  .modal-btn {
+    width: 100%; padding: 14px; border-radius: 12px; border: none;
+    background: linear-gradient(135deg, var(--accent), var(--bg-gradient-end));
+    color: #fff; font-size: 16px; font-weight: 700;
+    cursor: pointer; transition: var(--transition);
     font-family: inherit;
-    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
   }
-  .d-search-input:focus { 
-    border-color: var(--accent);
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
-  }
-  .d-search-input::placeholder { color: var(--text-muted); }
-  .d-search-icon {
-    position: absolute; left: 18px; top: 50%; transform: translateY(-50%);
-    color: var(--accent); font-size: 18px; pointer-events: none;
-    opacity: 0.7;
+  .modal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
   }
 
-  /* ── Category chips ── */
-  .d-cats { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
-  .d-cat {
-    padding: 8px 16px; border-radius: 20px; border: 1px solid rgba(102, 126, 234, 0.2);
-    background: rgba(255, 255, 255, 0.8); color: var(--text-secondary);
-    font-size: 12px; cursor: pointer; transition: var(--transition);
-    font-weight: 600;
-    backdrop-filter: blur(10px);
+  /* ── Interest Selection ── */
+  .interest-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+    margin-bottom: 20px;
   }
-  .d-cat:hover { 
+  .interest-chip {
+    padding: 12px 8px; border-radius: 12px; border: 2px solid rgba(0,0,0,0.08);
+    background: #fff; text-align: center; cursor: pointer;
+    transition: var(--transition);
+    font-size: 13px; font-weight: 600; color: var(--text-secondary);
+  }
+  .interest-chip:hover {
     border-color: var(--accent);
-    background: var(--accent-light);
     color: var(--accent);
-    transform: translateY(-2px);
   }
-  .d-cat.active { 
-    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+  .interest-chip.selected {
+    background: linear-gradient(135deg, var(--accent), var(--bg-gradient-end));
     border-color: transparent;
     color: #fff;
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
   }
+  .interest-chip .emoji { font-size: 24px; display: block; margin-bottom: 4px; }
 
-  /* ── Article cards ── */
-  .d-feed { display: flex; flex-direction: column; gap: 12px; }
+  /* ── Empty / End State ── */
+  .swipe-end {
+    text-align: center; padding: 48px 24px;
+    background: var(--card-bg); border-radius: var(--radius);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  }
+  .swipe-end-icon { font-size: 64px; margin-bottom: 16px; }
+  .swipe-end-title { font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 8px; }
+  .swipe-end-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
 
-  .d-card {
-    background: linear-gradient(135deg, #fff, #f8f9fc);
-    border: 1px solid rgba(102, 126, 234, 0.1);
-    border-radius: var(--radius-sm);
-    padding: 20px;
-    cursor: pointer;
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
+  /* ── Stats Bar ── */
+  .stats-bar {
+    display: flex; justify-content: center; gap: 32px;
+    margin-bottom: 24px; padding: 16px;
+    background: var(--glass-bg);
+    border-radius: var(--radius);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
   }
-  .d-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--bg-gradient-start), var(--bg-gradient-end));
-    opacity: 0;
-    transition: var(--transition);
-  }
-  .d-card:hover {
-    background: #fff;
-    border-color: rgba(102, 126, 234, 0.3);
-    box-shadow: 
-      0 12px 32px rgba(102, 126, 234, 0.12),
-      0 4px 12px rgba(0, 0, 0, 0.08);
-    transform: translateY(-3px) translateX(2px);
-  }
-  .d-card:hover::before { opacity: 1; }
-
-  .d-card-title { 
-    font-size: 15px; font-weight: 700; line-height: 1.6; margin-bottom: 8px;
-    color: var(--text-primary);
-  }
-  .d-card-title a { color: var(--text-primary); text-decoration: none; }
-  .d-card-title a:hover { color: var(--accent); }
-
-  .d-card-meta {
-    display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
-    font-size: 12px; color: var(--text-muted); margin-bottom: 8px;
-  }
-  .d-card-meta .source { 
-    color: var(--accent2); font-weight: 700;
-    background: rgba(72, 187, 120, 0.1);
-    padding: 3px 10px;
-    border-radius: 10px;
-  }
-  .d-card-meta .r-tag {
-    padding: 3px 10px; border-radius: 10px; font-size: 11px;
-    background: var(--accent-light); color: var(--accent); font-weight: 600;
-  }
-  .d-card-meta .r-tag.intl { 
-    background: rgba(237, 137, 54, 0.1); 
-    color: var(--accent3); 
-  }
-  .d-card-summary {
-    font-size: 13px; color: var(--text-secondary); line-height: 1.6;
-    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .d-card .importance-dot {
-    width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
-    margin-left: auto;
-    box-shadow: 0 0 8px currentColor;
-  }
-  .d-card .importance-dot.high { 
-    background: var(--tag-new);
-    box-shadow: 0 0 12px var(--tag-new);
-  }
-  .d-card .importance-dot.normal { background: #cbd5e0; box-shadow: none; }
-
-  .d-card-highlight {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
-    border-color: rgba(102, 126, 234, 0.2);
-  }
-  .d-card-highlight::after {
-    content: '⭐';
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    font-size: 14px;
-    opacity: 0.6;
-  }
-
-  /* ── Empty / Loader ── */
-  .d-empty { 
-    text-align: center; padding: 48px 20px; 
-    color: var(--text-muted); font-size: 14px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: var(--radius-sm);
-    border: 2px dashed rgba(102, 126, 234, 0.2);
-  }
-  .d-loader { 
-    text-align: center; padding: 36px; 
-    color: var(--text-muted);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-  .d-loader .spinner {
-    width: 40px; height: 40px;
-    border: 3px solid var(--accent-light);
-    border-top-color: var(--accent);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
+  .stat-item { text-align: center; }
+  .stat-value { font-size: 24px; font-weight: 800; color: #fff; }
+  .stat-label { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 4px; }
 
   /* ── Footer ── */
   .footer {
@@ -394,19 +457,6 @@
   }
   ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
-  /* ── Animations ── */
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .drawer { animation: fadeInUp 0.5s ease forwards; }
-  .drawer:nth-child(1) { animation-delay: 0.1s; }
-  .drawer:nth-child(2) { animation-delay: 0.2s; }
-  .drawer:nth-child(3) { animation-delay: 0.3s; }
-  .drawer:nth-child(4) { animation-delay: 0.4s; }
-  .drawer:nth-child(5) { animation-delay: 0.5s; }
-
   @media (max-width: 600px) {
     .app { padding: 0 16px 60px; }
     .header { 
@@ -417,12 +467,10 @@
     }
     .brand-logo { width: 40px; height: 40px; font-size: 18px; }
     .brand-name { font-size: 18px; }
-    .drawer-header { padding: 16px 18px; }
-    .drawer-content { padding: 18px; }
-    .d-card { padding: 16px; }
-    .d-stats { padding: 12px; gap: 8px; }
-    .d-stat { padding: 6px 12px; font-size: 12px; }
-    .d-stat strong { font-size: 15px; }
+    .swipe-container { height: 480px; }
+    .card-title { font-size: 18px; }
+    .interest-grid { grid-template-columns: repeat(2, 1fr); }
+    .mode-switch { flex-direction: column; }
   }
 </style>
 </head>
@@ -437,257 +485,654 @@
         <div class="brand-desc">AI · 信息聚合</div>
       </div>
     </a>
-    <button class="btn-refresh" onclick="init()">⟳ 刷新</button>
+    <div class="header-actions">
+      <button class="btn-icon" onclick="showPreferences()" title="偏好设置">⚙️</button>
+      <button class="btn-upgrade" onclick="showUpgrade()">升级 Pro</button>
+    </div>
   </header>
+
+  <div class="mode-switch">
+    <button class="mode-btn active" data-mode="swipe" onclick="switchMode('swipe')">🎴 滑动浏览</button>
+    <button class="mode-btn" data-mode="list" onclick="switchMode('list')">📋 列表浏览</button>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-value" id="stat-liked">0</div>
+      <div class="stat-label">喜欢</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value" id="stat-nope">0</div>
+      <div class="stat-label">不喜欢</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value" id="stat-remaining">0</div>
+      <div class="stat-label">剩余</div>
+    </div>
+  </div>
+
+  <div class="card-counter" id="cardCounter">
+    正在加载... <strong>0</strong> 条新内容
+  </div>
+
+  <div class="swipe-container" id="swipeContainer">
+    <div class="swipe-card" id="swipeCard">
+      <div class="swipe-overlay like" id="overlayLike">👍</div>
+      <div class="swipe-overlay nope" id="overlayNope">👎</div>
+      
+      <div class="card-header">
+        <span class="card-source-badge" id="cardSource">来源</span>
+        <span class="card-importance" id="cardImportance">重要</span>
+      </div>
+      
+      <span class="card-pain-point" id="cardPainPoint">痛点</span>
+      
+      <div class="card-title" id="cardTitle">标题</div>
+      <div class="card-summary" id="cardSummary">摘要</div>
+      <div class="card-insight" id="cardInsight">💡 核心洞察</div>
+      
+      <div class="card-meta" id="cardMeta">
+        <span class="card-meta-item">来源</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="swipe-indicators">
+    <button class="swipe-btn nope" onclick="handleSwipe('nope')">👎</button>
+    <button class="swipe-btn like" onclick="handleSwipe('like')">👍</button>
+  </div>
 
   <div class="drawer-list" id="drawerList"></div>
 
   <div class="footer">洛川 · 每日清晨 06:00 自动更新 · AI资讯聚合引擎</div>
 </div>
 
+<!-- Onboarding Modal -->
+<div class="modal-overlay" id="onboardingModal">
+  <div class="modal-content">
+    <div class="modal-title">🎉 欢迎使用洛川</div>
+    <div class="modal-desc">
+      专注于赚钱机会、世界前沿资讯的智能聚合平台。<br>
+      用滑动的方式，发现你真正关心的内容
+    </div>
+    
+    <div class="modal-step">
+      <div class="modal-step-icon">👉</div>
+      <div class="modal-step-text">右滑 = 喜欢，会推送更多类似内容</div>
+    </div>
+    <div class="modal-step">
+      <div class="modal-step-icon">👈</div>
+      <div class="modal-step-text">左滑 = 不喜欢，减少此类内容</div>
+    </div>
+    <div class="modal-step">
+      <div class="modal-step-icon">⚡</div>
+      <div class="modal-step-text">AI 会学习你的喜好，越用越懂你</div>
+    </div>
+    
+    <div class="modal-title" style="font-size: 18px; margin-top: 20px;">选择你的兴趣</div>
+    
+    <div class="interest-grid" id="interestGrid">
+      <div class="interest-chip" data-interest="money">
+        <span class="emoji">💰</span>
+        赚钱创业
+      </div>
+      <div class="interest-chip" data-interest="ai">
+        <span class="emoji">🤖</span>
+        AI科技
+      </div>
+      <div class="interest-chip" data-interest="career">
+        <span class="emoji">💼</span>
+        职场发展
+      </div>
+      <div class="interest-chip" data-interest="anxiety">
+        <span class="emoji">😰</span>
+        生活焦虑
+      </div>
+      <div class="interest-chip" data-interest="trend">
+        <span class="emoji">🔮</span>
+        未来趋势
+      </div>
+      <div class="interest-chip" data-interest="emotion">
+        <span class="emoji">💔</span>
+        情感困惑
+      </div>
+    </div>
+    
+    <button class="modal-btn" onclick="completeOnboarding()">开始探索 🚀</button>
+  </div>
+</div>
+
 <script>
 const DATA_DIR = './data/';
 
-let dateMeta = [];
-let drawerData = {};
-let openDate = null;
+let allArticles = [];
+let currentIndex = 0;
+let likedCount = 0;
+let nopeCount = 0;
+let userPreferences = {};
+let isDragging = false;
+let startX = 0, startY = 0, currentX = 0, currentY = 0;
+let cardEl, containerEl;
+
+const PAIN_POINTS = {
+  money: { label: '💰 赚钱机会', class: 'money' },
+  anxiety: { label: '😰 生活焦虑', class: 'anxiety' },
+  career: { label: '💼 职场发展', class: 'career' },
+  ai: { label: '🤖 AI科技', class: 'tech' },
+  tech: { label: '🔮 未来趋势', class: 'tech' },
+  emotion: { label: '💔 情感困惑', class: 'anxiety' },
+  default: { label: '📌 热门资讯', class: '' }
+};
+
+function classifyPainPoint(article) {
+  const text = (article.title + ' ' + (article.summary || '') + ' ' + (article.category || '')).toLowerCase();
+  
+  const patterns = {
+    money: ['赚钱', '变现', '创业', '副业', '投资', '风口', '商机', '盈利', '收入', '财富', 'money', 'profit', 'startup'],
+    anxiety: ['焦虑', '内卷', '躺平', '中年', '35岁', '危机', '压力', '烦恼', '痛苦'],
+    career: ['职场', '求职', '晋升', '加薪', '跳槽', '面试', '裁员', '打工', '工作'],
+    ai: ['ai', '人工智能', 'gpt', 'chatgpt', 'llm', '大模型', '机器学习', '深度学习'],
+    tech: ['前沿', '趋势', '颠覆', '创新', '突破', '未来', '新技术', '黑科技'],
+    emotion: ['情感', '恋爱', '人际关系', '孤独', '社恐', '家庭', '婚姻']
+  };
+  
+  for (const [point, keywords] of Object.entries(patterns)) {
+    if (keywords.some(kw => text.includes(kw))) {
+      return point;
+    }
+  }
+  return 'default';
+}
+
+function loadPreferences() {
+  try {
+    const saved = localStorage.getItem('luochuan_prefs');
+    if (saved) {
+      userPreferences = JSON.parse(saved);
+      return true;
+    }
+  } catch (e) {
+    console.error('加载偏好失败:', e);
+  }
+  return false;
+}
+
+function savePreferences() {
+  try {
+    localStorage.setItem('luochuan_prefs', JSON.stringify(userPreferences));
+  } catch (e) {
+    console.error('保存偏好失败:', e);
+  }
+}
+
+function updateStats() {
+  document.getElementById('stat-liked').textContent = likedCount;
+  document.getElementById('stat-nope').textContent = nopeCount;
+  document.getElementById('stat-remaining').textContent = Math.max(0, allArticles.length - currentIndex);
+  
+  const remaining = allArticles.length - currentIndex;
+  const counter = document.getElementById('cardCounter');
+  if (remaining > 0) {
+    counter.innerHTML = `还有 <strong>${remaining}</strong> 条新内容`;
+  } else {
+    counter.innerHTML = `今日内容已浏览完`;
+  }
+}
 
 async function init() {
-  const list = document.getElementById('drawerList');
-  list.innerHTML = `
-    <div class="d-loader">
-      <div class="spinner"></div>
-      <span>加载中...</span>
-    </div>
-  `;
-
-  try {
-    const resp = await fetch(`${DATA_DIR}index.json`);
-    if (!resp.ok) throw new Error('index not found');
-    dateMeta = (await resp.json()).reverse();
-  } catch {
-    dateMeta = [];
-  }
-
-  if (dateMeta.length === 0) {
-    list.innerHTML = '<div class="d-empty">暂无数据</div>';
+  loadPreferences();
+  
+  if (!userPreferences.onboarding_complete) {
+    showOnboarding();
     return;
   }
-
-  await fixIndexCounts();
-  renderDrawers();
-  if (dateMeta.length > 0) await openDrawer(dateMeta[0].date);
+  
+  await loadArticles();
+  setupSwipeCard();
+  updateStats();
+  showCurrentCard();
 }
 
-async function fixIndexCounts() {
-  for (const m of dateMeta) {
-    if (drawerData[m.date] && drawerData[m.date].articles) {
-      m.count = drawerData[m.date].articles.length;
-    }
-  }
-}
-
-function renderDrawers() {
-  const list = document.getElementById('drawerList');
-  list.innerHTML = dateMeta.map((m, i) => `
-    <div class="drawer${openDate === m.date ? ' open' : ''}" id="drawer-${m.date}">
-      <div class="drawer-header" onclick="toggleDrawer('${m.date}')">
-        <div class="drawer-header-left">
-          <span class="drawer-date">${m.date}</span>
-          <span class="drawer-count" id="count-${m.date}">${m.count} 篇</span>
-          ${i === 0 ? '<span style="font-size:10px;color:#fff;background:linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));padding:3px 10px;border-radius:10px;font-weight:700;box-shadow:0 2px 8px rgba(102,126,234,0.3)">最新</span>' : ''}
-        </div>
-        <span class="drawer-chevron">▼</span>
-      </div>
-      <div class="drawer-body">
-        <div class="drawer-content" id="content-${m.date}">
-          <div class="d-loader">
-            <div class="spinner"></div>
-            <span>加载中...</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  `).join('');
-}
-
-async function toggleDrawer(date) {
-  if (openDate === date) {
-    closeDrawer(date);
-    return;
-  }
-  await openDrawer(date);
-}
-
-async function openDrawer(date) {
-  if (openDate && openDate !== date) {
-    closeDrawerSilent(openDate);
-  }
-
-  openDate = date;
-  const drawer = document.getElementById(`drawer-${date}`);
-  if (drawer) drawer.classList.add('open');
-
-  if (drawerData[date]) {
-    renderDrawerContent(date);
-  } else {
-    try {
-      const resp = await fetch(`${DATA_DIR}${date}.json`);
-      if (!resp.ok) throw new Error('not found');
-      const data = await resp.json();
-      drawerData[date] = { articles: data.articles || [] };
-      const meta = dateMeta.find(m => m.date === date);
-      if (meta) { meta.count = data.articles.length; }
-      const countEl = document.getElementById(`count-${date}`);
-      if (countEl) { countEl.textContent = data.articles.length + ' 篇'; }
-    } catch {
-      drawerData[date] = { articles: [] };
-    }
-    renderDrawerContent(date);
-  }
-}
-
-function closeDrawer(date) {
-  openDate = null;
-  const drawer = document.getElementById(`drawer-${date}`);
-  if (drawer) drawer.classList.remove('open');
-}
-
-function closeDrawerSilent(date) {
-  const drawer = document.getElementById(`drawer-${date}`);
-  if (drawer) drawer.classList.remove('open');
-}
-
-function renderDrawerContent(date) {
-  const container = document.getElementById(`content-${date}`);
-  if (!container) return;
-
-  const data = drawerData[date];
-  if (!data || !data.articles || data.articles.length === 0) {
-    container.innerHTML = '<div class="d-empty">该日暂无资讯</div>';
-    return;
-  }
-
-  const articles = data.articles;
-  container.innerHTML = buildContentHTML(date, articles);
-  bindDrawerEvents(date, articles);
-}
-
-function buildContentHTML(date, articles) {
-  const domestic = articles.filter(a => a.region === '国内').length;
-  const intl = articles.filter(a => a.region === '国际' || a.region === '日本').length;
-  const important = articles.filter(a => a.importance === 'high').length;
-
-  const cats = new Map();
-  for (const a of articles) cats.set(a.category, (cats.get(a.category) || 0) + 1);
-
-  const regions = new Map();
-  for (const a of articles) regions.set(a.region, (regions.get(a.region) || 0) + 1);
-
-  return `
-    <div class="d-stats">
-      <div class="d-stat"><span class="icon">📰</span><strong>${articles.length}</strong>篇</div>
-      <div class="d-stat"><span class="icon">🔥</span><strong>${important}</strong>重点</div>
-      <div class="d-stat"><span class="icon">🇨🇳</span><strong>${domestic}</strong>国内</div>
-      <div class="d-stat"><span class="icon">🌍</span><strong>${intl}</strong>国际</div>
-    </div>
-    <div class="d-search-wrap">
-      <span class="d-search-icon">⌕</span>
-      <input class="d-search-input" type="text" id="search-${date}" placeholder="搜索这一天..." autocomplete="off">
-    </div>
-    <div class="d-cats">
-      <span class="d-cat active" data-cat="全部">全部 (${articles.length})</span>
-      ${[...cats].map(([n, c]) => `<span class="d-cat" data-cat="${escapeHtml(n)}">${escapeHtml(n)} (${c})</span>`).join('')}
-      <span style="color:var(--text-muted);margin:0 4px">|</span>
-      <span class="d-cat active" data-region="全部">全部地区</span>
-      ${[...regions].map(([n, c]) => `<span class="d-cat" data-region="${escapeHtml(n)}">${escapeHtml(n)} (${c})</span>`).join('')}
-    </div>
-    <div class="d-feed" id="feed-${date}">
-      ${buildCardsHTML(articles, { cat: '全部', region: '全部', search: '' })}
-    </div>
-  `;
-}
-
-function buildCardsHTML(articles, filter) {
-  let filtered = articles;
-
-  if (filter.search) {
-    const s = filter.search;
-    filtered = filtered.filter(a =>
-      a.title.toLowerCase().includes(s) ||
-      (a.summary || '').toLowerCase().includes(s) ||
-      (a.source || '').toLowerCase().includes(s)
-    );
-  }
-  if (filter.cat !== '全部') filtered = filtered.filter(a => a.category === filter.cat);
-  if (filter.region !== '全部') filtered = filtered.filter(a => a.region === filter.region);
-
-  if (filtered.length === 0) {
-    return '<div class="d-empty">🔍 没有匹配的资讯</div>';
-  }
-
-  const regionClass = { '国内': '', '国际': 'intl', '日本': 'intl' };
-
-  return filtered.map(a => `
-    <article class="d-card${a.importance === 'high' ? ' d-card-highlight' : ''}" onclick="window.open('${escapeHtml(a.url)}', '_blank')">
-      <div style="display:flex;align-items:flex-start;gap:12px">
-        <span style="flex:1;font-size:15px;font-weight:700;line-height:1.6">
-          <a href="${escapeHtml(a.url)}" target="_blank" onclick="event.stopPropagation()" style="color:var(--text-primary);text-decoration:none">${escapeHtml(a.title)}</a>
-        </span>
-        <span class="importance-dot ${a.importance}"></span>
-      </div>
-      <div class="d-card-meta">
-        <span class="source">${a.sourceIcon || ''} ${escapeHtml(a.source)}</span>
-        <span>${a.raw_date || ''}</span>
-        <span class="r-tag ${regionClass[a.region] || ''}">${a.region}</span>
-        <span style="font-size:11px;background:rgba(159,122,234,0.1);color:#9f7aea;padding:3px 10px;border-radius:10px;font-weight:600">${a.category}</span>
-      </div>
-      ${a.summary_cn ? `<p style="font-size:13px;color:var(--accent2);line-height:1.5;margin-bottom:6px;font-weight:600;padding:8px 12px;background:rgba(72,187,120,0.08);border-radius:8px;border-left:3px solid var(--accent2)">💡 ${escapeHtml(a.summary_cn)}</p>` : ''}
-      <p class="d-card-summary">${escapeHtml(a.summary || '')}</p>
-    </article>
-  `).join('');
-}
-
-function bindDrawerEvents(date, articles) {
-  const container = document.getElementById(`content-${date}`);
-  if (!container) return;
-
-  let filter = { cat: '全部', region: '全部', search: '' };
-
-  const searchInput = document.getElementById(`search-${date}`);
-  if (searchInput) {
-    searchInput.addEventListener('input', function() {
-      filter.search = this.value.toLowerCase();
-      refreshFeed(date, articles, filter);
-    });
-  }
-
-  container.querySelectorAll('.d-cat').forEach(chip => {
-    chip.addEventListener('click', function() {
-      if (this.dataset.cat !== undefined) filter.cat = this.dataset.cat;
-      if (this.dataset.region !== undefined) filter.region = this.dataset.region;
-      filter.search = searchInput ? searchInput.value.toLowerCase() : '';
-
-      container.querySelectorAll('.d-cat').forEach(c => c.classList.remove('active'));
-      const activeCat = container.querySelector(`.d-cat[data-cat="${escapeHtml(filter.cat)}"]`);
-      const activeRegion = container.querySelector(`.d-cat[data-region="${escapeHtml(filter.region)}"]`);
-      if (activeCat) activeCat.classList.add('active');
-      if (activeRegion) activeRegion.classList.add('active');
-
-      refreshFeed(date, articles, filter);
+function showOnboarding() {
+  const modal = document.getElementById('onboardingModal');
+  modal.classList.add('show');
+  
+  document.querySelectorAll('.interest-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      chip.classList.toggle('selected');
     });
   });
 }
 
-function refreshFeed(date, articles, filter) {
-  const feed = document.getElementById(`feed-${date}`);
-  if (feed) feed.innerHTML = buildCardsHTML(articles, filter);
+function completeOnboarding() {
+  const selected = Array.from(document.querySelectorAll('.interest-chip.selected'))
+    .map(chip => chip.dataset.interest);
+  
+  userPreferences = {
+    onboarding_complete: true,
+    interests: selected,
+    liked_articles: [],
+    disliked_articles: [],
+    topic_weights: {},
+    last_update: new Date().toISOString()
+  };
+  
+  selected.forEach(topic => {
+    userPreferences.topic_weights[topic] = 0.8;
+  });
+  
+  savePreferences();
+  document.getElementById('onboardingModal').classList.remove('show');
+  
+  loadArticles().then(() => {
+    setupSwipeCard();
+    updateStats();
+    showCurrentCard();
+  });
 }
 
-function escapeHtml(str) {
-  const div = document.createElement('div');
-  div.textContent = str;
-  return div.innerHTML;
+async function loadArticles() {
+  try {
+    const resp = await fetch(`${DATA_DIR}index.json`);
+    if (!resp.ok) throw new Error('index not found');
+    const dates = (await resp.json()).reverse();
+    
+    allArticles = [];
+    
+    for (const entry of dates.slice(0, 3)) {
+      try {
+        const dateResp = await fetch(`${DATA_DIR}${entry.date}.json`);
+        if (dateResp.ok) {
+          const data = await dateResp.json();
+          allArticles.push(...(data.articles || []));
+        }
+      } catch (e) {
+        console.error(`加载 ${entry.date} 失败:`, e);
+      }
+    }
+    
+    if (allArticles.length === 0) {
+      allArticles = generateSampleArticles();
+    }
+    
+    allArticles = filterByPreferences(allArticles);
+    allArticles = shuffleArray(allArticles);
+    
+  } catch (e) {
+    console.error('加载文章失败:', e);
+    allArticles = generateSampleArticles();
+  }
+}
+
+function filterByPreferences(articles) {
+  if (!userPreferences.interests || userPreferences.interests.length === 0) {
+    return articles;
+  }
+  
+  const weights = userPreferences.topic_weights || {};
+  
+  articles.sort((a, b) => {
+    const painA = classifyPainPoint(a);
+    const painB = classifyPainPoint(b);
+    const weightA = weights[painA] || 0.5;
+    const weightB = weights[painB] || 0.5;
+    return weightB - weightA;
+  });
+  
+  return articles;
+}
+
+function shuffleArray(array) {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+function generateSampleArticles() {
+  return [
+    {
+      title: '【重磅】2026年最赚钱的6个副业方向，第一个月入过万',
+      summary: '整理了当前最热门的副业赚钱方向，包括AI内容创作、跨境电商、知识付费等，实测有效...',
+      source: '36氪',
+      category: '赚钱',
+      importance: 'high',
+      url: '#'
+    },
+    {
+      title: 'AI取代的不是工作，而是不会用AI的人',
+      summary: '未来真正危险的并非AI本身，而是那些尚未掌握AI技能的人。学会与AI协作才是关键...',
+      source: '虎嗅',
+      category: 'AI焦虑',
+      importance: 'high',
+      url: '#'
+    },
+    {
+      title: '35岁职场危机：如何在中年找到新机会',
+      summary: '分享一位40岁转型成功的案例，从被裁员到找到新赛道的完整路径...',
+      source: '知乎',
+      category: '职场',
+      importance: 'normal',
+      url: '#'
+    },
+    {
+      title: 'B站UP主月入10万的秘密：普通人如何做知识博主',
+      summary: '拆解头部知识博主的变现路径，从定位、内容、流量到变现的完整方法论...',
+      source: 'B站',
+      category: '创业',
+      importance: 'high',
+      url: '#'
+    },
+    {
+      title: '2026年创业风口：下一个百亿市场在哪里',
+      summary: '深度分析当前创投趋势，从市场规模、竞争格局、准入门槛多维度评估...',
+      source: '创业邦',
+      category: '创业',
+      importance: 'high',
+      url: '#'
+    },
+    {
+      title: '为什么你总是存不下钱？心理学告诉你真相',
+      summary: '从行为心理学角度分析为什么很多人存钱困难，以及如何克服消费主义陷阱...',
+      source: '豆瓣',
+      category: '焦虑',
+      importance: 'normal',
+      url: '#'
+    },
+    {
+      title: '抖音带货新玩法：如何用AI工具自动生成爆款视频',
+      summary: '实测3款AI视频工具，教会你如何每天自动生成10条高质量带货视频...',
+      source: '抖音',
+      category: '赚钱',
+      importance: 'high',
+      url: '#'
+    },
+    {
+      title: '特斯拉开源新一代自动驾驶技术，行业即将巨变',
+      summary: '特斯拉宣布开源FSD技术，这意味着什么？对整个自动驾驶行业意味着什么...',
+      source: '机器之心',
+      category: '科技',
+      importance: 'high',
+      url: '#'
+    }
+  ];
+}
+
+function setupSwipeCard() {
+  cardEl = document.getElementById('swipeCard');
+  containerEl = document.getElementById('swipeContainer');
+  
+  cardEl.addEventListener('mousedown', handleStart);
+  cardEl.addEventListener('touchstart', handleStart, { passive: false });
+  
+  document.addEventListener('mousemove', handleMove);
+  document.addEventListener('touchmove', handleMove, { passive: false });
+  
+  document.addEventListener('mouseup', handleEnd);
+  document.addEventListener('touchend', handleEnd);
+}
+
+function handleStart(e) {
+  if (userPreferences.is_pro) return;
+  
+  isDragging = true;
+  const point = e.touches ? e.touches[0] : e;
+  startX = point.clientX;
+  startY = point.clientY;
+  currentX = 0;
+  currentY = 0;
+  
+  cardEl.classList.add('is-dragging');
+  cardEl.classList.remove('animating');
+}
+
+function handleMove(e) {
+  if (!isDragging) return;
+  
+  e.preventDefault();
+  const point = e.touches ? e.touches[0] : e;
+  currentX = point.clientX - startX;
+  currentY = point.clientY - startY;
+  
+  const rotation = currentX * 0.05;
+  const tiltY = currentY * 0.02;
+  
+  cardEl.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${rotation}deg) tiltX(${tiltY}deg)`;
+  
+  const overlayLike = document.getElementById('overlayLike');
+  const overlayNope = document.getElementById('overlayNope');
+  
+  if (currentX > 50) {
+    overlayLike.style.opacity = Math.min(currentX / 100, 1);
+    overlayNope.style.opacity = 0;
+  } else if (currentX < -50) {
+    overlayNope.style.opacity = Math.min(Math.abs(currentX) / 100, 1);
+    overlayLike.style.opacity = 0;
+  } else {
+    overlayLike.style.opacity = 0;
+    overlayNope.style.opacity = 0;
+  }
+}
+
+function handleEnd() {
+  if (!isDragging) return;
+  
+  isDragging = false;
+  cardEl.classList.remove('is-dragging');
+  cardEl.classList.add('animating');
+  
+  if (currentX > 100) {
+    animateSwipe('like');
+  } else if (currentX < -100) {
+    animateSwipe('nope');
+  } else {
+    resetCard();
+  }
+}
+
+function animateSwipe(direction) {
+  const targetX = direction === 'like' ? window.innerWidth : -window.innerWidth;
+  const rotation = direction === 'like' ? 30 : -30;
+  
+  cardEl.style.transform = `translate(${targetX}px, ${currentY}px) rotate(${rotation}deg)`;
+  cardEl.style.opacity = '0';
+  
+  setTimeout(() => {
+    handleSwipe(direction);
+    cardEl.style.opacity = '1';
+  }, 300);
+}
+
+function resetCard() {
+  cardEl.style.transform = 'translate(0, 0) rotate(0deg)';
+  document.getElementById('overlayLike').style.opacity = 0;
+  document.getElementById('overlayNope').style.opacity = 0;
+}
+
+function handleSwipe(direction) {
+  if (currentIndex >= allArticles.length) {
+    showEndState();
+    return;
+  }
+  
+  const article = allArticles[currentIndex];
+  const painPoint = classifyPainPoint(article);
+  
+  if (direction === 'like') {
+    likedCount++;
+    if (!userPreferences.liked_articles) userPreferences.liked_articles = [];
+    userPreferences.liked_articles.push({
+      id: article.id || article.title,
+      pain_point: painPoint,
+      timestamp: new Date().toISOString()
+    });
+    
+    if (!userPreferences.topic_weights) userPreferences.topic_weights = {};
+    userPreferences.topic_weights[painPoint] = Math.min(
+      (userPreferences.topic_weights[painPoint] || 0.5) + 0.1,
+      1.0
+    );
+  } else {
+    nopeCount++;
+    if (!userPreferences.disliked_articles) userPreferences.disliked_articles = [];
+    userPreferences.disliked_articles.push({
+      id: article.id || article.title,
+      pain_point: painPoint,
+      timestamp: new Date().toISOString()
+    });
+    
+    if (!userPreferences.topic_weights) userPreferences.topic_weights = {};
+    userPreferences.topic_weights[painPoint] = Math.max(
+      (userPreferences.topic_weights[painPoint] || 0.5) - 0.05,
+      0.1
+    );
+  }
+  
+  userPreferences.last_update = new Date().toISOString();
+  savePreferences();
+  
+  currentIndex++;
+  updateStats();
+  
+  if (currentIndex >= allArticles.length) {
+    showEndState();
+  } else {
+    showCurrentCard();
+  }
+}
+
+function showCurrentCard() {
+  if (currentIndex >= allArticles.length) {
+    showEndState();
+    return;
+  }
+  
+  const article = allArticles[currentIndex];
+  const painPoint = classifyPainPoint(article);
+  const painInfo = PAIN_POINTS[painPoint] || PAIN_POINTS.default;
+  
+  const sourceBadge = document.getElementById('cardSource');
+  sourceBadge.textContent = article.source || '资讯';
+  sourceBadge.className = 'card-source-badge';
+  if (['抖音', 'douyin'].includes(article.source)) sourceBadge.classList.add('douyin');
+  if (['B站', 'bilibili', '哔哩哔哩'].includes(article.source)) sourceBadge.classList.add('bilibili');
+  if (['快手', 'kuaishou'].includes(article.source)) sourceBadge.classList.add('kuaishou');
+  
+  document.getElementById('cardImportance').textContent = article.importance === 'high' ? '⭐ 重点' : '普通';
+  document.getElementById('cardImportance').className = `card-importance ${article.importance}`;
+  
+  const painEl = document.getElementById('cardPainPoint');
+  painEl.textContent = painInfo.label;
+  painEl.className = `card-pain-point ${painInfo.class}`;
+  
+  document.getElementById('cardTitle').textContent = article.title;
+  document.getElementById('cardSummary').textContent = article.summary || article.summary_cn || '暂无摘要';
+  
+  const insightEl = document.getElementById('cardInsight');
+  if (article.summary_cn) {
+    insightEl.textContent = '💡 ' + article.summary_cn;
+    insightEl.style.display = 'block';
+  } else {
+    insightEl.style.display = 'none';
+  }
+  
+  const metaEl = document.getElementById('cardMeta');
+  metaEl.innerHTML = `
+    <span class="card-meta-item">${article.source || '来源'}</span>
+    <span class="card-meta-item">${article.region || '未知'}</span>
+    <span class="card-meta-item">${article.category || '分类'}</span>
+  `;
+  
+  cardEl.style.transform = 'translate(0, 0) rotate(0deg)';
+  document.getElementById('overlayLike').style.opacity = 0;
+  document.getElementById('overlayNope').style.opacity = 0;
+  
+  cardEl.onclick = () => {
+    if (article.url && article.url !== '#') {
+      window.open(article.url, '_blank');
+    }
+  };
+}
+
+function showEndState() {
+  const container = document.getElementById('swipeContainer');
+  container.innerHTML = `
+    <div class="swipe-end">
+      <div class="swipe-end-icon">🎉</div>
+      <div class="swipe-end-title">今日内容已浏览完毕</div>
+      <div class="swipe-end-desc">
+        喜欢 ${likedCount} 条 · 不喜欢 ${nopeCount} 条<br>
+        明天早上6点有新内容哦
+      </div>
+      <button class="modal-btn" onclick="resetSwipe()">重新浏览</button>
+    </div>
+  `;
+  
+  document.querySelector('.swipe-indicators').style.display = 'none';
+}
+
+function resetSwipe() {
+  currentIndex = 0;
+  likedCount = 0;
+  nopeCount = 0;
+  
+  location.reload();
+}
+
+function switchMode(mode) {
+  document.querySelectorAll('.mode-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.mode === mode);
+  });
+  
+  const swipeArea = document.querySelector('.swipe-container').parentElement;
+  const drawerList = document.getElementById('drawerList');
+  
+  if (mode === 'list') {
+    document.querySelector('.stats-bar').style.display = 'none';
+    document.getElementById('cardCounter').style.display = 'none';
+    document.querySelector('.swipe-indicators').style.display = 'none';
+    document.querySelector('.swipe-container').style.display = 'none';
+    drawerList.style.display = 'flex';
+    loadDrawerList();
+  } else {
+    document.querySelector('.stats-bar').style.display = 'flex';
+    document.getElementById('cardCounter').style.display = 'block';
+    document.querySelector('.swipe-indicators').style.display = 'flex';
+    document.querySelector('.swipe-container').style.display = 'block';
+    drawerList.style.display = 'none';
+  }
+}
+
+async function loadDrawerList() {
+  const list = document.getElementById('drawerList');
+  list.innerHTML = '<div style="text-align:center;padding:40px;color:rgba(255,255,255,0.7)">加载中...</div>';
+  
+  try {
+    const resp = await fetch(`${DATA_DIR}index.json`);
+    if (!resp.ok) throw new Error('index not found');
+    const dates = (await resp.json()).reverse();
+    
+    list.innerHTML = dates.map(d => `
+      <div class="drawer" onclick="loadDateArticles('${d.date}')" style="cursor:pointer">
+        <div style="padding:16px 20px;background:var(--card-bg);border-radius:12px;display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-weight:700;color:var(--text-primary)">${d.date}</span>
+          <span style="padding:4px 12px;background:var(--accent-light);color:var(--accent);border-radius:10px;font-size:12px;font-weight:600">${d.count}篇</span>
+        </div>
+      </div>
+    `).join('');
+  } catch (e) {
+    list.innerHTML = '<div style="text-align:center;padding:40px;color:rgba(255,255,255,0.7)">暂无数据</div>';
+  }
+}
+
+function showPreferences() {
+  alert('偏好设置功能开发中...\n\n当前兴趣: ' + (userPreferences.interests || []).join(', ') || '未设置');
+}
+
+function showUpgrade() {
+  alert('🚀 升级到 Pro 版本\n\n• 无限浏览次数\n• AI热点预判\n• 高级内容变现工具\n• 跨设备同步\n\n即将上线，敬请期待！');
 }
 
 init();
