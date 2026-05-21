@@ -2,365 +2,655 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>洛川</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>洛川 Luochuan</title>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* 基础样式重置 */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
 
-  :root {
-    --bg: #ffffff;
-    --text: #1d1d1f;
-    --subtext: #86868b;
-    --accent: #0071e3;
-    --border: #d2d2d7;
-    --radius: 16px;
-    --transition: 0.2s;
-  }
+/* 定义可动画化的自定义属性 */
+@property --bg-1 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #F2F4FA;
+}
+@property --bg-2 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #F8F3FC;
+}
+@property --bg-3 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #FCF5F3;
+}
 
-  body {
+/* 全局变量 */
+:root {
+    --text-main: #1A1A1E;
+    --text-secondary: #8E8E93;
+    --text-placeholder: #48484D;
+    --accent: #007AFF;
+    --like-start: #34C759;
+    --like-end: #30D158;
+    --skip-start: #FF6B6B;
+    --skip-end: #FF8A80;
+    --glass-bg: rgba(255, 255, 255, 0.72);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --shadow-blur: rgba(0, 113, 227, 0.15);
+    --radius-lg: 32px;
+    --radius-md: 24px;
+    --radius-sm: 16px;
+    --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* 基础设置 */
+body {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", sans-serif;
-    background: var(--bg);
     min-height: 100vh;
-    color: var(--text);
-    -webkit-font-smoothing: antialiased;
-  }
+    overflow: hidden;
+    position: relative;
+}
 
-  .app { max-width: 390px; margin: 0 auto; padding: 0 0 80px; }
+/* 1. 动态流体背景 */
+.bg-fluid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    background: 
+        linear-gradient(135deg, var(--bg-1), var(--bg-2), var(--bg-3)),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    animation: bgFlow 25s ease-in-out infinite alternate;
+}
 
-  /* Header */
-  .header {
+/* 动态光斑 */
+.bg-glow-1, .bg-glow-2 {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(80px);
+    pointer-events: none;
+}
+.bg-glow-1 {
+    background: radial-gradient(circle, rgba(0,122,255,0.18) 0%, transparent 70%);
+    animation: float1 28s ease-in-out infinite;
+}
+.bg-glow-2 {
+    background: radial-gradient(circle, rgba(155,89,182,0.15) 0%, transparent 70%);
+    animation: float2 32s ease-in-out infinite;
+}
+
+/* 背景流动动画 */
+@keyframes bgFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@keyframes float1 {
+    0%, 100% { transform: translate(-100px, -50px); }
+    50% { transform: translate(100px, 100px); }
+}
+@keyframes float2 {
+    0%, 100% { transform: translate(200px, -100px); }
+    50% { transform: translate(-150px, 80px); }
+}
+
+/* 应用容器 */
+.app {
+    position: relative;
+    max-width: 414px;
+    margin: 0 auto;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2. 顶部 */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 20px 16px;
+    z-index: 100;
+}
+.logo {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--text-main);
+    opacity: 0.95;
+}
+.header-actions {
+    display: flex;
+    gap: 12px;
+}
+.icon-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px 20px;
-    border-bottom: 1px solid var(--border);
-  }
-  .logo {
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 1px;
-  }
-  .menu-btn {
-    width: 32px;
-    height: 32px;
-    border: none;
-    background: transparent;
+    justify-content: center;
     font-size: 18px;
     cursor: pointer;
-    color: var(--text);
-  }
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px var(--shadow-blur);
+}
+.icon-btn:active {
+    transform: scale(0.95);
+}
 
-  /* Card */
-  .card-wrap {
-    padding: 20px;
-  }
-  .card {
+/* 模式切换 */
+.mode-switch {
+    display: flex;
+    gap: 8px;
+    margin: 0 20px 20px;
+    padding: 4px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 24px var(--shadow-blur);
+}
+.mode-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all var(--ease);
+}
+.mode-btn.active {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text-main);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* 3. 卡片堆叠容器 */
+.card-stack {
+    flex: 1;
     position: relative;
-    border-radius: var(--radius);
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* 堆叠卡片样式 */
+.stack-card {
+    position: absolute;
+    width: 340px;
+    height: 480px;
+    border-radius: var(--radius-lg);
+    background: var(--glass-bg);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 
+        0 8px 32px rgba(0,113,227,0.12),
+        inset 0 1px 0 rgba(255,255,255,0.5);
     cursor: grab;
     user-select: none;
-    transition: box-shadow 0.2s;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
-  }
-  .card:active { cursor: grabbing; }
-  .card.is-dragging { transition: none; }
-  .card.animating { transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.4s; }
+    overflow: hidden;
+    transition: transform 0.5s var(--ease), opacity 0.5s var(--ease);
+}
+.stack-card:active {
+    cursor: grabbing;
+}
+.stack-card.dragging {
+    transition: none;
+}
 
-  .card-img {
+/* 第二层和第三层堆叠效果 */
+.stack-card:nth-child(2) {
+    transform: scale(0.95) translateY(12px) rotate(1deg);
+    opacity: 0.9;
+    z-index: 9;
+}
+.stack-card:nth-child(3) {
+    transform: scale(0.90) translateY(24px) rotate(-1deg);
+    opacity: 0.8;
+    z-index: 8;
+}
+
+/* 卡片内容 */
+.card-inner {
+    padding: 28px 24px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.card-image {
     width: 100%;
-    height: 320px;
+    height: 220px;
+    border-radius: var(--radius-md);
     background-size: cover;
     background-position: center;
-  }
-
-  .card-body {
-    padding: 16px;
-  }
-  .card-source {
-    font-size: 12px;
-    color: var(--subtext);
-    margin-bottom: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .card-title {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 1.35;
+    margin-bottom: 20px;
+    position: relative;
+}
+.card-image::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: var(--radius-md);
+    background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.08));
+}
+.card-source {
+    font-size: 13px;
+    color: var(--text-secondary);
     margin-bottom: 8px;
-  }
-  .card-summary {
-    font-size: 14px;
-    color: var(--subtext);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.card-title {
+    font-size: 24px;
+    font-weight: 590;
+    line-height: 1.25;
+    color: var(--text-main);
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.card-summary {
+    font-size: 15px;
     line-height: 1.5;
-  }
+    color: var(--text-placeholder);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
-  /* Overlays */
-  .overlay {
+/* 滑动时的情绪光感 */
+.overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.15s;
     pointer-events: none;
-  }
-  .overlay.like { background: rgba(0, 113, 227, 0.15); }
-  .overlay.nope { background: rgba(237, 66, 69, 0.15); }
-  .overlay span {
-    font-size: 36px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    padding: 16px 32px;
-    border-radius: 8px;
-    border: 4px solid;
-  }
-  .overlay.like span { color: var(--accent); border-color: var(--accent); }
-  .overlay.nope span { color: #ed4245; border-color: #ed4245; }
+    border-radius: var(--radius-lg);
+    transition: opacity 0.15s;
+}
+.overlay.like {
+    background: radial-gradient(circle, rgba(52,199,89,0.18) 0%, transparent 70%);
+}
+.overlay.skip {
+    background: radial-gradient(circle, rgba(255,107,107,0.18) 0%, transparent 70%);
+}
+.overlay-icon {
+    font-size: 72px;
+    font-weight: 800;
+    transform: rotate(-12deg);
+    opacity: 0.9;
+}
+.overlay.like .overlay-icon {
+    color: var(--like-end);
+}
+.overlay.skip .overlay-icon {
+    color: var(--skip-end);
+}
 
-  /* Buttons */
-  .actions {
+/* 4. 底部按钮 */
+.action-buttons {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    padding: 16px 0;
-  }
-  .btn {
-    width: 60px;
-    height: 60px;
+    gap: 24px;
+    padding: 16px 0 36px;
+}
+.action-btn {
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
-    border: 2px solid;
-    background: #fff;
+    border: none;
     cursor: pointer;
-    font-size: 24px;
-    transition: var(--transition);
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .btn:hover { transform: scale(1.1); }
-  .btn.nope { color: #ed4245; border-color: #ed4245; }
-  .btn.nope:hover { background: #ed4245; color: #fff; }
-  .btn.like { color: #34c759; border-color: #34c759; }
-  .btn.like:hover { background: #34c759; color: #fff; }
+    font-size: 22px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 6px 24px rgba(0,113,227,0.12);
+    transition: transform 0.15s, box-shadow 0.2s;
+}
+.action-btn:active {
+    transform: scale(0.95);
+}
+.action-btn.skip {
+    color: var(--skip-end);
+}
+.action-btn.info {
+    color: var(--accent);
+}
+.action-btn.like {
+    color: var(--like-end);
+}
+.action-btn.like:active {
+    background: linear-gradient(135deg, var(--like-start), var(--like-end));
+    color: white;
+}
+.action-btn.skip:active {
+    background: linear-gradient(135deg, var(--skip-start), var(--skip-end));
+    color: white;
+}
 
-  /* List */
-  .list { display: none; padding: 16px; }
-  .list.show { display: block; }
-  .list-item {
+/* 5. 列表模式 */
+.list-view {
+    display: none;
+    padding: 0 20px 100px;
+    flex: 1;
+    overflow-y: auto;
+}
+.list-view.show {
+    display: block;
+}
+.list-item {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    margin-bottom: 12px;
     display: flex;
-    gap: 12px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--border);
+    gap: 16px;
     cursor: pointer;
-  }
-  .list-item:last-child { border-bottom: none; }
-  .list-item:hover .list-title { color: var(--accent); }
-  .list-img {
-    width: 72px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.list-item:active {
+    transform: scale(0.98);
+}
+.list-img {
+    width: 96px;
     height: 72px;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     background-size: cover;
     background-position: center;
     flex-shrink: 0;
-  }
-  .list-content { flex: 1; min-width: 0; }
-  .list-source {
-    font-size: 11px;
-    color: var(--subtext);
-    margin-bottom: 4px;
-    text-transform: uppercase;
-  }
-  .list-title {
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.35;
-    margin-bottom: 4px;
-    transition: color 0.2s;
-  }
-  .list-meta {
-    font-size: 12px;
-    color: var(--subtext);
-  }
-
-  /* Mode Toggle */
-  .mode-bar {
-    display: flex;
-    border-bottom: 1px solid var(--border);
-  }
-  .mode-btn {
+}
+.list-content {
     flex: 1;
-    padding: 14px;
-    border: none;
-    background: transparent;
-    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.list-source {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+.list-title {
+    font-size: 16px;
     font-weight: 500;
-    color: var(--subtext);
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    transition: var(--transition);
-  }
-  .mode-btn.active {
-    color: var(--text);
-    border-bottom-color: var(--accent);
-  }
+    color: var(--text-main);
+    line-height: 1.4;
+}
 
-  /* Empty */
-  .empty {
-    text-align: center;
-    padding: 60px 20px;
-  }
-  .empty-icon { font-size: 48px; opacity: 0.3; margin-bottom: 12px; }
-  .empty-text { font-size: 16px; color: var(--subtext); }
-
-  /* Modal */
-  .modal {
+/* 6. 引导弹窗 */
+.modal {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0,0,0,0.4);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 24px;
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
-    transition: var(--transition);
-  }
-  .modal.show { opacity: 1; visibility: visible; }
-  .modal-box {
-    background: #fff;
-    border-radius: var(--radius);
-    padding: 32px;
-    max-width: 340px;
+    transition: all 0.3s var(--ease);
+}
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+.modal-content {
+    background: var(--glass-bg);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 36px 28px 28px;
+    max-width: 360px;
     width: 100%;
     text-align: center;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.15);
     transform: scale(0.95);
-    transition: var(--transition);
-  }
-  .modal.show .modal-box { transform: scale(1); }
-  .modal-logo {
-    width: 56px;
-    height: 56px;
-    background: var(--text);
-    border-radius: 14px;
-    color: #fff;
-    font-size: 24px;
-    font-weight: 700;
+    transition: transform 0.3s var(--ease);
+}
+.modal.show .modal-content {
+    transform: scale(1);
+}
+.modal-logo {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--accent), #5856D6);
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
+    font-size: 26px;
+    font-weight: 700;
     margin: 0 auto 16px;
-  }
-  .modal-title { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
-  .modal-desc { font-size: 14px; color: var(--subtext); margin-bottom: 24px; }
-  .modal-btn {
-    width: 100%;
-    padding: 14px;
-    border-radius: 12px;
-    border: none;
-    background: var(--accent);
-    color: #fff;
+}
+.modal-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 8px;
+}
+.modal-desc {
     font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+/* 兴趣标签网格 */
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 28px;
+}
+.interest-tag {
+    padding: 14px 8px;
+    border-radius: var(--radius-sm);
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(255,255,255,0.5);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all 0.2s var(--ease);
+    position: relative;
+    overflow: hidden;
+}
+.interest-tag .emoji {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 4px;
+}
+.interest-tag.selected {
+    background: var(--accent);
+    color: white;
+    border-color: transparent;
+}
+.interest-tag.selected::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    animation: ripple 0.4s ease-out;
+}
+@keyframes ripple {
+    from { transform: translate(-50%, -50%) scale(0); opacity: 0.8; }
+    to { transform: translate(-50%, -50%) scale(12); opacity: 0; }
+}
+
+/* 按钮 */
+.btn-primary {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--accent), #5856D6);
+    color: white;
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     font-family: inherit;
-    margin-bottom: 8px;
-  }
-  .modal-btn:hover { opacity: 0.9; }
-  .modal-skip {
-    background: transparent;
+    transition: transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 6px 20px rgba(0,122,255,0.3);
+}
+.btn-primary:active {
+    transform: scale(0.97);
+}
+.btn-secondary {
+    width: 100%;
+    padding: 12px;
     border: none;
-    color: var(--subtext);
-    font-size: 13px;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 14px;
     cursor: pointer;
-    padding: 8px;
-  }
+    font-family: inherit;
+    margin-top: 8px;
+}
 
-  /* Interests */
-  .interests {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+/* 无卡片状态 */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+}
+.empty-dots {
+    display: flex;
+    justify-content: center;
     gap: 8px;
     margin-bottom: 20px;
-  }
-  .interest {
-    padding: 12px 8px;
-    border-radius: 10px;
-    border: 1.5px solid var(--border);
-    background: transparent;
-    text-align: center;
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--subtext);
-    transition: var(--transition);
-  }
-  .interest:hover { border-color: var(--accent); color: var(--accent); }
-  .interest.selected { background: var(--accent); border-color: var(--accent); color: #fff; }
-  .interest .icon { font-size: 20px; display: block; margin-bottom: 4px; }
+}
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--text-secondary);
+    opacity: 0.3;
+    animation: breathe 2s ease-in-out infinite;
+}
+.dot:nth-child(2) { animation-delay: 0.3s; }
+.dot:nth-child(3) { animation-delay: 0.6s; }
+@keyframes breathe {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.25); opacity: 0.7; }
+}
+.empty-text {
+    font-size: 15px;
+    color: var(--text-secondary);
+}
 </style>
 </head>
 <body>
 
+<div class="bg-fluid"></div>
+<div class="bg-glow-1"></div>
+<div class="bg-glow-2"></div>
+
 <div class="app">
   <header class="header">
     <div class="logo">洛川</div>
-    <button class="menu-btn" onclick="showMenu()">☰</button>
+    <div class="header-actions">
+      <button class="icon-btn" onclick="showMenu()">⚙</button>
+    </div>
   </header>
 
-  <div class="mode-bar">
-    <button class="mode-btn active" onclick="setMode('swipe')">滑动</button>
+  <div class="mode-switch" id="modeSwitch">
+    <button class="mode-btn active" onclick="setMode('swipe')">滑动浏览</button>
     <button class="mode-btn" onclick="setMode('list')">列表</button>
   </div>
 
-  <div class="card-wrap" id="cardWrap">
-    <div class="card" id="card">
-      <div class="overlay like" id="overlayLike"><span>LIKE</span></div>
-      <div class="overlay nope" id="overlayNope"><span>PASS</span></div>
-      <div class="card-img" id="cardImg"></div>
-      <div class="card-body">
-        <div class="card-source" id="cardSource">来源</div>
-        <div class="card-title" id="cardTitle">标题</div>
-        <div class="card-summary" id="cardSummary">摘要</div>
-      </div>
-    </div>
+  <div class="card-stack" id="cardStack"></div>
+
+  <div class="action-buttons" id="actionBtns">
+    <button class="action-btn skip" onclick="handleAction('skip')">✕</button>
+    <button class="action-btn info" onclick="handleAction('info')">i</button>
+    <button class="action-btn like" onclick="handleAction('like')">♥</button>
   </div>
 
-  <div class="actions" id="actions">
-    <button class="btn nope" onclick="swipe('nope')">✕</button>
-    <button class="btn like" onclick="swipe('like')">♥</button>
-  </div>
-
-  <div class="list" id="list"></div>
+  <div class="list-view" id="listView"></div>
 </div>
 
-<!-- Onboarding -->
-<div class="modal" id="modal">
-  <div class="modal-box">
+<div class="modal" id="welcomeModal">
+  <div class="modal-content">
     <div class="modal-logo">洛</div>
-    <div class="modal-title">欢迎使用洛川</div>
-    <div class="modal-desc">发现值得关注的资讯</div>
-    <div class="interests" id="interests">
-      <div class="interest" data-v="money"><span class="icon">💰</span>赚钱</div>
-      <div class="interest" data-v="ai"><span class="icon">🤖</span>AI</div>
-      <div class="interest" data-v="career"><span class="icon">💼</span>职场</div>
-      <div class="interest" data-v="tech"><span class="icon">🚀</span>科技</div>
-      <div class="interest" data-v="trend"><span class="icon">🔮</span>趋势</div>
-      <div class="interest" data-v="life"><span class="icon">🎯</span>生活</div>
+    <h2 class="modal-title">欢迎使用洛川</h2>
+    <p class="modal-desc">发现值得关注的资讯，让每一次滑动都充满惊喜。</p>
+    
+    <div class="interests-grid" id="interests">
+      <div class="interest-tag" data-interest="money">
+        <span class="emoji">💰</span>
+        赚钱创业
+      </div>
+      <div class="interest-tag" data-interest="ai">
+        <span class="emoji">🤖</span>
+        AI科技
+      </div>
+      <div class="interest-tag" data-interest="career">
+        <span class="emoji">💼</span>
+        职场发展
+      </div>
+      <div class="interest-tag" data-interest="trend">
+        <span class="emoji">🔮</span>
+        前沿趋势
+      </div>
+      <div class="interest-tag" data-interest="life">
+        <span class="emoji">🎯</span>
+        生活方式
+      </div>
+      <div class="interest-tag" data-interest="design">
+        <span class="emoji">✨</span>
+        设计艺术
+      </div>
     </div>
-    <button class="modal-btn" onclick="startApp()">开始使用</button>
-    <button class="modal-skip" onclick="skipOnboard()">稍后</button>
+    
+    <button class="btn-primary" onclick="startUsing()">开始使用</button>
+    <button class="btn-secondary" onclick="skipWelcome()">稍后再说</button>
   </div>
 </div>
 
 <script>
 const DATA_DIR = './data/';
-let articles = [], index = 0, mode = 'swipe';
-let prefs = {}, dragging = false, startX = 0, curX = 0;
-let card, list;
+let articles = [], currentIndex = 0, mode = 'swipe';
+let prefs = {}, isDragging = false, startX = 0, curX = 0, curY = 0;
+let activeCard = null;
 
 const SOURCE_EMOJI = {
   '抖音': '🎵', 'B站': '📺', '36氪': '💰', '虎嗅': '🐯',
@@ -368,59 +658,66 @@ const SOURCE_EMOJI = {
 };
 
 function getTag(a) {
-  const t = (a.title + a.summary + a.category).toLowerCase();
-  if (/钱|赚|创业/.test(t)) return '赚钱';
-  if (/ai|人工智能/.test(t)) return 'AI';
-  if (/职场|工作/.test(t)) return '职场';
-  if (/科技|技术/.test(t)) return '科技';
-  if (/趋势|未来/.test(t)) return '趋势';
-  return '生活';
+  const t = (a.title + a.summary + (a.category || '')).toLowerCase();
+  if (/钱|赚|创业/.test(t)) return 'money';
+  if (/ai|人工智能/.test(t)) return 'ai';
+  if (/职场|工作/.test(t)) return 'career';
+  if (/趋势|未来/.test(t)) return 'trend';
+  return 'tech';
 }
 
 function loadPrefs() {
-  try { prefs = JSON.parse(localStorage.getItem('luo_prefs')) || {}; } 
-  catch (e) { prefs = {}; }
+  try {
+    prefs = JSON.parse(localStorage.getItem('luo_prefs')) || {};
+  } catch (e) { prefs = {}; }
 }
 
 function savePrefs() {
   localStorage.setItem('luo_prefs', JSON.stringify(prefs));
 }
 
-function init() {
-  loadPrefs();
-  card = document.getElementById('card');
-  list = document.getElementById('list');
-  
-  if (!prefs.done) {
-    showModal();
-    loadData();
-    return;
-  }
-  
-  loadData();
-  setupSwipe();
-  showCard();
+function getSourceEmoji(source) {
+  return SOURCE_EMOJI[source] || '📰';
 }
 
-function showModal() {
-  document.getElementById('modal').classList.add('show');
-  document.querySelectorAll('.interest').forEach(el => {
-    el.onclick = () => el.classList.toggle('selected');
+function init() {
+  loadPrefs();
+  
+  if (!prefs.done) {
+    loadData();
+    document.getElementById('welcomeModal').classList.add('show');
+    setupInterests();
+  } else {
+    loadData();
+  }
+}
+
+function setupInterests() {
+  document.querySelectorAll('.interest-tag').forEach(tag => {
+    tag.addEventListener('click', () => tag.classList.toggle('selected'));
   });
 }
 
-function startApp() {
-  const selected = [...document.querySelectorAll('.interest.selected')].map(el => el.dataset.v);
-  prefs = { done: true, interests: selected, liked: [], weights: {} };
+function startUsing() {
+  const selected = [...document.querySelectorAll('.interest-tag.selected')].map(el => el.dataset.interest);
+  
+  prefs.done = true;
+  prefs.interests = selected;
+  prefs.liked = prefs.liked || [];
+  prefs.weights = prefs.weights || {};
   selected.forEach(v => prefs.weights[v] = 0.8);
+  
   savePrefs();
-  document.getElementById('modal').classList.remove('show');
+  document.getElementById('welcomeModal').classList.remove('show');
 }
 
-function skipOnboard() {
-  prefs = { done: true, interests: [], liked: [], weights: {} };
+function skipWelcome() {
+  prefs.done = true;
+  prefs.liked = prefs.liked || [];
+  prefs.weights = prefs.weights || {};
+  
   savePrefs();
-  document.getElementById('modal').classList.remove('show');
+  document.getElementById('welcomeModal').classList.remove('show');
 }
 
 async function loadData() {
@@ -431,25 +728,28 @@ async function loadData() {
     for (const d of dates.slice(0, 3)) {
       try {
         const r2 = await fetch(DATA_DIR + d.date + '.json');
-        if (r2.ok) articles.push(...(await r2.json()).articles);
+        if (r2.ok) {
+          articles.push(...(await r2.json()).articles);
+        }
       } catch (e) {}
     }
   } catch (e) {}
   
-  if (!articles.length) articles = getSample();
+  if (!articles.length) {
+    articles = getSample();
+  }
+  
   shuffle(articles);
+  renderStack();
+  renderListView();
 }
 
 function getSample() {
   return [
-    { title: '2026年最赚钱的6个副业方向', summary: 'AI内容创作、跨境电商、知识付费等热门方向', source: '36氪', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop', region: '中国' },
-    { title: 'AI时代，如何不被替代', summary: '尚未掌握AI技能的人才是真正危险的', source: '虎嗅', image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop', region: '全球' },
-    { title: '35岁之后的职业选择', summary: '一位40岁转型成功者的完整路径', source: '知乎', image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop', region: '中国' },
-    { title: '短视频创作者的变现指南', summary: '拆解头部博主的变现路径和方法论', source: 'B站', image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop', region: '中国' },
-    { title: '特斯拉开源FSD技术', summary: '特斯拉宣布开源FSD，行业即将巨变', source: '机器之心', image: 'https://images.unsplash.com/photo-1516739698692-576384a8061d?w=800&h=600&fit=crop', region: '全球' },
-    { title: '抖音带货新玩法', summary: '实测AI工具自动生成高质量带货视频', source: '抖音', image: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=600&fit=crop', region: '中国' },
-    { title: '创业风口在哪里', summary: '深度分析当前创投趋势和百亿市场', source: '创业邦', image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop', region: '中国' },
-    { title: '为什么存不下钱', summary: '行为心理学告诉你存钱困难的真相', source: '知乎', image: 'https://images.unsplash.com/photo-1517924194047-0440b560d937?w=800&h=600&fit=crop', region: '中国' }
+    { id: 1, title: '2026年值得关注的6个副业方向', summary: 'AI内容创作、跨境电商、知识付费等多个赛道的深度分析', source: '36氪', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop', category: 'money', region: '中国' },
+    { id: 2, title: 'AI时代，如何不被替代', summary: '未来真正危险的并不是AI，而是那些尚未掌握AI协作技能的人', source: '虎嗅', image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop', category: 'ai', region: '全球' },
+    { id: 3, title: '35岁之后的职业选择', summary: '分享一位40岁转型成功者的经验，从被裁员到找到新赛道的完整路径', source: '知乎', image: 'https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop', category: 'career', region: '中国' },
+    { id: 4, title: '短视频创作者的变现指南', summary: '拆解头部知识博主的变现路径，从定位到内容策略的完整方法论', source: 'B站', image: 'https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=600&fit=crop', category: 'trend', region: '中国' }
   ];
 }
 
@@ -460,143 +760,207 @@ function shuffle(arr) {
   }
 }
 
-function setupSwipe() {
-  card.addEventListener('mousedown', e => start(e));
-  card.addEventListener('touchstart', e => start(e), { passive: false });
-  document.addEventListener('mousemove', move);
-  document.addEventListener('touchmove', move, { passive: false });
-  document.addEventListener('mouseup', end);
-  document.addEventListener('touchend', end);
-}
-
-function start(e) {
-  dragging = true;
-  const p = e.touches ? e.touches[0] : e;
-  startX = p.clientX;
-  card.classList.add('is-dragging');
-  card.classList.remove('animating');
-}
-
-function move(e) {
-  if (!dragging) return;
-  e.preventDefault();
-  const p = e.touches ? e.touches[0] : e;
-  curX = p.clientX - startX;
-  card.style.transform = `translateX(${curX}px) rotate(${curX * 0.04}deg)`;
+function renderStack() {
+  const stack = document.getElementById('cardStack');
+  stack.innerHTML = '';
   
-  const like = document.getElementById('overlayLike');
-  const nope = document.getElementById('overlayNope');
+  if (currentIndex >= articles.length) {
+    stack.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+        <p class="empty-text">今日内容已浏览完毕<br>明天会有新内容哦～</p>
+      </div>
+    `;
+    document.getElementById('actionBtns').style.display = 'none';
+    return;
+  }
   
-  if (curX > 50) {
-    like.style.opacity = Math.min(curX / 100, 1);
-    nope.style.opacity = 0;
-  } else if (curX < -50) {
-    nope.style.opacity = Math.min(Math.abs(curX) / 100, 1);
-    like.style.opacity = 0;
-  } else {
-    like.style.opacity = nope.style.opacity = 0;
+  document.getElementById('actionBtns').style.display = 'flex';
+  
+  for (let i = 2; i >= 0; i--) {
+    const idx = currentIndex + i;
+    if (idx >= articles.length) continue;
+    
+    const card = createCard(articles[idx], i === 0);
+    stack.appendChild(card);
+    
+    if (i === 0) {
+      activeCard = card;
+      setupDrag(card);
+    }
   }
 }
 
-function end() {
-  if (!dragging) return;
-  dragging = false;
-  card.classList.remove('is-dragging');
-  card.classList.add('animating');
+function createCard(a, isTop) {
+  const div = document.createElement('div');
+  div.className = 'stack-card';
+  if (isTop) div.style.zIndex = '10';
   
-  if (curX > 100) doSwipe('like');
-  else if (curX < -100) doSwipe('nope');
-  else resetCard();
+  div.innerHTML = `
+    <div class="overlay like">
+      <span class="overlay-icon">♥</span>
+    </div>
+    <div class="overlay skip">
+      <span class="overlay-icon">✕</span>
+    </div>
+    <div class="card-inner">
+      <div class="card-image" style="background-image:url('${a.image}')"></div>
+      <div class="card-source">
+        <span>${getSourceEmoji(a.source)}</span>
+        <span>${a.source}</span>
+        <span style="margin-left:auto;opacity:0.6;">刚刚</span>
+      </div>
+      <h3 class="card-title">${a.title}</h3>
+      <p class="card-summary">${a.summary}</p>
+    </div>
+  `;
+  
+  return div;
 }
 
-function resetCard() {
-  card.style.transform = 'translateX(0)';
-  document.getElementById('overlayLike').style.opacity = 0;
-  document.getElementById('overlayNope').style.opacity = 0;
+function setupDrag(card) {
+  card.addEventListener('mousedown', dragStart);
+  card.addEventListener('touchstart', dragStart, { passive: false });
+  
+  document.addEventListener('mousemove', dragMove);
+  document.addEventListener('touchmove', dragMove, { passive: false });
+  
+  document.addEventListener('mouseup', dragEnd);
+  document.addEventListener('touchend', dragEnd);
 }
 
-function swipe(dir) {
-  if (mode !== 'swipe') return;
-  doSwipe(dir);
+function dragStart(e) {
+  if (!activeCard) return;
+  
+  isDragging = true;
+  const p = e.touches ? e.touches[0] : e;
+  startX = p.clientX;
+  curX = 0;
+  curY = 0;
+  
+  activeCard.classList.add('dragging');
 }
 
-function doSwipe(dir) {
-  const targetX = dir === 'like' ? window.innerWidth : -window.innerWidth;
-  card.style.transform = `translateX(${targetX}px) rotate(${dir === 'like' ? 30 : -30}deg)`;
-  card.style.opacity = '0';
+function dragMove(e) {
+  if (!isDragging || !activeCard) return;
+  e.preventDefault();
+  
+  const p = e.touches ? e.touches[0] : e;
+  curX = p.clientX - startX;
+  curY = (e.touches ? e.touches[0].clientY : e.clientY) - (e.touches ? startY : startY);
+  
+  const rotate = curX * 0.04;
+  activeCard.style.transform = `translate(${curX}px, ${curY}px) rotate(${rotate}deg)`;
+  
+  const like = activeCard.querySelector('.overlay.like');
+  const skip = activeCard.querySelector('.overlay.skip');
+  
+  if (curX > 50) {
+    like.style.opacity = Math.min(curX / 150, 1);
+    skip.style.opacity = 0;
+  } else if (curX < -50) {
+    skip.style.opacity = Math.min(Math.abs(curX) / 150, 1);
+    like.style.opacity = 0;
+  } else {
+    like.style.opacity = skip.style.opacity = 0;
+  }
+}
+
+function dragEnd() {
+  if (!isDragging || !activeCard) return;
+  isDragging = false;
+  activeCard.classList.remove('dragging');
+  
+  const threshold = window.innerWidth * 0.3;
+  
+  if (curX > threshold) {
+    flyAway('like');
+  } else if (curX < -threshold) {
+    flyAway('skip');
+  } else {
+    snapBack();
+  }
+}
+
+function snapBack() {
+  if (!activeCard) return;
+  
+  activeCard.style.transform = '';
+  activeCard.querySelector('.overlay.like').style.opacity = '0';
+  activeCard.querySelector('.overlay.skip').style.opacity = '0';
+}
+
+function flyAway(action) {
+  if (!activeCard) return;
+  
+  const targetX = action === 'like' ? window.innerWidth + 100 : -window.innerWidth - 100;
+  const rotate = action === 'like' ? 20 : -20;
+  
+  activeCard.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.3s';
+  activeCard.style.transform = `translate(${targetX}px, ${curY}px) rotate(${rotate}deg)`;
+  activeCard.style.opacity = '0';
+  
+  if (navigator.vibrate) navigator.vibrate(10);
   
   setTimeout(() => {
-    const a = articles[index];
+    const a = articles[currentIndex];
     const tag = getTag(a);
     
-    if (dir === 'like') {
-      prefs.liked.push({ id: a.title, tag });
+    if (action === 'like') {
+      prefs.liked.push({ id: a.id || a.title, tag });
       prefs.weights[tag] = Math.min((prefs.weights[tag] || 0.5) + 0.1, 1);
     } else {
       prefs.weights[tag] = Math.max((prefs.weights[tag] || 0.5) - 0.05, 0.1);
     }
     savePrefs();
     
-    index++;
-    card.style.opacity = '1';
-    
-    if (index >= articles.length) showEmpty();
-    else showCard();
-  }, 300);
+    currentIndex++;
+    activeCard = null;
+    renderStack();
+  }, 350);
 }
 
-function showCard() {
-  if (index >= articles.length) { showEmpty(); return; }
+function handleAction(action) {
+  if (mode !== 'swipe' || currentIndex >= articles.length) return;
   
-  const a = articles[index];
-  document.getElementById('cardImg').style.backgroundImage = `url(${a.image})`;
-  document.getElementById('cardSource').textContent = (SOURCE_EMOJI[a.source] || '📰') + ' ' + a.source;
-  document.getElementById('cardTitle').textContent = a.title;
-  document.getElementById('cardSummary').textContent = a.summary;
-  
-  resetCard();
-  
-  card.onclick = () => {
-    if (a.url && a.url !== '#') window.open(a.url, '_blank');
-  };
-}
-
-function showEmpty() {
-  document.getElementById('cardWrap').innerHTML = `
-    <div class="empty">
-      <div class="empty-icon">✓</div>
-      <div class="empty-text">今日内容已浏览完毕</div>
-    </div>
-  `;
-  document.getElementById('actions').style.display = 'none';
+  if (action === 'like' || action === 'skip') {
+    curX = action === 'like' ? 200 : -200;
+    flyAway(action);
+  } else if (action === 'info') {
+    const a = articles[currentIndex];
+    if (a && a.url && a.url !== '#') {
+      window.open(a.url, '_blank');
+    } else {
+      alert('详细内容开发中...');
+    }
+  }
 }
 
 function setMode(m) {
   mode = m;
-  document.querySelectorAll('.mode-btn').forEach(b => {
-    b.classList.toggle('active', b.textContent.includes(m === 'swipe' ? '滑动' : '列表'));
+  
+  document.querySelectorAll('.mode-btn').forEach((btn, i) => {
+    btn.classList.toggle('active', 
+      (m === 'swipe' && i === 0) || (m === 'list' && i === 1));
   });
   
-  if (m === 'swipe') {
-    document.getElementById('cardWrap').style.display = 'block';
-    document.getElementById('actions').style.display = 'flex';
-    list.classList.remove('show');
-  } else {
-    document.getElementById('cardWrap').style.display = 'none';
-    document.getElementById('actions').style.display = 'none';
-    list.classList.add('show');
-    renderList();
-  }
+  document.getElementById('cardStack').style.display = m === 'swipe' ? 'flex' : 'none';
+  document.getElementById('actionBtns').style.display = m === 'swipe' ? 'flex' : 'none';
+  document.getElementById('listView').classList.toggle('show', m === 'list');
 }
 
-function renderList() {
+function renderListView() {
+  const list = document.getElementById('listView');
   list.innerHTML = articles.map(a => `
-    <div class="list-item" onclick="${a.url ? `window.open('${a.url}', '_blank')` : ''}">
-      <div class="list-img" style="background-image:url(${a.image})"></div>
+    <div class="list-item" onclick="${a.url && a.url !== '#' ? `window.open('${a.url}', '_blank')` : ''}">
+      <div class="list-img" style="background-image:url('${a.image}')"></div>
       <div class="list-content">
-        <div class="list-source">${a.source}</div>
+        <div class="list-source">${getSourceEmoji(a.source)} ${a.source}</div>
         <div class="list-title">${a.title}</div>
-        <div class="list-meta">${a.region || '全球'}</div>
       </div>
     </div>
   `).join('');
@@ -605,6 +969,11 @@ function renderList() {
 function showMenu() {
   alert('设置功能开发中...');
 }
+
+let startY = 0;
+document.addEventListener('touchstart', e => {
+  startY = e.touches[0].clientY;
+}, { passive: true });
 
 init();
 </script>
