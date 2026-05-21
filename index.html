@@ -651,6 +651,7 @@ const DATA_DIR = './data/';
 let articles = [], currentIndex = 0, mode = 'swipe';
 let prefs = {}, isDragging = false, startX = 0, curX = 0, curY = 0;
 let activeCard = null;
+let allArticles = []; // 保存所有文章
 
 const SOURCE_EMOJI = {
   '抖音': '🎵', 'B站': '📺', '36氪': '💰', '虎嗅': '🐯',
@@ -729,19 +730,32 @@ async function loadData() {
       try {
         const r2 = await fetch(DATA_DIR + d.date + '.json');
         if (r2.ok) {
-          articles.push(...(await r2.json()).articles);
+          allArticles.push(...(await r2.json()).articles);
         }
       } catch (e) {}
     }
   } catch (e) {}
   
-  if (!articles.length) {
-    articles = getSample();
+  if (!allArticles.length) {
+    allArticles = getSample();
   }
   
+  // 按模式筛选
+  updateArticlesForMode();
   shuffle(articles);
   renderStack();
   renderListView();
+}
+
+function updateArticlesForMode() {
+  if (mode === 'swipe') {
+    // 滑动模式只显示B站内容
+    articles = allArticles.filter(a => a.source === 'B站');
+  } else {
+    // 列表模式显示全部
+    articles = [...allArticles];
+  }
+  currentIndex = 0;
 }
 
 function getSample() {
@@ -948,9 +962,21 @@ function setMode(m) {
       (m === 'swipe' && i === 0) || (m === 'list' && i === 1));
   });
   
+  // 更新文章筛选
+  updateArticlesForMode();
+  
+  // 切换显示
   document.getElementById('cardStack').style.display = m === 'swipe' ? 'flex' : 'none';
   document.getElementById('actionBtns').style.display = m === 'swipe' ? 'flex' : 'none';
   document.getElementById('listView').classList.toggle('show', m === 'list');
+  
+  // 重新渲染
+  if (m === 'swipe') {
+    shuffle(articles);
+    renderStack();
+  } else {
+    renderListView();
+  }
 }
 
 function renderListView() {
