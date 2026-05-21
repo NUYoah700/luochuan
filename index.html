@@ -8,388 +8,98 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg: #f5f5f7;
-    --card-bg: #ffffff;
-    --text-primary: #1d1d1f;
-    --text-secondary: #6e6e73;
-    --text-muted: #a1a1a6;
+    --bg: #ffffff;
+    --text: #1d1d1f;
+    --subtext: #86868b;
     --accent: #0071e3;
-    --accent-hover: #0077ed;
-    --border: #e6e6e6;
-    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.04);
-    --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --border: #d2d2d7;
     --radius: 16px;
-    --radius-sm: 10px;
-    --transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    --transition: 0.2s;
   }
 
-  html { scroll-behavior: smooth; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
-      "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", sans-serif;
     background: var(--bg);
     min-height: 100vh;
+    color: var(--text);
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-    color: var(--text-primary);
   }
 
-  .app { 
-    max-width: 430px; 
-    margin: 0 auto; 
-    padding: 0 20px 100px;
-  }
+  .app { max-width: 390px; margin: 0 auto; padding: 0 0 80px; }
 
-  /* ── Header ── */
+  /* Header */
   .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 24px 0 20px;
-    position: sticky;
-    top: 0;
-    background: rgba(245, 245, 247, 0.95);
-    backdrop-filter: blur(20px);
-    z-index: 100;
+    padding: 20px 20px;
+    border-bottom: 1px solid var(--border);
   }
-
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-  }
-
-  .brand-logo {
-    width: 36px;
-    height: 36px;
-    background: linear-gradient(135deg, #000000 0%, #333333 100%);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: 1px;
-  }
-
-  .brand-name {
+  .logo {
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 1px;
-    color: var(--text-primary);
   }
-
-  .header-right {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-  }
-
-  .header-btn {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
+  .menu-btn {
+    width: 32px;
+    height: 32px;
     border: none;
     background: transparent;
-    color: var(--text-secondary);
+    font-size: 18px;
     cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-  }
-  .header-btn:hover { background: rgba(0, 0, 0, 0.05); }
-
-  /* ── Mode Switch ── */
-  .mode-switch {
-    display: flex;
-    gap: 8px;
-    padding: 6px;
-    background: var(--card-bg);
-    border-radius: 12px;
-    box-shadow: var(--shadow-light);
-    margin-bottom: 16px;
-  }
-  .mode-btn {
-    flex: 1;
-    padding: 10px 16px;
-    border-radius: 8px;
-    border: none;
-    background: transparent;
-    color: var(--text-secondary);
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--transition);
-    font-family: inherit;
-  }
-  .mode-btn.active {
-    background: var(--accent);
-    color: #fff;
-  }
-  .mode-btn:hover:not(.active) {
-    background: rgba(0, 0, 0, 0.05);
+    color: var(--text);
   }
 
-  /* ── Stats ── */
-  .stats {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 12px 0 24px;
+  /* Card */
+  .card-wrap {
+    padding: 20px;
   }
-  .stat-item {
-    text-align: center;
-  }
-  .stat-value {
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--text-primary);
-    line-height: 1;
-  }
-  .stat-label {
-    font-size: 12px;
-    color: var(--text-muted);
-    margin-top: 4px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  /* ── List View ── */
-  .list-view {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .list-item {
-    background: var(--card-bg);
-    border-radius: var(--radius-sm);
-    padding: 16px;
-    display: flex;
-    gap: 16px;
-    box-shadow: var(--shadow-light);
-    cursor: pointer;
-    transition: var(--transition);
-    border: 1px solid rgba(0, 0, 0, 0.04);
-  }
-  .list-item:hover {
-    box-shadow: var(--shadow-medium);
-    transform: translateY(-2px);
-  }
-  .list-item-image {
-    width: 100px;
-    height: 80px;
-    border-radius: 8px;
-    background-size: cover;
-    background-position: center;
-    flex-shrink: 0;
-  }
-  .list-item-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-width: 0;
-  }
-  .list-item-top {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 6px;
-  }
-  .list-item-source {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .list-item-tag {
-    font-size: 10px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 12px;
-    background: var(--bg);
-    color: var(--text-secondary);
-  }
-  .list-item-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text-primary);
-    line-height: 1.3;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    margin-bottom: 6px;
-  }
-  .list-item-meta {
-    display: flex;
-    gap: 12px;
-    font-size: 11px;
-    color: var(--text-muted);
-  }
-
-  /* ── Card Container ── */
-  .card-stack {
-    position: relative;
-    height: 520px;
-    margin-bottom: 24px;
-  }
-
-  /* ── Card ── */
   .card {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: var(--card-bg);
+    position: relative;
     border-radius: var(--radius);
     overflow: hidden;
     cursor: grab;
     user-select: none;
-    transition: var(--transition);
-    box-shadow: var(--shadow-medium);
-    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.2s;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
   }
   .card:active { cursor: grabbing; }
   .card.is-dragging { transition: none; }
-  .card.animating { transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.5s; }
+  .card.animating { transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.4s; }
 
-  /* Card Image */
-  .card-image {
+  .card-img {
     width: 100%;
-    height: 60%;
+    height: 320px;
     background-size: cover;
     background-position: center;
   }
 
-  /* Card Content */
-  .card-content {
-    padding: 24px;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  .card-body {
+    padding: 16px;
   }
-
-  .card-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 16px;
-  }
-
   .card-source {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .card-source-icon {
-    width: 28px;
-    height: 28px;
-    border-radius: 8px;
-    background: var(--bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-  }
-  .card-source-name {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text-secondary);
-  }
-
-  .card-tag {
-    font-size: 11px;
-    font-weight: 600;
-    padding: 4px 10px;
-    border-radius: 20px;
-    background: var(--bg);
-    color: var(--text-secondary);
+    font-size: 12px;
+    color: var(--subtext);
+    margin-bottom: 6px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
-
   .card-title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 1.35;
-    color: var(--text-primary);
     margin-bottom: 8px;
-    flex: 1;
   }
-
   .card-summary {
     font-size: 14px;
+    color: var(--subtext);
     line-height: 1.5;
-    color: var(--text-secondary);
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
   }
 
-  .card-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding-top: 16px;
-    border-top: 1px solid var(--border);
-    margin-top: 12px;
-  }
-
-  .card-meta {
-    display: flex;
-    gap: 10px;
-    font-size: 12px;
-    color: var(--text-muted);
-  }
-  .card-meta-item {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
-
-  .card-time {
-    font-size: 12px;
-    color: var(--text-muted);
-  }
-
-  /* No Image Placeholder */
-  .card-no-image {
-    width: 100%;
-    height: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 16px;
-    background: linear-gradient(135deg, #f8f8fa 0%, #e8e8ed 100%);
-  }
-  .card-no-image-icon {
-    font-size: 56px;
-    opacity: 0.3;
-  }
-  .card-no-image-text {
-    font-size: 14px;
-    color: var(--text-secondary);
-    font-weight: 500;
-  }
-
-  /* Swipe Overlays */
-  .card-overlay {
+  /* Overlays */
+  .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: var(--radius);
+    top: 0; left: 0; right: 0; bottom: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -397,974 +107,503 @@
     transition: opacity 0.15s;
     pointer-events: none;
   }
-  .card-overlay.like {
-    background: rgba(0, 113, 227, 0.12);
-  }
-  .card-overlay.nope {
-    background: rgba(237, 66, 69, 0.12);
-  }
-  .card-overlay-label {
-    font-size: 32px;
+  .overlay.like { background: rgba(0, 113, 227, 0.15); }
+  .overlay.nope { background: rgba(237, 66, 69, 0.15); }
+  .overlay span {
+    font-size: 36px;
     font-weight: 700;
     letter-spacing: 4px;
-    text-transform: uppercase;
-    padding: 12px 32px;
-    border-radius: 10px;
+    padding: 16px 32px;
+    border-radius: 8px;
     border: 4px solid;
-    transform: rotate(-15deg);
   }
-  .card-overlay.like .card-overlay-label {
-    color: var(--accent);
-    border-color: var(--accent);
-  }
-  .card-overlay.nope .card-overlay-label {
-    color: #ed4245;
-    border-color: #ed4245;
-  }
+  .overlay.like span { color: var(--accent); border-color: var(--accent); }
+  .overlay.nope span { color: #ed4245; border-color: #ed4245; }
 
-  /* ── Action Buttons ── */
+  /* Buttons */
   .actions {
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding: 8px 0;
+    padding: 16px 0;
   }
-
-  .action-btn {
-    width: 56px;
-    height: 56px;
+  .btn {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    border: none;
+    border: 2px solid;
+    background: #fff;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 24px;
     transition: var(--transition);
-    background: var(--card-bg);
-    box-shadow: var(--shadow-light);
-  }
-  .action-btn:hover {
-    transform: scale(1.1);
-  }
-  .action-btn.nope {
-    color: #ed4245;
-    border: 2px solid #ed4245;
-  }
-  .action-btn.nope:hover {
-    background: #ed4245;
-    color: #fff;
-  }
-  .action-btn.super {
-    width: 44px;
-    height: 44px;
-    color: #ffd60a;
-    border: 2px solid #ffd60a;
-    font-size: 18px;
-  }
-  .action-btn.super:hover {
-    background: #ffd60a;
-    color: #fff;
-  }
-  .action-btn.like {
-    color: var(--accent);
-    border: 2px solid var(--accent);
-  }
-  .action-btn.like:hover {
-    background: var(--accent);
-    color: #fff;
-  }
-
-  /* ── Empty State ── */
-  .empty-state {
-    background: var(--card-bg);
-    border-radius: var(--radius);
-    padding: 56px 32px;
-    text-align: center;
-    box-shadow: var(--shadow-medium);
-    border: 1px solid rgba(0, 0, 0, 0.04);
-  }
-  .empty-icon { font-size: 64px; margin-bottom: 20px; opacity: 0.2; }
-  .empty-title {
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 8px;
-  }
-  .empty-desc {
-    font-size: 14px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 24px;
-  }
-  .empty-btn {
-    padding: 12px 32px;
-    border-radius: 24px;
-    border: none;
-    background: var(--accent);
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--transition);
-    font-family: inherit;
-  }
-  .empty-btn:hover { background: var(--accent-hover); }
-
-  /* ── Onboarding Modal ── */
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 24px;
+  }
+  .btn:hover { transform: scale(1.1); }
+  .btn.nope { color: #ed4245; border-color: #ed4245; }
+  .btn.nope:hover { background: #ed4245; color: #fff; }
+  .btn.like { color: #34c759; border-color: #34c759; }
+  .btn.like:hover { background: #34c759; color: #fff; }
+
+  /* List */
+  .list { display: none; padding: 16px; }
+  .list.show { display: block; }
+  .list-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+  }
+  .list-item:last-child { border-bottom: none; }
+  .list-item:hover .list-title { color: var(--accent); }
+  .list-img {
+    width: 72px;
+    height: 72px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+  }
+  .list-content { flex: 1; min-width: 0; }
+  .list-source {
+    font-size: 11px;
+    color: var(--subtext);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+  .list-title {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.35;
+    margin-bottom: 4px;
+    transition: color 0.2s;
+  }
+  .list-meta {
+    font-size: 12px;
+    color: var(--subtext);
+  }
+
+  /* Mode Toggle */
+  .mode-bar {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+  }
+  .mode-btn {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--subtext);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: var(--transition);
+  }
+  .mode-btn.active {
+    color: var(--text);
+    border-bottom-color: var(--accent);
+  }
+
+  /* Empty */
+  .empty {
+    text-align: center;
+    padding: 60px 20px;
+  }
+  .empty-icon { font-size: 48px; opacity: 0.3; margin-bottom: 12px; }
+  .empty-text { font-size: 16px; color: var(--subtext); }
+
+  /* Modal */
+  .modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000;
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
   }
-  .modal-overlay.show {
-    opacity: 1;
-    visibility: visible;
-  }
-  .modal {
-    background: var(--card-bg);
+  .modal.show { opacity: 1; visibility: visible; }
+  .modal-box {
+    background: #fff;
     border-radius: var(--radius);
-    padding: 40px 32px 32px;
-    max-width: 380px;
+    padding: 32px;
+    max-width: 340px;
     width: 100%;
-    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.2);
-    transform: scale(0.95) translateY(10px);
+    text-align: center;
+    transform: scale(0.95);
     transition: var(--transition);
   }
-  .modal-overlay.show .modal {
-    transform: scale(1) translateY(0);
-  }
-  .modal-header {
-    text-align: center;
-    margin-bottom: 28px;
-  }
+  .modal.show .modal-box { transform: scale(1); }
   .modal-logo {
-    width: 64px;
-    height: 64px;
-    background: linear-gradient(135deg, #000 0%, #333 100%);
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    font-weight: 700;
+    width: 56px;
+    height: 56px;
+    background: var(--text);
+    border-radius: 14px;
     color: #fff;
-    margin: 0 auto 16px;
-  }
-  .modal-title {
     font-size: 24px;
     font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 8px;
-  }
-  .modal-desc {
-    font-size: 14px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-  }
-  .modal-steps {
-    margin-bottom: 28px;
-  }
-  .modal-step {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 16px;
-    background: var(--bg);
-    border-radius: var(--radius-sm);
-    margin-bottom: 12px;
-  }
-  .modal-step-num {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: var(--accent);
-    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    margin: 0 auto 16px;
+  }
+  .modal-title { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+  .modal-desc { font-size: 14px; color: var(--subtext); margin-bottom: 24px; }
+  .modal-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    font-size: 15px;
     font-weight: 600;
-    flex-shrink: 0;
+    cursor: pointer;
+    font-family: inherit;
+    margin-bottom: 8px;
   }
-  .modal-step-text {
-    font-size: 14px;
-    color: var(--text-primary);
-    font-weight: 500;
+  .modal-btn:hover { opacity: 0.9; }
+  .modal-skip {
+    background: transparent;
+    border: none;
+    color: var(--subtext);
+    font-size: 13px;
+    cursor: pointer;
+    padding: 8px;
   }
-  .modal-interests {
-    margin-bottom: 24px;
-  }
-  .interests-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text-secondary);
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  .interests-grid {
+
+  /* Interests */
+  .interests {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
+    margin-bottom: 20px;
   }
-  .interest-chip {
+  .interest {
     padding: 12px 8px;
-    border-radius: 12px;
+    border-radius: 10px;
     border: 1.5px solid var(--border);
     background: transparent;
     text-align: center;
     cursor: pointer;
-    transition: var(--transition);
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text-secondary);
-  }
-  .interest-chip:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-  .interest-chip.selected {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #fff;
-  }
-  .interest-chip .emoji {
-    font-size: 20px;
-    display: block;
-    margin-bottom: 4px;
-  }
-  .modal-btn-primary {
-    width: 100%;
-    padding: 14px;
-    border-radius: 14px;
-    border: none;
-    background: var(--accent);
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-    font-family: inherit;
-  }
-  .modal-btn-primary:hover {
-    background: var(--accent-hover);
-  }
-  .modal-btn-secondary {
-    width: 100%;
-    padding: 12px;
-    border-radius: 14px;
-    border: none;
-    background: transparent;
-    color: var(--text-secondary);
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--transition);
-    font-family: inherit;
-    margin-top: 8px;
-  }
-  .modal-btn-secondary:hover {
-    color: var(--text-primary);
-  }
-
-  /* ── Footer ── */
-  .footer {
-    text-align: center;
-    padding: 32px 0 0;
-    color: var(--text-muted);
     font-size: 12px;
+    font-weight: 500;
+    color: var(--subtext);
+    transition: var(--transition);
   }
-
-  @media (max-width: 480px) {
-    .app { padding: 0 16px 80px; }
-    .card-stack { height: 480px; }
-    .card-title { font-size: 18px; }
-    .action-btn { width: 52px; height: 52px; font-size: 22px; }
-    .action-btn.super { width: 40px; height: 40px; font-size: 16px; }
-    .interests-grid { grid-template-columns: repeat(2, 1fr); }
-  }
+  .interest:hover { border-color: var(--accent); color: var(--accent); }
+  .interest.selected { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .interest .icon { font-size: 20px; display: block; margin-bottom: 4px; }
 </style>
 </head>
 <body>
 
 <div class="app">
   <header class="header">
-    <div class="brand">
-      <div class="brand-logo">洛</div>
-      <div class="brand-name">洛川</div>
-    </div>
-    <div class="header-right">
-      <button class="header-btn" onclick="showPreferences()">⚙️</button>
-    </div>
+    <div class="logo">洛川</div>
+    <button class="menu-btn" onclick="showMenu()">☰</button>
   </header>
 
-  <div class="mode-switch">
-    <button class="mode-btn active" data-mode="swipe" onclick="switchMode('swipe')">🎴 滑动</button>
-    <button class="mode-btn" data-mode="list" onclick="switchMode('list')">📋 列表</button>
+  <div class="mode-bar">
+    <button class="mode-btn active" onclick="setMode('swipe')">滑动</button>
+    <button class="mode-btn" onclick="setMode('list')">列表</button>
   </div>
 
-  <div class="stats">
-    <div class="stat-item">
-      <div class="stat-value" id="stat-liked">0</div>
-      <div class="stat-label">Liked</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-value" id="stat-remaining">0</div>
-      <div class="stat-label">Left</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-value" id="stat-nope">0</div>
-      <div class="stat-label">Passed</div>
-    </div>
-  </div>
-
-  <div class="card-stack" id="cardStack">
+  <div class="card-wrap" id="cardWrap">
     <div class="card" id="card">
-      <div class="card-overlay like" id="overlayLike">
-        <div class="card-overlay-label">LIKE</div>
-      </div>
-      <div class="card-overlay nope" id="overlayNope">
-        <div class="card-overlay-label">PASS</div>
-      </div>
-      
-      <div class="card-no-image" id="cardNoImage">
-        <div class="card-no-image-icon">📰</div>
-        <div class="card-no-image-text">加载中...</div>
-      </div>
-      <div class="card-image" id="cardImage" style="display:none;"></div>
-      
-      <div class="card-content">
-        <div>
-          <div class="card-top">
-            <div class="card-source">
-              <div class="card-source-icon" id="cardSourceIcon">📰</div>
-              <div class="card-source-name" id="cardSource">来源</div>
-            </div>
-            <div class="card-tag" id="cardTag">热门</div>
-          </div>
-          <div class="card-title" id="cardTitle">标题加载中...</div>
-          <div class="card-summary" id="cardSummary">摘要内容...</div>
-        </div>
-        <div class="card-bottom">
-          <div class="card-meta" id="cardMeta">
-            <span class="card-meta-item">📍 全球</span>
-          </div>
-          <div class="card-time" id="cardTime">刚刚</div>
-        </div>
+      <div class="overlay like" id="overlayLike"><span>LIKE</span></div>
+      <div class="overlay nope" id="overlayNope"><span>PASS</span></div>
+      <div class="card-img" id="cardImg"></div>
+      <div class="card-body">
+        <div class="card-source" id="cardSource">来源</div>
+        <div class="card-title" id="cardTitle">标题</div>
+        <div class="card-summary" id="cardSummary">摘要</div>
       </div>
     </div>
   </div>
 
   <div class="actions" id="actions">
-    <button class="action-btn nope" onclick="handleSwipe('nope')">✕</button>
-    <button class="action-btn super" onclick="handleSwipe('super')">★</button>
-    <button class="action-btn like" onclick="handleSwipe('like')">♥</button>
+    <button class="btn nope" onclick="swipe('nope')">✕</button>
+    <button class="btn like" onclick="swipe('like')">♥</button>
   </div>
 
-  <div class="list-view" id="listView" style="display:none;"></div>
-
-  <div class="footer">每日清晨 06:00 自动更新</div>
+  <div class="list" id="list"></div>
 </div>
 
-<!-- Onboarding Modal -->
-<div class="modal-overlay" id="onboardingModal">
-  <div class="modal">
-    <div class="modal-header">
-      <div class="modal-logo">洛</div>
-      <div class="modal-title">欢迎使用洛川</div>
-      <div class="modal-desc">发现值得关注的资讯，让阅读更高效</div>
+<!-- Onboarding -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="modal-logo">洛</div>
+    <div class="modal-title">欢迎使用洛川</div>
+    <div class="modal-desc">发现值得关注的资讯</div>
+    <div class="interests" id="interests">
+      <div class="interest" data-v="money"><span class="icon">💰</span>赚钱</div>
+      <div class="interest" data-v="ai"><span class="icon">🤖</span>AI</div>
+      <div class="interest" data-v="career"><span class="icon">💼</span>职场</div>
+      <div class="interest" data-v="tech"><span class="icon">🚀</span>科技</div>
+      <div class="interest" data-v="trend"><span class="icon">🔮</span>趋势</div>
+      <div class="interest" data-v="life"><span class="icon">🎯</span>生活</div>
     </div>
-    
-    <div class="modal-steps">
-      <div class="modal-step">
-        <div class="modal-step-num">1</div>
-        <div class="modal-step-text">向右滑动，标记喜欢的内容</div>
-      </div>
-      <div class="modal-step">
-        <div class="modal-step-num">2</div>
-        <div class="modal-step-text">向左滑动，跳过不感兴趣的</div>
-      </div>
-      <div class="modal-step">
-        <div class="modal-step-num">3</div>
-        <div class="modal-step-text">AI 会学习你的喜好，越用越懂你</div>
-      </div>
-    </div>
-    
-    <div class="modal-interests">
-      <div class="interests-title">选择你的兴趣</div>
-      <div class="interests-grid" id="interestsGrid">
-        <div class="interest-chip" data-interest="money"><span class="emoji">💰</span>赚钱</div>
-        <div class="interest-chip" data-interest="ai"><span class="emoji">🤖</span>AI</div>
-        <div class="interest-chip" data-interest="career"><span class="emoji">💼</span>职场</div>
-        <div class="interest-chip" data-interest="tech"><span class="emoji">🚀</span>科技</div>
-        <div class="interest-chip" data-interest="trend"><span class="emoji">🔮</span>趋势</div>
-        <div class="interest-chip" data-interest="life"><span class="emoji">🎯</span>生活</div>
-      </div>
-    </div>
-    
-    <button class="modal-btn-primary" onclick="completeOnboarding()">开始使用</button>
-    <button class="modal-btn-secondary" onclick="skipOnboarding()">稍后选择</button>
+    <button class="modal-btn" onclick="startApp()">开始使用</button>
+    <button class="modal-skip" onclick="skipOnboard()">稍后</button>
   </div>
 </div>
 
 <script>
 const DATA_DIR = './data/';
+let articles = [], index = 0, mode = 'swipe';
+let prefs = {}, dragging = false, startX = 0, curX = 0;
+let card, list;
 
-let allArticles = [];
-let currentIndex = 0;
-let likedCount = 0;
-let nopeCount = 0;
-let userPreferences = {};
-let isDragging = false;
-let startX = 0, startY = 0, currentX = 0, currentY = 0;
-let cardEl;
-
-const SOURCE_ICONS = {
-  '抖音': '🎵', 'B站': '📺', '快手': '🎬',
-  '36氪': '💼', '虎嗅': '🐯', '知乎': '💬',
-  '少数派': '✌️', '创业邦': '🚀', '机器之心': '🧠',
-  '量子位': '⚛️', 'Hacker News': '🔶', 'Reddit': '🤖'
+const SOURCE_EMOJI = {
+  '抖音': '🎵', 'B站': '📺', '36氪': '💰', '虎嗅': '🐯',
+  '知乎': '💬', '机器之心': '🧠', '量子位': '⚛️'
 };
 
-function classifyTag(article) {
-  const text = (article.title + ' ' + (article.summary || '') + ' ' + (article.category || '')).toLowerCase();
+function getTag(a) {
+  const t = (a.title + a.summary + a.category).toLowerCase();
+  if (/钱|赚|创业/.test(t)) return '赚钱';
+  if (/ai|人工智能/.test(t)) return 'AI';
+  if (/职场|工作/.test(t)) return '职场';
+  if (/科技|技术/.test(t)) return '科技';
+  if (/趋势|未来/.test(t)) return '趋势';
+  return '生活';
+}
+
+function loadPrefs() {
+  try { prefs = JSON.parse(localStorage.getItem('luo_prefs')) || {}; } 
+  catch (e) { prefs = {}; }
+}
+
+function savePrefs() {
+  localStorage.setItem('luo_prefs', JSON.stringify(prefs));
+}
+
+function init() {
+  loadPrefs();
+  card = document.getElementById('card');
+  list = document.getElementById('list');
   
-  if (text.includes('钱') || text.includes('赚') || text.includes('创业')) return '赚钱';
-  if (text.includes('ai') || text.includes('人工智能')) return 'AI';
-  if (text.includes('职场') || text.includes('工作')) return '职场';
-  if (text.includes('科技') || text.includes('技术')) return '科技';
-  if (text.includes('趋势') || text.includes('未来')) return '趋势';
-  return '资讯';
-}
-
-function loadPreferences() {
-  try {
-    const saved = localStorage.getItem('luochuan_prefs');
-    if (saved) {
-      userPreferences = JSON.parse(saved);
-      return true;
-    }
-  } catch (e) { console.error('加载偏好失败:', e); }
-  return false;
-}
-
-function savePreferences() {
-  try {
-    localStorage.setItem('luochuan_prefs', JSON.stringify(userPreferences));
-  } catch (e) { console.error('保存偏好失败:', e); }
-}
-
-function updateStats() {
-  document.getElementById('stat-liked').textContent = likedCount;
-  document.getElementById('stat-nope').textContent = nopeCount;
-  document.getElementById('stat-remaining').textContent = Math.max(0, allArticles.length - currentIndex);
-}
-
-async function init() {
-  loadPreferences();
-  
-  if (!userPreferences.onboarding_complete) {
-    showOnboarding();
-    loadArticles();
+  if (!prefs.done) {
+    showModal();
+    loadData();
     return;
   }
   
-  await loadArticles();
-  setupSwipeCard();
-  updateStats();
-  showCurrentCard();
+  loadData();
+  setupSwipe();
+  showCard();
 }
 
-function showOnboarding() {
-  const modal = document.getElementById('onboardingModal');
-  modal.classList.add('show');
-  
-  document.querySelectorAll('.interest-chip').forEach(chip => {
-    chip.addEventListener('click', () => chip.classList.toggle('selected'));
+function showModal() {
+  document.getElementById('modal').classList.add('show');
+  document.querySelectorAll('.interest').forEach(el => {
+    el.onclick = () => el.classList.toggle('selected');
   });
 }
 
-function completeOnboarding() {
-  const selected = Array.from(document.querySelectorAll('.interest-chip.selected'))
-    .map(chip => chip.dataset.interest);
-  
-  userPreferences = {
-    onboarding_complete: true,
-    interests: selected,
-    liked_articles: [],
-    disliked_articles: [],
-    topic_weights: {},
-    last_update: new Date().toISOString()
-  };
-  
-  selected.forEach(topic => userPreferences.topic_weights[topic] = 0.8);
-  
-  savePreferences();
-  document.getElementById('onboardingModal').classList.remove('show');
-  
-  if (allArticles.length === 0) {
-    loadArticles().then(() => { setupSwipeCard(); updateStats(); showCurrentCard(); });
-  } else {
-    setupSwipeCard(); updateStats(); showCurrentCard();
-  }
+function startApp() {
+  const selected = [...document.querySelectorAll('.interest.selected')].map(el => el.dataset.v);
+  prefs = { done: true, interests: selected, liked: [], weights: {} };
+  selected.forEach(v => prefs.weights[v] = 0.8);
+  savePrefs();
+  document.getElementById('modal').classList.remove('show');
 }
 
-function skipOnboarding() {
-  userPreferences = {
-    onboarding_complete: true,
-    interests: [],
-    liked_articles: [],
-    disliked_articles: [],
-    topic_weights: {},
-    last_update: new Date().toISOString()
-  };
-  
-  savePreferences();
-  document.getElementById('onboardingModal').classList.remove('show');
-  
-  if (allArticles.length === 0) {
-    loadArticles().then(() => { setupSwipeCard(); updateStats(); showCurrentCard(); });
-  } else {
-    setupSwipeCard(); updateStats(); showCurrentCard();
-  }
+function skipOnboard() {
+  prefs = { done: true, interests: [], liked: [], weights: {} };
+  savePrefs();
+  document.getElementById('modal').classList.remove('show');
 }
 
-async function loadArticles() {
+async function loadData() {
   try {
-    const resp = await fetch(`${DATA_DIR}index.json`);
-    if (!resp.ok) throw new Error('index not found');
-    const dates = (await resp.json()).reverse();
+    const r = await fetch(DATA_DIR + 'index.json');
+    const dates = (await r.json()).reverse();
     
-    allArticles = [];
-    
-    for (const entry of dates.slice(0, 3)) {
+    for (const d of dates.slice(0, 3)) {
       try {
-        const dateResp = await fetch(`${DATA_DIR}${entry.date}.json`);
-        if (dateResp.ok) {
-          const data = await dateResp.json();
-          allArticles.push(...(data.articles || []));
-        }
-      } catch (e) { console.error(`加载 ${entry.date} 失败:`, e); }
+        const r2 = await fetch(DATA_DIR + d.date + '.json');
+        if (r2.ok) articles.push(...(await r2.json()).articles);
+      } catch (e) {}
     }
-    
-    if (allArticles.length === 0) allArticles = generateSampleArticles();
-    
-    allArticles = filterByPreferences(allArticles);
-    allArticles = shuffleArray(allArticles);
-    
-  } catch (e) {
-    console.error('加载文章失败:', e);
-    allArticles = generateSampleArticles();
-  }
-}
-
-function filterByPreferences(articles) {
-  if (!userPreferences.interests || userPreferences.interests.length === 0) return articles;
+  } catch (e) {}
   
-  const weights = userPreferences.topic_weights || {};
-  articles.sort((a, b) => {
-    const tagA = classifyTag(a);
-    const tagB = classifyTag(b);
-    const weightA = weights[tagA] || 0.5;
-    const weightB = weights[tagB] || 0.5;
-    return weightB - weightA;
-  });
-  
-  return articles;
+  if (!articles.length) articles = getSample();
+  shuffle(articles);
 }
 
-function shuffleArray(array) {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-}
-
-function generateSampleArticles() {
+function getSample() {
   return [
-    {
-      title: '2026年值得关注的6个副业方向',
-      summary: '整理了当前最热门的副业赚钱方向，包括AI内容创作、跨境电商、知识付费等',
-      source: '36氪',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
-      category: '赚钱',
-      importance: 'high',
-      region: '中国',
-      url: '#'
-    },
-    {
-      title: 'AI时代，如何不被替代',
-      summary: '未来真正危险的并非AI本身，而是那些尚未掌握AI技能的人',
-      source: '虎嗅',
-      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
-      category: 'AI',
-      importance: 'high',
-      region: '全球',
-      url: '#'
-    },
-    {
-      title: '35岁之后的职业选择',
-      summary: '分享一位40岁转型成功的案例，从被裁员到找到新赛道的完整路径',
-      source: '知乎',
-      image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop',
-      category: '职场',
-      importance: 'normal',
-      region: '中国',
-      url: '#'
-    },
-    {
-      title: '短视频创作者的变现指南',
-      summary: '拆解头部博主的变现路径，从定位、内容、流量到变现的完整方法论',
-      source: 'B站',
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
-      category: '创业',
-      importance: 'high',
-      region: '中国',
-      url: '#'
-    },
-    {
-      title: '特斯拉开源FSD技术',
-      summary: '特斯拉宣布开源FSD技术，行业即将巨变',
-      source: '机器之心',
-      image: 'https://images.unsplash.com/photo-1516739698692-576384a8061d?w=800&h=600&fit=crop',
-      category: '科技',
-      importance: 'high',
-      region: '全球',
-      url: '#'
-    },
-    {
-      title: '抖音带货新玩法：AI工具自动生成爆款视频',
-      summary: '实测AI视频工具，教会你如何每天自动生成高质量带货视频',
-      source: '抖音',
-      image: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=600&fit=crop',
-      category: '赚钱',
-      importance: 'high',
-      region: '中国',
-      url: '#'
-    },
-    {
-      title: '2026年创业风口：下一个百亿市场在哪里',
-      summary: '深度分析当前创投趋势，从市场规模、竞争格局多维度评估',
-      source: '创业邦',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop',
-      category: '创业',
-      importance: 'high',
-      region: '中国',
-      url: '#'
-    },
-    {
-      title: '为什么你总是存不下钱？心理学告诉你真相',
-      summary: '从行为心理学角度分析为什么很多人存钱困难',
-      source: '知乎',
-      image: 'https://images.unsplash.com/photo-1517924194047-0440b560d937?w=800&h=600&fit=crop',
-      category: '生活',
-      importance: 'normal',
-      region: '中国',
-      url: '#'
-    }
+    { title: '2026年最赚钱的6个副业方向', summary: 'AI内容创作、跨境电商、知识付费等热门方向', source: '36氪', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop', region: '中国' },
+    { title: 'AI时代，如何不被替代', summary: '尚未掌握AI技能的人才是真正危险的', source: '虎嗅', image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop', region: '全球' },
+    { title: '35岁之后的职业选择', summary: '一位40岁转型成功者的完整路径', source: '知乎', image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop', region: '中国' },
+    { title: '短视频创作者的变现指南', summary: '拆解头部博主的变现路径和方法论', source: 'B站', image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop', region: '中国' },
+    { title: '特斯拉开源FSD技术', summary: '特斯拉宣布开源FSD，行业即将巨变', source: '机器之心', image: 'https://images.unsplash.com/photo-1516739698692-576384a8061d?w=800&h=600&fit=crop', region: '全球' },
+    { title: '抖音带货新玩法', summary: '实测AI工具自动生成高质量带货视频', source: '抖音', image: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=600&fit=crop', region: '中国' },
+    { title: '创业风口在哪里', summary: '深度分析当前创投趋势和百亿市场', source: '创业邦', image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop', region: '中国' },
+    { title: '为什么存不下钱', summary: '行为心理学告诉你存钱困难的真相', source: '知乎', image: 'https://images.unsplash.com/photo-1517924194047-0440b560d937?w=800&h=600&fit=crop', region: '中国' }
   ];
 }
 
-function setupSwipeCard() {
-  cardEl = document.getElementById('card');
-  
-  cardEl.addEventListener('mousedown', handleStart);
-  cardEl.addEventListener('touchstart', handleStart, { passive: false });
-  
-  document.addEventListener('mousemove', handleMove);
-  document.addEventListener('touchmove', handleMove, { passive: false });
-  
-  document.addEventListener('mouseup', handleEnd);
-  document.addEventListener('touchend', handleEnd);
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
 }
 
-function handleStart(e) {
-  isDragging = true;
-  const point = e.touches ? e.touches[0] : e;
-  startX = point.clientX;
-  startY = point.clientY;
-  currentX = 0;
-  currentY = 0;
-  
-  cardEl.classList.add('is-dragging');
-  cardEl.classList.remove('animating');
+function setupSwipe() {
+  card.addEventListener('mousedown', e => start(e));
+  card.addEventListener('touchstart', e => start(e), { passive: false });
+  document.addEventListener('mousemove', move);
+  document.addEventListener('touchmove', move, { passive: false });
+  document.addEventListener('mouseup', end);
+  document.addEventListener('touchend', end);
 }
 
-function handleMove(e) {
-  if (!isDragging) return;
-  
+function start(e) {
+  dragging = true;
+  const p = e.touches ? e.touches[0] : e;
+  startX = p.clientX;
+  card.classList.add('is-dragging');
+  card.classList.remove('animating');
+}
+
+function move(e) {
+  if (!dragging) return;
   e.preventDefault();
-  const point = e.touches ? e.touches[0] : e;
-  currentX = point.clientX - startX;
-  currentY = point.clientY - startY;
+  const p = e.touches ? e.touches[0] : e;
+  curX = p.clientX - startX;
+  card.style.transform = `translateX(${curX}px) rotate(${curX * 0.04}deg)`;
   
-  const rotation = currentX * 0.04;
-  cardEl.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${rotation}deg)`;
+  const like = document.getElementById('overlayLike');
+  const nope = document.getElementById('overlayNope');
   
-  const overlayLike = document.getElementById('overlayLike');
-  const overlayNope = document.getElementById('overlayNope');
-  
-  if (currentX > 60) {
-    overlayLike.style.opacity = Math.min(currentX / 150, 1);
-    overlayNope.style.opacity = 0;
-  } else if (currentX < -60) {
-    overlayNope.style.opacity = Math.min(Math.abs(currentX) / 150, 1);
-    overlayLike.style.opacity = 0;
+  if (curX > 50) {
+    like.style.opacity = Math.min(curX / 100, 1);
+    nope.style.opacity = 0;
+  } else if (curX < -50) {
+    nope.style.opacity = Math.min(Math.abs(curX) / 100, 1);
+    like.style.opacity = 0;
   } else {
-    overlayLike.style.opacity = 0;
-    overlayNope.style.opacity = 0;
+    like.style.opacity = nope.style.opacity = 0;
   }
 }
 
-function handleEnd() {
-  if (!isDragging) return;
+function end() {
+  if (!dragging) return;
+  dragging = false;
+  card.classList.remove('is-dragging');
+  card.classList.add('animating');
   
-  isDragging = false;
-  cardEl.classList.remove('is-dragging');
-  cardEl.classList.add('animating');
-  
-  if (currentX > 120) {
-    animateSwipe('like');
-  } else if (currentX < -120) {
-    animateSwipe('nope');
-  } else {
-    resetCard();
-  }
-}
-
-function animateSwipe(direction) {
-  const targetX = direction === 'like' ? window.innerWidth : -window.innerWidth;
-  const rotation = direction === 'like' ? 30 : -30;
-  
-  cardEl.style.transform = `translate(${targetX}px, ${currentY}px) rotate(${rotation}deg)`;
-  cardEl.style.opacity = '0';
-  
-  setTimeout(() => {
-    handleSwipe(direction);
-    cardEl.style.opacity = '1';
-  }, 300);
+  if (curX > 100) doSwipe('like');
+  else if (curX < -100) doSwipe('nope');
+  else resetCard();
 }
 
 function resetCard() {
-  cardEl.style.transform = 'translate(0, 0) rotate(0deg)';
+  card.style.transform = 'translateX(0)';
   document.getElementById('overlayLike').style.opacity = 0;
   document.getElementById('overlayNope').style.opacity = 0;
 }
 
-function handleSwipe(direction) {
-  if (currentIndex >= allArticles.length) {
-    showEndState();
-    return;
-  }
-  
-  const article = allArticles[currentIndex];
-  const tag = classifyTag(article);
-  
-  if (direction === 'like') {
-    likedCount++;
-    if (!userPreferences.liked_articles) userPreferences.liked_articles = [];
-    userPreferences.liked_articles.push({ id: article.id || article.title, tag, timestamp: new Date().toISOString() });
-    
-    if (!userPreferences.topic_weights) userPreferences.topic_weights = {};
-    userPreferences.topic_weights[tag] = Math.min((userPreferences.topic_weights[tag] || 0.5) + 0.1, 1.0);
-  } else if (direction === 'nope') {
-    nopeCount++;
-    if (!userPreferences.disliked_articles) userPreferences.disliked_articles = [];
-    userPreferences.disliked_articles.push({ id: article.id || article.title, tag, timestamp: new Date().toISOString() });
-    
-    if (!userPreferences.topic_weights) userPreferences.topic_weights = {};
-    userPreferences.topic_weights[tag] = Math.max((userPreferences.topic_weights[tag] || 0.5) - 0.05, 0.1);
-  }
-  
-  userPreferences.last_update = new Date().toISOString();
-  savePreferences();
-  
-  currentIndex++;
-  updateStats();
-  
-  if (currentIndex >= allArticles.length) {
-    showEndState();
-  } else {
-    showCurrentCard();
-  }
+function swipe(dir) {
+  if (mode !== 'swipe') return;
+  doSwipe(dir);
 }
 
-function showCurrentCard() {
-  if (currentIndex >= allArticles.length) {
-    showEndState();
-    return;
-  }
+function doSwipe(dir) {
+  const targetX = dir === 'like' ? window.innerWidth : -window.innerWidth;
+  card.style.transform = `translateX(${targetX}px) rotate(${dir === 'like' ? 30 : -30}deg)`;
+  card.style.opacity = '0';
   
-  const article = allArticles[currentIndex];
-  const tag = classifyTag(article);
-  const sourceIcon = SOURCE_ICONS[article.source] || '📰';
-  
-  // Source
-  document.getElementById('cardSource').textContent = article.source || '资讯';
-  document.getElementById('cardSourceIcon').textContent = sourceIcon;
-  
-  // Tag
-  document.getElementById('cardTag').textContent = tag;
-  
-  // Title & Summary
-  document.getElementById('cardTitle').textContent = article.title;
-  document.getElementById('cardSummary').textContent = article.summary || article.summary_cn || '暂无摘要';
-  
-  // Meta
-  document.getElementById('cardMeta').innerHTML = `
-    <span class="card-meta-item">📍 ${article.region || '全球'}</span>
-  `;
-  document.getElementById('cardTime').textContent = '刚刚';
-  
-  // Image
-  const cardImage = document.getElementById('cardImage');
-  const cardNoImage = document.getElementById('cardNoImage');
-  
-  if (article.image) {
-    cardImage.style.backgroundImage = `url(${article.image})`;
-    cardImage.style.display = 'block';
-    cardNoImage.style.display = 'none';
-  } else {
-    const emoji = getContentEmoji(article);
-    cardNoImage.innerHTML = `
-      <div class="card-no-image-icon">${emoji}</div>
-      <div class="card-no-image-text">${tag}</div>
-    `;
-    cardNoImage.style.display = 'flex';
-    cardImage.style.display = 'none';
-  }
-  
-  // Reset
-  cardEl.style.transform = 'translate(0, 0) rotate(0deg)';
-  document.getElementById('overlayLike').style.opacity = 0;
-  document.getElementById('overlayNope').style.opacity = 0;
-  
-  // Click to open URL
-  cardEl.onclick = () => {
-    if (article.url && article.url !== '#') {
-      window.open(article.url, '_blank');
+  setTimeout(() => {
+    const a = articles[index];
+    const tag = getTag(a);
+    
+    if (dir === 'like') {
+      prefs.liked.push({ id: a.title, tag });
+      prefs.weights[tag] = Math.min((prefs.weights[tag] || 0.5) + 0.1, 1);
+    } else {
+      prefs.weights[tag] = Math.max((prefs.weights[tag] || 0.5) - 0.05, 0.1);
     }
+    savePrefs();
+    
+    index++;
+    card.style.opacity = '1';
+    
+    if (index >= articles.length) showEmpty();
+    else showCard();
+  }, 300);
+}
+
+function showCard() {
+  if (index >= articles.length) { showEmpty(); return; }
+  
+  const a = articles[index];
+  document.getElementById('cardImg').style.backgroundImage = `url(${a.image})`;
+  document.getElementById('cardSource').textContent = (SOURCE_EMOJI[a.source] || '📰') + ' ' + a.source;
+  document.getElementById('cardTitle').textContent = a.title;
+  document.getElementById('cardSummary').textContent = a.summary;
+  
+  resetCard();
+  
+  card.onclick = () => {
+    if (a.url && a.url !== '#') window.open(a.url, '_blank');
   };
 }
 
-function getContentEmoji(article) {
-  const text = (article.title + ' ' + (article.category || '')).toLowerCase();
-  
-  if (text.includes('钱') || text.includes('赚') || text.includes('创业')) return '💰';
-  if (text.includes('ai') || text.includes('人工智能')) return '🤖';
-  if (text.includes('职场') || text.includes('工作')) return '💼';
-  if (text.includes('视频') || text.includes('抖音') || text.includes('b站')) return '📺';
-  if (text.includes('科技') || text.includes('技术')) return '🚀';
-  
-  return '📰';
-}
-
-function showEndState() {
-  const stack = document.getElementById('cardStack');
-  stack.innerHTML = `
-    <div class="empty-state">
-      <div class="empty-icon">🎉</div>
-      <div class="empty-title">今日内容已浏览完毕</div>
-      <div class="empty-desc">
-        喜欢 ${likedCount} 条 · 跳过 ${nopeCount} 条<br>
-        明天早上6点有新内容哦
-      </div>
-      <button class="empty-btn" onclick="resetSwipe()">重新浏览</button>
+function showEmpty() {
+  document.getElementById('cardWrap').innerHTML = `
+    <div class="empty">
+      <div class="empty-icon">✓</div>
+      <div class="empty-text">今日内容已浏览完毕</div>
     </div>
   `;
-  
-  document.querySelector('.actions').style.display = 'none';
+  document.getElementById('actions').style.display = 'none';
 }
 
-function resetSwipe() {
-  currentIndex = 0;
-  likedCount = 0;
-  nopeCount = 0;
-  location.reload();
-}
-
-function showPreferences() {
-  alert('偏好设置功能开发中...');
-}
-
-function switchMode(mode) {
-  document.querySelectorAll('.mode-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.mode === mode);
+function setMode(m) {
+  mode = m;
+  document.querySelectorAll('.mode-btn').forEach(b => {
+    b.classList.toggle('active', b.textContent.includes(m === 'swipe' ? '滑动' : '列表'));
   });
   
-  const cardStack = document.getElementById('cardStack');
-  const actions = document.getElementById('actions');
-  const listView = document.getElementById('listView');
-  
-  if (mode === 'swipe') {
-    cardStack.style.display = 'block';
-    actions.style.display = 'flex';
-    listView.style.display = 'none';
+  if (m === 'swipe') {
+    document.getElementById('cardWrap').style.display = 'block';
+    document.getElementById('actions').style.display = 'flex';
+    list.classList.remove('show');
   } else {
-    cardStack.style.display = 'none';
-    actions.style.display = 'none';
-    listView.style.display = 'flex';
-    renderListView();
+    document.getElementById('cardWrap').style.display = 'none';
+    document.getElementById('actions').style.display = 'none';
+    list.classList.add('show');
+    renderList();
   }
 }
 
-function renderListView() {
-  const listView = document.getElementById('listView');
-  
-  if (allArticles.length === 0) {
-    listView.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-icon">📭</div>
-        <div class="empty-title">暂无内容</div>
-        <div class="empty-desc">请稍后再试</div>
+function renderList() {
+  list.innerHTML = articles.map(a => `
+    <div class="list-item" onclick="${a.url ? `window.open('${a.url}', '_blank')` : ''}">
+      <div class="list-img" style="background-image:url(${a.image})"></div>
+      <div class="list-content">
+        <div class="list-source">${a.source}</div>
+        <div class="list-title">${a.title}</div>
+        <div class="list-meta">${a.region || '全球'}</div>
       </div>
-    `;
-    return;
-  }
-  
-  listView.innerHTML = allArticles.map((article, index) => {
-    const tag = classifyTag(article);
-    const image = article.image || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=160&fit=crop';
-    
-    return `
-      <div class="list-item" onclick="openArticle('${article.url || '#'}')">
-        <div class="list-item-image" style="background-image: url(${image})"></div>
-        <div class="list-item-content">
-          <div class="list-item-top">
-            <span class="list-item-source">${article.source}</span>
-            <span class="list-item-tag">${tag}</span>
-          </div>
-          <div class="list-item-title">${article.title}</div>
-          <div class="list-item-meta">
-            <span>📍 ${article.region || '全球'}</span>
-            <span>•</span>
-            <span>${article.category}</span>
-          </div>
-        </div>
-      </div>
-    `;
-  }).join('');
+    </div>
+  `).join('');
 }
 
-function openArticle(url) {
-  if (url && url !== '#') {
-    window.open(url, '_blank');
-  }
+function showMenu() {
+  alert('设置功能开发中...');
 }
 
 init();
