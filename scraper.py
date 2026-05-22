@@ -508,6 +508,333 @@ def fetch_tech_digital():
     return articles
 
 
+# ── 数据源：更多 Reddit 版块 ──
+def fetch_reddit_more():
+    """从更多 Reddit 子版块获取热帖"""
+    articles = []
+    subreddits = [
+        ("news", "社区热议"),
+        ("worldnews", "国际新闻"),
+        ("technology", "科技数码"),
+        ("gaming", "游戏资讯"),
+        ("movies", "娱乐影视"),
+        ("music", "音乐资讯"),
+        ("sports", "体育资讯"),
+        ("science", "科学探索"),
+        ("askscience", "科学问答"),
+        ("todayilearned", "知识科普"),
+        ("funny", "趣味内容"),
+        ("aww", "萌宠内容"),
+    ]
+    
+    for sub, category in subreddits:
+        try:
+            url = f"https://old.reddit.com/r/{sub}/hot.json?limit=10"
+            resp = safe_get(url, headers={**HEADERS, "Accept": "application/json", "User-Agent": "python:luochuan:v1.0 (by /u/luochuan_bot)"})
+            if not resp:
+                continue
+            data = resp.json()
+            for post in data.get("data", {}).get("children", []):
+                p = post["data"]
+                if p.get("stickied"):
+                    continue
+                title = p.get("title", "")
+                articles.append({
+                    "id": make_id(title, f"https://reddit.com{p.get('permalink', '')}"),
+                    "title": title,
+                    "summary": f"r/{sub} | ↑{p.get('ups', 0)} | 💬{p.get('num_comments', 0)}",
+                    "source": f"Reddit r/{sub}",
+                    "sourceIcon": "📌",
+                    "url": f"https://reddit.com{p.get('permalink', '')}",
+                    "category": category,
+                    "region": "国际",
+                    "importance": "high" if p.get("ups", 0) > 1000 else "normal",
+                    "timestamp": now_iso(),
+                    "raw_date": datetime.fromtimestamp(p.get("created_utc", 0)).strftime("%Y-%m-%d %H:%M"),
+                })
+        except Exception as e:
+            print(f"  ⚠ Reddit r/{sub} 抓取异常: {e}")
+    
+    print(f"  ✓ Reddit 更多版块: {len(articles)} 篇")
+    return articles
+
+
+# ── 数据源：国际新闻媒体 ──
+def fetch_international_news():
+    """抓取国际新闻媒体资讯"""
+    articles = []
+    try:
+        sources = [
+            ("BBC News", "https://www.bbc.com/news", "📰"),
+            ("CNN", "https://www.cnn.com", "📺"),
+            ("Reuters", "https://www.reuters.com", "📡"),
+            ("Associated Press", "https://apnews.com", "📋"),
+            ("The New York Times", "https://www.nytimes.com", "🗞️"),
+            ("The Guardian", "https://www.theguardian.com", "📰"),
+            ("Al Jazeera", "https://www.aljazeera.com", "🌍"),
+        ]
+        seen = set()
+        
+        for name, url, icon in sources:
+            try:
+                resp = safe_get(url)
+                if not resp:
+                    continue
+                soup = BeautifulSoup(resp.text, "html.parser")
+                
+                selectors = [
+                    "a[href]",
+                    "article a",
+                    ".headline a",
+                    ".title a",
+                    "h2 a",
+                    "h3 a",
+                ]
+                
+                for selector in selectors:
+                    items = soup.select(selector)[:10]
+                    for item in items:
+                        title = item.get_text(strip=True)
+                        href = item.get("href", "")
+                        if not title or not href or len(title) < 15:
+                            continue
+                        if title in seen:
+                            continue
+                        if any(x in href.lower() for x in ["/tag/", "/category/", "#", "javascript:", "/help/", "/about/", "/contact/"]):
+                            continue
+                        seen.add(title)
+                        full_url = href if href.startswith("http") else (url.rstrip("/") + href if href.startswith("/") else url + "/" + href)
+                        articles.append({
+                            "id": make_id(title, full_url),
+                            "title": title,
+                            "summary": f"{name} 国际新闻",
+                            "source": name,
+                            "sourceIcon": icon,
+                            "url": full_url,
+                            "category": "国际新闻",
+                            "region": "国际",
+                            "importance": "normal",
+                            "timestamp": now_iso(),
+                            "raw_date": datetime.now().strftime("%Y-%m-%d %H:%M"),
+                        })
+                        if len(articles) >= 30:
+                            break
+                    if len(articles) >= 30:
+                        break
+            except Exception as e:
+                print(f"  ⚠ {name} 抓取异常: {e}")
+                continue
+        
+        print(f"  ✓ 国际新闻媒体: {len(articles)} 篇")
+    except Exception as e:
+        print(f"  ⚠ 国际新闻媒体抓取异常: {e}")
+    return articles
+
+
+# ── 数据源：娱乐八卦 ──
+def fetch_entertainment():
+    """抓取娱乐八卦资讯"""
+    articles = []
+    try:
+        sources = [
+            ("TMZ", "https://www.tmz.com", "🎬"),
+            ("Entertainment Weekly", "https://ew.com", "⭐"),
+            ("Variety", "https://variety.com", "🎭"),
+            ("Hollywood Reporter", "https://www.hollywoodreporter.com", "🎥"),
+            ("People", "https://people.com", "👤"),
+        ]
+        seen = set()
+        
+        for name, url, icon in sources:
+            try:
+                resp = safe_get(url)
+                if not resp:
+                    continue
+                soup = BeautifulSoup(resp.text, "html.parser")
+                
+                selectors = [
+                    "a[href]",
+                    "article a",
+                    ".headline a",
+                    ".title a",
+                ]
+                
+                for selector in selectors:
+                    items = soup.select(selector)[:10]
+                    for item in items:
+                        title = item.get_text(strip=True)
+                        href = item.get("href", "")
+                        if not title or not href or len(title) < 10:
+                            continue
+                        if title in seen:
+                            continue
+                        if any(x in href.lower() for x in ["/tag/", "/category/", "#", "javascript:"]):
+                            continue
+                        seen.add(title)
+                        full_url = href if href.startswith("http") else (url.rstrip("/") + href if href.startswith("/") else url + "/" + href)
+                        articles.append({
+                            "id": make_id(title, full_url),
+                            "title": title,
+                            "summary": f"{name} 娱乐资讯",
+                            "source": name,
+                            "sourceIcon": icon,
+                            "url": full_url,
+                            "category": "娱乐八卦",
+                            "region": "国际",
+                            "importance": "normal",
+                            "timestamp": now_iso(),
+                            "raw_date": datetime.now().strftime("%Y-%m-%d %H:%M"),
+                        })
+                        if len(articles) >= 20:
+                            break
+                    if len(articles) >= 20:
+                        break
+            except Exception as e:
+                print(f"  ⚠ {name} 抓取异常: {e}")
+                continue
+        
+        print(f"  ✓ 娱乐八卦: {len(articles)} 篇")
+    except Exception as e:
+        print(f"  ⚠ 娱乐八卦抓取异常: {e}")
+    return articles
+
+
+# ── 数据源：体育资讯 ──
+def fetch_sports():
+    """抓取体育资讯"""
+    articles = []
+    try:
+        sources = [
+            ("ESPN", "https://www.espn.com", "⚽"),
+            ("Sports Illustrated", "https://www.si.com", "🏈"),
+            ("Bleacher Report", "https://bleacherreport.com", "🏀"),
+            ("Sky Sports", "https://www.skysports.com", "⚾"),
+            ("BBC Sport", "https://www.bbc.com/sport", "🎾"),
+        ]
+        seen = set()
+        
+        for name, url, icon in sources:
+            try:
+                resp = safe_get(url)
+                if not resp:
+                    continue
+                soup = BeautifulSoup(resp.text, "html.parser")
+                
+                selectors = [
+                    "a[href]",
+                    "article a",
+                    ".headline a",
+                    ".title a",
+                ]
+                
+                for selector in selectors:
+                    items = soup.select(selector)[:10]
+                    for item in items:
+                        title = item.get_text(strip=True)
+                        href = item.get("href", "")
+                        if not title or not href or len(title) < 10:
+                            continue
+                        if title in seen:
+                            continue
+                        if any(x in href.lower() for x in ["/tag/", "/category/", "#", "javascript:"]):
+                            continue
+                        seen.add(title)
+                        full_url = href if href.startswith("http") else (url.rstrip("/") + href if href.startswith("/") else url + "/" + href)
+                        articles.append({
+                            "id": make_id(title, full_url),
+                            "title": title,
+                            "summary": f"{name} 体育资讯",
+                            "source": name,
+                            "sourceIcon": icon,
+                            "url": full_url,
+                            "category": "体育资讯",
+                            "region": "国际",
+                            "importance": "normal",
+                            "timestamp": now_iso(),
+                            "raw_date": datetime.now().strftime("%Y-%m-%d %H:%M"),
+                        })
+                        if len(articles) >= 20:
+                            break
+                    if len(articles) >= 20:
+                        break
+            except Exception as e:
+                print(f"  ⚠ {name} 抓取异常: {e}")
+                continue
+        
+        print(f"  ✓ 体育资讯: {len(articles)} 篇")
+    except Exception as e:
+        print(f"  ⚠ 体育资讯抓取异常: {e}")
+    return articles
+
+
+# ── 数据源：财经新闻 ──
+def fetch_finance():
+    """抓取财经新闻"""
+    articles = []
+    try:
+        sources = [
+            ("Bloomberg", "https://www.bloomberg.com", "💰"),
+            ("Financial Times", "https://www.ft.com", "📊"),
+            ("CNBC", "https://www.cnbc.com", "📈"),
+            ("MarketWatch", "https://www.marketwatch.com", "📉"),
+            ("Yahoo Finance", "https://finance.yahoo.com", "💵"),
+        ]
+        seen = set()
+        
+        for name, url, icon in sources:
+            try:
+                resp = safe_get(url)
+                if not resp:
+                    continue
+                soup = BeautifulSoup(resp.text, "html.parser")
+                
+                selectors = [
+                    "a[href]",
+                    "article a",
+                    ".headline a",
+                    ".title a",
+                ]
+                
+                for selector in selectors:
+                    items = soup.select(selector)[:10]
+                    for item in items:
+                        title = item.get_text(strip=True)
+                        href = item.get("href", "")
+                        if not title or not href or len(title) < 10:
+                            continue
+                        if title in seen:
+                            continue
+                        if any(x in href.lower() for x in ["/tag/", "/category/", "#", "javascript:"]):
+                            continue
+                        seen.add(title)
+                        full_url = href if href.startswith("http") else (url.rstrip("/") + href if href.startswith("/") else url + "/" + href)
+                        articles.append({
+                            "id": make_id(title, full_url),
+                            "title": title,
+                            "summary": f"{name} 财经新闻",
+                            "source": name,
+                            "sourceIcon": icon,
+                            "url": full_url,
+                            "category": "财经新闻",
+                            "region": "国际",
+                            "importance": "normal",
+                            "timestamp": now_iso(),
+                            "raw_date": datetime.now().strftime("%Y-%m-%d %H:%M"),
+                        })
+                        if len(articles) >= 20:
+                            break
+                    if len(articles) >= 20:
+                        break
+            except Exception as e:
+                print(f"  ⚠ {name} 抓取异常: {e}")
+                continue
+        
+        print(f"  ✓ 财经新闻: {len(articles)} 篇")
+    except Exception as e:
+        print(f"  ⚠ 财经新闻抓取异常: {e}")
+    return articles
+
+
 # ── DeepSeek 中文总结 ──
 def add_chinese_summaries(articles, config):
     """用 DeepSeek 给每篇文章生成中文简介和用途说明"""
@@ -597,6 +924,11 @@ def collect_all():
         ("The Verge AI", fetch_theverge_ai),
         ("生活资讯", fetch_lifestyle),
         ("科技数码", fetch_tech_digital),
+        ("Reddit 更多", fetch_reddit_more),
+        ("国际新闻", fetch_international_news),
+        ("娱乐八卦", fetch_entertainment),
+        ("体育资讯", fetch_sports),
+        ("财经新闻", fetch_finance),
     ]
 
     for name, fetcher in sources:
