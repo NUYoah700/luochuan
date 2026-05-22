@@ -29,7 +29,7 @@ OUTPUT_FILE = DATA_DIR / f"{datetime.now().strftime('%Y-%m-%d')}.json"
 REQUEST_TIMEOUT = 15
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-    "KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+    "KHTML, like Gecko Chrome/130.0.0.0 Safari/537.36"
 }
 
 # ── 工具函数 ──
@@ -106,15 +106,14 @@ def fetch_hackernews():
                     "url": url,
                     "category": "技术动态",
                     "region": "国际",
-                    "importance": "high" if item.get("score", 0) > 100 else "normal",
+                    "importance": "high" if item.get('score', 0) > 100 else "normal",
                     "timestamp": now_iso(),
-                    "raw_date": datetime.fromtimestamp(item.get("time", 0)).strftime("%Y-%m-%d %H:%M"),
+                    "raw_date": datetime.fromtimestamp(item.get('time', 0)).strftime("%Y-%m-%d %H:%M"),
                 })
         print(f"  ✓ Hacker News: {len(articles)} 篇")
     except Exception as e:
         print(f"  ⚠ Hacker News 抓取异常: {e}")
     return articles
-
 
 # ── 数据源：Reddit r/artificial + r/MachineLearning ──
 def fetch_reddit_ai():
@@ -142,15 +141,14 @@ def fetch_reddit_ai():
                     "url": f"https://reddit.com{p.get('permalink', '')}",
                     "category": "社区热议",
                     "region": "国际",
-                    "importance": "high" if p.get("ups", 0) > 500 else "normal",
+                    "importance": "high" if p.get('ups', 0) > 500 else "normal",
                     "timestamp": now_iso(),
-                    "raw_date": datetime.fromtimestamp(p.get("created_utc", 0)).strftime("%Y-%m-%d %H:%M"),
+                    "raw_date": datetime.fromtimestamp(p.get('created_utc', 0)).strftime("%Y-%m-%d %H:%M"),
                 })
         except Exception as e:
             print(f"  ⚠ Reddit r/{sub} 抓取异常: {e}")
     print(f"  ✓ Reddit AI: {len(articles)} 篇")
     return articles
-
 
 # ── 数据源：GitHub Trending（所有热门项目） ──
 def fetch_github_trending_ai():
@@ -216,7 +214,6 @@ def fetch_github_trending_ai():
         print(f"  ⚠ GitHub 抓取异常: {e}")
     return articles
 
-
 # ── 数据源：ArXiv AI 最新论文 ──
 def fetch_arxiv_ai():
     """获取ArXiv最新AI论文"""
@@ -258,7 +255,6 @@ def fetch_arxiv_ai():
         print(f"  ⚠ ArXiv 抓取异常: {e}")
     return articles
 
-
 # ── 数据源：机器之心 (jiqizhixin.com) ──
 def fetch_jiqizhixin():
     """抓取机器之心最新AI文章"""
@@ -296,7 +292,6 @@ def fetch_jiqizhixin():
     except Exception as e:
         print(f"  ⚠ 机器之心 抓取异常: {e}")
     return articles
-
 
 # ── 数据源：量子位 (qbitai.com) ──
 def fetch_qbitai():
@@ -336,7 +331,6 @@ def fetch_qbitai():
         print(f"  ⚠ 量子位 抓取异常: {e}")
     return articles
 
-
 # ── 数据源：The Verge AI ──
 def fetch_theverge_ai():
     """抓取The Verge AI板块"""
@@ -374,7 +368,6 @@ def fetch_theverge_ai():
     except Exception as e:
         print(f"  ⚠ The Verge 抓取异常: {e}")
     return articles
-
 
 # ── 数据源：生活资讯 ──
 def fetch_lifestyle():
@@ -441,7 +434,6 @@ def fetch_lifestyle():
         print(f"  ⚠ 生活资讯抓取异常: {e}")
     return articles
 
-
 # ── 数据源：科技数码 ──
 def fetch_tech_digital():
     """抓取科技数码资讯"""
@@ -507,7 +499,6 @@ def fetch_tech_digital():
         print(f"  ⚠ 科技数码抓取异常: {e}")
     return articles
 
-
 # ── 数据源：更多 Reddit 版块 ──
 def fetch_reddit_more():
     """从更多 Reddit 子版块获取热帖"""
@@ -548,16 +539,15 @@ def fetch_reddit_more():
                     "url": f"https://reddit.com{p.get('permalink', '')}",
                     "category": category,
                     "region": "国际",
-                    "importance": "high" if p.get("ups", 0) > 1000 else "normal",
+                    "importance": "high" if p.get('ups', 0) > 1000 else "normal",
                     "timestamp": now_iso(),
-                    "raw_date": datetime.fromtimestamp(p.get("created_utc", 0)).strftime("%Y-%m-%d %H:%M"),
+                    "raw_date": datetime.fromtimestamp(p.get('created_utc', 0)).strftime("%Y-%m-%d %H:%M"),
                 })
         except Exception as e:
             print(f"  ⚠ Reddit r/{sub} 抓取异常: {e}")
     
     print(f"  ✓ Reddit 更多版块: {len(articles)} 篇")
     return articles
-
 
 # ── 数据源：国际新闻媒体 ──
 def fetch_international_news():
@@ -630,7 +620,6 @@ def fetch_international_news():
         print(f"  ⚠ 国际新闻媒体抓取异常: {e}")
     return articles
 
-
 # ── 数据源：娱乐八卦 ──
 def fetch_entertainment():
     """抓取娱乐八卦资讯"""
@@ -697,7 +686,6 @@ def fetch_entertainment():
     except Exception as e:
         print(f"  ⚠ 娱乐八卦抓取异常: {e}")
     return articles
-
 
 # ── 数据源：体育资讯 ──
 def fetch_sports():
@@ -766,7 +754,6 @@ def fetch_sports():
         print(f"  ⚠ 体育资讯抓取异常: {e}")
     return articles
 
-
 # ── 数据源：财经新闻 ──
 def fetch_finance():
     """抓取财经新闻"""
@@ -834,6 +821,228 @@ def fetch_finance():
         print(f"  ⚠ 财经新闻抓取异常: {e}")
     return articles
 
+# ── 数据源：微博热搜 ──
+def fetch_weibo_hot():
+    """抓取微博热搜"""
+    articles = []
+    try:
+        resp = safe_get("https://s.weibo.com/top/summary")
+        if not resp:
+            return articles
+        soup = BeautifulSoup(resp.text, "html.parser")
+        items = soup.select("td.td-02")[:50]
+        seen = set()
+        for item in items:
+            a_tag = item.select_one("a")
+            if not a_tag:
+                continue
+            title = a_tag.get_text(strip=True)
+            href = a_tag.get("href", "")
+            if not title or not href:
+                continue
+            if title in seen:
+                continue
+            seen.add(title)
+            url = f"https://s.weibo.com{href}" if href.startswith("/") else f"https://s.weibo.com{href}"
+            articles.append({
+                "id": make_id(title, url),
+                "title": title,
+                "summary": "微博热搜话题",
+                "source": "微博热搜",
+                "sourceIcon": "🔥",
+                "url": url,
+                "category": "社交热点",
+                "region": "国内",
+                "importance": "high",
+                "timestamp": now_iso(),
+                "raw_date": datetime.now().strftime("%Y-%m-%d %H:%M"),
+            })
+        print(f"  ✓ 微博热搜: {len(articles)} 篇")
+    except Exception as e:
+        print(f"  ⚠ 微博热搜抓取异常: {e}")
+    return articles
+
+# ── 数据源：知乎热榜 ──
+def fetch_zhihu_hot():
+    """抓取知乎热榜"""
+    articles = []
+    try:
+        resp = safe_get("https://www.zhihu.com/hot")
+        if not resp:
+            return articles
+        soup = BeautifulSoup(resp.text, "html.parser")
+        items = soup.select(".HotItem-title")[:30]
+        seen = set()
+        for item in items:
+            title = item.get_text(strip=True)
+            if not title or title in seen:
+                continue
+            seen.add(title)
+            articles.append({
+                "id": make_id(title, "https://www.zhihu.com"),
+                "title": title,
+                "summary": "知乎热门讨论",
+                "source": "知乎热榜",
+                "sourceIcon": "💬",
+                "url": "https://www.zhihu.com/hot",
+                "category": "知识问答",
+                "region": "国内",
+                "importance": "high",
+                "timestamp": now_iso(),
+                "raw_date": datetime.now().strftime("%Y-%m-%d %H:%M"),
+            })
+        print(f"  ✓ 知乎热榜: {len(articles)} 篇")
+    except Exception as e:
+        print(f"  ⚠ 知乎热榜抓取异常: {e}")
+    return articles
+
+# ── 数据源：今日头条 ──
+def fetch_toutiao():
+    """抓取今日头条热点"""
+    articles = []
+    try:
+        resp = safe_get("https://www.toutiao.com")
+        if not resp:
+            return articles
+        soup = BeautifulSoup(resp.text, "html.parser")
+        items = soup.select("a[href*='/group/']")[:30]
+        seen = set()
+        for item in items:
+            title = item.get_text(strip=True)
+            href = item.get("href", "")
+            if not title or not href or len(title) < 5:
+                continue
+            if title in seen:
+                continue
+            seen.add(title)
+            url = f"https://www.toutiao.com{href}" if href.startswith("/") else href
+            articles.append({
+                "id": make_id(title, url),
+                "title": title,
+                "summary": "今日头条热点资讯",
+                "source": "今日头条",
+                "sourceIcon": "📰",
+                "url": url,
+                "category": "热点资讯",
+                "region": "国内",
+                "importance": "normal",
+                "timestamp": now_iso(),
+                "raw_date": datetime.now().strftime("%Y-%m-%d %H:%M"),
+            })
+        print(f"  ✓ 今日头条: {len(articles)} 篇")
+    except Exception as e:
+        print(f"  ⚠ 今日头条抓取异常: {e}")
+    return articles
+
+# ── 数据源：百度热搜 ──
+def fetch_baidu_hot():
+    """抓取百度热搜"""
+    articles = []
+    try:
+        resp = safe_get("https://top.baidu.com/board?tab=realtime")
+        if not resp:
+            return articles
+        soup = BeautifulSoup(resp.text, "html.parser")
+        items = soup.select(".c-single-text-ellipsis")[:30]
+        seen = set()
+        for item in items:
+            title = item.get_text(strip=True)
+            if not title or title in seen:
+                continue
+            seen.add(title)
+            articles.append({
+                "id": make_id(title, "https://top.baidu.com"),
+                "title": title,
+                "summary": "百度实时热搜",
+                "source": "百度热搜",
+                "sourceIcon": "🔍",
+                "url": "https://top.baidu.com/board?tab=realtime",
+                "category": "热点资讯",
+                "region": "国内",
+                "importance": "high",
+                "timestamp": now_iso(),
+                "raw_date": datetime.now().strftime("%Y-%m-%d %H:%M"),
+            })
+        print(f"  ✓ 百度热搜: {len(articles)} 篇")
+    except Exception as e:
+        print(f"  ⚠ 百度热搜抓取异常: {e}")
+    return articles
+
+# ── 数据源：网易新闻 ──
+def fetch_163_news():
+    """抓取网易新闻热点"""
+    articles = []
+    try:
+        resp = safe_get("https://news.163.com")
+        if not resp:
+            return articles
+        soup = BeautifulSoup(resp.text, "html.parser")
+        items = soup.select("a.news_title")[:30]
+        seen = set()
+        for item in items:
+            title = item.get_text(strip=True)
+            href = item.get("href", "")
+            if not title or not href:
+                continue
+            if title in seen:
+                continue
+            seen.add(title)
+            url = href if href.startswith("http") else f"https://news.163.com{href}"
+            articles.append({
+                "id": make_id(title, url),
+                "title": title,
+                "summary": "网易新闻热点",
+                "source": "网易新闻",
+                "sourceIcon": "📰",
+                "url": url,
+                "category": "热点资讯",
+                "region": "国内",
+                "importance": "normal",
+                "timestamp": now_iso(),
+                "raw_date": datetime.now().strftime("%Y-%m-%d %H:%M"),
+            })
+        print(f"  ✓ 网易新闻: {len(articles)} 篇")
+    except Exception as e:
+        print(f"  ⚠ 网易新闻抓取异常: {e}")
+    return articles
+
+# ── 数据源：搜狐新闻 ──
+def fetch_sohu_news():
+    """抓取搜狐新闻热点"""
+    articles = []
+    try:
+        resp = safe_get("https://www.sohu.com")
+        if not resp:
+            return articles
+        soup = BeautifulSoup(resp.text, "html.parser")
+        items = soup.select("a[href*='/a/']")[:30]
+        seen = set()
+        for item in items:
+            title = item.get_text(strip=True)
+            href = item.get("href", "")
+            if not title or not href or len(title) < 10:
+                continue
+            if title in seen:
+                continue
+            seen.add(title)
+            url = href if href.startswith("http") else f"https://www.sohu.com{href}"
+            articles.append({
+                "id": make_id(title, url),
+                "title": title,
+                "summary": "搜狐新闻热点",
+                "source": "搜狐新闻",
+                "sourceIcon": "📰",
+                "url": url,
+                "category": "热点资讯",
+                "region": "国内",
+                "importance": "normal",
+                "timestamp": now_iso(),
+                "raw_date": datetime.now().strftime("%Y-%m-%d %H:%M"),
+            })
+        print(f"  ✓ 搜狐新闻: {len(articles)} 篇")
+    except Exception as e:
+        print(f"  ⚠ 搜狐新闻抓取异常: {e}")
+    return articles
 
 # ── DeepSeek 中文总结 ──
 def add_chinese_summaries(articles, config):
@@ -843,7 +1052,6 @@ def add_chinese_summaries(articles, config):
         print("  ⚠ 未配置 deepseek_key，跳过中文总结")
         return
 
-    # 分批处理，每批 10 篇
     batch_size = 10
     for i in range(0, len(articles), batch_size):
         batch = articles[i:i + batch_size]
@@ -860,9 +1068,7 @@ def add_chinese_summaries(articles, config):
         ], ensure_ascii=False)
 
         prompt = f"""以下是今日热门 GitHub/GitHub Trending 项目和其他AI资讯。请为每条资讯写一句中文简介（不超过40字），说明这个项目的用途或这条资讯的价值。
-
 返回一个JSON数组，每一项格式：{{"index": 序号, "summary_cn": "一句话中文简介"}}
-
 资讯列表：
 {items_json}"""
 
@@ -885,7 +1091,6 @@ def add_chinese_summaries(articles, config):
             result = resp.json()
             content = result["choices"][0]["message"]["content"]
 
-            # 解析返回的 JSON
             json_match = re.search(r'\[[\s\S]*\]', content)
             if json_match:
                 summaries = json.loads(json_match.group())
@@ -896,13 +1101,12 @@ def add_chinese_summaries(articles, config):
                 print(f"  ✓ DeepSeek 总结: {len(summaries)} 条")
             else:
                 print(f"  ⚠ DeepSeek 返回格式异常: {content[:100]}")
-
         except Exception as e:
             print(f"  ⚠ DeepSeek API 错误: {e}")
             continue
 
         if i + batch_size < len(articles):
-            time.sleep(0.5)  # API 速率限制
+            time.sleep(0.5)
 
 # ── 主函数 ──
 def collect_all():
@@ -929,6 +1133,12 @@ def collect_all():
         ("娱乐八卦", fetch_entertainment),
         ("体育资讯", fetch_sports),
         ("财经新闻", fetch_finance),
+        ("微博热搜", fetch_weibo_hot),
+        ("知乎热榜", fetch_zhihu_hot),
+        ("今日头条", fetch_toutiao),
+        ("百度热搜", fetch_baidu_hot),
+        ("网易新闻", fetch_163_news),
+        ("搜狐新闻", fetch_sohu_news),
     ]
 
     for name, fetcher in sources:
@@ -938,7 +1148,7 @@ def collect_all():
             all_articles.extend(articles)
         except Exception as e:
             print(f"  ❌ {name} 抓取失败: {e}")
-        time.sleep(0.5)  # 礼貌延迟
+        time.sleep(0.5)
 
     # 去重
     seen_ids = set()
@@ -974,11 +1184,8 @@ def collect_all():
     print(f"\n  ✅ 采集完成: {len(unique)} 篇 (去重后)")
     print(f"  📁 保存至: {OUTPUT_FILE}\n")
 
-    # 同时更新汇总索引
     update_index(unique)
-
     return output
-
 
 def update_index(articles):
     """更新汇总索引文件，供前端加载多日数据"""
@@ -1001,11 +1208,9 @@ def update_index(articles):
             "file": f"{today}.json",
         })
 
-    # 只保留最近30天
     existing = existing[-30:]
     with open(index_file, "w", encoding="utf-8") as f:
         json.dump(existing, f, ensure_ascii=False, indent=2)
-
 
 def send_email_if_configured(output):
     """如果配置了邮箱，自动发送摘要"""
@@ -1019,7 +1224,6 @@ def send_email_if_configured(output):
             send_digest(to_email, output["date"], output["articles"])
     except Exception as e:
         print(f"  ⚠ 邮件发送跳过: {e}")
-
 
 if __name__ == "__main__":
     result = collect_all()
