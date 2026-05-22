@@ -376,75 +376,6 @@ def fetch_theverge_ai():
     return articles
 
 
-# ── 数据源：美容时尚 ──
-def fetch_beauty_fashion():
-    """抓取美容时尚资讯"""
-    articles = []
-    try:
-        # 抓取多个美容时尚相关来源
-        sources = [
-            ("Vogue 美容", "https://www.vogue.com/beauty", "👗"),
-            ("Refinery29", "https://www.refinery29.com/en-us/beauty", "💄"),
-            ("Into The Gloss", "https://intothegloss.com", "✨"),
-        ]
-        seen = set()
-        
-        for name, url, icon in sources:
-            try:
-                resp = safe_get(url)
-                if not resp:
-                    continue
-                soup = BeautifulSoup(resp.text, "html.parser")
-                
-                # 尝试多种选择器模式
-                selectors = [
-                    "a[href]",
-                    "article a",
-                    ".post-title a",
-                    ".headline a",
-                ]
-                
-                for selector in selectors:
-                    items = soup.select(selector)[:10]
-                    for item in items:
-                        title = item.get_text(strip=True)
-                        href = item.get("href", "")
-                        if not title or not href or len(title) < 10:
-                            continue
-                        if title in seen:
-                            continue
-                        # 过滤掉非文章链接
-                        if any(x in href.lower() for x in ["/tag/", "/category/", "#", "javascript:"]):
-                            continue
-                        seen.add(title)
-                        full_url = href if href.startswith("http") else (url.rstrip("/") + href if href.startswith("/") else url + "/" + href)
-                        articles.append({
-                            "id": make_id(title, full_url),
-                            "title": title,
-                            "summary": f"{name} 美容时尚资讯",
-                            "source": name,
-                            "sourceIcon": icon,
-                            "url": full_url,
-                            "category": "美容时尚",
-                            "region": "国际",
-                            "importance": "normal",
-                            "timestamp": now_iso(),
-                            "raw_date": datetime.now().strftime("%Y-%m-%d %H:%M"),
-                        })
-                        if len(articles) >= 15:
-                            break
-                    if len(articles) >= 15:
-                        break
-            except Exception as e:
-                print(f"  ⚠ {name} 抓取异常: {e}")
-                continue
-        
-        print(f"  ✓ 美容时尚: {len(articles)} 篇")
-    except Exception as e:
-        print(f"  ⚠ 美容时尚抓取异常: {e}")
-    return articles
-
-
 # ── 数据源：生活资讯 ──
 def fetch_lifestyle():
     """抓取生活资讯"""
@@ -664,7 +595,6 @@ def collect_all():
         ("机器之心", fetch_jiqizhixin),
         ("量子位", fetch_qbitai),
         ("The Verge AI", fetch_theverge_ai),
-        ("美容时尚", fetch_beauty_fashion),
         ("生活资讯", fetch_lifestyle),
         ("科技数码", fetch_tech_digital),
     ]
