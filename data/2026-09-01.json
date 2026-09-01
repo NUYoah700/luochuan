@@ -1,85 +1,141 @@
 {
   "date": "2026-09-01",
-  "generated_at": "2026-09-01T01:09:43.866833+00:00",
-  "total": 191,
+  "generated_at": "2026-09-01T23:55:26.756978+00:00",
+  "total": 188,
   "articles": [
     {
-      "id": "c6f5d86015c5",
-      "title": "AI-produced song",
-      "summary": "The Verge AI板块报道",
-      "source": "The Verge",
-      "sourceIcon": "📰",
-      "url": "https://www.theguardian.com/music/2026/jul/13/josh-fawaz-like-a-prayer-song-is-it-ai-radio",
-      "category": "行业动态",
+      "id": "44a24cbb9eab",
+      "title": "3b1b/manim",
+      "summary": "Animation engine for explanatory math videos",
+      "lang": "Python",
+      "stars": "74",
+      "source": "GitHub Trending",
+      "sourceIcon": "⭐",
+      "url": "https://github.com/3b1b/manim",
+      "category": "开源项目",
       "region": "国际",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:09.252296+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:39.579358+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "9c43b45adabb",
-      "title": "Agent memory as a file format",
-      "summary": "Score: 161 | Comments: 83",
+      "id": "a3b739cfcad6",
+      "title": "81年前的今天 日本签署投降书",
+      "summary": "百度实时热搜",
+      "source": "百度热搜",
+      "sourceIcon": "🔍",
+      "url": "https://top.baidu.com/board?tab=realtime",
+      "category": "热点资讯",
+      "region": "国内",
+      "importance": "high",
+      "timestamp": "2026-09-01T23:55:15.103627+00:00",
+      "raw_date": "2026-09-01 23:55"
+    },
+    {
+      "id": "70f461ec30d0",
+      "title": "AI Can Make You Suck Faster Too",
+      "summary": "Score: 142 | Comments: 141",
       "source": "Hacker News",
       "sourceIcon": "🔶",
-      "url": "https://calpaterson.com/memoryfields.html",
+      "url": "https://www.hermit-tech.com/blog/ai-can-make-you-suck-faster-too",
       "category": "技术动态",
       "region": "国际",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:00.128189+00:00",
-      "raw_date": "2026-08-31 11:17"
+      "timestamp": "2026-09-01T23:54:34.641635+00:00",
+      "raw_date": "2026-09-01 05:32"
     },
     {
-      "id": "d0ff59c62e73",
-      "title": "Apple caught off guard by AI demand for Mac Mini and Mac Studio",
-      "summary": "Score: 287 | Comments: 333",
+      "id": "86efb679865d",
+      "title": "American Airlines mechanic Azriel “Al” Blackman has died",
+      "summary": "Score: 365 | Comments: 149",
       "source": "Hacker News",
       "sourceIcon": "🔶",
-      "url": "https://www.macrumors.com/2026/08/30/apple-unexpected-mac-mini-and-studio-demand/",
+      "url": "https://simpleflying.com/american-airlines-mechanic-passes-away-100-record-80-years/",
       "category": "技术动态",
       "region": "国际",
       "importance": "high",
-      "timestamp": "2026-09-01T01:08:57.782380+00:00",
-      "raw_date": "2026-08-31 12:41"
+      "timestamp": "2026-09-01T23:54:32.599098+00:00",
+      "raw_date": "2026-08-29 21:25"
     },
     {
-      "id": "f1c523d1fa44",
-      "title": "Breaking Claude Code Opus 5 Auto Mode",
-      "summary": "Score: 341 | Comments: 113",
+      "id": "b337d1136160",
+      "title": "Apple reveals 'shocking evidence' from ex-employee's MacBook in OpenAI suit",
+      "summary": "Score: 158 | Comments: 113",
       "source": "Hacker News",
       "sourceIcon": "🔶",
-      "url": "https://embracethered.com/blog/posts/2026/breaking-claude-code-opus-5-and-automode/",
+      "url": "https://9to5mac.com/2026/08/31/apple-openai-forensic-macbook-evidence/",
       "category": "技术动态",
       "region": "国际",
       "importance": "high",
-      "timestamp": "2026-09-01T01:08:59.688236+00:00",
-      "raw_date": "2026-08-31 07:49"
+      "timestamp": "2026-09-01T23:54:33.690789+00:00",
+      "raw_date": "2026-09-01 20:19"
     },
     {
-      "id": "6a474a782e9b",
-      "title": "ChatGPT Work Tool and Skill Reference",
-      "summary": "Score: 178 | Comments: 50",
+      "id": "c50cc9ea9faa",
+      "title": "Atlas: A World Model for Spatial Intelligence",
+      "summary": "Score: 131 | Comments: 25",
       "source": "Hacker News",
       "sourceIcon": "🔶",
-      "url": "https://codex-tool-reference.simonw.chatgpt.site/",
+      "url": "https://www.worldlabs.ai/blog/atlas",
       "category": "技术动态",
       "region": "国际",
       "importance": "high",
-      "timestamp": "2026-09-01T01:08:58.476782+00:00",
-      "raw_date": "2026-08-31 14:07"
+      "timestamp": "2026-09-01T23:54:32.180727+00:00",
+      "raw_date": "2026-09-01 17:36"
     },
     {
-      "id": "bc45ed91fb9c",
-      "title": "Google Cloud Launches Gemini Enterprise for Legal",
-      "summary": "The Verge AI板块报道",
-      "source": "The Verge",
-      "sourceIcon": "📰",
-      "url": "https://www.googlecloudpresscorner.com/2026-08-25-Google-Cloud-Launches-Gemini-Enterprise-for-Legal",
-      "category": "行业动态",
+      "id": "40d8dc8776b9",
+      "title": "Claude Fable 5.1 and Claude Mythos 5.1",
+      "summary": "Score: 847 | Comments: 807",
+      "source": "Hacker News",
+      "sourceIcon": "🔶",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+      "category": "技术动态",
       "region": "国际",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:09.252287+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:29.535796+00:00",
+      "raw_date": "2026-09-01 17:53"
+    },
+    {
+      "id": "e027d2ed3f22",
+      "title": "Dwarf Fortress' creator says the industry's in shambles over AI",
+      "summary": "Score: 192 | Comments: 190",
+      "source": "Hacker News",
+      "sourceIcon": "🔶",
+      "url": "https://www.pcgamer.com/gaming-industry/dwarf-fortress-creator-says-the-industrys-in-shambles-over-ai-and-layoff-happy-ceos-everyone-i-know-their-bosses-are-slowly-getting-psychosis/",
+      "category": "技术动态",
+      "region": "国际",
+      "importance": "high",
+      "timestamp": "2026-09-01T23:54:34.538856+00:00",
+      "raw_date": "2026-09-01 15:53"
+    },
+    {
+      "id": "2abcd7ef4542",
+      "title": "GPU World",
+      "summary": "Score: 392 | Comments: 268",
+      "source": "Hacker News",
+      "sourceIcon": "🔶",
+      "url": "https://www.gpuworld.org/",
+      "category": "技术动态",
+      "region": "国际",
+      "importance": "high",
+      "timestamp": "2026-09-01T23:54:35.884616+00:00",
+      "raw_date": "2026-09-01 03:16"
+    },
+    {
+      "id": "cf3197d61053",
+      "title": "Gitlawb/openclaude",
+      "summary": "runs anywhere. uses anything",
+      "lang": "TypeScript",
+      "stars": "37",
+      "source": "GitHub Trending",
+      "sourceIcon": "⭐",
+      "url": "https://github.com/Gitlawb/openclaude",
+      "category": "开源项目",
+      "region": "国际",
+      "importance": "high",
+      "timestamp": "2026-09-01T23:54:39.575989+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "2b09ed1e4785",
@@ -91,8 +147,49 @@
       "category": "行业动态",
       "region": "国际",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:09.252200+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:44.519975+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "f7160ecaa7aa",
+      "title": "How accurate have Ed Zitron's AI skeptic predictions been?",
+      "summary": "Score: 337 | Comments: 397",
+      "source": "Hacker News",
+      "sourceIcon": "🔶",
+      "url": "https://danluu.com/zitron/",
+      "category": "技术动态",
+      "region": "国际",
+      "importance": "high",
+      "timestamp": "2026-09-01T23:54:29.739630+00:00",
+      "raw_date": "2026-09-01 18:35"
+    },
+    {
+      "id": "105d5e443c78",
+      "title": "I trained a small transformer in 1.5hrs and it beats many LLMs",
+      "summary": "Score: 551 | Comments: 147",
+      "source": "Hacker News",
+      "sourceIcon": "🔶",
+      "url": "https://mvakde.github.io/blog/44-on-arc-1/",
+      "category": "技术动态",
+      "region": "国际",
+      "importance": "high",
+      "timestamp": "2026-09-01T23:54:31.414586+00:00",
+      "raw_date": "2026-09-01 09:52"
+    },
+    {
+      "id": "9fc9d329472f",
+      "title": "Imbad0202/academic-research-skills",
+      "summary": "Academic Research Skills for Claude Code: research → write → review → revise → finalize",
+      "lang": "Python",
+      "stars": "161",
+      "source": "GitHub Trending",
+      "sourceIcon": "⭐",
+      "url": "https://github.com/Imbad0202/academic-research-skills",
+      "category": "开源项目",
+      "region": "国际",
+      "importance": "high",
+      "timestamp": "2026-09-01T23:54:39.576769+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "7bf7c862d5c0",
@@ -104,63 +201,35 @@
       "category": "行业动态",
       "region": "国际",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:09.252248+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:44.520022+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "d67ee283d396",
       "title": "K-Dense-AI/scientific-agent-skills",
       "summary": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 190,000+ scientists worldwide. 165 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compat",
       "lang": "Python",
-      "stars": "1,980",
+      "stars": "914",
       "source": "GitHub Trending",
       "sourceIcon": "⭐",
       "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "category": "开源项目",
       "region": "国际",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:04.437280+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "3d896a72ecec",
-      "title": "Osmantic/ODS",
-      "summary": "Turn your PC, Mac, or Linux box into an AI server. LLM inference, chat UI, voice, agents, workflows, RAG, and image generation.",
-      "lang": "Python",
-      "stars": "77",
-      "source": "GitHub Trending",
-      "sourceIcon": "⭐",
-      "url": "https://github.com/Osmantic/ODS",
-      "category": "开源项目",
-      "region": "国际",
-      "importance": "high",
-      "timestamp": "2026-09-01T01:09:04.439796+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "1411065ec861",
-      "title": "P99 0 ms* autocomplete for 240M domain names",
-      "summary": "Score: 215 | Comments: 83",
-      "source": "Hacker News",
-      "sourceIcon": "🔶",
-      "url": "https://ruurtjan.com/articles/p99-0ms-autocomplete-for-240-million-domain-names",
-      "category": "技术动态",
-      "region": "国际",
-      "importance": "high",
-      "timestamp": "2026-09-01T01:09:01.511719+00:00",
-      "raw_date": "2026-08-31 03:20"
+      "timestamp": "2026-09-01T23:54:39.581280+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "c6c8fc88138a",
       "title": "Smartphone LED detects hidden cameras with AI",
-      "summary": "Score: 140 | Comments: 38",
+      "summary": "Score: 269 | Comments: 80",
       "source": "Hacker News",
       "sourceIcon": "🔶",
       "url": "https://www.chosun.com/english/industry-en/2026/08/30/SBFXUIJQYZEARKP5T4FBAY25HQ/",
       "category": "技术动态",
       "region": "国际",
       "importance": "high",
-      "timestamp": "2026-09-01T01:08:57.963649+00:00",
+      "timestamp": "2026-09-01T23:54:36.089819+00:00",
       "raw_date": "2026-08-30 06:52"
     },
     {
@@ -168,240 +237,167 @@
       "title": "THU-MAIC/OpenMAIC",
       "summary": "Open Multi-Agent Interactive Classroom — Get an immersive, multi-agent learning experience in just one click",
       "lang": "TypeScript",
-      "stars": "2,824",
+      "stars": "3,122",
       "source": "GitHub Trending",
       "sourceIcon": "⭐",
       "url": "https://github.com/THU-MAIC/OpenMAIC",
       "category": "开源项目",
       "region": "国际",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:04.435947+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:39.577439+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "fe09501c9bcb",
-      "title": "Terence Tao explains 6 essential mathematical concepts [video]",
-      "summary": "Score: 192 | Comments: 23",
+      "id": "12bba2a05563",
+      "title": "The ChatGPT/Codex app bundles a full copy of LibreOffice",
+      "summary": "Score: 210 | Comments: 106",
       "source": "Hacker News",
       "sourceIcon": "🔶",
-      "url": "https://www.youtube.com/watch?v=OOMx2BHHWtE",
+      "url": "https://simonwillison.net/2026/Sep/1/codex-libreoffice/",
       "category": "技术动态",
       "region": "国际",
       "importance": "high",
-      "timestamp": "2026-09-01T01:08:57.431759+00:00",
-      "raw_date": "2026-08-30 22:37"
+      "timestamp": "2026-09-01T23:54:30.054842+00:00",
+      "raw_date": "2026-09-01 20:07"
     },
     {
-      "id": "730bb6556c37",
-      "title": "a financial research agent",
-      "summary": "The Verge AI板块报道",
-      "source": "The Verge",
-      "sourceIcon": "📰",
-      "url": "https://www.googlecloudpresscorner.com/2026-08-25-Google-Cloud-Launches-Gemini-Enterprise-for-Financial-Services",
-      "category": "行业动态",
+      "id": "1b5307336a35",
+      "title": "VoltAgent/awesome-design-md",
+      "summary": "A collection of DESIGN.md files analysis by popular brand design systems. Drop one into your project and let coding agents generate a matching UI.",
+      "lang": "",
+      "stars": "487",
+      "source": "GitHub Trending",
+      "sourceIcon": "⭐",
+      "url": "https://github.com/VoltAgent/awesome-design-md",
+      "category": "开源项目",
       "region": "国际",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:09.252274+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:39.582779+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "bcd69e7ed580",
       "title": "affaan-m/ECC",
       "summary": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
       "lang": "JavaScript",
-      "stars": "512",
+      "stars": "621",
       "source": "GitHub Trending",
       "sourceIcon": "⭐",
       "url": "https://github.com/affaan-m/ECC",
       "category": "开源项目",
       "region": "国际",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:04.441787+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:39.584163+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "b1066e91a520",
-      "title": "checkstyle/checkstyle",
-      "summary": "Checkstyle is a development tool to help programmers write Java code that adheres to a coding standard. By default it supports the Google Java Style Guide and Sun Code Conventions, but is highly configurable. It can be invoked with an ANT task and a ",
-      "lang": "Java",
-      "stars": "198",
+      "id": "3a92924b3cfc",
+      "title": "averygan/reclip",
+      "summary": "Download videos from almost any website. Lightweight, self-hosted media downloader with a clean web UI.",
+      "lang": "HTML",
+      "stars": "21",
       "source": "GitHub Trending",
       "sourceIcon": "⭐",
-      "url": "https://github.com/checkstyle/checkstyle",
+      "url": "https://github.com/averygan/reclip",
       "category": "开源项目",
       "region": "国际",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:04.440415+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:39.583381+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "ae16da31c6b0",
-      "title": "every-app/open-seo",
-      "summary": "Open source alternative to Semrush and Ahrefs",
-      "lang": "TypeScript",
-      "stars": "610",
+      "id": "bbd720bed560",
+      "title": "browser-use/video-use",
+      "summary": "Edit videos with coding agents",
+      "lang": "Python",
+      "stars": "509",
       "source": "GitHub Trending",
       "sourceIcon": "⭐",
-      "url": "https://github.com/every-app/open-seo",
+      "url": "https://github.com/browser-use/video-use",
       "category": "开源项目",
       "region": "国际",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:04.443162+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:39.580657+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "c6c9119020a4",
       "title": "firecrawl/pdf-inspector",
       "summary": "Fast Rust library for PDF inspection, classification, and text extraction. Intelligently detects scanned vs text-based PDFs to enable smart routing decisions.",
       "lang": "Rust",
-      "stars": "228",
+      "stars": "545",
       "source": "GitHub Trending",
       "sourceIcon": "⭐",
       "url": "https://github.com/firecrawl/pdf-inspector",
       "category": "开源项目",
       "region": "国际",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:04.444972+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:39.580013+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "93760d76f68c",
       "title": "handsomestWei/patent-disclosure-skill",
       "summary": "中国专利.skill：专利点挖掘与交底书（发明/实用/外观）编写，通俗解读专利，嗅探政策动向，辅助审查答复。",
       "lang": "Python",
-      "stars": "571",
+      "stars": "502",
       "source": "GitHub Trending",
       "sourceIcon": "⭐",
       "url": "https://github.com/handsomestWei/patent-disclosure-skill",
       "category": "开源项目",
       "region": "国际",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:04.444346+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:39.581898+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "d1ba8e489e73",
+      "title": "iv-org/invidious",
+      "summary": "Invidious is an alternative front-end to YouTube",
+      "lang": "Crystal",
+      "stars": "583",
+      "source": "GitHub Trending",
+      "sourceIcon": "⭐",
+      "url": "https://github.com/iv-org/invidious",
+      "category": "开源项目",
+      "region": "国际",
+      "importance": "high",
+      "timestamp": "2026-09-01T23:54:39.578077+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "1604c677943a",
       "title": "jingyaogong/minimind",
       "summary": "🧠 Train a 64M-parameter LLM from scratch in just 2h!",
       "lang": "Python",
-      "stars": "495",
+      "stars": "1,005",
       "source": "GitHub Trending",
       "sourceIcon": "⭐",
       "url": "https://github.com/jingyaogong/minimind",
       "category": "开源项目",
       "region": "国际",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:04.439174+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:39.578728+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "7c27aef4d674",
-      "title": "k1tbyte/Wand-Enhancer",
-      "summary": "Advanced UX and interoperability extension for Wand (WeMod) app",
-      "lang": "C#",
-      "stars": "582",
-      "source": "GitHub Trending",
-      "sourceIcon": "⭐",
-      "url": "https://github.com/k1tbyte/Wand-Enhancer",
-      "category": "开源项目",
-      "region": "国际",
-      "importance": "high",
-      "timestamp": "2026-09-01T01:09:04.437928+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "61b640ccbd14",
-      "title": "kaifcodec/user-scanner",
-      "summary": "🕵️‍♂️ (2-in-1) Email & Username OSINT suite for deep data extraction just from a single Email/Username. Analyzes 465+ actively maintained scan vectors (175+ email / 290+ username) for security research, investigations, and digital footprinting.",
+      "id": "3cce2db76a16",
+      "title": "unclecode/crawl4ai",
+      "summary": "🚀🤖 Crawl4AI: Open-source LLM Friendly Web Crawler & Scraper. Don't be shy, join here:https://discord.gg/jP8KfhDhyN",
       "lang": "Python",
-      "stars": "93",
+      "stars": "179",
       "source": "GitHub Trending",
       "sourceIcon": "⭐",
-      "url": "https://github.com/kaifcodec/user-scanner",
+      "url": "https://github.com/unclecode/crawl4ai",
       "category": "开源项目",
       "region": "国际",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:04.442555+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:39.584962+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "659e75cfa34b",
-      "title": "majd/ipatool",
-      "summary": "Command-line tool that allows searching and downloading app packages (known as ipa files) for iOS, iPadOS, tvOS, and visionOS from the App Store.",
-      "lang": "Go",
-      "stars": "373",
-      "source": "GitHub Trending",
-      "sourceIcon": "⭐",
-      "url": "https://github.com/majd/ipatool",
-      "category": "开源项目",
-      "region": "国际",
-      "importance": "high",
-      "timestamp": "2026-09-01T01:09:04.438568+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "2132c34cdd53",
-      "title": "p-e-w/heretic",
-      "summary": "Fully automatic censorship removal for language models",
-      "lang": "Python",
-      "stars": "537",
-      "source": "GitHub Trending",
-      "sourceIcon": "⭐",
-      "url": "https://github.com/p-e-w/heretic",
-      "category": "开源项目",
-      "region": "国际",
-      "importance": "high",
-      "timestamp": "2026-09-01T01:09:04.443782+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "3faa9860630a",
-      "title": "pollen-robotics/microduck_rl",
-      "summary": "RL training environments for Microduck (mjlab)",
-      "lang": "Python",
-      "stars": "385",
-      "source": "GitHub Trending",
-      "sourceIcon": "⭐",
-      "url": "https://github.com/pollen-robotics/microduck_rl",
-      "category": "开源项目",
-      "region": "国际",
-      "importance": "high",
-      "timestamp": "2026-09-01T01:09:04.445593+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "ce8b34229e94",
-      "title": "tt-a1i/archify",
-      "summary": "Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams—self-contained HTML with motion and crisp export.",
-      "lang": "JavaScript",
-      "stars": "3,991",
-      "source": "GitHub Trending",
-      "sourceIcon": "⭐",
-      "url": "https://github.com/tt-a1i/archify",
-      "category": "开源项目",
-      "region": "国际",
-      "importance": "high",
-      "timestamp": "2026-09-01T01:09:04.436649+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "e88dd2575090",
-      "title": "zhaoxuya520/reverse-skill",
-      "summary": "Reverse Engineering / Authorized Penetration Testing / Security Research Skill Router Pack AI-powered routing + On-demand toolchain bootstrapping + Self-evolving knowledge base Supports Claude Code, Kiro, Cursor, Cline, and other AI coding clients 逆向",
-      "lang": "PowerShell",
-      "stars": "1,401",
-      "source": "GitHub Trending",
-      "sourceIcon": "⭐",
-      "url": "https://github.com/zhaoxuya520/reverse-skill",
-      "category": "开源项目",
-      "region": "国际",
-      "importance": "high",
-      "timestamp": "2026-09-01T01:09:04.441025+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "5f819baa09df",
-      "title": "“外卖员向饮料里加百草枯”系谣言",
+      "id": "a887e16a00f6",
+      "title": "“豆包手机”外观公布 有4种配色",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -409,12 +405,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444219+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103680+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "2ea1857bde35",
-      "title": "“还我季洁”",
+      "id": "9a0ebdc9de79",
+      "title": "“龙餐馆”取景地游客暴增",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -422,12 +418,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444343+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103774+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "787f23470f96",
-      "title": "“香港大药房”不卖药也不在香港",
+      "id": "d01501cecd46",
+      "title": "中国制造的“机器鸭”卖断货",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -435,12 +431,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444175+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103697+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "3af19afb78d9",
-      "title": "一家16口包中巴送新生上大学",
+      "id": "0b068796d457",
+      "title": "习近平出席“上海合作组织+”会议",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -448,12 +444,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444236+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103492+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "8dbc40d4654a",
-      "title": "中国铜、金重大找矿成果",
+      "id": "91da86f77456",
+      "title": "于东来痛批明星扎堆直播带货",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -461,12 +457,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444380+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103748+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "397dd21e30ea",
-      "title": "为何不炸开一条泄流通道",
+      "id": "e6050ab46b16",
+      "title": "云南文山12级台风致人伤亡系谣言",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -474,12 +470,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444137+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103636+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "90ec87641034",
-      "title": "习近平会见普京",
+      "id": "77daaa902a7f",
+      "title": "伊朗一婚礼因美军袭击至少4死50伤",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -487,12 +483,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444084+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103706+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "ae7f068269d4",
-      "title": "于东来发文力挺韩红",
+      "id": "85b9c2c591a8",
+      "title": "伊朗多地传出爆炸声",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -500,12 +496,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444310+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103591+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "641eec58c461",
-      "title": "六大行房贷余额少了5000多亿",
+      "id": "6d35afbfaece",
+      "title": "伊朗称用重型导弹打击约旦美军营地",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -513,12 +509,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444318+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103739+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "63db628ba445",
-      "title": "包贝尔因出轨风波新剧被除名",
+      "id": "474ee2cee5f4",
+      "title": "华为、小米、荣耀回应涨价",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -526,12 +522,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444227+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103539+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "d875b5cf4b31",
-      "title": "华为小米荣耀手机今日集体调价",
+      "id": "32ff21862ffc",
+      "title": "女子携儿子闺蜜出游 酒后跳河失联",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -539,12 +535,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444167+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103783+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "24b45bf23cd7",
-      "title": "吉隆口岸大楼只剩地基",
+      "id": "ce0898d74f80",
+      "title": "女子流产4次找不到病因 结果崩溃",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -552,12 +548,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444158+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103663+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "96bf801f52cb",
-      "title": "喜马拉雅冰川消融加速65%",
+      "id": "dc140d93ed83",
+      "title": "家长反对交600元请保洁扫教室被禁言",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -565,12 +561,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444335+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103645+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "ce7be645b789",
-      "title": "女子被踢845个群被迫离职 当地通报",
+      "id": "2a2e26c9fdb7",
+      "title": "手机一夜涨价！赶紧下手还是等等",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -578,12 +574,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444184+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103553+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "8b95906eed28",
-      "title": "女子误诊抑郁症治疗3个月暴瘦20斤",
+      "id": "de67ca995f23",
+      "title": "找了29年的人已离世24年男子崩溃大哭",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -591,12 +587,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444372+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103609+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "972aab7f70ce",
-      "title": "女子赢2600万后失联欠200万律师费",
+      "id": "89c995de8f1b",
+      "title": "搜救犬在吉隆口岸搜救累到趴地",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -604,12 +600,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444294+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103573+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "1745320b665c",
-      "title": "孙东旭新公司30天年假",
+      "id": "446eabbfb96d",
+      "title": "救援救援！再难也要继续",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -617,12 +613,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444268+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103563+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "6aebc887c4e9",
-      "title": "小众旅居走向大众",
+      "id": "ec238dd72f3c",
+      "title": "智驾强制国标来了",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -630,12 +626,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444302+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103757+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "021a3cb708d0",
-      "title": "小学生赶作业有几种流派",
+      "id": "4fa870c75513",
+      "title": "曼城1.25亿英镑签约恩佐",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -643,12 +639,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444252+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103600+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "cec3d5b0b2cc",
-      "title": "小猫纵身一跳主人直接看崩溃",
+      "id": "94eaac0b6eb3",
+      "title": "校方回应1个班级超80人",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -656,12 +652,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444277+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103766+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "7b5d040f4ad3",
-      "title": "开学了家长松了一口气",
+      "id": "25d05a3c76ba",
+      "title": "特朗普威胁伊朗终极打击蓄势待发",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -669,12 +665,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444210+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103688+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "23837b6e118d",
-      "title": "我是NBA球员你是谁",
+      "id": "45817f901d42",
+      "title": "男子摸狮子被咬：听到嘶吼没当回事",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -682,12 +678,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444260+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103619+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "74fdec1615f9",
-      "title": "折叠屏手机大战9月",
+      "id": "40336c8c03a9",
+      "title": "科威特多个美军基地发生爆炸",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -695,12 +691,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444285+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103654+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "cad2e824baa2",
-      "title": "暑期结束 中国游客都去哪玩了",
+      "id": "d5a5384a2e39",
+      "title": "秘鲁宣布与伊朗断绝外交关系",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -708,12 +704,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444351+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103723+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "731d5c18f409",
-      "title": "江苏省委：坚决拥护党中央决定",
+      "id": "3055f6a5e5ff",
+      "title": "美军称完成一波对伊朗军事目标打击",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -721,12 +717,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444193+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103582+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "46e819718839",
-      "title": "演员王鸥：我目前独自养育一个孩子",
+      "id": "608c351ddde7",
+      "title": "金价下跌 油价大涨",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -734,12 +730,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444327+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103792+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "f2e1bace0136",
-      "title": "百万级产能缺口 订单排到3年后",
+      "id": "c1d4edb9f2eb",
+      "title": "音乐人蔡坤奇患渐冻症",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -747,12 +743,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444124+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103731+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "0a9184f7ba56",
-      "title": "胡军给陈丽君当助理处得像父女",
+      "id": "e17514eadd29",
+      "title": "顶流“傻鸟”承包了全网笑点",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -760,12 +756,12 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444202+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103714+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "100deb7f0cd6",
-      "title": "韩警方公开杀害中国女生嫌犯正面照",
+      "id": "bce34fabf166",
+      "title": "黄磊回应做饭不好吃",
       "summary": "百度实时热搜",
       "source": "百度热搜",
       "sourceIcon": "🔍",
@@ -773,47 +769,47 @@
       "category": "热点资讯",
       "region": "国内",
       "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444244+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:15.103671+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "f9b0f5489887",
-      "title": "高校开学季“科技迎新”",
-      "summary": "百度实时热搜",
-      "source": "百度热搜",
-      "sourceIcon": "🔍",
-      "url": "https://top.baidu.com/board?tab=realtime",
-      "category": "热点资讯",
-      "region": "国内",
-      "importance": "high",
-      "timestamp": "2026-09-01T01:09:32.444148+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "3ad967a20a7a",
-      "title": "'I haven't lost my hope' - the search for missing loved onesRelatives of those still missing in the fatal floods in Nepal hold onto hope that their loved ones have survived.8 hrs ago",
-      "summary": "BBC News 国际新闻",
-      "source": "BBC News",
-      "sourceIcon": "📰",
-      "url": "https://www.bbc.com/news/news/videos/c4g79v842xjo",
-      "category": "国际新闻",
+      "id": "8cc88d0830e4",
+      "title": "'Death of the Pastor's Wife' John-Paul Miller Not Allowed to Possess Firearm",
+      "summary": "TMZ 娱乐资讯",
+      "source": "TMZ",
+      "sourceIcon": "🎬",
+      "url": "https://www.tmz.com/2026/09/01/pastor-john-paul-miller-not-allowed-to-possess-firearm/",
+      "category": "娱乐八卦",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:13.731402+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:54.899854+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "8c4bbd7e5f69",
-      "title": "10 Ways to Create a Collected, Designer-Looking Home Without Spending Years on Decor",
-      "summary": "Real Simple 生活资讯",
-      "source": "Real Simple",
-      "sourceIcon": "🌸",
-      "url": "https://www.realsimple.com/how-to-get-a-collected-designer-looking-home-quickly-12058194",
-      "category": "生活资讯",
+      "id": "d3b1a90db89c",
+      "title": "'Sonos 27' brings a refreshed UI to the app and lets AI agents control your system",
+      "summary": "Engadget 科技数码资讯",
+      "source": "Engadget",
+      "sourceIcon": "📱",
+      "url": "https://www.engadget.com/2248252/sonos-27-brings-a-refreshed-ui-to-the-app-and-lets-ai-agents-control-your-system/",
+      "category": "科技数码",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:10.686731+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:47.096899+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "7d7f59fa147b",
+      "title": "'Wheel of Fortune'Announcer Jim Thornton Suspended",
+      "summary": "TMZ 娱乐资讯",
+      "source": "TMZ",
+      "sourceIcon": "🎬",
+      "url": "https://www.tmz.com/2026/09/01/jim-thornton-suspended/",
+      "category": "娱乐八卦",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:54.899869+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "647c7a170afc",
@@ -825,8 +821,21 @@
       "category": "生活资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:10.686673+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:46.323399+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "5a85da0d960f",
+      "title": "216国道抢通至吉隆口岸核心区",
+      "summary": "搜狐新闻热点",
+      "source": "搜狐新闻",
+      "sourceIcon": "📰",
+      "url": "https://www.sohu.com//www.sohu.com/a/1070750471_121258493?edtsign=077AF326A2215DF4781E16D3BA18B7208286BE7E&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.283_14-200000.0.0-0-0-0-0.",
+      "category": "热点资讯",
+      "region": "国内",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:55:18.653994+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
       "id": "d0c31b02f26f",
@@ -838,21 +847,8 @@
       "category": "生活资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:10.686695+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "b5f47a0fb55e",
-      "title": "25 of the biggest celebrity feuds of the past 30 years",
-      "summary": "Entertainment Weekly 娱乐资讯",
-      "source": "Entertainment Weekly",
-      "sourceIcon": "⭐",
-      "url": "https://ew.com/celebrity-feuds-12069598",
-      "category": "娱乐八卦",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:18.011098+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:46.323422+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "1337d9cba280",
@@ -864,8 +860,60 @@
       "category": "生活资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:10.686710+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:46.323452+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "7f32b3995ed5",
+      "title": "3 Reasons It’s Harder to Fall Asleep as You Get Older—and What to Do About It",
+      "summary": "Real Simple 生活资讯",
+      "source": "Real Simple",
+      "sourceIcon": "🌸",
+      "url": "https://www.realsimple.com/why-its-hard-for-adults-to-fall-asleep-12073737",
+      "category": "生活资讯",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:46.323496+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "42333223f22d",
+      "title": "AI hits college graduates in the heart of America’s data centre boom",
+      "summary": "Financial Times 财经新闻",
+      "source": "Financial Times",
+      "sourceIcon": "📊",
+      "url": "https://www.ft.com/content/9334212a-3cc4-426c-9cbe-57cb48033603?syn-25a6b1a6=1",
+      "category": "财经新闻",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:55:03.505113+00:00",
+      "raw_date": "2026-09-01 23:55"
+    },
+    {
+      "id": "b1677dcf300d",
+      "title": "AI is making back-office work extinct",
+      "summary": "Score: 7 | Comments: 0",
+      "source": "Hacker News",
+      "sourceIcon": "🔶",
+      "url": "https://www.whitecollardream.com/",
+      "category": "技术动态",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:33.792643+00:00",
+      "raw_date": "2026-09-01 21:43"
+    },
+    {
+      "id": "5d47955b46b2",
+      "title": "Abroad and at odds: How the war has divided Iranians in the diaspora",
+      "summary": "Al Jazeera 国际新闻",
+      "source": "Al Jazeera",
+      "sourceIcon": "🌍",
+      "url": "https://www.aljazeera.com/news/2026/9/1/abroad-and-at-odds-how-the-war-has-divided-iranians-in-the-diaspora",
+      "category": "国际新闻",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:54.158077+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "80de2d537347",
@@ -877,8 +925,8 @@
       "category": "财经新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:21.929676+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:03.426682+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
       "id": "57ef79369b6f",
@@ -890,8 +938,8 @@
       "category": "国际新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:16.888456+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:54.158061+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "6f3faf3208b7",
@@ -903,21 +951,34 @@
       "category": "国际新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:16.842305+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:54.112707+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "6c72d342fc0c",
-      "title": "Albert Breerâs Takeaways: How Rams Could Deploy Aaron Donald",
+      "id": "d9a0455b5cb0",
+      "title": "Albert Breer: Why Some NFL Teams Kept Four QBs",
       "summary": "Sports Illustrated 体育资讯",
       "source": "Sports Illustrated",
       "sourceIcon": "🏈",
-      "url": "https://www.si.com/nfl/albert-breer-takeaways-how-rams-could-proceed-with-aaron-donald-2026",
+      "url": "https://www.si.com/nfl/albert-breer-why-nfl-teams-kept-four-qbs-impact-game-day-rosters",
       "category": "体育资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:20.012193+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:59.329362+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "7def3249a073",
+      "title": "Ariana Grande completes tour and steps back from public life",
+      "summary": "BBC News 国际新闻",
+      "source": "BBC News",
+      "sourceIcon": "📰",
+      "url": "https://www.bbc.com/news/news/articles/c4gj0l34g78o",
+      "category": "国际新闻",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:50.783288+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "a4f34adc33c9",
@@ -929,8 +990,34 @@
       "category": "体育资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:20.910059+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:01.980811+00:00",
+      "raw_date": "2026-09-01 23:55"
+    },
+    {
+      "id": "6418cf55c688",
+      "title": "Bendy Babes Guess Who ... Bend, Snap, Slay!",
+      "summary": "TMZ 娱乐资讯",
+      "source": "TMZ",
+      "sourceIcon": "🎬",
+      "url": "https://www.tmz.com/photos/2018/04/26/bendy-babes-stars-strike-a-yoga-pose-photos/",
+      "category": "娱乐八卦",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:54.899836+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "4943f81fab55",
+      "title": "Big banks want a cut of lawyers’ AI savings",
+      "summary": "Financial Times 财经新闻",
+      "source": "Financial Times",
+      "sourceIcon": "📊",
+      "url": "https://www.ft.com/content/5240a6ac-b2e8-4897-a0a4-cbc7fc283bc9?syn-25a6b1a6=1",
+      "category": "财经新闻",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:55:03.505125+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
       "id": "7e80fa687ad8",
@@ -942,8 +1029,8 @@
       "category": "国际新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:13.719210+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:50.771077+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "ad5a1055291b",
@@ -955,47 +1042,60 @@
       "category": "国际新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:14.498746+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:51.652977+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "ea3498c153bf",
-      "title": "Can Iran use rockets to mine the Strait of Hormuz, as US claims?",
-      "summary": "Al Jazeera 国际新闻",
-      "source": "Al Jazeera",
-      "sourceIcon": "🌍",
-      "url": "https://www.aljazeera.com/news/2026/8/31/can-iran-use-rockets-to-mine-the-strait-of-hormuz-as-us-claims",
-      "category": "国际新闻",
+      "id": "51765d6b4e86",
+      "title": "Celebrate Zendaya's Big 3-0 With Her Hottest Shots!",
+      "summary": "TMZ 娱乐资讯",
+      "source": "TMZ",
+      "sourceIcon": "🎬",
+      "url": "https://www.tmz.com/photos/2023/04/02/zendaya-hot-shots/",
+      "category": "娱乐八卦",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:16.849230+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:54.899799+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "f5e7faa2afcc",
-      "title": "Claude × retrocomputing: emulating a QIC-117 tape drive",
-      "summary": "Score: 19 | Comments: 11",
-      "source": "Hacker News",
-      "sourceIcon": "🔶",
-      "url": "https://dmitrybrant.com/2026/08/23/claude-x-retrocomputing-emulating-a-qic-117-tape-drive",
-      "category": "技术动态",
+      "id": "39d2ac08221c",
+      "title": "China derails consensus on communiqué after US-hosted G20",
+      "summary": "Financial Times 财经新闻",
+      "source": "Financial Times",
+      "sourceIcon": "📊",
+      "url": "https://www.ft.com/content/dcefdf76-9bac-4b34-80c2-eab80b559f53?syn-25a6b1a6=1",
+      "category": "财经新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:08:58.722736+00:00",
-      "raw_date": "2026-08-24 18:58"
+      "timestamp": "2026-09-01T23:55:03.505087+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "0cb0eb0fcac1",
-      "title": "College Football's 2026 Coordinator Hires That Will Make or Break Their Teams",
-      "summary": "Sports Illustrated 体育资讯",
-      "source": "Sports Illustrated",
-      "sourceIcon": "🏈",
-      "url": "https://www.si.com/college-football/forde-yard-dash-10-coordinator-hires-who-could-make-or-break-their-teams",
-      "category": "体育资讯",
+      "id": "dc1ed50d89fd",
+      "title": "Chris McKenna opens up about ‘disappointing’ exit fromGeneral Hospitalfollowing shocking death scene",
+      "summary": "Entertainment Weekly 娱乐资讯",
+      "source": "Entertainment Weekly",
+      "sourceIcon": "⭐",
+      "url": "https://ew.com/chris-mckenna-opens-up-about-disappointing-exit-from-general-hospital-12076184",
+      "category": "娱乐八卦",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:20.012132+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:55.506906+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "3c46fec90095",
+      "title": "Colin Jost and Pete Davidson finally found a use for the Staten Island Ferry they regret buying",
+      "summary": "Entertainment Weekly 娱乐资讯",
+      "source": "Entertainment Weekly",
+      "sourceIcon": "⭐",
+      "url": "https://ew.com/colin-jost-and-pete-davidson-to-turn-staten-island-ferry-into-comedy-club-12076145",
+      "category": "娱乐八卦",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:55.506977+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "f1e8bbd49c42",
@@ -1007,21 +1107,8 @@
       "category": "娱乐八卦",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:17.999146+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "c7ddb8124ba2",
-      "title": "Consultants head for an AI showdown — with their own clients",
-      "summary": "Financial Times 财经新闻",
-      "source": "Financial Times",
-      "sourceIcon": "📊",
-      "url": "https://www.ft.com/content/709d7e2d-0c2f-45bc-b559-e7328372cf9e?syn-25a6b1a6=1",
-      "category": "财经新闻",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:22.007664+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:55.495058+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "831bd93f5183",
@@ -1033,8 +1120,8 @@
       "category": "国际新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:15.870431+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:53.161253+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "00ae219d4f66",
@@ -1046,8 +1133,21 @@
       "category": "财经新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:22.220876+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:03.887448+00:00",
+      "raw_date": "2026-09-01 23:55"
+    },
+    {
+      "id": "3f197dff2e75",
+      "title": "Cup noodles made with cold water? BBC tries Japan's viral snackThe BBC's Tokyo correspondent Kurumi Mori tries Japan's latest food trend, instant noodles made using cold water.2 hrs agoAsia",
+      "summary": "BBC News 国际新闻",
+      "source": "BBC News",
+      "sourceIcon": "📰",
+      "url": "https://www.bbc.com/news/news/videos/ce30lqln299o",
+      "category": "国际新闻",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:50.783185+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "6c9b18b52a05",
@@ -1059,47 +1159,21 @@
       "category": "财经新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:22.220853+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:03.887410+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "9ac0bf7de091",
-      "title": "D4vd's Lawyers Withdraw, Now Repped by Public Defender",
-      "summary": "TMZ 娱乐资讯",
-      "source": "TMZ",
-      "sourceIcon": "🎬",
-      "url": "https://www.tmz.com/2026/08/31/d4vd-lawyers-withdraw-now-repped-by-public-defender/",
-      "category": "娱乐八卦",
+      "id": "2f027cd37ba9",
+      "title": "DeepSeek-V3: From Roofline to Reality",
+      "summary": "Score: 3 | Comments: 0",
+      "source": "Hacker News",
+      "sourceIcon": "🔶",
+      "url": "https://deepseek-v3.ezyang.com/index.html",
+      "category": "技术动态",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:17.558840+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "4e5ffb0a9d39",
-      "title": "Dancing With the Stars: The Next Procrowns [SPOILER] as first winner in dazzling finale",
-      "summary": "Entertainment Weekly 娱乐资讯",
-      "source": "Entertainment Weekly",
-      "sourceIcon": "⭐",
-      "url": "https://ew.com/dwts-the-next-pro-crowns-its-first-winner-in-thrilling-finale-12074744",
-      "category": "娱乐八卦",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:18.010998+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "f3423dbad7d1",
-      "title": "Darializa Avila Chevalier: The face of America’s socialist insurgency",
-      "summary": "Financial Times 财经新闻",
-      "source": "Financial Times",
-      "sourceIcon": "📊",
-      "url": "https://www.ft.com/content/2ca855a9-be0d-4915-b4f0-b48355c6aa4a?syn-25a6b1a6=1",
-      "category": "财经新闻",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:22.007646+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:35.987863+00:00",
+      "raw_date": "2026-09-01 19:42"
     },
     {
       "id": "cf4d34cd07a4",
@@ -1111,21 +1185,34 @@
       "category": "娱乐八卦",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:17.999156+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:55.495070+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "00fea79e840c",
-      "title": "Double The Trouble! Guess Which Twins Are Too Hot To Handle",
+      "id": "7ae18dd4f98c",
+      "title": "Dolly Parton's Hollywood Star Damaged After Flowers Stolen, Name Scratched",
       "summary": "TMZ 娱乐资讯",
       "source": "TMZ",
       "sourceIcon": "🎬",
-      "url": "https://www.tmz.com/photos/2022/08/31/clermont-twins-hot-shots/",
+      "url": "https://www.tmz.com/2026/09/01/dolly-parton-hollywood-walk-of-fame-star-vandalized/",
       "category": "娱乐八卦",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:17.558785+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:54.899818+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "105e5680a537",
+      "title": "Dolly Parton’s Walk of Fame star vandalized days after country icon’s death",
+      "summary": "Entertainment Weekly 娱乐资讯",
+      "source": "Entertainment Weekly",
+      "sourceIcon": "⭐",
+      "url": "https://ew.com/dolly-partons-walk-of-fame-star-vandalized-days-after-country-icons-death-12076051",
+      "category": "娱乐八卦",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:55.506930+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "4585793b76d5",
@@ -1137,8 +1224,8 @@
       "category": "娱乐八卦",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:17.999167+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:55.495081+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "97a0e0d94ea2",
@@ -1150,8 +1237,8 @@
       "category": "娱乐八卦",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:17.548424+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:54.889749+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "c9b7b67d4295",
@@ -1163,8 +1250,8 @@
       "category": "科技数码",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:11.499073+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:47.309451+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "e18ad36158da",
@@ -1176,21 +1263,21 @@
       "category": "娱乐八卦",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:17.999054+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:55.494963+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "bf2fb299120a",
-      "title": "Europeans shun Russian finance minister at US-hosted G20 meeting",
+      "id": "a9cb73e55364",
+      "title": "FT Investigations.Russia secretly helping Iran develop supersonic cruise missiles",
       "summary": "Financial Times 财经新闻",
       "source": "Financial Times",
       "sourceIcon": "📊",
-      "url": "https://www.ft.com/content/16285abd-6bc2-4a38-942c-5206c79f4c4b?syn-25a6b1a6=1",
+      "url": "https://www.ft.com/content/6cf367bc-95b0-4f1f-b149-a25684adefc3?syn-25a6b1a6=1",
       "category": "财经新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:22.007697+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:03.505045+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
       "id": "7c185d603fe4",
@@ -1202,21 +1289,21 @@
       "category": "体育资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:20.259059+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:01.035024+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "94b785824b7f",
-      "title": "Festival honouring Dolly Parton set for Nashville and London",
-      "summary": "BBC News 国际新闻",
-      "source": "BBC News",
-      "sourceIcon": "📰",
-      "url": "https://www.bbc.com/news/news/articles/c5ywd9q3ywvo",
-      "category": "国际新闻",
+      "id": "8c49fa3e9819",
+      "title": "Feeling Stressed? Experts Say These 8 Foods Can Help You Feel Calmer",
+      "summary": "Real Simple 生活资讯",
+      "source": "Real Simple",
+      "sourceIcon": "🌸",
+      "url": "https://www.realsimple.com/stress-relieving-foods-12058199",
+      "category": "生活资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:13.731434+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:46.323475+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "907b64daa067",
@@ -1228,12 +1315,12 @@
       "category": "财经新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:21.929767+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:03.426771+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "2dcdd6857f8b",
-      "title": "Forde-Yard Dash: 10 QBs With a Chance to Make the Mendoza Leap",
+      "id": "f7a7084f556d",
+      "title": "Forde-Yard Dash: 10 QBs Who Could Make the Fernando Mendoza Leap",
       "summary": "Sports Illustrated 体育资讯",
       "source": "Sports Illustrated",
       "sourceIcon": "🏈",
@@ -1241,34 +1328,21 @@
       "category": "体育资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:20.012178+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:59.329407+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "20c26a2c6224",
-      "title": "Former US National Security Adviser says US blockade of Iranian oil an ‘enormous win’",
+      "id": "4f6f4de02346",
+      "title": "Four killed in attack on wedding in Iran’s Sirik region",
       "summary": "Al Jazeera 国际新闻",
       "source": "Al Jazeera",
       "sourceIcon": "🌍",
-      "url": "https://www.aljazeera.com/news/liveblog/2026/9/1/iran-war-live-trump-vows-to-hit-iran-following-first-clash-in-a-month?update=4905054",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/9/1/iran-war-live-trump-vows-to-hit-iran-following-first-clash-in-a-month?update=4908641",
       "category": "国际新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:16.849192+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "5d5b346da25f",
-      "title": "Former gang leader convicted of ordering Tupac Shakur’s 1996 killing",
-      "summary": "Entertainment Weekly 娱乐资讯",
-      "source": "Entertainment Weekly",
-      "sourceIcon": "⭐",
-      "url": "https://ew.com/duane-keffe-d-davis-guilty-murder-tupac-shakur-12070742",
-      "category": "娱乐八卦",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:18.011053+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:54.119502+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "e6fca16d1dba",
@@ -1280,21 +1354,47 @@
       "category": "财经新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:22.220887+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:03.887464+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "67348b4b75d7",
-      "title": "Garmin Cirqa review: A fine but utterly inessential smart band",
-      "summary": "Engadget 科技数码资讯",
-      "source": "Engadget",
-      "sourceIcon": "📱",
-      "url": "https://www.engadget.com/2246325/garmin-cirqa-review/",
-      "category": "科技数码",
+      "id": "0d2d2c8ec084",
+      "title": "G20 finance leaders, except China, demand ‘free, safe’ transit through Strait of Hormuz",
+      "summary": "Al Jazeera 国际新闻",
+      "source": "Al Jazeera",
+      "sourceIcon": "🌍",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/9/1/iran-war-live-trump-vows-to-hit-iran-following-first-clash-in-a-month?update=4908655",
+      "category": "国际新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:11.334693+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:54.119474+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "6d807f9e0e35",
+      "title": "Germany accuses Russia of drone attack on Leipzig airport",
+      "summary": "Al Jazeera 国际新闻",
+      "source": "Al Jazeera",
+      "sourceIcon": "🌍",
+      "url": "https://www.aljazeera.com/news/2026/9/1/germany-accuses-russia-of-drone-attack-on-leipzig-airport",
+      "category": "国际新闻",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:54.119533+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "ec158a6562a1",
+      "title": "Germany says Russia behind Leipzig airport drone attackA drone carrying an explosive device was discovered at the airport close to Ukrainian cargo planes on 4 August.3 hrs agoEurope",
+      "summary": "BBC News 国际新闻",
+      "source": "BBC News",
+      "sourceIcon": "📰",
+      "url": "https://www.bbc.com/news/news/articles/c5ylm3m67n2o",
+      "category": "国际新闻",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:50.783130+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "d911f04bb527",
@@ -1306,8 +1406,8 @@
       "category": "体育资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:20.259105+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:01.035074+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
       "id": "10ddfdcad57a",
@@ -1319,8 +1419,8 @@
       "category": "生活资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:10.674909+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:46.311707+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "1e2856c76ca7",
@@ -1332,142 +1432,142 @@
       "category": "娱乐八卦",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:18.571214+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:56.622020+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "f9b341089106",
-      "title": "Honor Robot Phone hands-on: A gimbal phone experiment with promising results",
-      "summary": "Engadget 科技数码资讯",
-      "source": "Engadget",
-      "sourceIcon": "📱",
-      "url": "https://www.engadget.com/2247473/honor-robot-phone-hands-on/",
-      "category": "科技数码",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:11.334641+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "d38df289c531",
-      "title": "How Shein lost its shine ahead of long-awaited stock market debutThe firm's Hong Kong listing on Tuesday comes after a years-long quest to sell shares in New York and London.11 mins agoBusiness",
-      "summary": "BBC News 国际新闻",
-      "source": "BBC News",
-      "sourceIcon": "📰",
-      "url": "https://www.bbc.com/news/news/articles/c3v0qrz7z25o",
-      "category": "国际新闻",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:13.731337+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "b24bfe9ed18e",
-      "title": "How we configured OpenTelemetry logs in Rails",
-      "summary": "Score: 18 | Comments: 3",
-      "source": "Hacker News",
-      "sourceIcon": "🔶",
-      "url": "https://www.sixpatterns.com/blog/how-we-configured-opentelemetry-logs-in-rails",
-      "category": "技术动态",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:08:59.157284+00:00",
-      "raw_date": "2026-08-31 21:12"
-    },
-    {
-      "id": "cf096d9ac52c",
-      "title": "Inside North Dakota Stateâs FBS Leap and Statement First Win",
-      "summary": "Sports Illustrated 体育资讯",
-      "source": "Sports Illustrated",
-      "sourceIcon": "🏈",
-      "url": "https://www.si.com/college-football/inside-north-dakota-state-fbs-leap-statement-first-win",
-      "category": "体育资讯",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:20.012162+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "0228dc94109a",
-      "title": "Iran urges UN Security Council to intervene after US attack on Larak Island",
+      "id": "6e766ecf28df",
+      "title": "Here’s what happened today",
       "summary": "Al Jazeera 国际新闻",
       "source": "Al Jazeera",
       "sourceIcon": "🌍",
-      "url": "https://www.aljazeera.com/news/liveblog/2026/9/1/iran-war-live-trump-vows-to-hit-iran-following-first-clash-in-a-month?update=4905064",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/9/1/iran-war-live-trump-vows-to-hit-iran-following-first-clash-in-a-month?update=4908769",
       "category": "国际新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:16.849206+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:54.119455+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "2591c95646f5",
-      "title": "Jane Fonda chokes up remembering Dolly Parton on the day of her funeral: ‘She meant love’",
-      "summary": "Entertainment Weekly 娱乐资讯",
-      "source": "Entertainment Weekly",
-      "sourceIcon": "⭐",
-      "url": "https://ew.com/jane-fonda-chokes-up-remembering-dolly-parton-on-day-of-her-funeral-12074807",
-      "category": "娱乐八卦",
+      "id": "917cc3cecdee",
+      "title": "How Jeremiah Smith Became the Greatest Ohio State Receiver",
+      "summary": "Sports Illustrated 体育资讯",
+      "source": "Sports Illustrated",
+      "sourceIcon": "🏈",
+      "url": "https://www.si.com/college-football/how-jeremiah-smith-became-the-greatest-ohio-state-receiver-digital-cover",
+      "category": "体育资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:18.011031+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:59.329336+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "f9efd91667a3",
-      "title": "Jena Frumes' Dazzles in Her Teeny Bikinis In the Bahamas!",
-      "summary": "TMZ 娱乐资讯",
-      "source": "TMZ",
-      "sourceIcon": "🎬",
-      "url": "https://www.tmz.com/photos/2026/08/31/jena-frumes-beautiful-bahamas-vacay/",
-      "category": "娱乐八卦",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:17.558824+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "ec713c1fa3dc",
-      "title": "Keffe DFound Guilty in Tupac Murder",
-      "summary": "TMZ 娱乐资讯",
-      "source": "TMZ",
-      "sourceIcon": "🎬",
-      "url": "https://www.tmz.com/2026/08/31/tupac-suspect-keffe-d-found-guilty/",
-      "category": "娱乐八卦",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:17.558856+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "860af927fc65",
-      "title": "LIVEJury in Tupac Shakur trial finds Duane 'Keffe D' Davis guilty of murderDuane \"Keffe D\" Davis has been found guilty of first-degree murder in Las Vegas, 30 years after the legendary rapper died in a drive-by shooting.",
+      "id": "3e769a09e434",
+      "title": "How a small island in Canada appeared, vanished, and was found againOfficials in British Columbia say the floating island drifted towards the shoreline of a local lake. But its origins remain a mystery.6 hrs agoUS & Canada",
       "summary": "BBC News 国际新闻",
       "source": "BBC News",
       "sourceIcon": "📰",
-      "url": "https://www.bbc.com/news/live/cr3w09l8z0yyt",
+      "url": "https://www.bbc.com/news/news/articles/cgk5jk6nkxzo",
       "category": "国际新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:13.731258+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:50.783257+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "fab1cdd73d42",
-      "title": "Launch HN: Almanac (YC S26) – AI that knows your company",
-      "summary": "Score: 46 | Comments: 42",
+      "id": "97d1c40d0308",
+      "title": "Iran vows ‘severe punishment’ for US attacks, Trump warns against response",
+      "summary": "Al Jazeera 国际新闻",
+      "source": "Al Jazeera",
+      "sourceIcon": "🌍",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/9/1/iran-war-live-trump-vows-to-hit-iran-following-first-clash-in-a-month",
+      "category": "国际新闻",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:54.119422+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "81ea17e3702c",
+      "title": "Iran’s IRGC claims ballistic missile strike on US drone hangars in Jordan",
+      "summary": "Al Jazeera 国际新闻",
+      "source": "Al Jazeera",
+      "sourceIcon": "🌍",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/9/1/iran-war-live-trump-vows-to-hit-iran-following-first-clash-in-a-month?update=4908825",
+      "category": "国际新闻",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:54.119488+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "10d50223fb7e",
+      "title": "J. Cerundolo v A. Gea",
+      "summary": "Sky Sports 体育资讯",
+      "source": "Sky Sports",
+      "sourceIcon": "⚾",
+      "url": "https://www.skysports.com/tennis/watch/9003856071987963112/us-open-2026",
+      "category": "体育资讯",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:55:01.761959+00:00",
+      "raw_date": "2026-09-01 23:55"
+    },
+    {
+      "id": "8b909e63b4d8",
+      "title": "J. de Jong v F. Passaro",
+      "summary": "Sky Sports 体育资讯",
+      "source": "Sky Sports",
+      "sourceIcon": "⚾",
+      "url": "https://www.skysports.com/tennis/watch/4886697504952768112/us-open-2026",
+      "category": "体育资讯",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:55:01.761971+00:00",
+      "raw_date": "2026-09-01 23:55"
+    },
+    {
+      "id": "27c9b2e2f162",
+      "title": "Jordan Love Mastered One of the Toughest Tasks for an NFL QB",
+      "summary": "Sports Illustrated 体育资讯",
+      "source": "Sports Illustrated",
+      "sourceIcon": "🏈",
+      "url": "https://www.si.com/nfl/how-packers-jordan-love-mastered-one-of-toughest-tasks-for-nfl-qb",
+      "category": "体育资讯",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:59.329378+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "9c77c3f7928c",
+      "title": "Jurors in Lindsay Clancy trial deadlocked but judge asks them to keep tryingThe Massachusetts mother is facing murder charges for killing her three children at their family home in 2023.4 hrs agoUS & Canada",
+      "summary": "BBC News 国际新闻",
+      "source": "BBC News",
+      "sourceIcon": "📰",
+      "url": "https://www.bbc.com/news/news/articles/c9qr4gp8qy9o",
+      "category": "国际新闻",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:50.783239+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "402d721408a1",
+      "title": "Keenable SELECT: an agent that searches the web in SQL",
+      "summary": "Score: 48 | Comments: 12",
       "source": "Hacker News",
       "sourceIcon": "🔶",
-      "url": "https://usealmanac.com/",
+      "url": "https://keenableai.github.io/select-showcase/",
       "category": "技术动态",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:08:58.988955+00:00",
-      "raw_date": "2026-08-31 15:34"
+      "timestamp": "2026-09-01T23:54:35.369702+00:00",
+      "raw_date": "2026-09-01 15:41"
     },
     {
-      "id": "084431ecf513",
-      "title": "Live US Open: Shelton v Griekspoor",
+      "id": "df4ff3d12448",
+      "title": "Live US Open: Gauff v Sonmez",
       "summary": "Sky Sports 体育资讯",
       "source": "Sky Sports",
       "sourceIcon": "⚾",
@@ -1475,12 +1575,12 @@
       "category": "体育资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:20.697519+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:01.761922+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "dcef0cfb4429",
-      "title": "Live US Open: Swiatek v Wang",
+      "id": "d6378da83048",
+      "title": "Live US Open: Monfils v Vallejo",
       "summary": "Sky Sports 体育资讯",
       "source": "Sky Sports",
       "sourceIcon": "⚾",
@@ -1488,21 +1588,21 @@
       "category": "体育资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:20.697542+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:01.761944+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "ef1aff1851d5",
-      "title": "M. Joint v L. Samsonova",
-      "summary": "Sky Sports 体育资讯",
-      "source": "Sky Sports",
-      "sourceIcon": "⚾",
-      "url": "https://www.skysports.com/tennis/watch/6540411146223798112/us-open-2026",
-      "category": "体育资讯",
+      "id": "4bad57811073",
+      "title": "Mackenzie Shirilla Appeal Denied Again",
+      "summary": "TMZ 娱乐资讯",
+      "source": "TMZ",
+      "sourceIcon": "🎬",
+      "url": "https://www.tmz.com/2026/09/01/mackenzie-shirilla-gets-appeal-denied/",
+      "category": "娱乐八卦",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:20.697556+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:54.899772+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "398839ca7b85",
@@ -1514,8 +1614,8 @@
       "category": "生活资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:10.674895+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:46.311692+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "3d4c910846eb",
@@ -1527,34 +1627,21 @@
       "category": "娱乐八卦",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:19.054398+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:57.170579+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "2183e0fbd5d3",
-      "title": "Mysterious Island Appears, Then Vanishes in Canadian Reservoir",
-      "summary": "TMZ 娱乐资讯",
-      "source": "TMZ",
-      "sourceIcon": "🎬",
-      "url": "https://www.tmz.com/2026/08/31/mysterious-island-appears-then-disappears-in-canadian-reservoir/",
-      "category": "娱乐八卦",
+      "id": "e2e4599eb0ff",
+      "title": "My local model setup on an M4 Pro Mac Mini",
+      "summary": "Score: 18 | Comments: 1",
+      "source": "Hacker News",
+      "sourceIcon": "🔶",
+      "url": "https://lws.io/blog/my-local-model-setup/",
+      "category": "技术动态",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:17.558806+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "218f95705eec",
-      "title": "Nepal rescuers blast hillside in search of hydropower workers as families wait anxiouslyRescuers have resorted to explosives as they struggle to reach trapped workers, as the flooding death toll reaches 939.8 hrs agoAsia",
-      "summary": "BBC News 国际新闻",
-      "source": "BBC News",
-      "sourceIcon": "📰",
-      "url": "https://www.bbc.com/news/news/articles/c5ylvgq9q71o",
-      "category": "国际新闻",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:13.731383+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:30.608022+00:00",
+      "raw_date": "2026-09-01 22:30"
     },
     {
       "id": "e0579d7acec6",
@@ -1566,8 +1653,21 @@
       "category": "国际新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:16.888487+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:54.158122+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "0565011f8fc1",
+      "title": "Perfect, Pristine Homes Are Out—This “Collected-Over-Time” Look Is Taking Over Instead",
+      "summary": "Real Simple 生活资讯",
+      "source": "Real Simple",
+      "sourceIcon": "🌸",
+      "url": "https://www.realsimple.com/houzz-2026-fall-design-trends-12076007",
+      "category": "生活资讯",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:46.323526+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "56be56ff66c8",
@@ -1579,8 +1679,8 @@
       "category": "娱乐八卦",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:18.259423+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:55.812368+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "99f9b7984320",
@@ -1592,8 +1692,8 @@
       "category": "财经新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:22.220796+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:03.887348+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
       "id": "27ca2b10a70c",
@@ -1605,8 +1705,8 @@
       "category": "财经新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:22.220865+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:03.887436+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
       "id": "2b3ad714861f",
@@ -1618,21 +1718,8 @@
       "category": "国际新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:16.368733+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "4b48a98af735",
-      "title": "Putin, Xi reaffirm Russia-China ties amid ‘unpredictable’ world",
-      "summary": "Al Jazeera 国际新闻",
-      "source": "Al Jazeera",
-      "sourceIcon": "🌍",
-      "url": "https://www.aljazeera.com/news/2026/8/31/putin-and-xi-affirm-strategic-alliance-amid-unpredictable-world",
-      "category": "国际新闻",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:16.849247+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:53.614177+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "9a7ed89e6ba1",
@@ -1644,21 +1731,47 @@
       "category": "生活资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:10.674846+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:46.311646+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "83b19240dfa5",
-      "title": "Retired Jewish police chief to stand for Arab-Israeli party in parliamentary election",
-      "summary": "Financial Times 财经新闻",
-      "source": "Financial Times",
-      "sourceIcon": "📊",
-      "url": "https://www.ft.com/content/a4017f9f-9a97-445b-b8fb-f4f0d2cf4344",
-      "category": "财经新闻",
+      "id": "80bd3e611197",
+      "title": "Remarkable US oil deal puzzles analysts - and angers many VenezuelansAmounting to 65 billion barrels of crude, the deal is labelled by one ex-envoy as a colonialist \"fever dream\".2 hrs agoWorld",
+      "summary": "BBC News 国际新闻",
+      "source": "BBC News",
+      "sourceIcon": "📰",
+      "url": "https://www.bbc.com/news/news/articles/c93vkgk5e1yo",
+      "category": "国际新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:22.007741+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:50.783221+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "95a6038a0078",
+      "title": "River water smashed into tunnel and chased me for 20 minutes, Nepal worker tells BBCMajor efforts to rescue hydropower workers continue as Nepal's death toll exceeds 1,000.8 hrs agoAsia",
+      "summary": "BBC News 国际新闻",
+      "source": "BBC News",
+      "sourceIcon": "📰",
+      "url": "https://www.bbc.com/news/news/articles/cg49590v6k1o",
+      "category": "国际新闻",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:50.783164+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "b74e4567557f",
+      "title": "Romo Releases Candid First Statement About Arrest, CBS Leave",
+      "summary": "Sports Illustrated 体育资讯",
+      "source": "Sports Illustrated",
+      "sourceIcon": "🏈",
+      "url": "https://www.si.com/nfl/tony-romo-releases-candid-first-statement-arrest-cbs-broadcasting-leave",
+      "category": "体育资讯",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:59.329393+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "d2010ba475cc",
@@ -1670,8 +1783,8 @@
       "category": "体育资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:20.678068+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:01.742647+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
       "id": "f03e478caa7f",
@@ -1683,8 +1796,8 @@
       "category": "体育资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:20.678053+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:01.742633+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
       "id": "11eb1493412c",
@@ -1696,8 +1809,8 @@
       "category": "体育资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:19.994460+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:59.311391+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "c1f51115c127",
@@ -1709,8 +1822,8 @@
       "category": "体育资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:19.994480+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:59.311412+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "e542f9745394",
@@ -1722,8 +1835,8 @@
       "category": "体育资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:19.994416+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:59.311344+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "cba3f14549ba",
@@ -1735,34 +1848,34 @@
       "category": "体育资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:19.994496+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:59.311440+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "4c29a49386d1",
-      "title": "Shang Juncheng v M. Trungelliti",
-      "summary": "Sky Sports 体育资讯",
-      "source": "Sky Sports",
-      "sourceIcon": "⚾",
-      "url": "https://www.skysports.com/tennis/watch/6786200538627410112/us-open-2026",
-      "category": "体育资讯",
+      "id": "6496b8c0811a",
+      "title": "Saab has unveiled its A3 collaborative combat aircraft concept",
+      "summary": "Score: 89 | Comments: 110",
+      "source": "Hacker News",
+      "sourceIcon": "🔶",
+      "url": "https://aviationweek.com/defense/aircraft-propulsion/saab-enters-collaborative-combat-aircraft-race-high-end-concept",
+      "category": "技术动态",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:20.697568+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:35.678002+00:00",
+      "raw_date": "2026-09-01 14:19"
     },
     {
-      "id": "eb9c0554e47e",
-      "title": "Should You Ever Take “Beige Flags” Seriously? Here’s What Relationship Experts Say",
-      "summary": "Real Simple 生活资讯",
-      "source": "Real Simple",
-      "sourceIcon": "🌸",
-      "url": "https://www.realsimple.com/beige-flags-12074376",
-      "category": "生活资讯",
+      "id": "6c9c63394168",
+      "title": "Saudi and South Korean oil tankers hit in Strait of Hormuz",
+      "summary": "Financial Times 财经新闻",
+      "source": "Financial Times",
+      "sourceIcon": "📊",
+      "url": "https://www.ft.com/content/bbbce2e1-6542-4806-9c26-d35e8c3b702e?syn-25a6b1a6=1",
+      "category": "财经新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:10.686771+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:03.505027+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
       "id": "67839d7e7656",
@@ -1774,21 +1887,21 @@
       "category": "娱乐八卦",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:17.999135+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:55.495048+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "0da876ce6e5b",
-      "title": "Show HN: We built the smallest dual-band aircraft tracker",
-      "summary": "Score: 76 | Comments: 21",
+      "id": "b632b796277d",
+      "title": "Show HN: Weedout – Safari extension that hides YouTube AI-labeled videos",
+      "summary": "Score: 31 | Comments: 10",
       "source": "Hacker News",
       "sourceIcon": "🔶",
-      "url": "https://pantsforbirds.com/the-worlds-smallest-dual-band-ads-b-receiver-module/",
+      "url": "https://masteranza.github.io/weedout/",
       "category": "技术动态",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:08:59.433922+00:00",
-      "raw_date": "2026-08-26 20:38"
+      "timestamp": "2026-09-01T23:54:29.845799+00:00",
+      "raw_date": "2026-09-01 22:06"
     },
     {
       "id": "129fc80dd843",
@@ -1800,8 +1913,21 @@
       "category": "体育资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:20.677991+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:01.742570+00:00",
+      "raw_date": "2026-09-01 23:55"
+    },
+    {
+      "id": "61e37c75be2d",
+      "title": "Sony Bravia Theater Trio review: The three-piece soundbar alternative",
+      "summary": "Engadget 科技数码资讯",
+      "source": "Engadget",
+      "sourceIcon": "📱",
+      "url": "https://www.engadget.com/2248082/sony-bravia-theater-trio-review/",
+      "category": "科技数码",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:47.096951+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "2e7474ad983e",
@@ -1813,60 +1939,8 @@
       "category": "体育资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:20.259120+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "8b2596690b45",
-      "title": "Study: Blue light impairs the eye's ability to distinguish fine detail most",
-      "summary": "Score: 86 | Comments: 52",
-      "source": "Hacker News",
-      "sourceIcon": "🔶",
-      "url": "https://research.uga.edu/news/blue-light-has-a-surprising-effect-on-your-eyes-study-finds/",
-      "category": "技术动态",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:01.095086+00:00",
-      "raw_date": "2026-08-31 08:33"
-    },
-    {
-      "id": "7ea8a018e45f",
-      "title": "Stylists Agree: These Are the 17 Items You Need to Build a Fall Capsule Wardrobe—Starting at $13",
-      "summary": "Real Simple 生活资讯",
-      "source": "Real Simple",
-      "sourceIcon": "🌸",
-      "url": "https://www.realsimple.com/amazon-fall-capsule-wardrobe-august-2026-12073292",
-      "category": "生活资讯",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:10.686752+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "d1aee1282b23",
-      "title": "Supreme Court allows construction of Trump’s White House ballroom to continue",
-      "summary": "Financial Times 财经新闻",
-      "source": "Financial Times",
-      "sourceIcon": "📊",
-      "url": "https://www.ft.com/content/60b3e8d9-df14-422c-b513-9d23850b5291?syn-25a6b1a6=1",
-      "category": "财经新闻",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:22.007755+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "d458d448bb3a",
-      "title": "Supreme Court clears way for Trump to keep building White House ballroomBut Chief Justice John Roberts dissents, writing that \"construction is likely unlawful\".2 hrs agoUS & Canada",
-      "summary": "BBC News 国际新闻",
-      "source": "BBC News",
-      "sourceIcon": "📰",
-      "url": "https://www.bbc.com/news/news/articles/c9w457e7ydlo",
-      "category": "国际新闻",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:13.731366+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:01.035089+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
       "id": "9ccbe683a136",
@@ -1878,8 +1952,8 @@
       "category": "生活资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:10.674928+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:46.311728+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "8b0064b9aae1",
@@ -1891,8 +1965,8 @@
       "category": "娱乐八卦",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:17.999119+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:55.495030+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "77d2fea7d8f8",
@@ -1904,8 +1978,8 @@
       "category": "娱乐八卦",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:17.548472+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:54.889798+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "4708c82ca3d7",
@@ -1917,21 +1991,34 @@
       "category": "国际新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:15.870380+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:53.161202+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "13eef5effbb6",
-      "title": "The Big Read.The dawn of physical AI",
+      "id": "3096c29542f5",
+      "title": "The Big Read.Revolut’s mission to dominate banking",
       "summary": "Financial Times 财经新闻",
       "source": "Financial Times",
       "sourceIcon": "📊",
-      "url": "https://www.ft.com/content/fc8f86f2-96ad-4bfb-bba4-75326115aa24?syn-25a6b1a6=1",
+      "url": "https://www.ft.com/content/f9f240f9-4077-421f-b320-6dc895d65fd1?syn-25a6b1a6=1",
       "category": "财经新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:22.007728+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:03.505073+00:00",
+      "raw_date": "2026-09-01 23:55"
+    },
+    {
+      "id": "8e49d9aab26e",
+      "title": "The EU's repair policies are changing the way tech is designed",
+      "summary": "Score: 29 | Comments: 0",
+      "source": "Hacker News",
+      "sourceIcon": "🔶",
+      "url": "https://theconversation.com/the-eus-repair-policies-are-changing-the-way-tech-is-designed-288468",
+      "category": "技术动态",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:35.166099+00:00",
+      "raw_date": "2026-09-01 19:59"
     },
     {
       "id": "d4a8d4679b72",
@@ -1943,8 +2030,8 @@
       "category": "科技数码",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:11.499046+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:47.309415+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "c404987bd68a",
@@ -1956,34 +2043,34 @@
       "category": "科技数码",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:11.499001+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:47.309371+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "8da081f07743",
-      "title": "The looming failure of Operation Economic Outcast",
-      "summary": "Al Jazeera 国际新闻",
-      "source": "Al Jazeera",
-      "sourceIcon": "🌍",
-      "url": "https://www.aljazeera.com/opinions/2026/8/31/the-looming-failure-of-operation-economic-outcast",
-      "category": "国际新闻",
+      "id": "eecc7931f258",
+      "title": "The pitfalls in Trump’s Venezuela oil play",
+      "summary": "Financial Times 财经新闻",
+      "source": "Financial Times",
+      "sourceIcon": "📊",
+      "url": "https://www.ft.com/content/58840205-448b-4d17-9dd7-0313c8b8ed81?syn-25a6b1a6=1",
+      "category": "财经新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:16.888421+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:03.505059+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "db736a18ce5e",
-      "title": "The safest job from AI may be writing",
-      "summary": "Score: 97 | Comments: 133",
-      "source": "Hacker News",
-      "sourceIcon": "🔶",
-      "url": "http://muratbuffalo.blogspot.com/2026/08/the-safest-job-from-ai-may-be-writing.html",
-      "category": "技术动态",
+      "id": "807341d3d8b0",
+      "title": "Tim Cook to be paid $47mn as Apple’s executive chair",
+      "summary": "Financial Times 财经新闻",
+      "source": "Financial Times",
+      "sourceIcon": "📊",
+      "url": "https://www.ft.com/content/8efaf87c-e5bf-4cfe-8403-16690ed4c265?syn-25a6b1a6=1",
+      "category": "财经新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:08:58.894449+00:00",
-      "raw_date": "2026-08-31 18:12"
+      "timestamp": "2026-09-01T23:55:03.505099+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
       "id": "9f62dfaf16c6",
@@ -1995,60 +2082,8 @@
       "category": "财经新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:22.992889+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "812353896f72",
-      "title": "Trespassing Cops Shoot and Kill Baby Donkey Named HeeHaw, Farm Says",
-      "summary": "TMZ 娱乐资讯",
-      "source": "TMZ",
-      "sourceIcon": "🎬",
-      "url": "https://www.tmz.com/2026/08/31/donkey-named-heehaw-fatally-shot-by-police/",
-      "category": "娱乐八卦",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:17.558755+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "1bec60e6c7e9",
-      "title": "Trump pledges to strike Iran ‘hard’ after first exchange of fire in a month",
-      "summary": "Al Jazeera 国际新闻",
-      "source": "Al Jazeera",
-      "sourceIcon": "🌍",
-      "url": "https://www.aljazeera.com/news/liveblog/2026/9/1/iran-war-live-trump-vows-to-hit-iran-following-first-clash-in-a-month",
-      "category": "国际新闻",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:16.849148+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "4325fd5453dc",
-      "title": "Trump says data centre critics ‘want to end up backwards and poor’",
-      "summary": "Financial Times 财经新闻",
-      "source": "Financial Times",
-      "sourceIcon": "📊",
-      "url": "https://www.ft.com/content/744c448c-858e-4398-85dc-a66cecd02abb?syn-25a6b1a6=1",
-      "category": "财经新闻",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:22.007711+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "5da57686969f",
-      "title": "Two dead and more than a dozen missing after 'terrifying' flash flood hits Grand Canyon\"It was a beautiful day - and then people were screaming,\" one hiker tells the BBC, as 14 people are missing.4 hrs agoUS & Canada",
-      "summary": "BBC News 国际新闻",
-      "source": "BBC News",
-      "sourceIcon": "📰",
-      "url": "https://www.bbc.com/news/news/articles/clylkjyez1do",
-      "category": "国际新闻",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:13.731421+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:04.988775+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
       "id": "c611689429b6",
@@ -2060,60 +2095,47 @@
       "category": "财经新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:22.220838+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:03.887396+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "9a04af7c843c",
-      "title": "UK has billions in contracts with firms tied to illegal Israeli settlements",
-      "summary": "Al Jazeera 国际新闻",
-      "source": "Al Jazeera",
-      "sourceIcon": "🌍",
-      "url": "https://www.aljazeera.com/news/2026/8/28/uk-has-billions-in-contracts-with-firms-tied-to-illegal-israeli-settlements",
-      "category": "国际新闻",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:16.888527+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "9f794ca3e960",
-      "title": "US Army secretary resigns after tension with Pete Hegseth",
+      "id": "5bbea2ae3da6",
+      "title": "US diesel prices soar as Trump hauls in refiners",
       "summary": "Financial Times 财经新闻",
       "source": "Financial Times",
       "sourceIcon": "📊",
-      "url": "https://www.ft.com/content/0d72d3c1-8786-44f0-b88a-ca41b6286a31?syn-25a6b1a6=1",
+      "url": "https://www.ft.com/content/697253e0-01d3-44fe-85e5-d4d9af207a3c?syn-25a6b1a6=1",
       "category": "财经新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:22.007600+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:03.505009+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "1dfc6b17ee6d",
-      "title": "US approves $800m military helicopter sale to Iraq",
-      "summary": "Al Jazeera 国际新闻",
-      "source": "Al Jazeera",
-      "sourceIcon": "🌍",
-      "url": "https://www.aljazeera.com/news/liveblog/2026/9/1/iran-war-live-trump-vows-to-hit-iran-following-first-clash-in-a-month?update=4905024",
-      "category": "国际新闻",
+      "id": "3c6adbe5fd3e",
+      "title": "US launches further strikes on Iran as conflict flares up",
+      "summary": "Financial Times 财经新闻",
+      "source": "Financial Times",
+      "sourceIcon": "📊",
+      "url": "https://www.ft.com/content/c557ccc2-9fe7-4725-8a1c-c40a0948e8d3?syn-25a6b1a6=1",
+      "category": "财经新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:16.849218+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:03.504964+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "bf4d16052a34",
-      "title": "US singer D4vd's celebrity lawyers withdraw from murder caseThe singer, 21, will be now represented by a public defender in the murder trial of 14-year-old Celeste Rivas Hernandez. He has pleaded not guilty.7 hrs agoUS & Canada",
+      "id": "f09ffbb9ec8e",
+      "title": "US strikes Iran as state media reports four killed at wedding partyIranian news agencies said retaliatory missile and drone attacks on US targets had begun.2 hrs agoWorld",
       "summary": "BBC News 国际新闻",
       "source": "BBC News",
       "sourceIcon": "📰",
-      "url": "https://www.bbc.com/news/news/articles/crr451lpl4no",
+      "url": "https://www.bbc.com/news/news/articles/cj06q4ynpmjo",
       "category": "国际新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:13.731314+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:50.783203+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "557169a74f29",
@@ -2125,8 +2147,8 @@
       "category": "生活资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:10.177308+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:45.754334+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "15c13774349b",
@@ -2138,8 +2160,8 @@
       "category": "生活资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:10.177241+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:45.754268+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "8d2918c0621f",
@@ -2151,8 +2173,8 @@
       "category": "生活资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:10.177290+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:45.754316+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "90d69fb80330",
@@ -2164,8 +2186,8 @@
       "category": "生活资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:10.177338+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:45.754365+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "f828c130a1dc",
@@ -2177,8 +2199,8 @@
       "category": "生活资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:10.177323+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:45.754351+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "6a8fe911e5aa",
@@ -2190,8 +2212,8 @@
       "category": "财经新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:21.929734+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:03.426740+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
       "id": "44ca329b3d6a",
@@ -2203,21 +2225,8 @@
       "category": "国际新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:16.888500+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "150b7231539e",
-      "title": "Warsh’s mildly hawkish speech helped fill in the blanks",
-      "summary": "Financial Times 财经新闻",
-      "source": "Financial Times",
-      "sourceIcon": "📊",
-      "url": "https://www.ft.com/content/69b00e4b-e558-4534-8c78-ed145413cec2",
-      "category": "财经新闻",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:22.007768+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:54.158134+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "b0612eb94ce0",
@@ -2229,47 +2238,60 @@
       "category": "娱乐八卦",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:17.999099+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:55.495009+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "d7de11e5a5d3",
-      "title": "Watch: Moment Duane 'Keffe D' Davis is found guilty of Tupac Shakur's murderThe rapper's killing became one of popular culture's great mysteries, with countless theories but no arrests until 2023.36 mins agoUS & Canada",
+      "id": "a6bd07cb5e8a",
+      "title": "Watch: Astronauts set out on rare all-female spacewalkFor the sixth time in history, a team of two women completed a spacewalk outside the International Space Station.3 hrs agoUS & Canada",
       "summary": "BBC News 国际新闻",
       "source": "BBC News",
       "sourceIcon": "📰",
-      "url": "https://www.bbc.com/news/news/videos/ckg7yrwp70qo",
+      "url": "https://www.bbc.com/news/news/videos/c89jyxqvjq0o",
       "category": "国际新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:13.731293+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:50.783275+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "758654217c65",
-      "title": "What’s behind Netanyahu’s condemnation of this weekend’s settler pogroms?",
-      "summary": "Al Jazeera 国际新闻",
-      "source": "Al Jazeera",
-      "sourceIcon": "🌍",
-      "url": "https://www.aljazeera.com/news/2026/8/30/whats-behind-netanyahus-condemnation-of-this-weekends-settler-pogroms",
-      "category": "国际新闻",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:16.888514+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "440dcf5c51bc",
-      "title": "Will Forte bestows this title onFour SeasonsandSNLcastmate Tina Fey",
+      "id": "2fa362cdc208",
+      "title": "What happened to Rachael ‘Raygun’ Gunn? See where the viral 2024 Olympic breakdancer is now",
       "summary": "Entertainment Weekly 娱乐资讯",
       "source": "Entertainment Weekly",
       "sourceIcon": "⭐",
-      "url": "https://ew.com/will-forte-bestows-this-title-on-four-seasons-snl-costar-tina-fey-12074777",
+      "url": "https://ew.com/where-is-olympic-breakdancer-rachael-raygun-gunn-now-12076048",
       "category": "娱乐八卦",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:18.011078+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:55.506869+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "009be3531ce6",
+      "title": "Wheel of Fortuneannouncer Jim Thornton suspended amid ‘allegations concerning’ him",
+      "summary": "Entertainment Weekly 娱乐资讯",
+      "source": "Entertainment Weekly",
+      "sourceIcon": "⭐",
+      "url": "https://ew.com/wheel-of-fortune-announcer-jim-thornton-suspended-12076179",
+      "category": "娱乐八卦",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:55.506956+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "9a269781cf57",
+      "title": "Why China will not comply with US sanctions on Iran",
+      "summary": "Al Jazeera 国际新闻",
+      "source": "Al Jazeera",
+      "sourceIcon": "🌍",
+      "url": "https://www.aljazeera.com/opinions/2026/9/1/why-china-will-not-comply-with-us-sanctions-on-iran",
+      "category": "国际新闻",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:54.158024+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "ca6e227ccea0",
@@ -2281,21 +2303,8 @@
       "category": "国际新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:15.870450+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "5db914d70274",
-      "title": "Yemeni forces target Houthi positions, destroy drone boats",
-      "summary": "Al Jazeera 国际新闻",
-      "source": "Al Jazeera",
-      "sourceIcon": "🌍",
-      "url": "https://www.aljazeera.com/news/liveblog/2026/9/1/iran-war-live-trump-vows-to-hit-iran-following-first-clash-in-a-month?update=4905115",
-      "category": "国际新闻",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:16.849174+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:53.161271+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
       "id": "23a96ae4129a",
@@ -2307,34 +2316,8 @@
       "category": "体育资讯",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:20.259133+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "dd4fa0f5f21d",
-      "title": "opinion content.Whose fiscal problems would you prefer?",
-      "summary": "Financial Times 财经新闻",
-      "source": "Financial Times",
-      "sourceIcon": "📊",
-      "url": "https://www.ft.com/content/0f74b589-3fdf-447d-aa44-9570496bf7c7?syn-25a6b1a6=1",
-      "category": "财经新闻",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:22.007682+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "2ad0976e93a9",
-      "title": "ð® CFP Projections: Pat Fordeâs Playoff Bracket After Week Zero",
-      "summary": "Sports Illustrated 体育资讯",
-      "source": "Sports Illustrated",
-      "sourceIcon": "🏈",
-      "url": "https://www.si.com/college-football/pat-forde-college-football-playoff-projected-bracket-after-week-zero",
-      "category": "体育资讯",
-      "region": "国际",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:20.012209+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:01.035102+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
       "id": "758189104d36",
@@ -2346,177 +2329,151 @@
       "category": "国际新闻",
       "region": "国际",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:16.888473+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:54:54.158107+00:00",
+      "raw_date": "2026-09-01 23:54"
     },
     {
-      "id": "568b9da9c8d1",
-      "title": "为期62天 2026年铁路暑期运输落下帷幕",
+      "id": "e555f8b4ad80",
+      "title": "‘Hit them hard’: Does Trump have another ‘new’ Iran strategy, can it work?",
+      "summary": "Al Jazeera 国际新闻",
+      "source": "Al Jazeera",
+      "sourceIcon": "🌍",
+      "url": "https://www.aljazeera.com/news/2026/9/1/hit-them-hard-does-trump-have-another-new-iran-strategy-can-it-work",
+      "category": "国际新闻",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:54.119516+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "095285f23610",
+      "title": "‘I’ll never be Swedish enough’: Far-right campaign upsets minority groups",
+      "summary": "Al Jazeera 国际新闻",
+      "source": "Al Jazeera",
+      "sourceIcon": "🌍",
+      "url": "https://www.aljazeera.com/news/2026/9/1/not-welcome-how-swedens-far-right-took-over-stockholm-central-station",
+      "category": "国际新闻",
+      "region": "国际",
+      "importance": "normal",
+      "timestamp": "2026-09-01T23:54:54.158092+00:00",
+      "raw_date": "2026-09-01 23:54"
+    },
+    {
+      "id": "73ba2c5756be",
+      "title": "习近平出席上合组织会议并发表重要讲话",
       "summary": "搜狐新闻热点",
       "source": "搜狐新闻",
       "sourceIcon": "📰",
-      "url": "https://www.sohu.com//www.sohu.com/a/1070250741_99984058?edtsign=26ED0980F6937F9C2CDAAB9A949592FA8DD0FCA9&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.283_14-200000.0.0-0-0-0-0.",
+      "url": "https://www.sohu.com//www.sohu.com/a/1070747472_429139?edtsign=11CA054AE681063E1B4172AA3DEA84374BEFE539&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.282_14-200000.0.0-0-0-0-0.&ace=F96799352AD2968BC6693B09FC740C27D61724BC",
       "category": "热点资讯",
       "region": "国内",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:35.715533+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:18.654135+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "b0d5c0884ef2",
-      "title": "习主席一个下午先后会见三国总统",
+      "id": "f4fe2792bfce",
+      "title": "习近平抵达开罗对埃及进行国事访问",
       "summary": "搜狐新闻热点",
       "source": "搜狐新闻",
       "sourceIcon": "📰",
-      "url": "https://www.sohu.com//www.sohu.com/a/1070275478_429139?edtsign=2197FE1B32FC5CDFC42DA3DFA59D6AEC042E3813&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.282_14-200000.0.0-0-0-0-0.&ace=22643BFC6F3CD9C16D017DBD51AD24B2C8F1A476",
+      "url": "https://www.sohu.com//www.sohu.com/a/1070748012_429139?edtsign=CEB6A76257151843952DFFBEBA562DB814139951&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.282_14-200000.0.0-0-0-0-0.&ace=679F71C31D1AD1C05B8443536F382F661B7A3BE2",
       "category": "热点资讯",
       "region": "国内",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:35.715586+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:18.654121+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "8b4dfd7ae01f",
-      "title": "习近平在埃及媒体发表署名文章",
+      "id": "a64d8209d117",
+      "title": "光伏发电装机首超煤电 成中国第一大电源",
       "summary": "搜狐新闻热点",
       "source": "搜狐新闻",
       "sourceIcon": "📰",
-      "url": "https://www.sohu.com//www.sohu.com/a/1070234071_267106?edtsign=20ACC4C479B5A047DD0D7F8E2AC16D39CCD53F9C&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.282_14-200000.0.0-0-0-0-0.&ace=874EA3081213A8354A524BC65BB7CC4964083AD6",
+      "url": "https://www.sohu.com//www.sohu.com/a/1070745548_162522?edtsign=1480403054592C6E18D2B1E6901094CA15BFECC4&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.283_14-200000.0.0-0-0-0-0.",
       "category": "热点资讯",
       "region": "国内",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:35.715576+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:18.654042+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "34e30e9ca9b4",
-      "title": "习近平擘画中吉关系发展新蓝图",
+      "id": "71edceda4c2c",
+      "title": "吉隆口岸方向路段受阻",
       "summary": "搜狐新闻热点",
       "source": "搜狐新闻",
       "sourceIcon": "📰",
-      "url": "https://www.sohu.com//www.sohu.com/a/1070275232_429139?edtsign=90DB1692D0919E18F1D3E86B14F5FA4E8C9772D7&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.282_14-200000.0.0-0-0-0-0.&ace=DCF8AF97C262033DFEE12343C098234494F292A5",
+      "url": "https://www.sohu.com//www.sohu.com/a/1070600420_163278?edtsign=91105C966F30F371549BEE98531581B0BDA9EEA0&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.282_14-200000.0.0-0-0-0-0.&ace=8CB67292BEDA062B16C6EE553506D4281F045C67",
       "category": "热点资讯",
       "region": "国内",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:35.715566+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:18.654186+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "e48a56bd3b3a",
-      "title": "全国各地中小学相继开学",
+      "id": "992f0e4c7134",
+      "title": "媒体:所见即所得 现房销售一举多得",
       "summary": "搜狐新闻热点",
       "source": "搜狐新闻",
       "sourceIcon": "📰",
-      "url": "https://www.sohu.com//www.sohu.com/a/1070254393_121258493?edtsign=DC3A0343871F8DF5589B0B8893BC71157CE93648&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.283_14-200000.0.0-0-0-0-0.",
+      "url": "https://www.sohu.com//www.sohu.com/a/1070753424_120702?edtsign=E70583FF1D4FA97EA73FF327C75708BC9022989D&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.283_14-200000.0.0-0-0-0-0.",
       "category": "热点资讯",
       "region": "国内",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:35.715428+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:18.654098+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "0e1d0b75fc61",
-      "title": "南开大学“爱国三问”",
+      "id": "3b4eb04ee202",
+      "title": "新加坡试用人形机器人为乘客指路",
       "summary": "搜狐新闻热点",
       "source": "搜狐新闻",
       "sourceIcon": "📰",
-      "url": "https://www.sohu.com//www.sohu.com/a/1069849918_429139?edtsign=AD765B69CFECD04007B05787A3AAB812659EB6C9&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.282_14-200000.0.0-0-0-0-0.&ace=7CC327BE9B5C8AE88355D2AD8B46367B07F63E81",
+      "url": "https://www.sohu.com//www.sohu.com/a/1070750970_99984058?edtsign=BDC879F54566BF099F937B8FD834AA69A98ECDC2&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.283_14-200000.0.0-0-0-0-0.",
       "category": "热点资讯",
       "region": "国内",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:35.715651+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:18.654072+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "d07a56a8af51",
-      "title": "吉隆泥石流灾害抢险救援",
+      "id": "fd316f27ae3a",
+      "title": "第83届威尼斯电影节即将开幕",
       "summary": "搜狐新闻热点",
       "source": "搜狐新闻",
       "sourceIcon": "📰",
-      "url": "https://www.sohu.com//www.sohu.com/a/1070140887_429139?edtsign=AACDA4E73E17CC5B63D66CF49037A333A05BA337&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.282_14-200000.0.0-0-0-0-0.&ace=8EC6028040E22390D516589426C62C63A18D37A8",
+      "url": "https://www.sohu.com//www.sohu.com/a/1070747406_99984058?edtsign=83BC71F4D6E0D6BE0A2D811275209FB5B19BF71F&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.283_14-200000.0.0-0-0-0-0.",
       "category": "热点资讯",
       "region": "国内",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:35.715640+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:18.654086+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "6b24522baa18",
-      "title": "油价吞噬航司利润 三大航增亏七成",
+      "id": "fdf2a71aac45",
+      "title": "美伊冲突半年:硝烟未散变局已生",
       "summary": "搜狐新闻热点",
       "source": "搜狐新闻",
       "sourceIcon": "📰",
-      "url": "https://www.sohu.com//www.sohu.com/a/1070167015_313745?edtsign=CA00B6F95D7EEE7298827B48ED9B6FD41C5689F8&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.283_14-200000.0.0-0-0-0-0.",
+      "url": "https://www.sohu.com/a/1070753528_99985316?edtsign=91777555FDFBA341BAC90A86BE28C45F2A97D2ED&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.283_14-200000.0.0-0-0-0-0.",
       "category": "热点资讯",
       "region": "国内",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:35.715519+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:18.654059+00:00",
+      "raw_date": "2026-09-01 23:55"
     },
     {
-      "id": "fd7ffb40d35d",
-      "title": "秋季关注流大会明星阵容陆续官宣",
+      "id": "460fff22adfa",
+      "title": "西班牙6-8月逾5000人因关联高温原因死亡",
       "summary": "搜狐新闻热点",
       "source": "搜狐新闻",
       "sourceIcon": "📰",
-      "url": "https://www.sohu.com//www.sohu.com/a/1069861451_114941?edtsign=802F43DD4AC55051F4BCE89FFE711F1998CD17BF&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.283_14-200000.0.0-0-0-0-0.",
+      "url": "https://www.sohu.com//www.sohu.com/a/1070648148_121345914?edtsign=6DEA489D3E1891CB303B655D9CDF8B5030CCE46D&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.283_14-200000.0.0-0-0-0-0.",
       "category": "热点资讯",
       "region": "国内",
       "importance": "normal",
-      "timestamp": "2026-09-01T01:09:35.715474+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "c20b2681cb42",
-      "title": "西班牙\"飞地\"休达仍有数千移民滞留",
-      "summary": "搜狐新闻热点",
-      "source": "搜狐新闻",
-      "sourceIcon": "📰",
-      "url": "https://www.sohu.com//www.sohu.com/a/1069486519_99984058?edtsign=BBF6477930642ED70D87C742FA48B3396043B8CF&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.283_14-200000.0.0-0-0-0-0.",
-      "category": "热点资讯",
-      "region": "国内",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:35.715545+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "3e5b317e6452",
-      "title": "记者直击吉隆口岸核心区搜救",
-      "summary": "搜狐新闻热点",
-      "source": "搜狐新闻",
-      "sourceIcon": "📰",
-      "url": "https://www.sohu.com/a/1070173551_163278?edtsign=E75C1DE4773F8EAF14B42CDECE9E401661DD4368&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.283_14-200000.0.0-0-0-0-0.",
-      "category": "热点资讯",
-      "region": "国内",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:35.715491+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "106cc8308682",
-      "title": "读懂中吉关系高质量发展之道",
-      "summary": "搜狐新闻热点",
-      "source": "搜狐新闻",
-      "sourceIcon": "📰",
-      "url": "https://www.sohu.com//www.sohu.com/a/1070276086_429139?edtsign=6B7E94C9E4E87414F09CBCEDDB50A26DDE236B9E&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.282_14-200000.0.0-0-0-0-0.&ace=87FF4CE1611F1CD7AB60023A4148ABB957F701DE",
-      "category": "热点资讯",
-      "region": "国内",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:35.715603+00:00",
-      "raw_date": "2026-09-01 01:09"
-    },
-    {
-      "id": "11026b792e91",
-      "title": "郑钦文胜柳托娃 晋级美网次轮",
-      "summary": "搜狐新闻热点",
-      "source": "搜狐新闻",
-      "sourceIcon": "📰",
-      "url": "https://www.sohu.com//www.sohu.com/a/1070198886_267106?edtsign=E554D0392F0D461BC30744BE745BFAAF6A8ADC28&edtcode=dgVQRNHqiz2n3c1041gOMg%3D%3D&scm=thor.283_14-200000.0.0-0-0-0-0.",
-      "category": "热点资讯",
-      "region": "国内",
-      "importance": "normal",
-      "timestamp": "2026-09-01T01:09:35.715556+00:00",
-      "raw_date": "2026-09-01 01:09"
+      "timestamp": "2026-09-01T23:55:18.654110+00:00",
+      "raw_date": "2026-09-01 23:55"
     }
   ]
 }
